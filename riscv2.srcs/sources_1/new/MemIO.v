@@ -44,8 +44,8 @@ module MemIO(
     assign b2 = bState[2];
     assign b1 = bState[1];
     assign b0 = bState[0];
-    assign wa = wea[0] | wea[1] | wea[2];
-    assign wb = web[0] | web[1] | web[2];
+    assign wa = wea[0] | wea[1] | wea[2] | wea[3];
+    assign wb = web[0] | web[1] | web[2] | wea[3];
     
     always @(posedge clk) begin
         aState <= {a0&wa&ena, (a0|wa)&ena, (((~a1)&(~wa))|(a2&(~a0)&(~wa)))&ena};
