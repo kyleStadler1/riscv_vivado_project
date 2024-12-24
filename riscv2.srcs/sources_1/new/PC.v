@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/23/2024 12:58:10 AM
+// Create Date: 12/23/2024 09:13:04 PM
 // Design Name: 
-// Module Name: top
+// Module Name: PC
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module top(
-    
+module PC(
+    input clk,
+    input hold,
+    input sel,
+    input [31:0] vect,
+    output reg [31:0] pc
     );
-    
-    wire clk, rsta, ena, wea, rstb, enb, web, rsta_busy, rstb_busy;
-    wire [31:0] addra, dina, douta, addrb, sdinb, doutb;
-    DualBram ram(clk, rsta, ena, wea, addra, dina, douta, clkb, rstb, enb, web, dinb, rsta_busy, rstb_busy);
-    
-    
+    always @(posedge clk) begin
+        pc <= sel ? vect : pc + 32'd4;
+    end
 endmodule

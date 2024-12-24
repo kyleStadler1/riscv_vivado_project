@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/23/2024 12:58:10 AM
+// Create Date: 12/24/2024 06:02:03 AM
 // Design Name: 
-// Module Name: top
+// Module Name: mem_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module top(
-    
+module mem_tb(
+
     );
-    
-    wire clk, rsta, ena, wea, rstb, enb, web, rsta_busy, rstb_busy;
-    wire [31:0] addra, dina, douta, addrb, sdinb, doutb;
-    DualBram ram(clk, rsta, ena, wea, addra, dina, douta, clkb, rstb, enb, web, dinb, rsta_busy, rstb_busy);
-    
-    
 endmodule
