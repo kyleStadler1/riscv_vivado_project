@@ -1,26 +1,4 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12/24/2024 06:02:03 AM
-// Design Name: 
-// Module Name: mem_tb
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-module mem_tb;
+module MemIO_tb;
     reg clk;
     reg ena;
     reg [3:0] wea;
@@ -58,52 +36,49 @@ module mem_tb;
         addra = 32'b0;
         dina = 32'b0;
 
-        // Wait for initial reset behavior
-        #20;
-
-        // Test 1: Write operation
-        ena = 1;      // Enable the channel
-        wea = 4'b1111; // Enable writing
-        addra = 32'h0000_0001;
-        dina = 32'hDEAD_BEEF; // Write value
+        // Test sequence
         #10;
 
-        // Test 2: Disable write, read back
-        wea = 4'b0000; // Disable write
+        // First rising edge: Write to addr 4
+        ena = 1;
+        wea = 4'b1111;
+        addra = 32'h0000_0004;
+        dina = 32'h1234_5678;
         #10;
 
-        // Check readAValid while reading
-        addra = 32'h0000_0001;
+        // Second rising edge: Disable
+        ena = 0;
+        wea = 4'b0000;
         #10;
 
-        // Test 3: Disable the channel
+        // Third rising edge: Enable, wea = x0000, addr = 4
+        ena = 1;
+        wea = 4'b0000;
+        addra = 32'h0000_0004;
+        #10;
+
+        // Fourth rising edge: Same as third
+        #10;
+
+        // Fifth rising edge: Disable
         ena = 0;
         #10;
 
-        // Test 4: Re-enable and write new value
+        // Sixth rising edge: Enable, wea = x0, addr = 4
         ena = 1;
-        wea = 4'b1111;
-        addra = 32'h0000_0002;
-        dina = 32'hC0FF_EE11;
-        #10;
-
-        // Test 5: Continuous reads with disabled channel
         wea = 4'b0000;
-        ena = 0; // Disable channel during read
-        addra = 32'h0000_0002;
+        addra = 32'h0000_0004;
         #10;
 
-        // Test 6: Re-enable channel and read valid data
-        ena = 1;
-        #10;
-
-        // Test 7: Alternate write and read transitions
+        // Seventh rising edge: Enable, wea = xf, addr = 8
         wea = 4'b1111;
-        addra = 32'h0000_0003;
-        dina = 32'hBAD_C0DE;
+        addra = 32'h0000_0008;
+        dina = 32'hABCD_EF01;
         #10;
+
+        // Eighth rising edge: Disable
+        ena = 0;
         wea = 4'b0000;
-        addra = 32'h0000_0003;
         #10;
 
         // Finish simulation
