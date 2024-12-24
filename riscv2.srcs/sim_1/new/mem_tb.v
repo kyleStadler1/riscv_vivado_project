@@ -31,55 +31,55 @@ module MemIO_tb;
     // Test procedure
     initial begin
         // Initialize inputs
-        ena = 0;
-        wea = 4'b0000;
-        addra = 32'b0;
-        dina = 32'b0;
+        ena <= 0;
+        wea <= 4'b0000;
+        addra <= 32'b0;
+        dina <= 32'b0;
 
         // Test sequence
-        #10;
+        @(posedge clk);
 
         // First rising edge: Write to addr 4
-        ena = 1;
-        wea = 4'b1111;
-        addra = 32'h0000_0004;
-        dina = 32'h1234_5678;
-        #10;
+        ena <= 1;
+        wea <= 4'b1111;
+        addra <= 32'h0000_0004;
+        dina <= 32'h1234_5678;
+        @(posedge clk);
 
         // Second rising edge: Disable
-        ena = 0;
-        wea = 4'b0000;
-        #10;
+        ena <= 0;
+        wea <= 4'b0000;
+        @(posedge clk);
 
         // Third rising edge: Enable, wea = x0000, addr = 4
-        ena = 1;
-        wea = 4'b0000;
-        addra = 32'h0000_0004;
-        #10;
+        ena <= 1;
+        wea <= 4'b0000;
+        addra <= 32'h0000_0004;
+        @(posedge clk);
 
         // Fourth rising edge: Same as third
-        #10;
+        @(posedge clk);
 
         // Fifth rising edge: Disable
-        ena = 0;
-        #10;
+        ena <= 0;
+        @(posedge clk);
 
         // Sixth rising edge: Enable, wea = x0, addr = 4
-        ena = 1;
-        wea = 4'b0000;
-        addra = 32'h0000_0004;
-        #10;
+        ena <= 1;
+        wea <= 4'b0000;
+        addra <= 32'h0000_0004;
+        @(posedge clk);
 
         // Seventh rising edge: Enable, wea = xf, addr = 8
-        wea = 4'b1111;
-        addra = 32'h0000_0008;
-        dina = 32'hABCD_EF01;
-        #10;
+        wea <= 4'b1111;
+        addra <= 32'h0000_0008;
+        dina <= 32'hABCD_EF01;
+        @(posedge clk);
 
         // Eighth rising edge: Disable
-        ena = 0;
-        wea = 4'b0000;
-        #10;
+        ena <= 0;
+        wea <= 4'b0000;
+        @(posedge clk);
 
         // Finish simulation
         $finish;
