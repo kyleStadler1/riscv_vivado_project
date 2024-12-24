@@ -70,8 +70,8 @@ module MemIO(
         .addrb(addrb),
         .dinb(dinb),
         .doutb(doutb),
-        .rtsa_busy(), //not using rn
-        .rtsb_busy() //not using rn
+        .rsta_busy(), //not using rn
+        .rstb_busy() //not using rn
     );
 endmodule
 
