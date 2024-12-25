@@ -60,7 +60,7 @@ module MemIO(
     
     assign readAValid = aState == 2'b11; //
     assign readBValid = bState == 2'b11;
-    assign abusy = aState == 2'b01; //
+    assign abusy = aStateNext == 2'b01; //
     assign bbusy = bState == 2'b01;
     
     assign state = aState;
