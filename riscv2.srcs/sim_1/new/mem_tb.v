@@ -62,7 +62,7 @@ module MemIO_tb;
         for (i = 0; i < 32; i = i + 4) begin
             addra = i;
             @(posedge clk);
-            while (!readAValid) @(posedge clk); // Wait for valid read
+            while (~readAValid) @(posedge clk); // Wait for radValid to begin next read
         end
 
         // Burst mode test
@@ -80,7 +80,7 @@ module MemIO_tb;
         for (i = 0; i < 16; i = i + 4) begin
             addra = i + 8;
             @(posedge clk);
-            while (!readAValid) @(posedge clk); // Wait for valid read
+            while (~readAValid) @(posedge clk); // Wait for valid read
         end
 
         // Interleaved write-read mode test
@@ -97,9 +97,9 @@ module MemIO_tb;
             // Read from a different location
             addra = i;
             @(posedge clk);
-            while (!readAValid) @(posedge clk); // Wait for valid read
+            while (~readAValid) @(posedge clk); // Wait for valid read
         end
-
+        ena = 0;
         $stop;
     end
 
