@@ -58,8 +58,8 @@ module MemIO(
     assign aOverride = ~(a1&a0);
     assign readBValid = b1&b0;
     assign bOverride = ~(b1&b0);
-    assign abusy = ((~a0)&a1);
-    assign bbusy = ((~b0)&b1);
+    assign abusy = ((~a1)&a0);
+    assign bbusy = ((~b1)&b0);
     
     assign state = aState;
     

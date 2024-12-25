@@ -49,7 +49,7 @@ module MemIO_tb;
 
         // Sequential write test
         ena = 1;
-        for (i = 0; i < 8; i = i + 1) begin
+        for (i = 0; i < 16; i = i + 4) begin
             while (abusy) @(posedge clk); // Wait for not busy
             wea = 4'b1111;
             addra = i;
@@ -59,7 +59,7 @@ module MemIO_tb;
         wea = 4'b0000; // Disable writing
 
         // Sequential read test
-        for (i = 0; i < 8; i = i + 1) begin
+        for (i = 0; i < 16; i = i + 4) begin
             while (abusy) @(posedge clk); // Wait for not busy
             addra = i;
             @(posedge clk);
@@ -68,7 +68,7 @@ module MemIO_tb;
 
         // Burst mode test
         // Write burst data
-        for (i = 0; i < 4; i = i + 1) begin
+        for (i = 0; i < 8; i = i + 4) begin
             while (abusy) @(posedge clk); // Wait for not busy
             wea = 4'b1111;
             addra = i + 8; // Different memory region
@@ -78,12 +78,13 @@ module MemIO_tb;
         wea = 4'b0000; // Disable writing
 
         // Read burst data
-        for (i = 0; i < 4; i = i + 1) begin
+        for (i = 0; i < 8; i = i + 4) begin
             while (abusy) @(posedge clk); // Wait for not busy
             addra = i + 8;
             @(posedge clk);
             while (!readAValid) @(posedge clk); // Wait for valid read
         end
+        ena = 0;
 
         $stop;
     end
