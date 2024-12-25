@@ -49,7 +49,7 @@ module MemIO_tb;
 
         // Sequential write test
         ena = 1;
-        for (i = 0; i < 16; i = i + 4) begin
+        for (i = 0; i < 32; i = i + 4) begin
             while (abusy) @(posedge clk); // Wait for not busy
             wea = 4'b1111;
             addra = i;
@@ -59,8 +59,7 @@ module MemIO_tb;
         wea = 4'b0000; // Disable writing
 
         // Sequential read test
-        for (i = 0; i < 16; i = i + 4) begin
-            while (abusy) @(posedge clk); // Wait for not busy
+        for (i = 0; i < 32; i = i + 4) begin
             addra = i;
             @(posedge clk);
             while (!readAValid) @(posedge clk); // Wait for valid read
@@ -68,7 +67,7 @@ module MemIO_tb;
 
         // Burst mode test
         // Write burst data
-        for (i = 0; i < 8; i = i + 4) begin
+        for (i = 0; i < 16; i = i + 4) begin
             while (abusy) @(posedge clk); // Wait for not busy
             wea = 4'b1111;
             addra = i + 8; // Different memory region
@@ -78,16 +77,30 @@ module MemIO_tb;
         wea = 4'b0000; // Disable writing
 
         // Read burst data
-        for (i = 0; i < 8; i = i + 4) begin
-            while (abusy) @(posedge clk); // Wait for not busy
+        for (i = 0; i < 16; i = i + 4) begin
             addra = i + 8;
             @(posedge clk);
             while (!readAValid) @(posedge clk); // Wait for valid read
         end
-        ena = 0;
+
+        // Interleaved write-read mode test
+        for (i = 0; i < 12; i = i + 4) begin
+            // Write
+            while (abusy) @(posedge clk); // Wait for not busy
+            wea = 4'b1111;
+            addra = i + 12; // Write to new memory location
+            dina = i * 1000;
+            @(posedge clk);
+
+            wea = 4'b0000; // Disable writing
+
+            // Read from a different location
+            addra = i;
+            @(posedge clk);
+            while (!readAValid) @(posedge clk); // Wait for valid read
+        end
 
         $stop;
     end
 
 endmodule
-
