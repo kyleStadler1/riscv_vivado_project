@@ -8,8 +8,10 @@ module MemIO_tb;
     reg [31:0] dina;
     wire [31:0] douta;
     wire readAValid;
-    wire abusy;
-    wire [1:0] state;
+    wire [31:0] readAddr;
+    wire acceptRead;
+    wire acceptWrite;
+    wire [2:0] state;
 
     // Instantiate the DUT (Device Under Test)
     MemIO dut (
@@ -26,8 +28,12 @@ module MemIO_tb;
         .doutb(),
         .readAValid(readAValid),
         .readBValid(),
-        .abusy(abusy),
-        .bbusy(),
+        .aReadAddr(readAddr),
+        .bReadAddr(),
+        .acceptReadA(acceptRead),
+        .acceptWriteA(acceptWrite),
+        .acceptReadB(),
+        .acceptWriteB(),
         .state(state)
     );
 
@@ -49,12 +55,13 @@ module MemIO_tb;
 
         // Sequential write test
         ena = 1;
+       
         for (i = 0; i < 32; i = i + 4) begin
-            while (abusy) @(posedge clk); // Wait for not busy
             wea = 4'b1111;
             addra = i;
             dina = i * 10;
             @(posedge clk);
+            while (~acceptWrite) @(posedge clk); 
         end
         wea = 4'b0000; // Disable writing
 
@@ -62,17 +69,18 @@ module MemIO_tb;
         for (i = 0; i < 32; i = i + 4) begin
             addra = i;
             @(posedge clk);
-            while (~readAValid) @(posedge clk); // Wait for radValid to begin next read
+            //while (~readAValid) @(posedge clk); // Wait for radValid to begin next read
         end
 
         // Burst mode test
         // Write burst data
+       
         for (i = 0; i < 16; i = i + 4) begin
-            while (abusy) @(posedge clk); // Wait for not busy
             wea = 4'b1111;
             addra = i + 8; // Different memory region
             dina = i * 100;
             @(posedge clk);
+            while (~acceptWrite) @(posedge clk); 
         end
         wea = 4'b0000; // Disable writing
 
@@ -80,24 +88,23 @@ module MemIO_tb;
         for (i = 0; i < 16; i = i + 4) begin
             addra = i + 8;
             @(posedge clk);
-            while (~readAValid) @(posedge clk); // Wait for valid read
+            //while (~readAValid) @(posedge clk); // Wait for valid read
         end
 
         // Interleaved write-read mode test
         for (i = 0; i < 12; i = i + 4) begin
             // Write
-            while (abusy) @(posedge clk); // Wait for not busy
             wea = 4'b1111;
             addra = i + 12; // Write to new memory location
             dina = i * 1000;
             @(posedge clk);
-
+            while (~acceptWrite) @(posedge clk); 
             wea = 4'b0000; // Disable writing
 
             // Read from a different location
             addra = i;
             @(posedge clk);
-            while (~readAValid) @(posedge clk); // Wait for valid read
+            //while (~readAValid) @(posedge clk); // Wait for valid read
         end
         ena = 0;
         $stop;
