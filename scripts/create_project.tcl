@@ -2,7 +2,7 @@
 set project_name "riscv2"
 set project_dir "../riscv2_project"
 
-# Clean up the previous project directory
+# Clean up previous project directory
 file delete -force $project_dir
 
 # Create a new Vivado project
@@ -18,12 +18,9 @@ add_files ../src/bramtest.v
 add_files ../src/top.v
 
 # Add IP core
-# This ensures the .xci file is integrated directly into the project
-add_files ../ips/DualBRAM3.xci
+add_files ../ips/DualBRAM3.xci  # Add the IP core to the project
 
-# Regenerate IP in the context of this project
-# This prevents Vivado from attempting to write outside the project directory
-upgrade_ip [get_files ../ips/DualBRAM3.xci]
+# Generate the IP output (this will ensure the IP is correctly instantiated)
 generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
 
 # Add constraints file
@@ -37,7 +34,6 @@ save_project
 
 # Close the project
 close_project
-
 
 
 
