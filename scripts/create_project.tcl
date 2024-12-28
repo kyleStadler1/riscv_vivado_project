@@ -17,11 +17,11 @@ add_files ../src/FetchLatch.v
 add_files ../src/bramtest.v
 add_files ../src/top.v
 
-# Add IP core
-add_files ../ips/DualBRAM3.xci  
-#^ Add the IP core to the project
+# Reimport the IP core
+remove_files [get_files ../ips/DualBRAM3.xci]  # Remove old file if necessary
+import_ip -force ../ips/DualBRAM3.xci  # Re-import the IP correctly
 
-# Generate the IP output (this will ensure the IP is correctly instantiated)
+# Generate the IP outputs (to ensure IP is correctly created)
 generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
 
 # Add constraints file
