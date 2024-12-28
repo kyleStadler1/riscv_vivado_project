@@ -21,7 +21,7 @@ add_files /home/user/project/riscv2//src/top.v
 read_ip /home/user/project/riscv2/ips/DualBRAM.xci
 
 # Add constraints file
-add_files -fileset constrs_1 /home/user/project/riscv2/constraints/constraints.xdc
+add_files -fileset constrs_1 /home/user/project/riscv2/constraints/constrs_1/constraints.xdc
 
 # Set the top module to 'top'
 set_property top top [current_fileset]
