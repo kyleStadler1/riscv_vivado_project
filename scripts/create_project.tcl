@@ -1,6 +1,6 @@
 # Define project parameters
 set project_name "riscv2"
-set project_dir "./riscv2_project"
+set project_dir "/home/user/projects/riscv2_project"
 
 # Clean up previous project directory
 file delete -force $project_dir
