@@ -19,6 +19,8 @@ add_files ../src/top.v
 
 # Add IP core
 read_ip ../ips/DualBRAM3.xci
+generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
+add_files [get_files ../ips/DualBRAM3.xdc]
 
 # Add constraints file
 add_files -fileset constrs_1 ../constraints/constraints.xdc
