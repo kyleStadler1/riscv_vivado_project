@@ -18,7 +18,8 @@ add_files ../src/bramtest.v
 add_files ../src/top.v
 
 # Add IP core
-add_files ../ips/DualBRAM3.xci  # Add the IP core to the project
+add_files ../ips/DualBRAM3.xci  
+#^ Add the IP core to the project
 
 # Generate the IP output (this will ensure the IP is correctly instantiated)
 generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
