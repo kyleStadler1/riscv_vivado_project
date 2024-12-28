@@ -18,8 +18,10 @@ add_files ../src/bramtest.v
 add_files ../src/top.v
 
 # Reimport the IP core
-remove_files [get_files ../ips/DualBRAM3.xci]  # Remove old file if necessary
-import_ip -force ../ips/DualBRAM3.xci  # Re-import the IP correctly
+remove_files [get_files ../ips/DualBRAM3.xci]
+# Remove old file if necessary
+import_ip ../ips/DualBRAM3.xci 
+# Re-import the IP correctly
 
 # Generate the IP outputs (to ensure IP is correctly created)
 generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
@@ -31,7 +33,7 @@ add_files -fileset constrs_1 ../constraints/constraints.xdc
 set_property top top [current_fileset]
 
 # Save the project
-save_project
+save_project as $project_name
 
 # Close the project
 close_project
