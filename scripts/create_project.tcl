@@ -21,9 +21,10 @@ add_files ../src/top.v
 read_ip ../ips/DualBRAM3.xci
 
 # Set custom output directories for the IP core
-set_property GENERATE_SIMULATION_OUTPUT_DIRECTORY $project_dir/ip_generated/sim [get_files ../ips/DualBRAM3.xci]
-set_property GENERATE_SYNTHESIS_OUTPUT_DIRECTORY $project_dir/ip_generated/synth [get_files ../ips/DualBRAM3.xci]
-set_property GENERATE_IMPLEMENTATION_OUTPUT_DIRECTORY $project_dir/ip_generated/impl [get_files ../ips/DualBRAM3.xci]
+set_property CONFIG.PROJ_DIR $project_dir/ip_generated [get_ips]
+#set_property GENERATE_SIMULATION_OUTPUT_DIRECTORY $project_dir/ip_generated/sim [get_files ../ips/DualBRAM3.xci]
+#set_property GENERATE_SYNTHESIS_OUTPUT_DIRECTORY $project_dir/ip_generated/synth [get_files ../ips/DualBRAM3.xci]
+#set_property GENERATE_IMPLEMENTATION_OUTPUT_DIRECTORY $project_dir/ip_generated/impl [get_files ../ips/DualBRAM3.xci]
 
 # Generate IP output products
 generate_target all [get_files ../ips/DualBRAM3.xci]
