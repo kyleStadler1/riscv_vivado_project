@@ -16,7 +16,21 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+// FO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'DualBRAM'...
+//CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/user/Xilinx/Vivado/2023.1/data/ip/xilinx/blk_mem_gen_v8_4/ttcl/bmg_ooc_xdc.ttcl': Problem launching IP file '/home/user/Xilinx/Vivado/2023.1/data/ip/xilinx/blk_mem_gen_v8_4/ttcl/bmg_ooc_xdc.ttcl': couldn't open "/home/user/Xilinx/Vivado/2023.1/tps/tcl/tclIndex": no such file or directory
+//    while executing
+//"open [file join $dir tclIndex]"
+//CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/user/Xilinx/Vivado/2023.1/data/ip/xilinx/blk_mem_gen_v8_4/hdl/mem_init_file.xit': Problem launching IP file '/home/user/Xilinx/Vivado/2023.1/data/ip/xilinx/blk_mem_gen_v8_4/hdl/mem_init_file.xit': couldn't open "/home/user/Xilinx/Vivado/2023.1/tps/tcl/tclIndex": no such file or directory
+//    while executing
+//"open [file join $dir tclIndex]"
+//CRITICAL WARNING: [IP_Flow 19-664] Failed to create directory '/home/riscv2.gen/sources_1/ip/DualBRAM/hdl' to copy '/home/user/Xilinx/Vivado/2023.1/data/ip/xilinx/blk_mem_gen_v8_4/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd' to.
+//ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+//ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'DualBRAM'. Failed to generate 'Vivado VHDL Synthesis' outputs: 
+//CRITICAL WARNING: [IP_Flow 19-193] Failed to save BOM file '/home/riscv2.gen/sources_1/ip/DualBRAM/DualBRAM.xml'.
+//CRITICAL WARNING: [IP_Flow 19-194] Failed to save IP instance 'DualBRAM'.
+//ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+//Failed to generate IP 'DualBRAM'. Failed to generate 'Vivado VHDL Synthesis' outputs: 
+
 //////////////////////////////////////////////////////////////////////////////////
 
 
