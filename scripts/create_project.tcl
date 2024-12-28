@@ -20,7 +20,8 @@ add_files ../src/top.v
 # Add IP core
 read_ip ../ips/DualBRAM3.xci
 generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
-add_files [get_files ../ips/DualBRAM3.xdc]
+# Generate IP output products (required for new environments)
+generate_target all [get_ips]
 
 # Add constraints file
 add_files -fileset constrs_1 ../constraints/constraints.xdc
@@ -28,8 +29,7 @@ add_files -fileset constrs_1 ../constraints/constraints.xdc
 # Set the top module to 'top'
 set_property top top [current_fileset]
 
-# Generate IP output products (required for new environments)
-generate_target all [get_ips]
+
 
 # Save and close the project
 save_project_as $project_name
