@@ -87,7 +87,7 @@
     
     assign state = aState;
     
-    DualBRAM ram(
+    DualBRAM3 ram(
         .clka(clk),
         .ena(ena),
         .wea(wea),

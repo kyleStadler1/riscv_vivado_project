@@ -1,6 +1,6 @@
 # Define project parameters
 set project_name "riscv2"
-set project_dir "./riscv2_project"
+set project_dir "../riscv2_project"
 
 # Clean up previous project directory
 file delete -force $project_dir
@@ -18,7 +18,7 @@ add_files ../src/bramtest.v
 add_files ../src/top.v
 
 # Add IP core
-read_ip ../ips/DualBRAM.xci
+read_ip ../ips/DualBRAM3.xci
 
 # Add constraints file
 add_files -fileset constrs_1 ../constraints/constraints.xdc
