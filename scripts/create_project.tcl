@@ -1,3 +1,10 @@
+# Define project parameters
+set project_name "riscv2"
+set project_dir "../riscv2_project"
+
+# Clean up the previous project directory
+file delete -force $project_dir
+
 # Create a new Vivado project
 create_project $project_name $project_dir -part xc7z007sclg400-1
 
@@ -30,6 +37,7 @@ save_project
 
 # Close the project
 close_project
+
 
 
 
