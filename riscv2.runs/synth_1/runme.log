@@ -1,0 +1,30 @@
+
+*** Running vivado
+    with args -log bramtest.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bramtest.tcl
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source bramtest.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/user/project/riscv2/riscv2.srcs/utils_1/imports/synth_1/FetchLatch.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/project/riscv2/riscv2.srcs/utils_1/imports/synth_1/FetchLatch.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top bramtest -part xc7z007sclg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Vivado_Tcl 4-1810] synth_design options have changed between reference and incremental; A full resynthesis will be run
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4916
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2551.590 ; gain = 383.668 ; free physical = 3537 ; free virtual = 4423
+---------------------------------------------------------------------------------
+/home/user/Xilinx/Vivado/2023.1/bin/rdiArgs.sh: line 352:  4892 Killed                  "$RDI_PROG" "$@"
+Parent process (pid 4892) has died. This helper process will now exit

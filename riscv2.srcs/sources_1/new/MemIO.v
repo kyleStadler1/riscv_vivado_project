@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MemIO(
+ module MemIO(
     input clk, 
     input ena,
     input enb,
@@ -89,14 +89,12 @@ module MemIO(
     
     DualBRAM ram(
         .clka(clk),
-       // .rsta(1'b0),
         .ena(ena),
         .wea(wea),
         .addra(addra),
         .dina(dina),
         .douta(douta),
         .clkb(clk),
-       // .rstb(1'b0),
         .enb(enb),
         .web(web),
         .addrb(addrb),
