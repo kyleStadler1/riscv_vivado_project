@@ -1,3 +1,8 @@
+*.jou
+*.log
+*.str
+*.runs
 *.cache
 *.hw
 *.sim
+*.xpr
