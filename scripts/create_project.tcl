@@ -1,6 +1,6 @@
 # Define project parameters
 set project_name "riscv2"
-set project_dir "/home/user/projects/riscv2_project"
+set project_dir "/home/user/project/riscv2_project"
 
 # Clean up previous project directory
 file delete -force $project_dir
@@ -9,19 +9,19 @@ file delete -force $project_dir
 create_project $project_name $project_dir -part xc7a35tcpg236-1
 
 # Add source files
-add_files ../src/PC.v
-add_files ../src/ModeFSM.v
-add_files ../src/MemIO.v
-add_files ../src/InstrInject.v
-add_files ../src/FetchLatch.v
-add_files ../src/bramtest.v
-add_files ../src/top.v
+add_files /home/user/project/riscv2/src/PC.v
+add_files /home/user/project/riscv2//src/ModeFSM.v
+add_files /home/user/project/riscv2//src/MemIO.v
+add_files /home/user/project/riscv2//src/InstrInject.v
+add_files /home/user/project/riscv2//src/FetchLatch.v
+add_files /home/user/project/riscv2//src/bramtest.v
+add_files /home/user/project/riscv2//src/top.v
 
 # Add IP core
-read_ip ../ips/DualBRAM.xci
+read_ip /home/user/project/riscv2/ips/DualBRAM.xci
 
 # Add constraints file
-add_files -fileset constrs_1 ../constraints/constraints.xdc
+add_files -fileset constrs_1 /home/user/project/riscv2/constraints/constraints.xdc
 
 # Set the top module to 'top'
 set_property top top [current_fileset]
