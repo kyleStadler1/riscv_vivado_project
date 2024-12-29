@@ -56,7 +56,7 @@ module RamIO (
         .addrb(addrB),
         .dinb(dinB),
         .doutb(doutB)
-    )
+    );
 
 
 endmodule
