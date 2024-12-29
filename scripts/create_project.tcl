@@ -4,6 +4,9 @@ set project_dir "../riscv2_project"
 
 # Clean up previous project directory
 file delete -force $project_dir
+file delete -force ./riscv2
+file delete -force ./vivado.jou
+file delete -force ./vivado.log
 
 # Create a new Vivado project
 create_project $project_name $project_dir -part xc7z007sclg400-1
