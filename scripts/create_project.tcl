@@ -24,12 +24,12 @@ add_files ../src/RomIO.v
 add_files ../src/top.v
 
 # Reimport the IP core
-remove_files [get_files ../ips/DualBRAM3.xci]
+remove_files [get_files ../ips/dualPortRAM32kx32.xci]
 # Remove old file if necessary
-import_ip ../ips/DualBRAM3.xci 
+import_ip ../ips/dualPortRAM32kx32.xci 
 
 # Generate the IP outputs (to ensure IP is correctly created)
-generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
+generate_target {synthesis simulation} [get_files ../ips/dualPortRAM32kx32.xci]
 
 # Add constraints file
 add_files -fileset constrs_1 ../constraints/constraints.xdc
