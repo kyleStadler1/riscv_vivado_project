@@ -9,19 +9,21 @@ file delete -force $project_dir
 create_project $project_name $project_dir -part xc7z007sclg400-1
 
 # Add source files
-add_files ../src/PC.v
-add_files ../src/ModeFSM.v
-add_files ../src/MemIO.v
-add_files ../src/InstrInject.v
 add_files ../src/FetchLatch.v
+add_files ../src/MemIO.v
+add_files ../src/ModeFSM.v
+add_files ../src/RamIO.v
 add_files ../src/bramtest.v
+add_files ../src/InstrInject.v
+add_files ../src/MemoryMappedIO.v
+add_files ../src/PC.v
+add_files ../src/RomIO.v
 add_files ../src/top.v
 
 # Reimport the IP core
 remove_files [get_files ../ips/DualBRAM3.xci]
 # Remove old file if necessary
 import_ip ../ips/DualBRAM3.xci 
-# Re-import the IP correctly
 
 # Generate the IP outputs (to ensure IP is correctly created)
 generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
@@ -40,22 +42,6 @@ close_project
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # # Define project parameters
 # set project_name "riscv2"
 # set project_dir "../riscv2_project"
@@ -75,17 +61,14 @@ close_project
 # add_files ../src/bramtest.v
 # add_files ../src/top.v
 
-# # Add IP core
-# read_ip ../ips/DualBRAM3.xci
+# # Reimport the IP core
+# remove_files [get_files ../ips/DualBRAM3.xci]
+# # Remove old file if necessary
+# import_ip ../ips/DualBRAM3.xci 
+# # Re-import the IP correctly
 
-# # Set custom output directories for the IP core
-# set_property CONFIG.PROJ_DIR $project_dir/ip_generated [get_ips]
-# #set_property GENERATE_SIMULATION_OUTPUT_DIRECTORY $project_dir/ip_generated/sim [get_files ../ips/DualBRAM3.xci]
-# #set_property GENERATE_SYNTHESIS_OUTPUT_DIRECTORY $project_dir/ip_generated/synth [get_files ../ips/DualBRAM3.xci]
-# #set_property GENERATE_IMPLEMENTATION_OUTPUT_DIRECTORY $project_dir/ip_generated/impl [get_files ../ips/DualBRAM3.xci]
-
-# # Generate IP output products
-# generate_target all [get_files ../ips/DualBRAM3.xci]
+# # Generate the IP outputs (to ensure IP is correctly created)
+# generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
 
 # # Add constraints file
 # add_files -fileset constrs_1 ../constraints/constraints.xdc
@@ -94,7 +77,7 @@ close_project
 # set_property top top [current_fileset]
 
 # # Save the project
-# save_project
+# save_project as $project_name
 
 # # Close the project
 # close_project
@@ -107,39 +90,3 @@ close_project
 
 
 
-# # Define project parameters
-# set project_name "riscv2"
-# set project_dir "../riscv2_project"
-
-# # Clean up previous project directory
-# file delete -force $project_dir
-
-# # Create a new Vivado project
-# create_project $project_name $project_dir -part xc7z007sclg400-1
-
-# # Add source files
-# add_files ../src/PC.v
-# add_files ../src/ModeFSM.v
-# add_files ../src/MemIO.v
-# add_files ../src/InstrInject.v
-# add_files ../src/FetchLatch.v
-# add_files ../src/bramtest.v
-# add_files ../src/top.v
-
-# # Add IP core
-# read_ip ../ips/DualBRAM3.xci
-# generate_target {synthesis simulation} [get_files ../ips/DualBRAM3.xci]
-# # Generate IP output products (required for new environments)
-# generate_target all [get_ips]
-
-# # Add constraints file
-# add_files -fileset constrs_1 ../constraints/constraints.xdc
-
-# # Set the top module to 'top'
-# set_property top top [current_fileset]
-
-
-
-# # Save and close the project
-# save_project_as $project_name
-# close_project

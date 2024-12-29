@@ -28,20 +28,18 @@
 
 module ModeFSM(
     input clk,
-    input instrWriteDone,
     input branchJump,
-    input memWait,
+    input requestDoneA,
+    input requestDoneB,
     output reg MASTER_HOLD,
     output reg FLUSH_HOLD
     ); 
-    reg [1:0] state = 2'b11;
+    wire memWait = ~RamRequestDoneA | ~RamRequestDoneB;
+    reg [1:0] state = 2'b00;
     wire [1:0] nextState;
     reg [1:0] ctr = 2'b11;
     always @(posedge clk) begin
-        if (state == 2'b11) begin
-            state <= instrWriteDone ? 2'b00 : 2'b11;
-        end
-        else if (state == 2'b00) begin
+        if (state == 2'b00) begin
             if (memWait) begin
                 state <= 2'b10;
             end
