@@ -1,9 +1,9 @@
 module MemoryMappedIO(
     input clk,
-    input [3:0] weA,
+    //input [3:0] weA,
     input [31:0] addrA,
-    input [31:0] dinA,
-    input isRequestA,
+    //input [31:0] dinA,
+    //input isRequestA,
     output [31:0] doutA,
     output requestDoneA,
     output readValidA,
@@ -18,6 +18,8 @@ module MemoryMappedIO(
 );
 
 parameter ROM_UPPER_ADDR = 32'h7fff_ffff;
+
+wire isRequestA = 1'b1;
 
 wire AisROM = (addrA <= ROM_UPPER_ADDR);
 wire BisROM = (addrB <= ROM_UPPER_ADDR);
@@ -51,9 +53,9 @@ RomIO romIO (
 
 RamIO ramIO (
     .clk(clk),
-    .weA(weA),
+    .weA(4'b0000),
     .addrA(addrA[14:0]),
-    .dinA(dinA),
+    .dinA(32'hxxxxxxxx),
     .isRequestA((~AisROM) & isRequestA),
     .doutA(doutARam),
     .requestDoneA(RamRequestDoneA),
