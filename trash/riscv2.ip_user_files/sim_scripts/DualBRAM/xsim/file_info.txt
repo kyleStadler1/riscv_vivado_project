@@ -1,2 +1,0 @@
-DualBRAM.v,verilog,xil_defaultlib,../../../../riscv2.gen/sources_1/ip/DualBRAM/sim/DualBRAM.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v
