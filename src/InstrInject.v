@@ -21,7 +21,6 @@
 
 module InstrInject(
     input clk,
-    input acceptWrite,
     output reg [31:0] addr,
     output reg [31:0] instr,
     output reg done = 0
@@ -42,7 +41,7 @@ module InstrInject(
         if (~pre) begin
             addr <= ptr;
             instr <= i[ptr<<2];
-            if (acceptWrite & ~done) begin
+            if (~done) begin
                 ptr <= ptr+1;            
             end
             if (ptr == lastIndex) begin

@@ -77,7 +77,6 @@ module top(
     wire injectDone;
     InstrInject inject(
         .clk(clk),
-        .acceptWrite(acceptWriteA),
         .addr(addra),
         .instr(dina),
         .done(injectDone)
@@ -115,7 +114,7 @@ module top(
         .instr(instrDecode)
     );
     
-    assign out = pcDecode + instrDecode;
+    assign out = pcDecode + instrDecode + readValidA;
 
     
 endmodule
