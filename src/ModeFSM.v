@@ -31,10 +31,11 @@ module ModeFSM(
     input branchJump,
     input requestDoneA,
     input requestDoneB,
+    input regWriteCollision,
     output reg MASTER_HOLD,
     output reg FLUSH_HOLD
     ); 
-    wire memWait = ~requestDoneA | ~requestDoneB;
+    wire memWait = ~requestDoneA | ~requestDoneB | regWriteCollision;
     reg [1:0] state = 2'b00;
     wire [1:0] nextState;
     reg [1:0] ctr = 2'b11;
