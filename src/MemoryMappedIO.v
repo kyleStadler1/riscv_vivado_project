@@ -6,15 +6,15 @@ module MemoryMappedIO(
     //input isRequestA,
     output [31:0] doutA,
     output requestDoneA,
-    output readValidA,
+//    output readValidA,
 
     input [3:0] weB,
     input [31:0] addrB,
     input [31:0] dinB,
     input isRequestB,
     output [31:0] doutB,
-    output requestDoneB,
-    output readValidB
+    output requestDoneB
+//    output readValidB
 );
 
 parameter ROM_UPPER_ADDR = 32'h7fff_ffff;
@@ -24,13 +24,13 @@ wire isRequestA = 1'b1;
 wire AisROM = (addrA <= ROM_UPPER_ADDR);
 wire BisROM = (addrB <= ROM_UPPER_ADDR);
 
-wire RomRequestDoneA, RomRequestDoneB, RomReadValidA, RomReadValidB;
-wire RamRequestDoneA, RamRequestDoneB, RamReadValidA, RamReadValidB;
+wire RomRequestDoneA, RomRequestDoneB;// RomReadValidA, RomReadValidB;
+wire RamRequestDoneA, RamRequestDoneB;// RamReadValidA, RamReadValidB;
 
 assign requestDoneA = AisROM ? RomRequestDoneA : RamRequestDoneA;
 assign requestDoneB = BisROM ? RomRequestDoneB : RamRequestDoneB;
-assign readValidA = AisROM ? RomReadValidA : RamReadValidA;
-assign readValidB = BisROM ? RomReadValidB : RamReadValidB;
+//assign readValidA = AisROM ? RomReadValidA : RamReadValidA;
+//assign readValidB = BisROM ? RomReadValidB : RamReadValidB;
 
 wire [31:0] doutARom, doutBRom, doutARam, doutBRam;
 
@@ -43,12 +43,12 @@ RomIO romIO (
     .isRequestA(AisROM & isRequestA),
     .doutA(doutARom),
     .requestDoneA(RomRequestDoneA),
-    .readValidA(RomReadValidA),
+//    .readValidA(RomReadValidA),
     .addrB(addrB),
     .isRequestB(BisROM & isRequestB),
     .doutB(doutBRom),
-    .requestDoneB(RomRequestDoneB),
-    .readValidB(RomReadValidB)
+    .requestDoneB(RomRequestDoneB)
+//    .readValidB(RomReadValidB)
 );
 
 RamIO ramIO (
@@ -59,14 +59,14 @@ RamIO ramIO (
     .isRequestA((~AisROM) & isRequestA),
     .doutA(doutARam),
     .requestDoneA(RamRequestDoneA),
-    .readValidA(RamReadValidA),
+//    .readValidA(RamReadValidA),
     .weB(weB),
     .addrB(addrB[14:0]),
     .dinB(dinB),
     .isRequestB((~BisROM) & isRequestB),
     .doutB(doutBRam),
-    .requestDoneB(RamRequestDoneB),
-    .readValidB(RamReadValidB)
+    .requestDoneB(RamRequestDoneB)
+//    .readValidB(RamReadValidB)
 );
 
 endmodule

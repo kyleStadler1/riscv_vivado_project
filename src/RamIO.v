@@ -5,42 +5,40 @@ module RamIO (
     input [31:0] dinA,
     input isRequestA,
     output [31:0] doutA,
-    output reg requestDoneA,
-    output reg readValidA,
+    output requestDoneA,
+    //output reg readValidA,
 
     input [3:0] weB,
     input [14:0] addrB,
     input [31:0] dinB,
     input isRequestB,
     output [31:0] doutB,
-    output reg requestDoneB,
-    output reg readValidB
+    output requestDoneB
+   // output reg readValidB
 );
 
     reg [1:0] stateA = 2'b00;
-    wire wA= weA[0] | weA[1] | weA[2] | weA[3];
-    wire [1:0] nextStateA = {(~stateA[1])&((wA&isRequestA)|stateA[0]), (~stateA[1])&(((~wA)&isRequestA)|stateA[0])};
-    reg enA;
+    wire wA = weA[0] | weA[1] | weA[2] | weA[3];
+    wire [1:0] nextStateA = {(~stateA[1])&(~stateA[0])&wA&isRequestA, (~stateA[1])&(~stateA[0])&(~wA)&isRequestA};
+    wire enA;
     
     
     reg [1:0] stateB = 2'b00;
-    wire wB= weB[0] | weB[1] | weB[2] | weB[3];
-    wire [1:0] nextStateB = {(~stateB[1])&((wB&isRequestB)|stateB[0]), (~stateB[1])&(((~wB)&isRequestB)|stateB[0])};
-    reg enB;
+    wire wB = weB[0] | weB[1] | weB[2] | weB[3];
+    wire [1:0] nextStateB = {(~stateB[1])&(~stateB[0])&wB&isRequestB, (~stateB[1])&(~stateB[0])&(~wB)&isRequestB};
+    wire enB;
 
 
 
     always @(posedge clk) begin
         stateA <= nextStateA;
-        requestDoneA <= stateA == 2'b00;
-        readValidA <= stateA == 2'b11;
-        enA <= stateA[0] | stateA[1];
-
         stateB <= nextStateB;
-        requestDoneB <= stateB == 2'b00;
-        readValidB <= stateB == 2'b11;
-        enB <= stateB[0] | stateB[1];
     end
+    
+    assign requestDoneA = stateA == 2'b00;
+    assign requestDoneB = stateB == 2'b00;
+    assign enA = stateA != 2'b00;
+    assign enB = stateB != 2'b00;
 
 
     dualPortRAM32kx32 ram (

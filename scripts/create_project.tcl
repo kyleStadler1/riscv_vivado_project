@@ -3,7 +3,7 @@ set project_name "riscv2"
 set project_dir "../riscv2_project"
 
 # Clean up previous project directory
-file delete -force $project_dir
+#file delete -force $project_dir #temp comment this out since bd isnt saved
 file delete -force ./riscv2
 file delete -force ./vivado.jou
 file delete -force ./vivado.log

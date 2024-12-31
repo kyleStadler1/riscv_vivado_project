@@ -22,22 +22,20 @@ module RomIO #(
     input [31:0] addrA,
     input isRequestA,
     output reg [31:0] doutA,
-    output reg requestDoneA,
-    output reg readValidA,
+    output requestDoneA,
+//    output reg readValidA,
 
     input [31:0] addrB,
     input isRequestB,
     output reg [31:0] doutB,
-    output reg requestDoneB,
-    output reg readValidB
+    output requestDoneB
+//    output reg readValidB
 );
+    assign requestDoneA = 1'b1;
+    assign requestDoneB = 1'b1;
 
 
     always @(posedge clk) begin
-        requestDoneA <= 1'b1;
-        readValidA <= isRequestA;
-        requestDoneB <= 1'b1;
-        readValidB <= isRequestB;
 
     case (addrA) 
         32'h00000000 : doutA <= DATA0;

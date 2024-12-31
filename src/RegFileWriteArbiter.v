@@ -4,9 +4,9 @@ module RegFileWriteArbiter (
     input [31:0] aluVal,
     input [31:0] memVal,
     input aluToReg,
-    input memToReg
+    input memToReg,
     output [31:0] regFileWriteData,
-    output regFileWriteEnable,
+    output regFileWriteEnable
 );
     reg state = 1'b0;
     wire sel;

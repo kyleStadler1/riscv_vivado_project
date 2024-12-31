@@ -18,7 +18,8 @@ module ExecStage (
     output reg pcSel,
     output reg [31:0] pcVect,
     output reg [1:0] memOp,
-    output reg [1:0] memSize
+    output reg [1:0] memSize,
+    output reg [31:0] memDin
 );
     wire [31:0] aOut, bOut;
     inputAMux inputAMux (
@@ -38,7 +39,7 @@ module ExecStage (
         .a(aOut),
         .b(bOut),
         .aluOp(aluOp),
-        .aluOut(aluOut)
+        .aluOut(_aluOut)
     );
     wire [31:0] _pcVect;
     pcAlu pcAlu (
@@ -46,7 +47,7 @@ module ExecStage (
         .imm(imm),
         .r1(rs1Val),
         .sel(jalr),
-        .pcOut(pcVect)
+        .pcOut(_pcVect)
     );
     wire _pcSel;
     pcMuxSelector pcMuxSelector (
@@ -65,12 +66,14 @@ module ExecStage (
             pcVect <= pcVect;
             memOp <= memOp;
             memSize <= memSize;
+            memDin <= memDin;
         end else begin
             aluToMem <= _aluOut;
             pcSel <= _pcSel;
             pcVect <= _pcVect;
             memOp <= memOpIn;
             memSize <= memSizeIn;
+            memDin <= rs2Val;
         end
     end
 endmodule
@@ -99,22 +102,22 @@ endmodule
 
 
 module alu #(
-        parameter ADD   = 4'b0000; // Addition
-        parameter SUB   = 4'b0001; // Subtraction
-        parameter AND   = 4'b0010; // Logical AND
-        parameter OR    = 4'b0011; // Logical OR
-        parameter XOR   = 4'b0100; // Logical XOR
-        parameter SLL   = 4'b0101; // Shift Left Logical
-        parameter SRL   = 4'b0110; // Shift Right Logical
-        parameter SRA   = 4'b0111; // Shift Right Arithmetic
-        parameter SLT   = 4'b1000; // Set Less Than
-        parameter SLTU  = 4'b1001; // Set Less Than Unsigned
-        parameter BEQ   = 4'b1010; // Branch Equal
-        parameter BNE   = 4'b1011; // Branch Not Equal
-        parameter BLT   = 4'b1100; // Branch Less Than
-        parameter BGE   = 4'b1101; // Branch Greater Than or Equal
-        parameter BLTU  = 4'b1110; // Branch Less Than Unsigned
-        parameter BGEU  = 4'b1111; // Branch Greater Than or Equal Unsigned
+        parameter ADD   = 4'b0000, // Addition
+        parameter SUB   = 4'b0001, // Subtraction
+        parameter AND   = 4'b0010, // Logical AND
+        parameter OR    = 4'b0011, // Logical OR
+        parameter XOR   = 4'b0100, // Logical XOR
+        parameter SLL   = 4'b0101, // Shift Left Logical
+        parameter SRL   = 4'b0110, // Shift Right Logical
+        parameter SRA   = 4'b0111, // Shift Right Arithmetic
+        parameter SLT   = 4'b1000, // Set Less Than
+        parameter SLTU  = 4'b1001, // Set Less Than Unsigned
+        parameter BEQ   = 4'b1010, // Branch Equal
+        parameter BNE   = 4'b1011, // Branch Not Equal
+        parameter BLT   = 4'b1100, // Branch Less Than
+        parameter BGE   = 4'b1101, // Branch Greater Than or Equal
+        parameter BLTU  = 4'b1110, // Branch Less Than Unsigned
+        parameter BGEU  = 4'b1111 // Branch Greater Than or Equal Unsigned
 )(
     input [31:0] a,
     input [31:0] b,

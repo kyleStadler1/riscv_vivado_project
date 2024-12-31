@@ -6,7 +6,8 @@ module RegFile (
     input wire [4:0] wa, // write address
     input wire [31:0] wd, // write data
     output wire [31:0] rd1, // read data 1
-    output wire [31:0] rd2 // read data 2
+    output wire [31:0] rd2, // read data 2
+    output wire [31:0] toEdge
 );
 
     reg [31:0] regfile [31:0]; // 32 registers of 32 bits each
@@ -14,9 +15,11 @@ module RegFile (
     // Read ports
     assign rd1 = regfile[ra1];
     assign rd2 = regfile[ra2];
+    assign toEdge = regfile[5'b00001];
 
     // Write port
     always @(posedge clk) begin
+        regfile[5'b00000] <= 32'h0000_0000;
         if (we) begin
             regfile[wa] <= wd;
         end
