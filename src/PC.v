@@ -25,11 +25,13 @@ module PC(
     input hold,
     input sel,
     input [31:0] vect,
-    output reg [31:0] pc
+    output reg [31:0] pc,
+    output ena
     );
     always @(posedge clk) begin
         if (~hold) begin
             pc <= sel ? vect : pc + 32'd4;
         end
     end
+    assign ena = 1'b1;
 endmodule

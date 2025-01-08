@@ -146,7 +146,7 @@ endmodule
 module pcAlu (
     input [31:0] pc,
     input [31:0] imm,
-    input r1,
+    input [31:0] r1,
     input sel, // 0: pc+imm, 1: r1+imm
     output [31:0] pcOut
 );

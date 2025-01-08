@@ -8,6 +8,6 @@
 *.xpr
 .DS_Store
 riscv2_project
-.tmp
+*.tmp
 riscv2
-.zip
+*.zip

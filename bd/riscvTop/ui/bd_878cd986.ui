@@ -1,0 +1,70 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.908549",
+   "Default View_TopLeft":"-210,-1433",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_busErr -pg 1 -lvl 5 -x 1640 -y -1280 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x -140 -y -1300 -defaultsOSRD
+preplace portBus r1ToEdge -pg 1 -lvl 5 -x 1640 -y -1300 -defaultsOSRD
+preplace portBus addrB -pg 1 -lvl 5 -x 1640 -y -1260 -defaultsOSRD
+preplace inst ramTop_0 -pg 1 -lvl 2 -x 530 -y -1180 -defaultsOSRD
+preplace inst PC_0 -pg 1 -lvl 1 -x 80 -y -750 -defaultsOSRD
+preplace inst ModeFSM_0 -pg 1 -lvl 1 -x 80 -y -590 -defaultsOSRD
+preplace inst FetchLatch_0 -pg 1 -lvl 2 -x 530 -y -760 -defaultsOSRD
+preplace inst Decode_0 -pg 1 -lvl 3 -x 870 -y -670 -defaultsOSRD
+preplace inst RegFile_0 -pg 1 -lvl 4 -x 1370 -y -940 -defaultsOSRD
+preplace inst RegFileWriteArbiter_0 -pg 1 -lvl 4 -x 1370 -y -1200 -defaultsOSRD
+preplace inst orGate_0 -pg 1 -lvl 2 -x 530 -y -590 -defaultsOSRD
+preplace inst ExecStage_0 -pg 1 -lvl 4 -x 1370 -y -660 -defaultsOSRD
+preplace netloc Decode_0_aluOp 1 3 1 1100 -730n
+preplace netloc Decode_0_aluToReg 1 3 1 1110 -1170n
+preplace netloc Decode_0_branch 1 3 1 N -610
+preplace netloc Decode_0_imm 1 3 1 1170 -750n
+preplace netloc Decode_0_jal 1 3 1 N -590
+preplace netloc Decode_0_jalr 1 3 1 N -570
+preplace netloc Decode_0_memOp 1 3 1 1060 -650n
+preplace netloc Decode_0_memSize 1 3 1 1090 -630n
+preplace netloc Decode_0_pc 1 3 1 1080 -690n
+preplace netloc Decode_0_rd 1 3 1 1130 -910n
+preplace netloc Decode_0_regWriteCollision 1 0 4 -110 -890 N -890 N -890 1050
+preplace netloc Decode_0_rs1 1 3 1 1100 -950n
+preplace netloc Decode_0_rs2 1 3 1 1120 -930n
+preplace netloc Decode_0_selA 1 3 1 1160 -710n
+preplace netloc Decode_0_selB 1 3 1 1070 -690n
+preplace netloc ExecStage_0_aluToMem 1 1 4 360 -440 NJ -440 NJ -440 1610
+preplace netloc ExecStage_0_aluToRegFile 1 3 2 1190 -1070 1580
+preplace netloc ExecStage_0_memDin 1 1 4 350 -430 NJ -430 NJ -430 1560
+preplace netloc ExecStage_0_memOp 1 1 4 330 -420 NJ -420 NJ -420 1580
+preplace netloc ExecStage_0_memSize 1 1 4 370 -460 NJ -460 NJ -460 1550
+preplace netloc ExecStage_0_pcSel 1 0 5 -100 -410 NJ -410 NJ -410 NJ -410 1600
+preplace netloc ExecStage_0_pcVect 1 0 5 -80 -450 NJ -450 NJ -450 NJ -450 1570
+preplace netloc FetchLatch_0_instr 1 2 1 670 -750n
+preplace netloc FetchLatch_0_pc 1 2 1 690 -770n
+preplace netloc ModeFSM_0_FLUSH_HOLD 1 1 1 N -580
+preplace netloc ModeFSM_0_MASTER_HOLD 1 0 4 -80 -840 320 -880 N -880 1140
+preplace netloc PC_0_ena 1 1 1 240 -1180n
+preplace netloc PC_0_pc 1 1 1 250 -1160n
+preplace netloc RegFileWriteArbiter_0_regFileWriteData 1 3 2 1170 -1080 1560
+preplace netloc RegFileWriteArbiter_0_regFileWriteEnable 1 3 2 1180 -1060 1590
+preplace netloc RegFile_0_rd1 1 3 2 1190 -1050 1560
+preplace netloc RegFile_0_rd2 1 3 2 1190 -470 1590
+preplace netloc RegFile_0_toEdge 1 4 1 1600 -1300n
+preplace netloc clk_1 1 0 4 -120 -930 310 -860 700 -870 1160
+preplace netloc orGate_0_y 1 2 1 700 -680n
+preplace netloc ramTop_0_addrAOut 1 1 2 340 -1310 670
+preplace netloc ramTop_0_addrBOut 1 2 3 700 -1090 NJ -1090 1610J
+preplace netloc ramTop_0_busErr 1 2 3 690 -1310 NJ -1310 1590J
+preplace netloc ramTop_0_doutA 1 1 2 380 -910 690
+preplace netloc ramTop_0_doutB 1 2 2 NJ -1170 1040
+preplace netloc ramTop_0_readValidA 1 1 2 390 -900 680
+preplace netloc ramTop_0_readValidB 1 2 2 NJ -1130 1040
+preplace netloc ramTop_0_ready 1 0 3 -90 -920 NJ -920 670
+levelinfo -pg 1 -140 80 530 870 1370 1640
+pagesize -pg 1 -db -bbox -sgen -210 -1320 1810 260
+"
+}
+{
+   "da_clkrst_cnt":"7"
+}

@@ -26,6 +26,7 @@ module hardwareWrapper(
     );
     wire err;
     wire [31:0] r1;
+    wire [31:0] addrB;
     
     assign led[0] = r1[0] | r1[1] | r1[2] | r1[3];
     assign led[1] = r1[4] | r1[5] | r1[6] | r1[7];
@@ -35,13 +36,14 @@ module hardwareWrapper(
     assign led[5] = r1[20] | r1[21] | r1[22] | r1[23];
     assign led[6] = r1[24] | r1[25] | r1[26] | r1[27];
     assign led[7] = r1[28] | r1[29] | r1[30] | r1[31];
-    assign led[8] = 1'b1;
+    assign led[8] = addrB ? 1 : 0;
     assign led[9] = err;
     
     
-    riscv_top_wrapper(
+    riscvTop_wrapper(
         .busErr(err),
         .clk(clk),
-        .r1ToEdge(r1)
+        .r1ToEdge(r1),
+        .addrB(addrB)
     );
 endmodule
