@@ -22,7 +22,8 @@
 
 module FetchLatch(
      input clk,
-     input hold,
+     input stall,
+     input reset,
      input [31:0] pc_in,
      input [31:0] instr_in,
      input valid,
@@ -30,9 +31,14 @@ module FetchLatch(
      output reg [31:0] instr = 32'h0000_0000
     );
     always @(posedge clk) begin
-        if ((~hold) & valid) begin
-            pc <= pc_in;
-            instr <= instr_in;
+        if (reset) begin
+            pc <= 32'h0000_0000;
+            instr <= 32'h0000_0000;
+        end else begin
+            if ((~stall) & valid) begin
+                pc <= pc_in;
+                instr <= instr_in;
+            end
         end
     end
 endmodule

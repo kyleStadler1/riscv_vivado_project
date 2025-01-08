@@ -51,7 +51,8 @@ module Decode #(
     parameter WORD        = 2'b10
 )(
     input clk,
-    input hold,
+    input stall,
+    input reset,
     input [31:0] instruction,
     input [31:0] pc_in,
     
@@ -63,12 +64,12 @@ module Decode #(
     output reg selA, //0 for rs1, 1 for PC
     output reg [1:0] selB, //00 -> rs2, 01 -> imm, 10 -> 4
     output reg aluToReg = 1'b0,
-    output reg [1:0] memOp = MEM_DISABLE, //00 for disable, 01 for read signed, 10 for read unsigned, 11 for write
+    output reg [1:0] memOp, //00 for disable, 01 for read signed, 10 for read unsigned, 11 for write
     output reg [1:0] memSize, //00 for byte, 01 for halfword, 10 for word
-    output reg branch = 1'b0,
-    output reg jal = 1'b0,
-    output reg jalr = 1'b0,
-    output reg regWriteCollision = 1'b0,
+    output reg branch,
+    output reg jal,
+    output reg jalr,
+    output reg regWriteCollision,
     output reg [31:0] pc
 );
     reg prevOpIsLoad = 0;
@@ -87,7 +88,14 @@ module Decode #(
     wire [12:0] branch_imm_field = {instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0};
 
     always @(posedge clk) begin
-        if (~hold) begin
+        if (reset) begin
+            memOp <- MEM_DISABLE;
+            branch <= 1'b0;
+            jal <= 1'b0;
+            jalr <= 1'b0;
+            regWriteCollision <= 1'b0;
+        end else begin
+        if (~stall) begin
                 pc <= pc_in;
                 prevOpIsLoad <= (opcode_field == LOAD);
                 regWriteCollision <= (prevOpIsLoad & (opcode_field == R_TYPE | opcode_field == I_TYPE | opcode_field == JAL | opcode_field == JALR | opcode_field == LUI | opcode_field == AUIPC));
@@ -780,6 +788,7 @@ module Decode #(
                 end
             endcase
         end
+    end
     end
 
 endmodule

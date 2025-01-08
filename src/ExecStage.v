@@ -1,6 +1,7 @@
 module ExecStage (
     input clk,
-    input hold,
+    input stall,
+    input reset,
     input [31:0] rs1Val,
     input [31:0] rs2Val,
     input [31:0] imm,
@@ -60,20 +61,29 @@ module ExecStage (
 
     assign aluToRegFile = _aluOut;
     always @(posedge clk) begin
-        if (hold) begin
-            aluToMem <= aluToMem;
-            pcSel <= pcSel;
-            pcVect <= pcVect;
-            memOp <= memOp;
-            memSize <= memSize;
-            memDin <= memDin;
+        if (reset) begin
+            aluToMem <= 32'b0;
+            pcSel <= 1'b0;
+            pcVect <= 32'b0;
+            memOp <= 2'b00;
+            memSize <= 2'b00;
+            memDin <= 32'b0;
         end else begin
-            aluToMem <= _aluOut;
-            pcSel <= _pcSel;
-            pcVect <= _pcVect;
-            memOp <= memOpIn;
-            memSize <= memSizeIn;
-            memDin <= rs2Val;
+            if (stall) begin
+                aluToMem <= aluToMem;
+                pcSel <= pcSel;
+                pcVect <= pcVect;
+                memOp <= memOp;
+                memSize <= memSize;
+                memDin <= memDin;
+            end else begin
+                aluToMem <= _aluOut;
+                pcSel <= _pcSel;
+                pcVect <= _pcVect;
+                memOp <= memOpIn;
+                memSize <= memSizeIn;
+                memDin <= rs2Val;
+            end
         end
     end
 endmodule
