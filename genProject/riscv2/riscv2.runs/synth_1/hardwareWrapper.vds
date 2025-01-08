@@ -1,0 +1,288 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Wed Jan  8 02:38:51 2025
+# Process ID: 19775
+# Current directory: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1
+# Command line: vivado -log hardwareWrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hardwareWrapper.tcl
+# Log file: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/hardwareWrapper.vds
+# Journal file: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/vivado.jou
+# Running On: baa28d90d760, OS: Linux, CPU Frequency: , CPU Physical cores: 1, Host memory: 14638 MB
+#-----------------------------------------------------------
+source hardwareWrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/user/project/riscv2/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/user/Xilinx/Vivado/2023.1/data/ip'.
+add_files: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2049.047 ; gain = 143.082 ; free physical = 7346 ; free virtual = 12878
+Command: read_checkpoint -auto_incremental -incremental /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/utils_1/imports/synth_1/hardwareWrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/utils_1/imports/synth_1/hardwareWrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top hardwareWrapper -part xc7z007sclg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 19898
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2721.141 ; gain = 374.812 ; free physical = 6654 ; free virtual = 11977
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hardwareWrapper' [/home/user/project/riscv2/src/hardwareWrapper.v:23]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_wrapper' [/home/user/project/riscv2/bd/riscvTop/hdl/riscvTop_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop' [/home/user/project/riscv2/bd/riscvTop/synth/riscvTop.v:13]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_Decode_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_Decode_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_Decode_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_Decode_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_ExecStage_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_ExecStage_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_ExecStage_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_ExecStage_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_FetchLatch_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_FetchLatch_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_FetchLatch_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_FetchLatch_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_ModeFSM_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_ModeFSM_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_ModeFSM_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_ModeFSM_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_PC_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_PC_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_PC_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_PC_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_RegFileWriteArbiter_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_RegFileWriteArbiter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_RegFileWriteArbiter_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_RegFileWriteArbiter_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_RegFile_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_RegFile_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_RegFile_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_RegFile_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_orGate_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_orGate_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_orGate_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_orGate_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'riscvTop_ramTop_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_ramTop_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_ramTop_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-19775-baa28d90d760/realtime/riscvTop_ramTop_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop' (0#1) [/home/user/project/riscv2/bd/riscvTop/synth/riscvTop.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'riscvTop_wrapper' (0#1) [/home/user/project/riscv2/bd/riscvTop/hdl/riscvTop_wrapper.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'hardwareWrapper' (0#1) [/home/user/project/riscv2/src/hardwareWrapper.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2802.207 ; gain = 455.879 ; free physical = 6243 ; free virtual = 11775
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2820.508 ; gain = 474.180 ; free physical = 6231 ; free virtual = 11762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2820.508 ; gain = 474.180 ; free physical = 6231 ; free virtual = 11762
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2821.086 ; gain = 0.051 ; free physical = 6231 ; free virtual = 11763
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_ramTop_0_0/riscvTop_ramTop_0_0/riscvTop_ramTop_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/ramTop_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_ramTop_0_0/riscvTop_ramTop_0_0/riscvTop_ramTop_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/ramTop_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_PC_0_0/riscvTop_PC_0_0/riscvTop_PC_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/PC_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_PC_0_0/riscvTop_PC_0_0/riscvTop_PC_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/PC_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_ModeFSM_0_0/riscvTop_ModeFSM_0_0/riscvTop_ModeFSM_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/ModeFSM_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_ModeFSM_0_0/riscvTop_ModeFSM_0_0/riscvTop_ModeFSM_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/ModeFSM_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_FetchLatch_0_0/riscvTop_FetchLatch_0_0/riscvTop_FetchLatch_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/FetchLatch_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_FetchLatch_0_0/riscvTop_FetchLatch_0_0/riscvTop_FetchLatch_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/FetchLatch_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_Decode_0_0/riscvTop_Decode_0_0/riscvTop_Decode_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/Decode_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_Decode_0_0/riscvTop_Decode_0_0/riscvTop_Decode_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/Decode_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_RegFile_0_0/riscvTop_RegFile_0_0/riscvTop_RegFile_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/RegFile_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_RegFile_0_0/riscvTop_RegFile_0_0/riscvTop_RegFile_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/RegFile_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_RegFileWriteArbiter_0_0/riscvTop_RegFileWriteArbiter_0_0/riscvTop_RegFileWriteArbiter_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/RegFileWriteArbiter_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_RegFileWriteArbiter_0_0/riscvTop_RegFileWriteArbiter_0_0/riscvTop_RegFileWriteArbiter_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/RegFileWriteArbiter_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_orGate_0_0/riscvTop_orGate_0_0/riscvTop_orGate_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/orGate_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_orGate_0_0/riscvTop_orGate_0_0/riscvTop_orGate_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/orGate_0'
+Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_ExecStage_0_0/riscvTop_ExecStage_0_0/riscvTop_ExecStage_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/ExecStage_0'
+Finished Parsing XDC File [/home/user/project/riscv2/bd/riscvTop/ip/riscvTop_ExecStage_0_0/riscvTop_ExecStage_0_0/riscvTop_ExecStage_0_0_in_context.xdc] for cell 'nolabel_line43/riscvTop_i/ExecStage_0'
+Parsing XDC File [/home/user/project/riscv2/constraints/constraints.xdc]
+Finished Parsing XDC File [/home/user/project/riscv2/constraints/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/project/riscv2/constraints/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hardwareWrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/hardwareWrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2916.855 ; gain = 0.000 ; free physical = 6186 ; free virtual = 11724
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2916.969 ; gain = 0.098 ; free physical = 6186 ; free virtual = 11723
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6182 ; free virtual = 11720
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6182 ; free virtual = 11720
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/ramTop_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/PC_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/ModeFSM_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/FetchLatch_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/Decode_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/RegFile_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/RegFileWriteArbiter_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/orGate_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line43/riscvTop_i/ExecStage_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6182 ; free virtual = 11720
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6179 ; free virtual = 11717
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6213 ; free virtual = 11753
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6211 ; free virtual = 11751
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6211 ; free virtual = 11751
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6211 ; free virtual = 11751
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------------------+----------+
+|      |BlackBox name                    |Instances |
++------+---------------------------------+----------+
+|1     |riscvTop_Decode_0_0              |         1|
+|2     |riscvTop_ExecStage_0_0           |         1|
+|3     |riscvTop_FetchLatch_0_0          |         1|
+|4     |riscvTop_ModeFSM_0_0             |         1|
+|5     |riscvTop_PC_0_0                  |         1|
+|6     |riscvTop_RegFileWriteArbiter_0_0 |         1|
+|7     |riscvTop_RegFile_0_0             |         1|
+|8     |riscvTop_orGate_0_0              |         1|
+|9     |riscvTop_ramTop_0_0              |         1|
++------+---------------------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------------+------+
+|      |Cell                           |Count |
++------+-------------------------------+------+
+|1     |riscvTop_Decode_0              |     1|
+|2     |riscvTop_ExecStage_0           |     1|
+|3     |riscvTop_FetchLatch_0          |     1|
+|4     |riscvTop_ModeFSM_0             |     1|
+|5     |riscvTop_PC_0                  |     1|
+|6     |riscvTop_RegFileWriteArbiter_0 |     1|
+|7     |riscvTop_RegFile_0             |     1|
+|8     |riscvTop_orGate_0              |     1|
+|9     |riscvTop_ramTop_0              |     1|
+|10    |LUT2                           |     1|
+|11    |LUT4                           |     8|
+|12    |LUT6                           |     6|
+|13    |IBUF                           |     1|
+|14    |OBUF                           |    10|
++------+-------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2917.609 ; gain = 474.184 ; free physical = 6216 ; free virtual = 11756
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2917.609 ; gain = 571.281 ; free physical = 6216 ; free virtual = 11756
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2917.609 ; gain = 0.000 ; free physical = 6352 ; free virtual = 11895
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2917.609 ; gain = 0.000 ; free physical = 6510 ; free virtual = 12053
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: ea4ee6da
+INFO: [Common 17-83] Releasing license: Synthesis
+46 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 2917.609 ; gain = 868.562 ; free physical = 6510 ; free virtual = 12053
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2357.271; main = 1793.918; forked = 564.491
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5196.465; main = 2899.383; forked = 2297.082
+INFO: [Common 17-1381] The checkpoint '/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/hardwareWrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file hardwareWrapper_utilization_synth.rpt -pb hardwareWrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  8 02:39:28 2025...

@@ -1,11 +1,11 @@
 *.jou
 *.log
 *.str
-*.runs
+#*.runs
 *.cache
-*.hw
-*.sim
-*.xpr
+#*.hw
+#*.sim
+#*.xpr
 .DS_Store
 riscv2_project
 *.tmp

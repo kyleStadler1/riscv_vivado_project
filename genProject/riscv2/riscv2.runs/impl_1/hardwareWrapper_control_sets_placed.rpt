@@ -1,0 +1,128 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Wed Jan  8 02:40:17 2025
+| Host         : baa28d90d760 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_control_sets -verbose -file hardwareWrapper_control_sets_placed.rpt
+| Design       : hardwareWrapper
+| Device       : xc7z007s
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    50 |
+|    Minimum number of control sets                        |    50 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    54 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    50 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    41 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              17 |            8 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              32 |           11 |
+| Yes          | No                    | No                     |            1290 |          597 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              47 |           34 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                                               Enable Signal                                              |                                             Set/Reset Signal                                             | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/ramTop_0/inst/MemoryMappedIO_0/inst/ramIO/portB/FSM_onehot_state[3]_i_2__0_n_0 | nolabel_line43/riscvTop_i/ramTop_0/inst/MemoryMappedIO_0/inst/ramIO/portB/FSM_onehot_state[3]_i_1__0_n_0 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/Decode_0/inst/rd[4]_i_1_n_0                                                    |                                                                                                          |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/Decode_0/inst/rs2[4]_i_1_n_0                                                   |                                                                                                          |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/Decode_0/inst/rs1[4]_i_2_n_0                                                   | nolabel_line43/riscvTop_i/Decode_0/inst/rs1[4]_i_1_n_0                                                   |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/Decode_0/inst/aluToReg_i_1_n_0                                                 |                                                                                                          |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/ramTop_0/inst/MemoryMappedIO_0/inst/ramIO/portA/sub/enb                        |                                                                                                          |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/ramTop_0/inst/MemoryMappedIO_0/inst/ramIO/portB/regcea                         |                                                                                                          |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/Decode_0/inst/imm[31]_i_1_n_0                                                  | nolabel_line43/riscvTop_i/Decode_0/inst/imm[30]_i_1_n_0                                                  |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/Decode_0/inst/aluOp[3]_i_1_n_0                                                 |                                                                                                          |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG |                                                                                                          |                                                                                                          |                8 |             17 |         2.12 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/ramTop_0/inst/MemoryMappedIO_0/inst/ramIO/portA/sub/FSM_onehot_state_reg[0]_0  |                                                                                                          |                7 |             17 |         2.43 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/ramTop_0/inst/MemoryMappedIO_0/inst/ramIO/portB/Q[0]                           |                                                                                                          |                7 |             21 |         3.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/Decode_0/inst/imm[31]_i_1_n_0                                                  |                                                                                                          |               13 |             25 |         1.92 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/ExecStage_0/inst/p_0_in                                                        | nolabel_line43/riscvTop_i/ExecStage_0/inst/aluToMem[31]_i_1_n_0                                          |               30 |             31 |         1.03 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[7][31]_i_1_n_0                                          |                                                                                                          |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[18][31]_i_1_n_0                                         |                                                                                                          |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[9][31]_i_1_n_0                                          |                                                                                                          |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[8][31]_i_1_n_0                                          |                                                                                                          |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[28][31]_i_1_n_0                                         |                                                                                                          |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[11][31]_i_1_n_0                                         |                                                                                                          |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[30][31]_i_1_n_0                                         |                                                                                                          |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[13][31]_i_1_n_0                                         |                                                                                                          |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[16][31]_i_1_n_0                                         |                                                                                                          |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[6][31]_i_1_n_0                                          |                                                                                                          |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[2][31]_i_1_n_0                                          |                                                                                                          |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[24][31]_i_1_n_0                                         |                                                                                                          |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[29][31]_i_1_n_0                                         |                                                                                                          |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[4][31]_i_1_n_0                                          |                                                                                                          |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile                                                         |                                                                                                          |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[25][31]_i_1_n_0                                         |                                                                                                          |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[21][31]_i_1_n_0                                         |                                                                                                          |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG |                                                                                                          | nolabel_line43/riscvTop_i/RegFileWriteArbiter_0/regFileWriteEnable                                       |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[12][31]_i_1_n_0                                         |                                                                                                          |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[10][31]_i_1_n_0                                         |                                                                                                          |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[27][31]_i_1_n_0                                         |                                                                                                          |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[3][31]_i_1_n_0                                          |                                                                                                          |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[23][31]_i_1_n_0                                         |                                                                                                          |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[22][31]_i_1_n_0                                         |                                                                                                          |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[26][31]_i_1_n_0                                         |                                                                                                          |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[20][31]_i_1_n_0                                         |                                                                                                          |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[1][31]_i_1_n_0                                          |                                                                                                          |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[14][31]_i_1_n_0                                         |                                                                                                          |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[15][31]_i_1_n_0                                         |                                                                                                          |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[17][31]_i_1_n_0                                         |                                                                                                          |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[19][31]_i_1_n_0                                         |                                                                                                          |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/RegFile_0/inst/regfile[5][31]_i_1_n_0                                          |                                                                                                          |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/PC_0/inst/pc[31]_i_1_n_0                                                       |                                                                                                          |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/orGate_0/y                                                                     |                                                                                                          |               16 |             34 |         2.12 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/FetchLatch_0/inst/pc[31]_i_1_n_0                                               |                                                                                                          |               22 |             64 |         2.91 |
+|  clk_IBUF_BUFG | nolabel_line43/riscvTop_i/ExecStage_0/inst/p_0_in                                                        |                                                                                                          |               28 |             70 |         2.50 |
++----------------+----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+
