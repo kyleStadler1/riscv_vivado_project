@@ -20,7 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module top_tb(
-
+module top_tb;
+    reg clk = 0;
+    wire [31:0] r1Edge;
+    wire bussErr;
+    wire [31:0] addrB;
+    
+    riscvTop_wrapper uut(
+        .busErr(bussErr),
+        .clk(clk),
+        .r1ToEdge(r1Edge),
+        .addrB(addrB)
     );
+    
+    initial begin
+        forever begin
+            #5 clk <= ~clk;   
+    end end
 endmodule

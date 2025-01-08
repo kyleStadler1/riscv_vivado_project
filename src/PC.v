@@ -25,7 +25,7 @@ module PC(
     input hold,
     input sel,
     input [31:0] vect,
-    output reg [31:0] pc,
+    output reg [31:0] pc = 32'h00000000,
     output ena
     );
     always @(posedge clk) begin

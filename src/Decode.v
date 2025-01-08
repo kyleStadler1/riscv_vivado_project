@@ -62,13 +62,13 @@ module Decode #(
     output reg [3:0] aluOp,
     output reg selA, //0 for rs1, 1 for PC
     output reg [1:0] selB, //00 -> rs2, 01 -> imm, 10 -> 4
-    output reg aluToReg,
-    output reg [1:0] memOp, //00 for disable, 01 for read signed, 10 for read unsigned, 11 for write
+    output reg aluToReg = 1'b0,
+    output reg [1:0] memOp = MEM_DISABLE, //00 for disable, 01 for read signed, 10 for read unsigned, 11 for write
     output reg [1:0] memSize, //00 for byte, 01 for halfword, 10 for word
-    output reg branch,
-    output reg jal,
-    output reg jalr,
-    output reg regWriteCollision,
+    output reg branch = 1'b0,
+    output reg jal = 1'b0,
+    output reg jalr = 1'b0,
+    output reg regWriteCollision = 1'b0,
     output reg [31:0] pc
 );
     reg prevOpIsLoad = 0;

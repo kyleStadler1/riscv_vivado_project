@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736303926" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hardwareWrapper.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="hardwareWrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="hardwareWrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="hardwareWrapper_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="hardwareWrapper_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="hardwareWrapper_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="hardwareWrapper.vds"/>
-  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="hardwareWrapper_timing_summary_synth.pb"/>
   <File Type="PA-TCL" Name="hardwareWrapper.tcl"/>
+  <File Type="RDS-UTIL" Name="hardwareWrapper_utilization_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="hardwareWrapper.vds"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../src/PC.v">
@@ -235,13 +232,13 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ExecStage_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFile_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_FetchLatch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_ModeFSM_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_PC_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_Decode_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_FetchLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFile_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ExecStage_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_ramTop_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_Decode_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
 </GenRun>

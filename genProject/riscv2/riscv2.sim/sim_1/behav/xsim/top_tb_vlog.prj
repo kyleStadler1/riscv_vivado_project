@@ -1,0 +1,36 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../src/PC.v" \
+"../../../../../../src/ModeFSM.v" \
+"../../../../../../src/FetchLatch.v" \
+"../../../../../../src/Decode.v" \
+"../../../../../../src/RegFile.v" \
+"../../../../../../src/RegFileWriteArbiter.v" \
+"../../../../../../src/or.v" \
+"../../../../../../src/ExecStage.v" \
+"../../../../../../src/MemInputCtrl.v" \
+"../../../../../../ips/dualPortRAM32kx32/sim/dualPortRAM32kx32.v" \
+"../../../../../../src/RamIO.v" \
+"../../../../../../src/RomIO.v" \
+"../../../../../../src/MemoryMappedIO.v" \
+"../../../../../../src/MemOutputCtrl.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_PC_0_0/sim/riscvTop_PC_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_ModeFSM_0_0/sim/riscvTop_ModeFSM_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_FetchLatch_0_0/sim/riscvTop_FetchLatch_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_Decode_0_0/sim/riscvTop_Decode_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_RegFile_0_0/sim/riscvTop_RegFile_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_RegFileWriteArbiter_0_0/sim/riscvTop_RegFileWriteArbiter_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_orGate_0_0/sim/riscvTop_orGate_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_ExecStage_0_0/sim/riscvTop_ExecStage_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_MemInputCtrl_0_0/sim/riscvTop_MemInputCtrl_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_MemoryMappedIO_0_0/sim/riscvTop_MemoryMappedIO_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/ip/riscvTop_MemOutputCtrl_0_0/sim/riscvTop_MemOutputCtrl_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/riscvTop/sim/riscvTop.v" \
+"../../../../../../bd/riscvTop/hdl/riscvTop_wrapper.v" \
+"../../../../../../sim/top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

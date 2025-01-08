@@ -6,13 +6,12 @@
       "name": "ramTop",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.1",
-      "validated": "true"
+      "tool_version": "2023.1"
     },
     "design_tree": {
       "MemInputCtrl_0": "",
-      "MemoryMappedIO_0": "",
-      "MemOutputCtrl_0": ""
+      "MemOutputCtrl_0": "",
+      "MemoryMappedIO_0": ""
     },
     "ports": {
       "addrAOut": {
@@ -129,6 +128,54 @@
           }
         }
       },
+      "MemOutputCtrl_0": {
+        "vlnv": "xilinx.com:module_ref:MemOutputCtrl:1.0",
+        "xci_name": "ramTop_MemOutputCtrl_0_0",
+        "xci_path": "ip/ramTop_MemOutputCtrl_0_0/ramTop_MemOutputCtrl_0_0.xci",
+        "inst_hier_path": "MemOutputCtrl_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MemOutputCtrl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "memInstr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "memOut": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "aluIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memOp": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "instr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
       "MemoryMappedIO_0": {
         "vlnv": "xilinx.com:module_ref:MemoryMappedIO:1.0",
         "xci_name": "ramTop_MemoryMappedIO_0_0",
@@ -217,54 +264,6 @@
           "memSize": {
             "direction": "O",
             "left": "1",
-            "right": "0"
-          }
-        }
-      },
-      "MemOutputCtrl_0": {
-        "vlnv": "xilinx.com:module_ref:MemOutputCtrl:1.0",
-        "xci_name": "ramTop_MemOutputCtrl_0_0",
-        "xci_path": "ip/ramTop_MemOutputCtrl_0_0/ramTop_MemOutputCtrl_0_0.xci",
-        "inst_hier_path": "MemOutputCtrl_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "MemOutputCtrl",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "memInstr": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "memOut": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "aluIn": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memOp": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "instr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "data": {
-            "direction": "O",
-            "left": "31",
             "right": "0"
           }
         }

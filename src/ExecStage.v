@@ -15,9 +15,9 @@ module ExecStage (
     input [1:0] memSizeIn,
     output wire [31:0] aluToRegFile,
     output reg [31:0] aluToMem,
-    output reg pcSel,
+    output reg pcSel = 1'b0,
     output reg [31:0] pcVect,
-    output reg [1:0] memOp,
+    output reg [1:0] memOp = 2'b00,
     output reg [1:0] memSize,
     output reg [31:0] memDin
 );

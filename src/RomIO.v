@@ -1,10 +1,10 @@
 
 
 module RomIO #(
-    parameter DATA0 = 32'h21436587,
-    parameter DATA1 = 32'h00000001,
-    parameter DATA2 = 32'h00000002,
-    parameter DATA3 = 32'h00000003,
+    parameter DATA0 = 32'hB7000080,
+    parameter DATA1 = 32'h83210000,
+    parameter DATA2 = 32'h23a03000,
+    parameter DATA3 = 32'h83a00000,
     parameter DATA4 = 32'h00000004,
     parameter DATA5 = 32'h00000005,
     parameter DATA6 = 32'h00000006,
