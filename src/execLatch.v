@@ -44,7 +44,7 @@ module execLatch(
             aluToReg <= 1'b0;
             memSize <= 2'bxx;
             memOp <= 2'b00;
-            rd <= 5'bxxxxx;
+            rd <= 5'b00000;
             rs2Val <= 32'hx;
         end
         else if (stall) begin

@@ -8,5 +8,6 @@ simpleRisc_aluMuxComb_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/sim
 simpleRisc_alu_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_alu_0_0/sim/simpleRisc_alu_0_0.v,
 simpleRisc_execLatch_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_execLatch_0_0/sim/simpleRisc_execLatch_0_0.v,
 simpleRisc_writeBackLatch_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/sim/simpleRisc_writeBackLatch_0_0.v,
+simpleRisc_bypassMux_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/sim/simpleRisc_bypassMux_0_0.v,
 simpleRisc.v,verilog,xil_defaultlib,../../../bd/simpleRisc/sim/simpleRisc.v,
 glbl.v,Verilog,xil_defaultlib,glbl.v

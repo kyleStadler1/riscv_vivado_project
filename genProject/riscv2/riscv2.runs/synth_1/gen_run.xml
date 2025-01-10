@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736303926" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hardwareWrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736516098" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hardwareWrapper.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="hardwareWrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="hardwareWrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="hardwareWrapper_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="hardwareWrapper.tcl"/>
   <File Type="RDS-UTIL" Name="hardwareWrapper_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="hardwareWrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="hardwareWrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="hardwareWrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="hardwareWrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../src/PC.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/ModeFSM.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/FetchLatch.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -36,7 +25,49 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/ExecStage.v">
+    <File Path="$PPRDIR/../../src/not.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/MemInputCtrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/MemOutputCtrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/MemoryMappedIO.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/RamIO.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/RomIO.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ROMRAM.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -50,28 +81,56 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/RegFileWriteArbiter.v">
+    <File Path="$PPRDIR/../../src/opLatch.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/or.v">
+    <File Path="$PSRCDIR/sources_1/new/aluMuxComb.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../bd/riscvTop/riscvTop.bd">
+    <File Path="$PPRDIR/../../src/ExecStage.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../bd/riscvTop/hdl/riscvTop_wrapper.v">
+    <File Path="$PPRDIR/../../src/execLatch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/writeBackLatch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bypassMux.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/simpleRisc/simpleRisc.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/simpleRisc/hdl/simpleRisc_wrapper.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -85,7 +144,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemIO.v">
+    <File Path="$PPRDIR/../../sim/ramTop_tb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -93,7 +152,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemInputCtrl.v">
+    <File Path="$PPRDIR/../../src/RegFileWriteArbiter.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -101,7 +160,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemOutputCtrl.v">
+    <File Path="$PPRDIR/../../src/or.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -109,7 +168,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemoryMappedIO.v">
+    <File Path="$PPRDIR/../../src/FetchLatch.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -117,7 +176,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/RamIO.v">
+    <File Path="$PPRDIR/../../bd/riscvTop/riscvTop.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../bd/riscvTop/hdl/riscvTop_wrapper.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -141,14 +208,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/RomIO.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../src/and.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -158,14 +217,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../sim/fetch_tb.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../sim/ramTop_tb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -190,6 +241,22 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../bd/ramTop/hdl/ramTop_wrapper.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/RAMTop.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/simpleAluComb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -232,13 +299,18 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Not_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_ROMRAM_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="dualPortRAM32kx32"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_execLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_RegFile_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_Decode_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ramTop_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ExecStage_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ModeFSM_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_PC_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_FetchLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFile_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
 </GenRun>

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736303926">
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736516098">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="hardwareWrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="hardwareWrapper_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-BGN" Name="hardwareWrapper.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="hardwareWrapper.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="hardwareWrapper.ltx"/>
   <File Type="RBD_FILE" Name="hardwareWrapper.rbd"/>
   <File Type="NPI_FILE" Name="hardwareWrapper.npi"/>
   <File Type="RNPI_FILE" Name="hardwareWrapper.rnpi"/>
@@ -10,10 +15,16 @@
   <File Type="RCFI_FILE" Name="hardwareWrapper.rcfi"/>
   <File Type="PL-PDI-FILE" Name="hardwareWrapper_pld.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="hardwareWrapper_soc.pdi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="hardwareWrapper_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-RPX" Name="hardwareWrapper_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="hardwareWrapper_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="hardwareWrapper_methodology_drc_routed.rpt"/>
+  <File Type="RDI-RDI" Name="hardwareWrapper.vdi"/>
+  <File Type="PDI-FILE" Name="hardwareWrapper.pdi"/>
+  <File Type="BITSTR-MMI" Name="hardwareWrapper.mmi"/>
+  <File Type="BITSTR-BMM" Name="hardwareWrapper_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="hardwareWrapper.nky"/>
+  <File Type="BITSTR-RBT" Name="hardwareWrapper.rbt"/>
+  <File Type="BITSTR-MSK" Name="hardwareWrapper.msk"/>
+  <File Type="BG-BIN" Name="hardwareWrapper.bin"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="BG-BIT" Name="hardwareWrapper.bit"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="hardwareWrapper_bus_skew_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="hardwareWrapper_bus_skew_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="hardwareWrapper_bus_skew_postroute_physopted.rpt"/>
@@ -21,72 +32,61 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="hardwareWrapper_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="hardwareWrapper_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="hardwareWrapper_postroute_physopt_bb.dcp"/>
-  <File Type="PLACE-IO" Name="hardwareWrapper_io_placed.rpt"/>
-  <File Type="OPT-DRC" Name="hardwareWrapper_drc_opted.rpt"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="hardwareWrapper.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="hardwareWrapper.sysdef"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="hardwareWrapper_postroute_physopt.dcp"/>
-  <File Type="BITSTR-MMI" Name="hardwareWrapper.mmi"/>
-  <File Type="BITSTR-BMM" Name="hardwareWrapper_bd.bmm"/>
-  <File Type="PHYSOPT-DCP" Name="hardwareWrapper_physopt.dcp"/>
-  <File Type="PLACE-UTIL-PB" Name="hardwareWrapper_utilization_placed.pb"/>
-  <File Type="BG-BGN" Name="hardwareWrapper.bgn"/>
-  <File Type="OPT-DCP" Name="hardwareWrapper_opt.dcp"/>
-  <File Type="OPT-HWDEF" Name="hardwareWrapper.hwdef"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <File Type="BG-BIT" Name="hardwareWrapper.bit"/>
-  <File Type="ROUTE-BUS-SKEW" Name="hardwareWrapper_bus_skew_routed.rpt"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="PA-TCL" Name="hardwareWrapper.tcl"/>
-  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
-  <File Type="PLACE-UTIL" Name="hardwareWrapper_utilization_placed.rpt"/>
   <File Type="BG-DRC" Name="hardwareWrapper.drc"/>
-  <File Type="PLACE-CTRL" Name="hardwareWrapper_control_sets_placed.rpt"/>
-  <File Type="PDI-FILE" Name="hardwareWrapper.pdi"/>
-  <File Type="RDI-RDI" Name="hardwareWrapper.vdi"/>
-  <File Type="BG-BIN" Name="hardwareWrapper.bin"/>
-  <File Type="PLACE-DCP" Name="hardwareWrapper_placed.dcp"/>
-  <File Type="BITSTR-MSK" Name="hardwareWrapper.msk"/>
-  <File Type="PWROPT-DCP" Name="hardwareWrapper_pwropt.dcp"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="hardwareWrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BITSTR-RBT" Name="hardwareWrapper.rbt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="hardwareWrapper_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-NKY" Name="hardwareWrapper.nky"/>
-  <File Type="ROUTE-DRC" Name="hardwareWrapper_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="hardwareWrapper_drc_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="hardwareWrapper_power_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="hardwareWrapper_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="hardwareWrapper_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="hardwareWrapper_route_status.rpt"/>
+  <File Type="ROUTE-RQS-PB" Name="hardwareWrapper_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="hardwareWrapper_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="hardwareWrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="hardwareWrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="hardwareWrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="hardwareWrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="hardwareWrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="hardwareWrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="hardwareWrapper_timing_summary_routed.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="hardwareWrapper_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="hardwareWrapper_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="hardwareWrapper_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="hardwareWrapper_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="hardwareWrapper_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="hardwareWrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="hardwareWrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="hardwareWrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="hardwareWrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="hardwareWrapper_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="hardwareWrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="hardwareWrapper_routed_bb.dcp"/>
   <File Type="ROUTE-DCP" Name="hardwareWrapper_routed.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="hardwareWrapper_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="hardwareWrapper_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="hardwareWrapper_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="hardwareWrapper_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="hardwareWrapper_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="hardwareWrapper_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="hardwareWrapper_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="hardwareWrapper_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="hardwareWrapper_bus_skew_routed.rpx"/>
+  <File Type="PHYSOPT-TIMING" Name="hardwareWrapper_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="hardwareWrapper_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="hardwareWrapper_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="hardwareWrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="hardwareWrapper_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="hardwareWrapper_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="hardwareWrapper_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="hardwareWrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="hardwareWrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="hardwareWrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="hardwareWrapper_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="hardwareWrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="hardwareWrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="hardwareWrapper_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="hardwareWrapper_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="hardwareWrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="hardwareWrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="hardwareWrapper_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="hardwareWrapper_rqa_opted.pb"/>
+  <File Type="OPT-HWDEF" Name="hardwareWrapper.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="hardwareWrapper_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="hardwareWrapper_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="hardwareWrapper_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="hardwareWrapper_timing_summary_opted.rpt"/>
+  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="hardwareWrapper_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="hardwareWrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../src/PC.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/ModeFSM.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/FetchLatch.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -100,7 +100,49 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/ExecStage.v">
+    <File Path="$PPRDIR/../../src/not.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/MemInputCtrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/MemOutputCtrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/MemoryMappedIO.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/RamIO.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/RomIO.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ROMRAM.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -114,28 +156,56 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/RegFileWriteArbiter.v">
+    <File Path="$PPRDIR/../../src/opLatch.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/or.v">
+    <File Path="$PSRCDIR/sources_1/new/aluMuxComb.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../bd/riscvTop/riscvTop.bd">
+    <File Path="$PPRDIR/../../src/ExecStage.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../bd/riscvTop/hdl/riscvTop_wrapper.v">
+    <File Path="$PPRDIR/../../src/execLatch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/writeBackLatch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bypassMux.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/simpleRisc/simpleRisc.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/simpleRisc/hdl/simpleRisc_wrapper.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -149,7 +219,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemIO.v">
+    <File Path="$PPRDIR/../../sim/ramTop_tb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -157,7 +227,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemInputCtrl.v">
+    <File Path="$PPRDIR/../../src/RegFileWriteArbiter.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -165,7 +235,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemOutputCtrl.v">
+    <File Path="$PPRDIR/../../src/or.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -173,7 +243,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/MemoryMappedIO.v">
+    <File Path="$PPRDIR/../../src/FetchLatch.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -181,7 +251,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/RamIO.v">
+    <File Path="$PPRDIR/../../bd/riscvTop/riscvTop.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../bd/riscvTop/hdl/riscvTop_wrapper.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -205,14 +283,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/RomIO.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../src/and.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -222,14 +292,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../sim/fetch_tb.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../sim/ramTop_tb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -254,6 +316,22 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../bd/ramTop/hdl/ramTop_wrapper.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/RAMTop.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/simpleAluComb.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -303,15 +381,19 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Not_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_ROMRAM_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="dualPortRAM32kx32"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_execLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_RegFile_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_Decode_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ramTop_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ExecStage_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ModeFSM_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_PC_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_FetchLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFile_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
 </GenRun>

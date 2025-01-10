@@ -17,8 +17,8 @@
       "FetchLatch_0": "",
       "ExecStage_0": "",
       "PC_0": "",
-      "Decode_0": "",
       "MemoryMappedIO_0": "",
+      "Decode_0": "",
       "RegFile_0": ""
     },
     "ports": {
@@ -475,6 +475,108 @@
           }
         }
       },
+      "MemoryMappedIO_0": {
+        "vlnv": "xilinx.com:module_ref:MemoryMappedIO:1.0",
+        "xci_name": "riscvTop_MemoryMappedIO_0_0",
+        "xci_path": "ip/riscvTop_MemoryMappedIO_0_0/riscvTop_MemoryMappedIO_0_0.xci",
+        "inst_hier_path": "MemoryMappedIO_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MemoryMappedIO",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "enA": {
+            "direction": "I"
+          },
+          "addrA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "addrOutA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "readValidA": {
+            "direction": "O"
+          },
+          "enB": {
+            "direction": "I"
+          },
+          "weB": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "addrB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "dinB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutB": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "addrOutB": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "readValidB": {
+            "direction": "O"
+          },
+          "ready": {
+            "direction": "O"
+          },
+          "memOpIn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memSizeIn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memOp": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
       "Decode_0": {
         "vlnv": "xilinx.com:module_ref:Decode:1.0",
         "xci_name": "riscvTop_Decode_0_0",
@@ -578,108 +680,6 @@
           }
         }
       },
-      "MemoryMappedIO_0": {
-        "vlnv": "xilinx.com:module_ref:MemoryMappedIO:1.0",
-        "xci_name": "riscvTop_MemoryMappedIO_0_0",
-        "xci_path": "ip/riscvTop_MemoryMappedIO_0_0/riscvTop_MemoryMappedIO_0_0.xci",
-        "inst_hier_path": "MemoryMappedIO_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "MemoryMappedIO",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "enA": {
-            "direction": "I"
-          },
-          "addrA": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "doutA": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "addrOutA": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "readValidA": {
-            "direction": "O"
-          },
-          "enB": {
-            "direction": "I"
-          },
-          "weB": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "addrB": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "dinB": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "doutB": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "addrOutB": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "readValidB": {
-            "direction": "O"
-          },
-          "ready": {
-            "direction": "O"
-          },
-          "memOpIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memSizeIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memOp": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          }
-        }
-      },
       "RegFile_0": {
         "vlnv": "xilinx.com:module_ref:RegFile:1.0",
         "xci_name": "riscvTop_RegFile_0_0",
@@ -693,9 +693,19 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
           },
           "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
             "direction": "I"
           },
           "we": {
@@ -734,6 +744,16 @@
           "toEdge": {
             "direction": "O",
             "left": "31",
+            "right": "0"
+          },
+          "ra1Out": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ra2Out": {
+            "direction": "O",
+            "left": "4",
             "right": "0"
           }
         }
@@ -1042,8 +1062,8 @@
           "FetchLatch_0/clk",
           "ExecStage_0/clk",
           "PC_0/clk",
-          "Decode_0/clk",
           "MemoryMappedIO_0/clk",
+          "Decode_0/clk",
           "RegFile_0/clk"
         ]
       },

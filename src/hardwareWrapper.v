@@ -22,6 +22,7 @@
 
 module hardwareWrapper(
     input clk,
+    input [0:0] btn,
     output [9:0] led
     );
     wire err;
@@ -36,14 +37,15 @@ module hardwareWrapper(
     assign led[5] = r1[20] | r1[21] | r1[22] | r1[23];
     assign led[6] = r1[24] | r1[25] | r1[26] | r1[27];
     assign led[7] = r1[28] | r1[29] | r1[30] | r1[31];
-    assign led[8] = addrB ? 1 : 0;
+    assign led[8] = 0;
     assign led[9] = err;
     
     
-    riscvTop_wrapper(
+    simpleRisc_wrapper cpu(
         .busErr(err),
         .clk(clk),
-        .r1ToEdge(r1),
-        .addrB(addrB)
+        .reset(btn),
+        .toEdge(r1)
+        //.addrB(addrB)
     );
 endmodule

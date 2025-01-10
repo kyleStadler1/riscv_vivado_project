@@ -94,6 +94,8 @@ module Decode #(
             jal <= 1'b0;
             jalr <= 1'b0;
             regWriteCollision <= 1'b0;
+            rs1 <= 5'd0;
+            rs2 <= 5'd0;
         end 
         else if (stall) begin
             
@@ -287,7 +289,7 @@ module Decode #(
                         ADD_SUB: begin
                             // ADDI
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
@@ -303,7 +305,7 @@ module Decode #(
                         XOR_OP: begin
                             // XORI
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= XOR;
@@ -335,7 +337,7 @@ module Decode #(
                         AND_OP: begin
                             // ANDI
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= AND;
@@ -351,7 +353,7 @@ module Decode #(
                         SLT_OP: begin
                             // SLTI
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= SLT;
@@ -367,7 +369,7 @@ module Decode #(
                         SLTU_OP: begin
                             // SLTIU
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= SLTU;
@@ -383,7 +385,7 @@ module Decode #(
                         SLL_OP: begin
                             // SLLI
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{27{imm_12_field[4]}}, imm_12_field[4:0]};
                             aluOp <= SLL;
@@ -401,7 +403,7 @@ module Decode #(
                                 1'b0: begin
                                     // SRLI
                                     rs1 <= rs1_field;
-                                    rs2 <= 5'bx;
+                                    rs2 <= 5'b00000;
                                     rd <= rd_field;
                                     imm <= {{27{imm_12_field[4]}}, imm_12_field[4:0]};
                                     aluOp <= SRL;
@@ -417,7 +419,7 @@ module Decode #(
                                 1'b1: begin
                                     // SRAI
                                     rs1 <= rs1_field;
-                                    rs2 <= 5'bx;
+                                    rs2 <= 5'b00000;
                                     rd <= rd_field;
                                     imm <= {{27{imm_12_field[4]}}, imm_12_field[4:0]};
                                     aluOp <= SRA;
@@ -441,7 +443,7 @@ module Decode #(
                         3'b000: begin
                             // LB
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
@@ -457,7 +459,7 @@ module Decode #(
                         3'b001: begin
                             // LH
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
@@ -473,7 +475,7 @@ module Decode #(
                         3'b010: begin
                             // LW
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
@@ -489,7 +491,7 @@ module Decode #(
                         3'b100: begin
                             // LBU
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
@@ -505,7 +507,7 @@ module Decode #(
                         3'b101: begin
                             // LHU
                             rs1 <= rs1_field;
-                            rs2 <= 5'bx;
+                            rs2 <= 5'b00000;
                             rd <= rd_field;
                             imm <= {{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
@@ -528,7 +530,7 @@ module Decode #(
                             // SB
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{20{store_imm_field[11]}}, store_imm_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
@@ -544,7 +546,7 @@ module Decode #(
                             // SH
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{20{store_imm_field[11]}}, store_imm_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
@@ -560,7 +562,7 @@ module Decode #(
                             // SW
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{20{store_imm_field[11]}}, store_imm_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
@@ -582,7 +584,7 @@ module Decode #(
                             // BEQ
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BEQ;
                             selA <= 1'b0;
@@ -598,7 +600,7 @@ module Decode #(
                             // BNE
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BNE;
                             selA <= 1'b0;
@@ -614,7 +616,7 @@ module Decode #(
                             // BLT
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BLT;
                             selA <= 1'b0;
@@ -630,7 +632,7 @@ module Decode #(
                             // BGE
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BGE;
                             selA <= 1'b0;
@@ -646,7 +648,7 @@ module Decode #(
                             // BLTU
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BLTU;
                             selA <= 1'b0;
@@ -662,7 +664,7 @@ module Decode #(
                             // BGEU
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
-                            rd <= 5'bx;
+                            rd <= 5'b00000;
                             imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BGEU;
                             selA <= 1'b0;
@@ -680,8 +682,8 @@ module Decode #(
                 // JAL (J-Type)
                 JAL: begin
                     // JAL
-                    rs1 <= 5'bx;
-                    rs2 <= 5'bx;
+                    rs1 <= 5'b00000;
+                    rs2 <= 5'b00000;
                     rd <= rd_field;
                     imm <= {{20{imm_20_field[11]}}, imm_20_field, 1'b0};
                     aluOp <= ADD;
@@ -698,8 +700,8 @@ module Decode #(
                 // JALR (I-Type)
                 JALR: begin
                     // JALR
-                    rs1 <= 5'bx;
-                    rs2 <= 5'bx;
+                    rs1 <= 5'b00000;
+                    rs2 <= 5'b00000;
                     rd <= rd_field;
                     imm <= {{20{imm_20_field[11]}}, imm_20_field, 1'b0};
                     aluOp <= ADD;
@@ -717,7 +719,7 @@ module Decode #(
                 LUI: begin
                     // LUI
                     rs1 <= 5'b00000;
-                    rs2 <= 5'bx;
+                    rs2 <= 5'b00000;
                     rd <= rd_field;
                     imm <= {imm_20_field, {12{1'b0}}};
                     aluOp <= ADD;
@@ -734,8 +736,8 @@ module Decode #(
                 // AUIPC (U-Type)
                 AUIPC: begin
                     // AUIPC
-                    rs1 <= 5'bx;
-                    rs2 <= 5'bx;
+                    rs1 <= 5'b00000;
+                    rs2 <= 5'b00000;
                     rd <= rd_field;
                     imm <= {imm_20_field, {12{1'b0}}};
                     aluOp <= ADD;

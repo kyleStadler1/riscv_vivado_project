@@ -24,6 +24,7 @@ vlog -work xil_defaultlib -64 -incr -mfcu  \
 "../../../bd/simpleRisc/ip/simpleRisc_alu_0_0/sim/simpleRisc_alu_0_0.v" \
 "../../../bd/simpleRisc/ip/simpleRisc_execLatch_0_0/sim/simpleRisc_execLatch_0_0.v" \
 "../../../bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/sim/simpleRisc_writeBackLatch_0_0.v" \
+"../../../bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/sim/simpleRisc_bypassMux_0_0.v" \
 "../../../bd/simpleRisc/sim/simpleRisc.v" \
 
 vlog -work xil_defaultlib \

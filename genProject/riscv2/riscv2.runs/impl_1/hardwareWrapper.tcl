@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
@@ -143,7 +144,8 @@ OPTRACE "add files" START { }
   add_files -quiet /home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/hardwareWrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/user/project/riscv2/bd/riscvTop/riscvTop.bd
+  add_files /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/sources_1/bd/simpleRisc/simpleRisc.bd
+  read_ip -quiet /home/user/project/riscv2/ips/dualPortRAM32kx32/dualPortRAM32kx32.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/user/project/riscv2/constraints/constraints.xdc

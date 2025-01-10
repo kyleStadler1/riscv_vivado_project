@@ -57,6 +57,7 @@
 module simpleRisc_RegFile_0_0 (
   clk,
   stall,
+  reset,
   we,
   ra1,
   ra2,
@@ -64,13 +65,18 @@ module simpleRisc_RegFile_0_0 (
   wd,
   rd1,
   rd2,
-  toEdge
+  toEdge,
+  ra1Out,
+  ra2Out
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 input wire stall;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
 input wire we;
 input wire [4 : 0] ra1;
 input wire [4 : 0] ra2;
@@ -79,10 +85,13 @@ input wire [31 : 0] wd;
 output wire [31 : 0] rd1;
 output wire [31 : 0] rd2;
 output wire [31 : 0] toEdge;
+output wire [4 : 0] ra1Out;
+output wire [4 : 0] ra2Out;
 
   RegFile inst (
     .clk(clk),
     .stall(stall),
+    .reset(reset),
     .we(we),
     .ra1(ra1),
     .ra2(ra2),
@@ -90,6 +99,8 @@ output wire [31 : 0] toEdge;
     .wd(wd),
     .rd1(rd1),
     .rd2(rd2),
-    .toEdge(toEdge)
+    .toEdge(toEdge),
+    .ra1Out(ra1Out),
+    .ra2Out(ra2Out)
   );
 endmodule

@@ -45,7 +45,7 @@ module writeBackLatch(
             mem <= 32'hx;
             alu <= 32'hx;
             //regWrite <= 1'b0;
-            rd <= 5'bxxxxx;
+            rd <= 5'b00000;
             memValid <= 1'b0;
             aluValid <= 1'b0;
         end

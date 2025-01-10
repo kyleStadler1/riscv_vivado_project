@@ -48,7 +48,7 @@ module opLatch(
             imm <= 32'hx;
             memSize <= 2'bxx;
             memOp <= 2'b00;
-            rd <= 5'bxxxxx;
+            rd <= 5'b00000;
             pc <= 32'hx;
             selA <= 1'bx;
             selB <= 2'bxx;
