@@ -50,7 +50,7 @@ parameter WORD        = 2'b10;
     wire ready;
 
     // Instantiate the module
-    ramTop uut (
+    ROMRAM uut (
         .addrAOut(addrAOut),
         .addrBOut(addrBOut),
         .alu(alu),

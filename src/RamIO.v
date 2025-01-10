@@ -5,6 +5,7 @@ module RamIO #(
     parameter WRITE = 2'b10
 )(
     input clk,
+    input reset,
     
     input enA,
     input [16:0] addrA,
@@ -50,6 +51,7 @@ module RamIO #(
     
     portAFSM portA(
         .clk(clk),
+        .reset(reset),
         .en(realEnA),
         .readValid(readValidA),
         .ready(readyA),
@@ -57,6 +59,7 @@ module RamIO #(
     );
     portBFSM portB(
         .clk(clk),
+        .reset(reset),
         .en(realEnB),
         .wen(weB[3] | weB[2] | weB[1] | weB[0]),
         .readValid(readValidB),
@@ -90,6 +93,7 @@ module portBFSM #(
     parameter WRITE = 2'b10
 )(
     input clk,
+    input reset,
     input en, 
     input wen, 
     output reg readValid = 1'b0,
@@ -98,7 +102,12 @@ module portBFSM #(
 );
     reg [1:0] state = IDLE;
     always @(posedge clk) begin
-        if (en) begin
+        if (reset) begin
+            readValid <= 1'b0;
+            ready <= 1'b1;
+            state <= IDLE;
+        end
+        else begin if (en) begin
             if (state == IDLE) begin
                 state <= wen ? WRITE : READ0;
                 readValid <= 0;
@@ -122,13 +131,16 @@ module portBFSM #(
         end else begin
             state <= IDLE;
             ready <= 1;
+            readValid <= 0;
         end
+    end
     end
     assign new = state == IDLE;
 endmodule
 
 module portAFSM (
     input clk,
+    input reset,
     input en, 
     output wire readValid,
     output wire ready,
@@ -136,6 +148,7 @@ module portAFSM (
 );
     portBFSM sub(
         .clk(clk),
+        .reset(reset),
         .en(en),
         .wen(1'b0),
         .readValid(readValid),

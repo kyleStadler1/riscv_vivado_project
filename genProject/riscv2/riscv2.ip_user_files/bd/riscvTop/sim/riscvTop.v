@@ -2,8 +2,8 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Wed Jan  8 05:31:22 2025
-//Host        : baa28d90d760 running 64-bit Ubuntu 22.04.5 LTS
+//Date        : Thu Jan  9 07:21:41 2025
+//Host        : c41189cdeabc running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target riscvTop.bd
 //Design      : riscvTop
 //Purpose     : IP block netlist
@@ -81,7 +81,6 @@ module riscvTop
         .aluToReg(Decode_0_aluToReg),
         .branch(Decode_0_branch),
         .clk(clk_1),
-        .hold(orGate_0_y),
         .imm(Decode_0_imm),
         .instruction(FetchLatch_0_instr),
         .jal(Decode_0_jal),
@@ -92,10 +91,12 @@ module riscvTop
         .pc_in(FetchLatch_0_pc),
         .rd(Decode_0_rd),
         .regWriteCollision(Decode_0_regWriteCollision),
+        .reset(1'b0),
         .rs1(Decode_0_rs1),
         .rs2(Decode_0_rs2),
         .selA(Decode_0_selA),
-        .selB(Decode_0_selB));
+        .selB(Decode_0_selB),
+        .stall(1'b0));
   riscvTop_ExecStage_0_0 ExecStage_0
        (.aluOp(Decode_0_aluOp),
         .aluToMem(ExecStage_0_aluToMem),
@@ -172,10 +173,9 @@ module riscvTop
   riscvTop_PC_0_0 PC_0
        (.clk(clk_1),
         .ena(PC_0_ena),
-        .hold(ModeFSM_0_MASTER_HOLD),
         .pc(PC_0_pc),
-        .sel(ExecStage_0_pcSel),
-        .vect(ExecStage_0_pcVect));
+        .reset(1'b0),
+        .stall(1'b0));
   riscvTop_RegFileWriteArbiter_0_0 RegFileWriteArbiter_0
        (.aluToReg(Decode_0_aluToReg),
         .aluVal(ExecStage_0_aluToRegFile),

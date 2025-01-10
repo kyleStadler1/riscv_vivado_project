@@ -1,5 +1,6 @@
 module MemoryMappedIO(
     input clk,
+    input reset,
     
     input enA,
     input [31:0] addrA,
@@ -27,13 +28,13 @@ parameter ROM_UPPER_ADDR = 32'h7fff_ffff;
 parameter RAM_UPPER_ADDR = 32'h8001_ffff;
 
 wire AisROM = (addrA <= ROM_UPPER_ADDR);
-wire BisROM = (addrB <= ROM_UPPER_ADDR);
+wire BisROM = memOpIn != 2'b00 ? (addrB <= ROM_UPPER_ADDR) : 1'b0;
 
 wire RomReady, RomReadValidA, RomReadValidB;
 wire RamReady, RamReadValidA, RamReadValidB;
 assign ready = AisROM & BisROM ? RomReady : RamReady&RomReady;
 assign readValidA = AisROM ? RomReadValidA : RamReadValidA;
-assign readValidB = BisROM ? RomReadValidB : RamReadValidB;
+assign readValidB = BisROM ? RomReadValidB & (memOpIn == 2'b01 | memOp == 2'b10) : RamReadValidB;
 
 wire [31:0] doutARom, doutBRom, doutARam, doutBRam;
 assign doutA = AisROM ? doutARom : doutARam;
@@ -62,6 +63,7 @@ RomIO romIO (
 
 RamIO ramIO (
     .clk(clk),
+    .reset(reset),
     
     .enA(enA&(~AisROM)),
     .addrA(addrA[16:0]),

@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"simpleRisc": {
+			"proto_instances": {
+			}
+		}
+	}
+}

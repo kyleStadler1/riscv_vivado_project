@@ -189,6 +189,16 @@
         "ports": {
           "clk": {
             "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
             "direction": "I"
           },
           "enA": {

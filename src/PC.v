@@ -24,19 +24,20 @@ module PC(
     input clk,
     input stall,
     input reset,
-    input sel,
-    input [31:0] vect,
-    output reg [31:0] pc = 32'h00000000,
+    output reg [31:0] pc,
     output ena
     );
     always @(posedge clk) begin
-        if reset begin
-            pc <= 32'h00000000;
-        end else begin
-            if (~stall) begin
-                pc <= sel ? vect : pc + 32'd4;
-            end
+        if (reset) begin
+            pc <= 32'h0000_0000;
+        end
+        else if (stall) begin
+            pc <= pc;
+        end 
+        else begin
+            pc <= pc+4;
         end
     end
-    assign ena = 1'b1;
+    
 endmodule
+

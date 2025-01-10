@@ -56,27 +56,26 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module riscvTop_PC_0_0 (
   clk,
-  hold,
-  sel,
-  vect,
+  stall,
+  reset,
   pc,
   ena
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscvTop_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscvTop_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-input wire hold;
-input wire sel;
-input wire [31 : 0] vect;
+input wire stall;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
 output wire [31 : 0] pc;
 output wire ena;
 
   PC inst (
     .clk(clk),
-    .hold(hold),
-    .sel(sel),
-    .vect(vect),
+    .stall(stall),
+    .reset(reset),
     .pc(pc),
     .ena(ena)
   );

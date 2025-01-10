@@ -9,17 +9,17 @@
       "tool_version": "2023.1"
     },
     "design_tree": {
-      "RegFile_0": "",
       "RegFileWriteArbiter_0": "",
       "orGate_0": "",
       "MemInputCtrl_0": "",
-      "MemoryMappedIO_0": "",
       "MemOutputCtrl_0": "",
-      "PC_0": "",
-      "Decode_0": "",
       "ModeFSM_0": "",
       "FetchLatch_0": "",
-      "ExecStage_0": ""
+      "ExecStage_0": "",
+      "PC_0": "",
+      "Decode_0": "",
+      "MemoryMappedIO_0": "",
+      "RegFile_0": ""
     },
     "ports": {
       "busErr": {
@@ -46,71 +46,6 @@
       }
     },
     "components": {
-      "RegFile_0": {
-        "vlnv": "xilinx.com:module_ref:RegFile:1.0",
-        "xci_name": "riscvTop_RegFile_0_0",
-        "xci_path": "ip/riscvTop_RegFile_0_0/riscvTop_RegFile_0_0.xci",
-        "inst_hier_path": "RegFile_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "RegFile",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscvTop_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "we": {
-            "direction": "I"
-          },
-          "ra1": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "ra2": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "wa": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "wd": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "rd1": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "rd2": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "toEdge": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "RegFileWriteArbiter_0": {
         "vlnv": "xilinx.com:module_ref:RegFileWriteArbiter:1.0",
         "xci_name": "riscvTop_RegFileWriteArbiter_0_0",
@@ -236,108 +171,6 @@
           }
         }
       },
-      "MemoryMappedIO_0": {
-        "vlnv": "xilinx.com:module_ref:MemoryMappedIO:1.0",
-        "xci_name": "riscvTop_MemoryMappedIO_0_0",
-        "xci_path": "ip/riscvTop_MemoryMappedIO_0_0/riscvTop_MemoryMappedIO_0_0.xci",
-        "inst_hier_path": "MemoryMappedIO_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "MemoryMappedIO",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscvTop_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "enA": {
-            "direction": "I"
-          },
-          "addrA": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "doutA": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "addrOutA": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "readValidA": {
-            "direction": "O"
-          },
-          "enB": {
-            "direction": "I"
-          },
-          "weB": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "addrB": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "dinB": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "doutB": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "addrOutB": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "readValidB": {
-            "direction": "O"
-          },
-          "ready": {
-            "direction": "O"
-          },
-          "memOpIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memSizeIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memOp": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          }
-        }
-      },
       "MemOutputCtrl_0": {
         "vlnv": "xilinx.com:module_ref:MemOutputCtrl:1.0",
         "xci_name": "riscvTop_MemOutputCtrl_0_0",
@@ -386,169 +219,30 @@
           }
         }
       },
-      "PC_0": {
-        "vlnv": "xilinx.com:module_ref:PC:1.0",
-        "xci_name": "riscvTop_PC_0_0",
-        "xci_path": "ip/riscvTop_PC_0_0/riscvTop_PC_0_0.xci",
-        "inst_hier_path": "PC_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "PC",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscvTop_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "hold": {
-            "direction": "I"
-          },
-          "sel": {
-            "direction": "I"
-          },
-          "vect": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "pc": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "ena": {
-            "direction": "O"
-          }
-        }
-      },
-      "Decode_0": {
-        "vlnv": "xilinx.com:module_ref:Decode:1.0",
-        "xci_name": "riscvTop_Decode_0_0",
-        "xci_path": "ip/riscvTop_Decode_0_0/riscvTop_Decode_0_0.xci",
-        "inst_hier_path": "Decode_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Decode",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscvTop_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "hold": {
-            "direction": "I"
-          },
-          "instruction": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "pc_in": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "rs1": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
-          },
-          "rs2": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
-          },
-          "rd": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
-          },
-          "imm": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "aluOp": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "selA": {
-            "direction": "O"
-          },
-          "selB": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "aluToReg": {
-            "direction": "O"
-          },
-          "memOp": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "branch": {
-            "direction": "O"
-          },
-          "jal": {
-            "direction": "O"
-          },
-          "jalr": {
-            "direction": "O"
-          },
-          "regWriteCollision": {
-            "direction": "O"
-          },
-          "pc": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "ModeFSM_0": {
         "vlnv": "xilinx.com:module_ref:ModeFSM:1.0",
         "xci_name": "riscvTop_ModeFSM_0_0",
         "xci_path": "ip/riscvTop_ModeFSM_0_0/riscvTop_ModeFSM_0_0.xci",
         "inst_hier_path": "ModeFSM_0",
         "reference_info": {
-          "ref_type": "hdl",
+          "ref_type": "unknown",
           "ref_name": "ModeFSM",
           "boundary_crc": "0x0"
         },
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "1000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscvTop_clk",
+                "value_src": "default_prop"
+              }
+            }
           },
           "branchJump": {
             "direction": "I"
@@ -580,7 +274,17 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "1000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscvTop_clk",
+                "value_src": "default_prop"
+              }
+            }
           },
           "hold": {
             "direction": "I"
@@ -623,7 +327,17 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "1000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscvTop_clk",
+                "value_src": "default_prop"
+              }
+            }
           },
           "hold": {
             "direction": "I"
@@ -709,6 +423,315 @@
             "right": "0"
           },
           "memDin": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "PC_0": {
+        "vlnv": "xilinx.com:module_ref:PC:1.0",
+        "xci_name": "riscvTop_PC_0_0",
+        "xci_path": "ip/riscvTop_PC_0_0/riscvTop_PC_0_0.xci",
+        "inst_hier_path": "PC_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PC",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "1000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscvTop_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pc": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ena": {
+            "direction": "O"
+          }
+        }
+      },
+      "Decode_0": {
+        "vlnv": "xilinx.com:module_ref:Decode:1.0",
+        "xci_name": "riscvTop_Decode_0_0",
+        "xci_path": "ip/riscvTop_Decode_0_0/riscvTop_Decode_0_0.xci",
+        "inst_hier_path": "Decode_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Decode",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "instruction": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc_in": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rs1": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "rs2": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "rd": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "imm": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "aluOp": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "selA": {
+            "direction": "O"
+          },
+          "selB": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "aluToReg": {
+            "direction": "O"
+          },
+          "memOp": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "branch": {
+            "direction": "O"
+          },
+          "jal": {
+            "direction": "O"
+          },
+          "jalr": {
+            "direction": "O"
+          },
+          "regWriteCollision": {
+            "direction": "O"
+          },
+          "pc": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "MemoryMappedIO_0": {
+        "vlnv": "xilinx.com:module_ref:MemoryMappedIO:1.0",
+        "xci_name": "riscvTop_MemoryMappedIO_0_0",
+        "xci_path": "ip/riscvTop_MemoryMappedIO_0_0/riscvTop_MemoryMappedIO_0_0.xci",
+        "inst_hier_path": "MemoryMappedIO_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MemoryMappedIO",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "enA": {
+            "direction": "I"
+          },
+          "addrA": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "addrOutA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "readValidA": {
+            "direction": "O"
+          },
+          "enB": {
+            "direction": "I"
+          },
+          "weB": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "addrB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "dinB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutB": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "addrOutB": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "readValidB": {
+            "direction": "O"
+          },
+          "ready": {
+            "direction": "O"
+          },
+          "memOpIn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memSizeIn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memOp": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "RegFile_0": {
+        "vlnv": "xilinx.com:module_ref:RegFile:1.0",
+        "xci_name": "riscvTop_RegFile_0_0",
+        "xci_path": "ip/riscvTop_RegFile_0_0/riscvTop_RegFile_0_0.xci",
+        "inst_hier_path": "RegFile_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RegFile",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "stall": {
+            "direction": "I"
+          },
+          "we": {
+            "direction": "I"
+          },
+          "ra1": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ra2": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "wa": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "wd": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rd1": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "rd2": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "toEdge": {
             "direction": "O",
             "left": "31",
             "right": "0"
@@ -844,14 +867,12 @@
       "ExecStage_0_pcSel": {
         "ports": [
           "ExecStage_0/pcSel",
-          "PC_0/sel",
           "ModeFSM_0/branchJump"
         ]
       },
       "ExecStage_0_pcVect": {
         "ports": [
-          "ExecStage_0/pcVect",
-          "PC_0/vect"
+          "ExecStage_0/pcVect"
         ]
       },
       "FetchLatch_0_instr": {
@@ -967,7 +988,6 @@
         "ports": [
           "ModeFSM_0/MASTER_HOLD",
           "orGate_0/a",
-          "PC_0/hold",
           "FetchLatch_0/hold",
           "ExecStage_0/hold"
         ]
@@ -1017,20 +1037,19 @@
       "clk_1": {
         "ports": [
           "clk",
-          "RegFile_0/clk",
           "RegFileWriteArbiter_0/clk",
-          "MemoryMappedIO_0/clk",
-          "PC_0/clk",
-          "Decode_0/clk",
           "ModeFSM_0/clk",
           "FetchLatch_0/clk",
-          "ExecStage_0/clk"
+          "ExecStage_0/clk",
+          "PC_0/clk",
+          "Decode_0/clk",
+          "MemoryMappedIO_0/clk",
+          "RegFile_0/clk"
         ]
       },
       "orGate_0_y": {
         "ports": [
-          "orGate_0/y",
-          "Decode_0/hold"
+          "orGate_0/y"
         ]
       }
     }

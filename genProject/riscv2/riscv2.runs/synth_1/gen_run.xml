@@ -232,13 +232,13 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_Decode_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ramTop_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ExecStage_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_ModeFSM_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_PC_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_FetchLatch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFile_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ExecStage_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_ramTop_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_Decode_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
 </GenRun>
