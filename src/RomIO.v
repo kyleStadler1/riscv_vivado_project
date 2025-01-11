@@ -12,11 +12,11 @@ module RomIO #(
     parameter DATA8 = 32'h93003003,
     parameter DATA9 = 32'h83200100,
     parameter DATA10 = 32'h83204100,
-    parameter DATA11 = 32'h0000000B,
-    parameter DATA12 = 32'h0000000C,
-    parameter DATA13 = 32'h0000000D,
-    parameter DATA14 = 32'h0000000E,
-    parameter DATA15 = 32'h0000000F
+    parameter DATA11 = 32'h93001000,
+    parameter DATA12 = 32'h93801000,
+    parameter DATA13 = 32'h23241100,
+    parameter DATA14 = 32'h83200100,
+    parameter DATA15 = 32'h83208100
 )(
     input clk,
     

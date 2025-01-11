@@ -42,10 +42,9 @@ module hardwareWrapper(
     
     
     simpleRisc_wrapper cpu(
-        .busErr(err),
         .clk(clk),
         .reset(btn),
-        .toEdge(r1)
+        .toEdge01(r1)
         //.addrB(addrB)
     );
 endmodule

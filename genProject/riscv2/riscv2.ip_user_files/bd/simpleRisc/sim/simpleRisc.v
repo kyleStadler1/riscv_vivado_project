@@ -2,8 +2,8 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Fri Jan 10 13:21:18 2025
-//Host        : c41189cdeabc running 64-bit Ubuntu 22.04.5 LTS
+//Date        : Sat Jan 11 00:21:11 2025
+//Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target simpleRisc.bd
 //Design      : simpleRisc
 //Purpose     : IP block netlist
@@ -18,7 +18,7 @@ module simpleRisc
     regWrite,
     reset,
     toEdge01);
-  input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET reset, CLK_DOMAIN simpleRisc_clk, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
   output [31:0]dataToReg;
   output [4:0]rd;
   output regWrite;

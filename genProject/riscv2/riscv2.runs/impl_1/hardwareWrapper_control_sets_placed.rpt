@@ -1,0 +1,117 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Fri Jan 10 14:28:42 2025
+| Host         : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_control_sets -verbose -file hardwareWrapper_control_sets_placed.rpt
+| Design       : hardwareWrapper
+| Device       : xc7z007s
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    39 |
+|    Minimum number of control sets                        |    39 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    27 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    39 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    35 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              54 |           22 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |            1130 |          367 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             101 |           30 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-------------------------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                           Enable Signal                           |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-------------------------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/Decode_0/inst/memOp[1]_i_1_n_0                   | btn_IBUF[0]                                  |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/Decode_0/inst/rs1[4]_i_1_n_0                     | btn_IBUF[0]                                  |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/Decode_0/inst/rd[4]_i_2_n_0                      | cpu/simpleRisc_i/Decode_0/inst/rd[4]_i_1_n_0 |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/ROMRAM_0/inst/MemoryMappedIO_0/ramIO/portB/E[0]  |                                              |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[13][31]_i_1_n_0           |                                              |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[17][31]_i_1_n_0           |                                              |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[12][31]_i_1_n_0           |                                              |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[14][31]_i_1_n_0           |                                              |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[16][31]_i_1_n_0           |                                              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[18][31]_i_1_n_0           |                                              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[19][31]_i_1_n_0           |                                              |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[20][31]_i_1_n_0           |                                              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[21][31]_i_1_n_0           |                                              |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[1][31]_i_1_n_0            |                                              |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[22][31]_i_1_n_0           |                                              |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[23][31]_i_1_n_0           |                                              |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[26][31]_i_1_n_0           |                                              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[24][31]_i_1_n_0           |                                              |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[9][31]_i_1_n_0            |                                              |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[2][31]_i_1_n_0            |                                              |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/toEdge[31]_i_1_n_0                |                                              |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[25][31]_i_1_n_0           |                                              |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[10][31]_i_1_n_0           |                                              |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[31][31]_i_1_n_0           |                                              |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[6][31]_i_1_n_0            |                                              |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[7][31]_i_1_n_0            |                                              |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[30][31]_i_1_n_0           |                                              |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[29][31]_i_1_n_0           |                                              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[28][31]_i_1_n_0           |                                              |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[27][31]_i_1_n_0           |                                              |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[11][31]_i_1_n_0           |                                              |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[15][31]_i_1_n_0           |                                              |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[8][31]_i_1_n_0            |                                              |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[4][31]_i_1_n_0            |                                              |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[5][31]_i_1_n_0            |                                              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/RegFile_0/inst/regfile[3][31]_i_1_n_0            |                                              |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG |                                                                   |                                              |               22 |             54 |         2.45 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/ROMRAM_0/inst/MemoryMappedIO_0/ramIO/portB/ready | btn_IBUF[0]                                  |               25 |             89 |         3.56 |
+|  clk_IBUF_BUFG | cpu/simpleRisc_i/ROMRAM_0/inst/MemoryMappedIO_0/ramIO/portB/ready |                                              |               27 |            100 |         3.70 |
++----------------+-------------------------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+
+

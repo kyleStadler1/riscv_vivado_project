@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736516098" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hardwareWrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736519188" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hardwareWrapper.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="hardwareWrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="hardwareWrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="hardwareWrapper_utilization_synth.pb"/>
@@ -18,14 +18,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/Decode.v">
+    <File Path="$PPRDIR/../../src/not.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/not.v">
+    <File Path="$PSRCDIR/sources_1/new/aluMuxComb.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../src/ExecStage.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -74,7 +81,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/RegFile.v">
+    <File Path="$PPRDIR/../../src/Decode.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bypassMux.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -82,20 +96,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../src/opLatch.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/aluMuxComb.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/ExecStage.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -116,7 +116,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/bypassMux.v">
+    <File Path="$PPRDIR/../../src/RegFile.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -299,18 +299,18 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Not_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_ROMRAM_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="dualPortRAM32kx32"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_execLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_RegFile_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_execLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="dualPortRAM32kx32"/>
 </GenRun>

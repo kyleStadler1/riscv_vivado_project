@@ -1,8 +1,9 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../../../src/PC.v" \
-"../../../../../../src/Decode.v" \
 "../../../../../../src/not.v" \
+"../../../../riscv2.srcs/sources_1/new/aluMuxComb.v" \
+"../../../../../../src/ExecStage.v" \
 "../../../../../../ips/dualPortRAM32kx32/sim/dualPortRAM32kx32.v" \
 "../../../../../../src/MemInputCtrl.v" \
 "../../../../../../src/MemOutputCtrl.v" \
@@ -10,24 +11,23 @@ verilog xil_defaultlib  \
 "../../../../../../src/RamIO.v" \
 "../../../../../../src/RomIO.v" \
 "../../../../../../src/ROMRAM.v" \
-"../../../../../../src/RegFile.v" \
+"../../../../../../src/Decode.v" \
+"../../../../riscv2.srcs/sources_1/new/bypassMux.v" \
 "../../../../../../src/opLatch.v" \
-"../../../../riscv2.srcs/sources_1/new/aluMuxComb.v" \
-"../../../../../../src/ExecStage.v" \
 "../../../../../../src/execLatch.v" \
 "../../../../../../src/writeBackLatch.v" \
-"../../../../riscv2.srcs/sources_1/new/bypassMux.v" \
+"../../../../../../src/RegFile.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_PC_0_0/sim/simpleRisc_PC_0_0.v" \
-"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_Decode_0_0/sim/simpleRisc_Decode_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_Not_0_0/sim/simpleRisc_Not_0_0.v" \
-"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_ROMRAM_0_0/sim/simpleRisc_ROMRAM_0_0.v" \
-"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_RegFile_0_0/sim/simpleRisc_RegFile_0_0.v" \
-"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_opLatch_0_0/sim/simpleRisc_opLatch_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_aluMuxComb_0_0/sim/simpleRisc_aluMuxComb_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_alu_0_0/sim/simpleRisc_alu_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_ROMRAM_0_0/sim/simpleRisc_ROMRAM_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_Decode_0_0/sim/simpleRisc_Decode_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/sim/simpleRisc_bypassMux_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_opLatch_0_0/sim/simpleRisc_opLatch_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_execLatch_0_0/sim/simpleRisc_execLatch_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/sim/simpleRisc_writeBackLatch_0_0.v" \
-"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/sim/simpleRisc_bypassMux_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_RegFile_0_0/sim/simpleRisc_RegFile_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/sim/simpleRisc.v" \
 "../../../../riscv2.gen/sources_1/bd/simpleRisc/hdl/simpleRisc_wrapper.v" \
 

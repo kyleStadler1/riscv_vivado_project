@@ -2,8 +2,8 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Fri Jan 10 13:34:51 2025
-//Host        : c41189cdeabc running 64-bit Ubuntu 22.04.5 LTS
+//Date        : Sat Jan 11 00:21:10 2025
+//Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target simpleRisc.bd
 //Design      : simpleRisc
 //Purpose     : IP block netlist
@@ -12,15 +12,13 @@
 
 (* CORE_GENERATION_INFO = "simpleRisc,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=simpleRisc,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=11,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "simpleRisc.hwdef" *) 
 module simpleRisc
-   (busErr,
-    clk,
+   (clk,
     dataToReg,
     rd,
     regWrite,
     reset,
     toEdge01);
-  output busErr;
-  input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET reset, CLK_DOMAIN simpleRisc_clk, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
   output [31:0]dataToReg;
   output [4:0]rd;
   output regWrite;
@@ -42,7 +40,6 @@ module simpleRisc
   wire PC_0_ena;
   wire [31:0]PC_0_pc;
   wire [31:0]ROMRAM_0_addrAOut;
-  wire ROMRAM_0_busErr;
   wire [31:0]ROMRAM_0_doutA;
   wire [31:0]ROMRAM_0_doutB;
   wire ROMRAM_0_readValidB;
@@ -78,7 +75,6 @@ module simpleRisc
   wire [4:0]writeBackLatch_0_rd;
   wire writeBackLatch_0_regWrite;
 
-  assign busErr = ROMRAM_0_busErr;
   assign clk_1 = clk;
   assign dataToReg[31:0] = writeBackLatch_0_dataToReg;
   assign rd[4:0] = writeBackLatch_0_rd;
@@ -114,7 +110,6 @@ module simpleRisc
   simpleRisc_ROMRAM_0_0 ROMRAM_0
        (.addrAOut(ROMRAM_0_addrAOut),
         .alu(execLatch_0_alu),
-        .busErr(ROMRAM_0_busErr),
         .clk(clk_1),
         .din(execLatch_0_rs2Val),
         .doutA(ROMRAM_0_doutA),

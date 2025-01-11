@@ -9,23 +9,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc 
 # IP: bd/simpleRisc/ip/simpleRisc_PC_0_0/simpleRisc_PC_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_PC_0_0 || ORIG_REF_NAME==simpleRisc_PC_0_0} -quiet] -quiet
 
-# IP: bd/simpleRisc/ip/simpleRisc_Decode_0_0/simpleRisc_Decode_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_Decode_0_0 || ORIG_REF_NAME==simpleRisc_Decode_0_0} -quiet] -quiet
-
 # IP: bd/simpleRisc/ip/simpleRisc_Not_0_0/simpleRisc_Not_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_Not_0_0 || ORIG_REF_NAME==simpleRisc_Not_0_0} -quiet] -quiet
-
-# IP: bd/simpleRisc/ip/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_ROMRAM_0_0 || ORIG_REF_NAME==simpleRisc_ROMRAM_0_0} -quiet] -quiet
-
-# IP: /home/user/project/riscv2/ips/dualPortRAM32kx32/dualPortRAM32kx32.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==dualPortRAM32kx32 || ORIG_REF_NAME==dualPortRAM32kx32} -quiet] -quiet
-
-# IP: bd/simpleRisc/ip/simpleRisc_RegFile_0_0/simpleRisc_RegFile_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_RegFile_0_0 || ORIG_REF_NAME==simpleRisc_RegFile_0_0} -quiet] -quiet
-
-# IP: bd/simpleRisc/ip/simpleRisc_opLatch_0_0/simpleRisc_opLatch_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_opLatch_0_0 || ORIG_REF_NAME==simpleRisc_opLatch_0_0} -quiet] -quiet
 
 # IP: bd/simpleRisc/ip/simpleRisc_aluMuxComb_0_0/simpleRisc_aluMuxComb_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_aluMuxComb_0_0 || ORIG_REF_NAME==simpleRisc_aluMuxComb_0_0} -quiet] -quiet
@@ -33,13 +18,28 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_
 # IP: bd/simpleRisc/ip/simpleRisc_alu_0_0/simpleRisc_alu_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_alu_0_0 || ORIG_REF_NAME==simpleRisc_alu_0_0} -quiet] -quiet
 
+# IP: bd/simpleRisc/ip/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_ROMRAM_0_0 || ORIG_REF_NAME==simpleRisc_ROMRAM_0_0} -quiet] -quiet
+
+# IP: /home/user/project/riscv2/ips/dualPortRAM32kx32/dualPortRAM32kx32.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==dualPortRAM32kx32 || ORIG_REF_NAME==dualPortRAM32kx32} -quiet] -quiet
+
+# IP: bd/simpleRisc/ip/simpleRisc_Decode_0_0/simpleRisc_Decode_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_Decode_0_0 || ORIG_REF_NAME==simpleRisc_Decode_0_0} -quiet] -quiet
+
+# IP: bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/simpleRisc_bypassMux_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_bypassMux_0_0 || ORIG_REF_NAME==simpleRisc_bypassMux_0_0} -quiet] -quiet
+
+# IP: bd/simpleRisc/ip/simpleRisc_opLatch_0_0/simpleRisc_opLatch_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_opLatch_0_0 || ORIG_REF_NAME==simpleRisc_opLatch_0_0} -quiet] -quiet
+
 # IP: bd/simpleRisc/ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_execLatch_0_0 || ORIG_REF_NAME==simpleRisc_execLatch_0_0} -quiet] -quiet
 
 # IP: bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_writeBackLatch_0_0 || ORIG_REF_NAME==simpleRisc_writeBackLatch_0_0} -quiet] -quiet
 
-# IP: bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/simpleRisc_bypassMux_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_bypassMux_0_0 || ORIG_REF_NAME==simpleRisc_bypassMux_0_0} -quiet] -quiet
+# IP: bd/simpleRisc/ip/simpleRisc_RegFile_0_0/simpleRisc_RegFile_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==simpleRisc_RegFile_0_0 || ORIG_REF_NAME==simpleRisc_RegFile_0_0} -quiet] -quiet
 
 # XDC: /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/simpleRisc_ooc.xdc
