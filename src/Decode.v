@@ -89,6 +89,13 @@ module Decode #(
     wire [11:0] store_imm_field = {instruction[31:25], instruction[11:7]};
     wire [11:0] branch_imm_field = {instruction[31:25], instruction[11:7]};
 
+    wire [31:0] Iimm ={{21{instruction[31]}}, instruction[30:25], instruction[24:21], instruction[20]};
+    wire [31:0] Simm ={{21{instruction[31]}}, instruction[30:25], instruction[11:8], instruction[7]};
+    wire [31:0] Bimm ={{20{instruction[31]}}, instruction[7], instruction[30:25], instruction[11:8], 1'b0};
+    wire [31:0] Uimm = {instruction[31], instruction[30:20], instruction[19:12], 12'b0};
+    wire [31:0] Jimm = {12{instruction[31]}, instruction[19:12], instruction[20], instruction[30:25], instruction[24:21], 1'b0};
+    wire [31:0] IShiftimm = {26'b0, Iimm[5:0]};
+
     always @(posedge clk) begin
         if (reset | resetFlush) begin
             rs1 <= 5'b00000;
@@ -317,7 +324,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -333,7 +340,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= XOR;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -349,7 +356,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'bx;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= OR;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -365,7 +372,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= AND;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -381,7 +388,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= SLT;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -397,7 +404,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= SLTU;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -413,7 +420,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{27{imm_12_field[4]}}, imm_12_field[4:0]};
+                            imm <= IShiftimm;//{{27{imm_12_field[4]}}, imm_12_field[4:0]};
                             aluOp <= SLL;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -431,7 +438,7 @@ module Decode #(
                                     rs1 <= rs1_field;
                                     rs2 <= 5'b00000;
                                     rd <= rd_field;
-                                    imm <= {{27{imm_12_field[4]}}, imm_12_field[4:0]};
+                                    imm <= IShiftimm;//{{27{imm_12_field[4]}}, imm_12_field[4:0]};
                                     aluOp <= SRL;
                                     selA <= 1'b0;
                                     selB <= 2'b01;
@@ -447,7 +454,7 @@ module Decode #(
                                     rs1 <= rs1_field;
                                     rs2 <= 5'b00000;
                                     rd <= rd_field;
-                                    imm <= {{27{imm_12_field[4]}}, imm_12_field[4:0]};
+                                    imm <= IShiftimm;//{{27{imm_12_field[4]}}, imm_12_field[4:0]};
                                     aluOp <= SRA;
                                     selA <= 1'b0;
                                     selB <= 2'b01;
@@ -471,7 +478,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -487,7 +494,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -503,7 +510,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 1'b01;
@@ -519,7 +526,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -535,7 +542,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= 5'b00000;
                             rd <= rd_field;
-                            imm <= {{20{imm_12_field[11]}}, imm_12_field};
+                            imm <= Iimm;//{{20{imm_12_field[11]}}, imm_12_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -557,7 +564,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{20{store_imm_field[11]}}, store_imm_field};
+                            imm <= Simm;//{{20{store_imm_field[11]}}, store_imm_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -573,7 +580,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{20{store_imm_field[11]}}, store_imm_field};
+                            imm <= Simm;//{{20{store_imm_field[11]}}, store_imm_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -589,7 +596,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{20{store_imm_field[11]}}, store_imm_field};
+                            imm <= Simm;//{{20{store_imm_field[11]}}, store_imm_field};
                             aluOp <= ADD;
                             selA <= 1'b0;
                             selB <= 2'b01;
@@ -611,7 +618,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{20{branch_imm_field[11]}}, branch_imm_field};
+                            imm <= Bimm;//{{20{branch_imm_field[11]}}, branch_imm_field};
                             aluOp <= BEQ;
                             selA <= 1'b0;
                             selB <= 2'b00;
@@ -627,7 +634,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
+                            imm <= Bimm;//{{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BNE;
                             selA <= 1'b0;
                             selB <= 2'b00;
@@ -643,7 +650,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
+                            imm <= Bimm;//{{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BLT;
                             selA <= 1'b0;
                             selB <= 2'b00;
@@ -659,7 +666,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
+                            imm <= Bimm;//{{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BGE;
                             selA <= 1'b0;
                             selB <= 2'b00;
@@ -675,7 +682,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
+                            imm <= Bimm;//{{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BLTU;
                             selA <= 1'b0;
                             selB <= 2'b00;
@@ -691,7 +698,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
+                            imm <= Bimm;//{{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
                             aluOp <= BGEU;
                             selA <= 1'b0;
                             selB <= 2'b00;
@@ -711,7 +718,7 @@ module Decode #(
                     rs1 <= 5'b00000;
                     rs2 <= 5'b00000;
                     rd <= rd_field;
-                    imm <= {{20{imm_20_field[11]}}, imm_20_field, 1'b0};
+                    imm <= Jimm;//{{20{imm_20_field[11]}}, imm_20_field, 1'b0};
                     aluOp <= ADD;
                     selA <= 1'b1;
                     selB <= 2'b10;
@@ -729,7 +736,7 @@ module Decode #(
                     rs1 <= 5'b00000;
                     rs2 <= 5'b00000;
                     rd <= rd_field;
-                    imm <= {{20{imm_20_field[11]}}, imm_20_field, 1'b0};
+                    imm <= Jimm;//{{20{imm_20_field[11]}}, imm_20_field, 1'b0};
                     aluOp <= ADD;
                     selA <= 1'b1;
                     selB <= 2'b10;
@@ -747,7 +754,7 @@ module Decode #(
                     rs1 <= 5'b00000;
                     rs2 <= 5'b00000;
                     rd <= rd_field;
-                    imm <= {imm_20_field, {12{1'b0}}};
+                    imm <= Uimm;//{imm_20_field, {12{1'b0}}};
                     aluOp <= ADD;
                     selA <= 1'b0;
                     selB <= 2'b01;
@@ -765,7 +772,7 @@ module Decode #(
                     rs1 <= 5'b00000;
                     rs2 <= 5'b00000;
                     rd <= rd_field;
-                    imm <= {imm_20_field, {12{1'b0}}};
+                    imm <= (Uimm << 32'd12);//{imm_20_field, {12{1'b0}}};
                     aluOp <= ADD;
                     selA <= 1'b1;
                     selB <= 2'b01;
