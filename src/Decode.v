@@ -779,7 +779,7 @@ module Decode #(
                     rs1 <= 5'b00000;
                     rs2 <= 5'b00000;
                     rd <= rd_field;
-                    imm <= (Uimm << 32'd12);//{imm_20_field, {12{1'b0}}};
+                    imm <= Uimm;//{imm_20_field, {12{1'b0}}};
                     aluOp <= ADD;
                     selA <= 1'b1;
                     selB <= 2'b01;
