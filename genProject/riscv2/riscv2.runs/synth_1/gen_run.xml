@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736686465" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hardwareWrapper.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736692203" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hardwareWrapper.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="hardwareWrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="hardwareWrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="hardwareWrapper_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="hardwareWrapper.tcl"/>
   <File Type="RDS-UTIL" Name="hardwareWrapper_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="hardwareWrapper_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="hardwareWrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="hardwareWrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="hardwareWrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="hardwareWrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/aluMuxComb.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../src/Decode.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -71,6 +67,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../../src/PC.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../src/fakeMemIO.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -78,7 +81,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/PC.v">
+    <File Path="$PPRDIR/../../src/Decode.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -325,18 +328,18 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcMuxSelector_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_fakeMemIO_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_resetManager_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcMuxSelector_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcAlu_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_RegFile_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
 </GenRun>

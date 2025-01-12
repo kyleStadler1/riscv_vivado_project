@@ -1,0 +1,252 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Jan 12 14:30:07 2025
+# Process ID: 6143
+# Current directory: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/simpleRisc_fakeMemIO_0_0_synth_1
+# Command line: vivado -log simpleRisc_fakeMemIO_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source simpleRisc_fakeMemIO_0_0.tcl
+# Log file: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/simpleRisc_fakeMemIO_0_0_synth_1/simpleRisc_fakeMemIO_0_0.vds
+# Journal file: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/simpleRisc_fakeMemIO_0_0_synth_1/vivado.jou
+# Running On: 94e62420d91b, OS: Linux, CPU Frequency: , CPU Physical cores: 1, Host memory: 14638 MB
+#-----------------------------------------------------------
+source simpleRisc_fakeMemIO_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/user/project/riscv2/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/user/Xilinx/Vivado/2023.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: simpleRisc_fakeMemIO_0_0
+Command: synth_design -top simpleRisc_fakeMemIO_0_0 -part xc7z007sclg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6174
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2313.293 ; gain = 386.758 ; free physical = 6907 ; free virtual = 12200
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_fakeMemIO_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_fakeMemIO_0_0/synth/simpleRisc_fakeMemIO_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'fakeMemIO' [/home/user/project/riscv2/src/fakeMemIO.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'fakeMemIO' (0#1) [/home/user/project/riscv2/src/fakeMemIO.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_fakeMemIO_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_fakeMemIO_0_0/synth/simpleRisc_fakeMemIO_0_0.v:53]
+WARNING: [Synth 8-7129] Port addrB[31] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[30] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[29] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[28] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[27] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[26] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[25] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[24] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[23] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[22] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[21] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[20] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[19] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[18] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[17] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[16] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[15] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[14] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[13] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[12] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[1] in module fakeMemIO is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[0] in module fakeMemIO is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2482.664 ; gain = 556.129 ; free physical = 5832 ; free virtual = 11350
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2497.684 ; gain = 571.148 ; free physical = 5818 ; free virtual = 11346
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2505.770 ; gain = 579.234 ; free physical = 5818 ; free virtual = 11346
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2591.742 ; gain = 665.207 ; free physical = 5514 ; free virtual = 11053
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1027  
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   3 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	   3 Input   30 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 1025  
+	   2 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port addrB[31] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[30] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[29] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[28] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[27] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[26] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[25] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[24] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[23] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[22] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[21] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[20] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[19] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[18] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[17] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[16] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[15] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[14] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[13] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[12] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[1] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addrB[0] in module simpleRisc_fakeMemIO_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 2828.582 ; gain = 902.047 ; free physical = 5234 ; free virtual = 10817
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 2828.961 ; gain = 902.426 ; free physical = 5227 ; free virtual = 10810
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:25 . Memory (MB): peak = 2845.887 ; gain = 919.352 ; free physical = 5215 ; free virtual = 10769
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:29 . Memory (MB): peak = 2846.000 ; gain = 919.465 ; free physical = 5199 ; free virtual = 10779
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:29 . Memory (MB): peak = 2846.016 ; gain = 919.480 ; free physical = 5199 ; free virtual = 10779
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 2846.086 ; gain = 919.551 ; free physical = 5199 ; free virtual = 10778
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:29 . Memory (MB): peak = 2846.094 ; gain = 919.559 ; free physical = 5199 ; free virtual = 10778
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2846.129 ; gain = 919.594 ; free physical = 5195 ; free virtual = 10774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2846.133 ; gain = 919.598 ; free physical = 5195 ; free virtual = 10774
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT2  |    41|
+|2     |LUT3  |    25|
+|3     |LUT4  |    16|
+|4     |LUT5  |    25|
+|5     |LUT6  | 18488|
+|6     |MUXF7 |  8704|
+|7     |MUXF8 |  4352|
+|8     |FDRE  | 32732|
+|9     |FDSE  |   133|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+----------+------+
+|      |Instance |Module    |Cells |
++------+---------+----------+------+
+|1     |top      |          | 64516|
+|2     |  inst   |fakeMemIO | 64516|
++------+---------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2846.164 ; gain = 919.629 ; free physical = 5195 ; free virtual = 10774
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 45 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2846.188 ; gain = 919.652 ; free physical = 5195 ; free virtual = 10774
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2846.207 ; gain = 919.656 ; free physical = 5195 ; free virtual = 10774
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.3 . Memory (MB): peak = 2847.562 ; gain = 0.055 ; free physical = 5574 ; free virtual = 11156
+INFO: [Netlist 29-17] Analyzing 13056 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'simpleRisc_fakeMemIO_0_0' is not ideal for floorplanning, since the cellview 'fakeMemIO' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2913.449 ; gain = 0.000 ; free physical = 7271 ; free virtual = 12857
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 58caa071
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:35 . Memory (MB): peak = 2913.539 ; gain = 990.785 ; free physical = 7270 ; free virtual = 12856
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2210.568; main = 1815.571; forked = 554.923
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5125.711; main = 2913.539; forked = 2297.133
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint '/home/user/project/riscv2/genProject/riscv2/riscv2.runs/simpleRisc_fakeMemIO_0_0_synth_1/simpleRisc_fakeMemIO_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 3242.414 ; gain = 328.859 ; free physical = 7074 ; free virtual = 12661
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP simpleRisc_fakeMemIO_0_0, cache-ID = 5336b1ffe2e47bdf
+INFO: [Common 17-1381] The checkpoint '/home/user/project/riscv2/genProject/riscv2/riscv2.runs/simpleRisc_fakeMemIO_0_0_synth_1/simpleRisc_fakeMemIO_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file simpleRisc_fakeMemIO_0_0_utilization_synth.rpt -pb simpleRisc_fakeMemIO_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 12 14:31:09 2025...

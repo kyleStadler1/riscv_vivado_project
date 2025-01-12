@@ -84,10 +84,10 @@ module Decode #(
     wire [4:0] rs1_field = instruction[19:15];
     wire [4:0] rs2_field = instruction[24:20];
     wire [6:0] funct7_field = instruction[31:25];
-    wire [11:0] imm_12_field = instruction[31:20];
-    wire [20:0] imm_20_field = {instruction[31], instruction[19:12], instruction[20], instruction[30:21]};
-    wire [11:0] store_imm_field = {instruction[31:25], instruction[11:7]};
-    wire [11:0] branch_imm_field = {instruction[31:25], instruction[11:7]};
+//    wire [11:0] imm_12_field = instruction[31:20];
+//    wire [20:0] imm_20_field = {instruction[31], instruction[19:12], instruction[20], instruction[30:21]};
+//    wire [11:0] store_imm_field = {instruction[31:25], instruction[11:7]};
+//    wire [11:0] branch_imm_field = {instruction[31:25], instruction[11:7]};
 
     wire [31:0] Iimm ={{21{instruction[31]}}, instruction[30:25], instruction[24:21], instruction[20]};
     wire [31:0] Simm ={{21{instruction[31]}}, instruction[30:25], instruction[11:8], instruction[7]};
