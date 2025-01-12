@@ -9,8 +9,8 @@ verilog xil_defaultlib  \
 "../../../../../../src/execLatch.v" \
 "../../../../../../src/resetManager.v" \
 "../../../../../../src/PC.v" \
-"../../../../../../src/fakeMemIO.v" \
 "../../../../../../src/Decode.v" \
+"../../../../../../src/fakeMemIO.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_aluMuxComb_0_0/sim/simpleRisc_aluMuxComb_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_RegFile_0_0/sim/simpleRisc_RegFile_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/sim/simpleRisc_writeBackLatch_0_0.v" \
@@ -22,8 +22,8 @@ verilog xil_defaultlib  \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_execLatch_0_0/sim/simpleRisc_execLatch_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_resetManager_0_0/sim/simpleRisc_resetManager_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_PC_0_0/sim/simpleRisc_PC_0_0.v" \
-"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_fakeMemIO_0_0/sim/simpleRisc_fakeMemIO_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_Decode_0_0/sim/simpleRisc_Decode_0_0.v" \
+"../../../../riscv2.ip_user_files/bd/simpleRisc/ip/simpleRisc_fakeMemIO_0_0/sim/simpleRisc_fakeMemIO_0_0.v" \
 "../../../../riscv2.ip_user_files/bd/simpleRisc/sim/simpleRisc.v" \
 "../../../../riscv2.gen/sources_1/bd/simpleRisc/hdl/simpleRisc_wrapper.v" \
 

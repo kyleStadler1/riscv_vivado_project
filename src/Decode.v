@@ -743,7 +743,7 @@ module Decode #(
                     rs1 <= 5'b00000;
                     rs2 <= 5'b00000;
                     rd <= rd_field;
-                    imm <= Jimm;//{{20{imm_20_field[11]}}, imm_20_field, 1'b0};
+                    imm <= Iimm;//{{20{imm_20_field[11]}}, imm_20_field, 1'b0};
                     aluOp <= ADD;
                     selA <= 1'b1;
                     selB <= 2'b10;
@@ -803,24 +803,24 @@ module Decode #(
 
                 // ECALL/EBREAK (I-Type)
                 SYSTEM: begin
-                    case (imm_12_field)
-                        12'b000000000000: begin
-                            // ECALL
-                            aluToReg <= 1'b0;
-                            memOp <= MEM_DISABLE;
-                            branch <= 1'b0;
-                            jal <= 1'b0;
-                            jalr <= 1'b0;
-                        end
-                        12'b000000000001: begin
-                            // EBREAK
-                            aluToReg <= 1'b0;
-                            memOp <= MEM_DISABLE;
-                            branch <= 1'b0;
-                            jal <= 1'b0;
-                            jalr <= 1'b0;
-                        end
-                    endcase
+//                    case (imm_12_field)
+//                        12'b000000000000: begin
+//                            // ECALL
+//                            aluToReg <= 1'b0;
+//                            memOp <= MEM_DISABLE;
+//                            branch <= 1'b0;
+//                            jal <= 1'b0;
+//                            jalr <= 1'b0;
+//                        end
+//                        12'b000000000001: begin
+//                            // EBREAK
+//                            aluToReg <= 1'b0;
+//                            memOp <= MEM_DISABLE;
+//                            branch <= 1'b0;
+//                            jal <= 1'b0;
+//                            jalr <= 1'b0;
+//                        end
+//                    endcase
                 end
 
                 default: begin

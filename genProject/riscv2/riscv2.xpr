@@ -59,20 +59,20 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="107"/>
+    <Option Name="WTXSimLaunchSim" Val="110"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="55"/>
-    <Option Name="WTModelSimExportSim" Val="55"/>
-    <Option Name="WTQuestaExportSim" Val="55"/>
+    <Option Name="WTXSimExportSim" Val="58"/>
+    <Option Name="WTModelSimExportSim" Val="58"/>
+    <Option Name="WTQuestaExportSim" Val="58"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="55"/>
-    <Option Name="WTRivieraExportSim" Val="55"/>
-    <Option Name="WTActivehdlExportSim" Val="55"/>
+    <Option Name="WTVcsExportSim" Val="58"/>
+    <Option Name="WTRivieraExportSim" Val="58"/>
+    <Option Name="WTActivehdlExportSim" Val="58"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -175,12 +175,6 @@
         </FileInfo>
         <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_PC_0_0/simpleRisc_PC_0_0.xci">
           <Proxy FileSetName="simpleRisc_PC_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_Decode_0_0/simpleRisc_Decode_0_0.xci">
-          <Proxy FileSetName="simpleRisc_Decode_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_fakeMemIO_0_0/simpleRisc_fakeMemIO_0_0.xci">
-          <Proxy FileSetName="simpleRisc_fakeMemIO_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_resetManager_0_0/simpleRisc_resetManager_0_0.xci">
           <Proxy FileSetName="simpleRisc_resetManager_0_0"/>
@@ -547,18 +541,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="simpleRisc_fakeMemIO_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/simpleRisc_fakeMemIO_0_0" RelGenDir="$PGENDIR/simpleRisc_fakeMemIO_0_0">
-      <Config>
-        <Option Name="TopModule" Val="simpleRisc_fakeMemIO_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="simpleRisc_Decode_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/simpleRisc_Decode_0_0" RelGenDir="$PGENDIR/simpleRisc_Decode_0_0">
-      <Config>
-        <Option Name="TopModule" Val="simpleRisc_Decode_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -713,26 +695,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="simpleRisc_PC_0_0_synth_1" Type="Ft3:Synth" SrcSet="simpleRisc_PC_0_0" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_PC_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/simpleRisc_PC_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_PC_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_PC_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="simpleRisc_fakeMemIO_0_0_synth_1" Type="Ft3:Synth" SrcSet="simpleRisc_fakeMemIO_0_0" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_fakeMemIO_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/simpleRisc_fakeMemIO_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_fakeMemIO_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_fakeMemIO_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="simpleRisc_Decode_0_0_synth_1" Type="Ft3:Synth" SrcSet="simpleRisc_Decode_0_0" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_Decode_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/simpleRisc_Decode_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_Decode_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_Decode_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
         <Step Id="synth_design"/>
@@ -965,40 +927,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="simpleRisc_PC_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_PC_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="simpleRisc_PC_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_PC_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_PC_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="simpleRisc_fakeMemIO_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_fakeMemIO_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="simpleRisc_fakeMemIO_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_fakeMemIO_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_fakeMemIO_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="simpleRisc_Decode_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_Decode_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="simpleRisc_Decode_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_Decode_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_Decode_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>

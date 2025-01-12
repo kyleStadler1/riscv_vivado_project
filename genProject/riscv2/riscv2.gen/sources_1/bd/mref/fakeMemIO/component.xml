@@ -55,7 +55,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>07e50405</spirit:value>
+            <spirit:value>e1259b9a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -68,7 +68,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>07e50405</spirit:value>
+            <spirit:value>e1259b9a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -326,7 +326,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA7</spirit:name>
         <spirit:displayName>Data7</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA7" spirit:bitStringLength="32">0xFFC080E7</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA7" spirit:bitStringLength="32">0xFE1FF0EF</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA8</spirit:name>
@@ -521,7 +521,7 @@
     <spirit:parameter>
       <spirit:name>DATA7</spirit:name>
       <spirit:displayName>Data7</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA7" spirit:bitStringLength="32">0xFFC080E7</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA7" spirit:bitStringLength="32">0xFE1FF0EF</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA8</spirit:name>
@@ -663,7 +663,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-01-12T14:17:28Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-01-12T22:37:55Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.1</xilinx:xilinxVersion>
