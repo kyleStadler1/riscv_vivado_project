@@ -2,8 +2,8 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Thu Jan  9 07:21:41 2025
-//Host        : c41189cdeabc running 64-bit Ubuntu 22.04.5 LTS
+//Date        : Sun Jan 12 03:44:14 2025
+//Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target riscvTop.bd
 //Design      : riscvTop
 //Purpose     : IP block netlist
@@ -103,7 +103,6 @@ module riscvTop
         .aluToRegFile(ExecStage_0_aluToRegFile),
         .branch(Decode_0_branch),
         .clk(clk_1),
-        .hold(ModeFSM_0_MASTER_HOLD),
         .imm(Decode_0_imm),
         .jal(Decode_0_jal),
         .jalr(Decode_0_jalr),
@@ -115,17 +114,20 @@ module riscvTop
         .pc(Decode_0_pc),
         .pcSel(ExecStage_0_pcSel),
         .pcVect(ExecStage_0_pcVect),
+        .reset(1'b0),
         .rs1Val(RegFile_0_rd1),
         .rs2Val(RegFile_0_rd2),
         .selA(Decode_0_selA),
-        .selB(Decode_0_selB));
+        .selB(Decode_0_selB),
+        .stall(1'b0));
   riscvTop_FetchLatch_0_0 FetchLatch_0
        (.clk(clk_1),
-        .hold(ModeFSM_0_MASTER_HOLD),
         .instr(FetchLatch_0_instr),
         .instr_in(MemOutputCtrl_0_instr),
         .pc(FetchLatch_0_pc),
         .pc_in(MemoryMappedIO_0_addrOutA),
+        .reset(1'b0),
+        .stall(1'b0),
         .valid(MemoryMappedIO_0_readValidA));
   riscvTop_MemInputCtrl_0_0 MemInputCtrl_0
        (.aluIn(ExecStage_0_aluToMem),
@@ -162,6 +164,7 @@ module riscvTop
         .readValidA(MemoryMappedIO_0_readValidA),
         .readValidB(MemoryMappedIO_0_readValidB),
         .ready(MemoryMappedIO_0_ready),
+        .reset(1'b0),
         .weB(MemInputCtrl_0_wen));
   riscvTop_ModeFSM_0_0 ModeFSM_0
        (.FLUSH_HOLD(ModeFSM_0_FLUSH_HOLD),
@@ -191,6 +194,8 @@ module riscvTop
         .ra2(Decode_0_rs2),
         .rd1(RegFile_0_rd1),
         .rd2(RegFile_0_rd2),
+        .reset(1'b0),
+        .stall(1'b0),
         .toEdge(RegFile_0_toEdge),
         .wa(Decode_0_rd),
         .wd(RegFileWriteArbiter_0_regFileWriteData),

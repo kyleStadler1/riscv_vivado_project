@@ -61,15 +61,14 @@ module simpleRisc_writeBackLatch_0_0 (
   aluIn,
   memIn,
   aluToRegIn,
-  memOp,
-  readValid,
+  memValidIn,
   rdIn,
   dataToReg,
   regWrite,
   rd
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN simpleRisc_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 input wire stall;
@@ -79,8 +78,7 @@ input wire reset;
 input wire [31 : 0] aluIn;
 input wire [31 : 0] memIn;
 input wire aluToRegIn;
-input wire [1 : 0] memOp;
-input wire readValid;
+input wire memValidIn;
 input wire [4 : 0] rdIn;
 output wire [31 : 0] dataToReg;
 output wire regWrite;
@@ -93,8 +91,7 @@ output wire [4 : 0] rd;
     .aluIn(aluIn),
     .memIn(memIn),
     .aluToRegIn(aluToRegIn),
-    .memOp(memOp),
-    .readValid(readValid),
+    .memValidIn(memValidIn),
     .rdIn(rdIn),
     .dataToReg(dataToReg),
     .regWrite(regWrite),

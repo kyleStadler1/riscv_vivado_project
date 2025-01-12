@@ -15,13 +15,12 @@
       "Not_0": "",
       "aluMuxComb_0": "",
       "Decode_0": "",
-      "bypassMux_0": "",
       "opLatch_0": "",
-      "execLatch_0": "",
-      "writeBackLatch_0": "",
       "RegFile_0": "",
       "alu_0": "",
-      "ROMRAM_0": ""
+      "writeBackLatch_0": "",
+      "fakeMemIO_0": "",
+      "execLatch_0": ""
     },
     "ports": {
       "reset": {
@@ -303,79 +302,6 @@
           }
         }
       },
-      "bypassMux_0": {
-        "vlnv": "xilinx.com:module_ref:bypassMux:1.0",
-        "xci_name": "simpleRisc_bypassMux_0_0",
-        "xci_path": "ip/simpleRisc_bypassMux_0_0/simpleRisc_bypassMux_0_0.xci",
-        "inst_hier_path": "bypassMux_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "bypassMux",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "ra1": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "ra2": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "execAluVal": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "execMemVal": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "execMemOp": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "execRd": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "wbVal": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "wbRd": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "r1RegVal": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "r2RegVal": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "r1Val": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "r2Val": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "opLatch_0": {
         "vlnv": "xilinx.com:module_ref:opLatch:1.0",
         "xci_name": "simpleRisc_opLatch_0_0",
@@ -493,177 +419,6 @@
           },
           "aluToReg": {
             "direction": "O"
-          }
-        }
-      },
-      "execLatch_0": {
-        "vlnv": "xilinx.com:module_ref:execLatch:1.0",
-        "xci_name": "simpleRisc_execLatch_0_0",
-        "xci_path": "ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0.xci",
-        "inst_hier_path": "execLatch_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "execLatch",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "simpleRisc_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "stall": {
-            "direction": "I"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "aluIn": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "aluToRegIn": {
-            "direction": "I"
-          },
-          "memSizeIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memOpIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "rdIn": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "rs2ValIn": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "alu": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "aluToReg": {
-            "direction": "O"
-          },
-          "memSize": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "memOp": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "rd": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
-          },
-          "rs2Val": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
-      "writeBackLatch_0": {
-        "vlnv": "xilinx.com:module_ref:writeBackLatch:1.0",
-        "xci_name": "simpleRisc_writeBackLatch_0_0",
-        "xci_path": "ip/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0.xci",
-        "inst_hier_path": "writeBackLatch_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "writeBackLatch",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "simpleRisc_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "stall": {
-            "direction": "I"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "aluIn": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "memIn": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "aluToRegIn": {
-            "direction": "I"
-          },
-          "memOp": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "readValid": {
-            "direction": "I"
-          },
-          "rdIn": {
-            "direction": "I",
-            "left": "4",
-            "right": "0"
-          },
-          "dataToReg": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "regWrite": {
-            "direction": "O"
-          },
-          "rd": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
           }
         }
       },
@@ -786,39 +541,17 @@
           }
         }
       },
-      "ROMRAM_0": {
-        "vlnv": "xilinx.com:module_ref:ROMRAM:1.0",
-        "xci_name": "simpleRisc_ROMRAM_0_0",
-        "xci_path": "ip/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0.xci",
-        "inst_hier_path": "ROMRAM_0",
+      "writeBackLatch_0": {
+        "vlnv": "xilinx.com:module_ref:writeBackLatch:1.0",
+        "xci_name": "simpleRisc_writeBackLatch_0_0",
+        "xci_path": "ip/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0.xci",
+        "inst_hier_path": "writeBackLatch_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "ROMRAM",
+          "ref_name": "writeBackLatch",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "addrAOut": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "addrBOut": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "alu": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "busErr": {
-            "direction": "O"
-          },
           "clk": {
             "type": "clk",
             "direction": "I",
@@ -837,25 +570,86 @@
               }
             }
           },
-          "din": {
+          "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "aluIn": {
             "direction": "I",
             "left": "31",
             "right": "0"
           },
-          "doutA": {
+          "memIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "aluToRegIn": {
+            "direction": "I"
+          },
+          "memValidIn": {
+            "direction": "I"
+          },
+          "rdIn": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "dataToReg": {
             "direction": "O",
             "left": "31",
             "right": "0"
           },
-          "doutB": {
+          "regWrite": {
+            "direction": "O"
+          },
+          "rd": {
             "direction": "O",
-            "left": "31",
+            "left": "4",
             "right": "0"
+          }
+        }
+      },
+      "fakeMemIO_0": {
+        "vlnv": "xilinx.com:module_ref:fakeMemIO:1.0",
+        "xci_name": "simpleRisc_fakeMemIO_0_0",
+        "xci_path": "ip/simpleRisc_fakeMemIO_0_0/simpleRisc_fakeMemIO_0_0.xci",
+        "inst_hier_path": "fakeMemIO_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fakeMemIO",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "1000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "simpleRisc_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
           },
           "enA": {
             "direction": "I"
           },
-          "instrAddr": {
+          "pcIn": {
             "direction": "I",
             "left": "31",
             "right": "0"
@@ -865,19 +659,100 @@
             "left": "1",
             "right": "0"
           },
-          "memSize": {
+          "addrB": {
             "direction": "I",
-            "left": "1",
+            "left": "31",
             "right": "0"
           },
-          "readValidA": {
-            "direction": "O"
+          "dinB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
           },
-          "readValidB": {
+          "instr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "pc": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "doutB": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "bValid": {
             "direction": "O"
           },
           "ready": {
             "direction": "O"
+          }
+        }
+      },
+      "execLatch_0": {
+        "vlnv": "xilinx.com:module_ref:execLatch:1.0",
+        "xci_name": "simpleRisc_execLatch_0_0",
+        "xci_path": "ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0.xci",
+        "inst_hier_path": "execLatch_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "execLatch",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "1000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "simpleRisc_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "aluIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "aluToRegIn": {
+            "direction": "I"
+          },
+          "rdIn": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "alu": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "aluToReg": {
+            "direction": "O"
+          },
+          "rd": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
           }
         }
       }
@@ -955,76 +830,34 @@
           "PC_0/stall",
           "Decode_0/stall",
           "opLatch_0/stall",
-          "execLatch_0/stall",
+          "RegFile_0/stall",
           "writeBackLatch_0/stall",
-          "RegFile_0/stall"
+          "execLatch_0/stall"
         ]
       },
       "PC_0_ena": {
         "ports": [
           "PC_0/ena",
-          "ROMRAM_0/enA"
+          "fakeMemIO_0/enA"
         ]
       },
       "PC_0_pc": {
         "ports": [
           "PC_0/pc",
-          "ROMRAM_0/instrAddr"
-        ]
-      },
-      "ROMRAM_0_addrAOut": {
-        "ports": [
-          "ROMRAM_0/addrAOut",
-          "Decode_0/pc_in"
-        ]
-      },
-      "ROMRAM_0_doutA": {
-        "ports": [
-          "ROMRAM_0/doutA",
-          "Decode_0/instruction"
-        ]
-      },
-      "ROMRAM_0_doutB": {
-        "ports": [
-          "ROMRAM_0/doutB",
-          "bypassMux_0/execMemVal",
-          "writeBackLatch_0/memIn"
-        ]
-      },
-      "ROMRAM_0_readValidB": {
-        "ports": [
-          "ROMRAM_0/readValidB",
-          "writeBackLatch_0/readValid"
-        ]
-      },
-      "ROMRAM_0_ready": {
-        "ports": [
-          "ROMRAM_0/ready",
-          "Not_0/in"
-        ]
-      },
-      "RegFile_0_ra1Out": {
-        "ports": [
-          "RegFile_0/ra1Out",
-          "bypassMux_0/ra1"
-        ]
-      },
-      "RegFile_0_ra2Out": {
-        "ports": [
-          "RegFile_0/ra2Out",
-          "bypassMux_0/ra2"
+          "fakeMemIO_0/pcIn"
         ]
       },
       "RegFile_0_rd1": {
         "ports": [
           "RegFile_0/rd1",
-          "bypassMux_0/r1RegVal"
+          "aluMuxComb_0/rs1Val"
         ]
       },
       "RegFile_0_rd2": {
         "ports": [
           "RegFile_0/rd2",
-          "bypassMux_0/r2RegVal"
+          "aluMuxComb_0/rs2Val",
+          "fakeMemIO_0/dinB"
         ]
       },
       "RegFile_0_toEdge": {
@@ -1048,20 +881,8 @@
       "alu_0_aluOut": {
         "ports": [
           "alu_0/aluOut",
+          "fakeMemIO_0/addrB",
           "execLatch_0/aluIn"
-        ]
-      },
-      "bypassMux_0_r1Val": {
-        "ports": [
-          "bypassMux_0/r1Val",
-          "aluMuxComb_0/rs1Val"
-        ]
-      },
-      "bypassMux_0_r2Val": {
-        "ports": [
-          "bypassMux_0/r2Val",
-          "aluMuxComb_0/rs2Val",
-          "execLatch_0/rs2ValIn"
         ]
       },
       "clk_1": {
@@ -1070,18 +891,16 @@
           "PC_0/clk",
           "Decode_0/clk",
           "opLatch_0/clk",
-          "execLatch_0/clk",
-          "writeBackLatch_0/clk",
           "RegFile_0/clk",
-          "ROMRAM_0/clk"
+          "writeBackLatch_0/clk",
+          "fakeMemIO_0/clk",
+          "execLatch_0/clk"
         ]
       },
       "execLatch_0_alu": {
         "ports": [
           "execLatch_0/alu",
-          "bypassMux_0/execAluVal",
-          "writeBackLatch_0/aluIn",
-          "ROMRAM_0/alu"
+          "writeBackLatch_0/aluIn"
         ]
       },
       "execLatch_0_aluToReg": {
@@ -1090,31 +909,40 @@
           "writeBackLatch_0/aluToRegIn"
         ]
       },
-      "execLatch_0_memOp": {
-        "ports": [
-          "execLatch_0/memOp",
-          "bypassMux_0/execMemOp",
-          "writeBackLatch_0/memOp",
-          "ROMRAM_0/memOp"
-        ]
-      },
-      "execLatch_0_memSize": {
-        "ports": [
-          "execLatch_0/memSize",
-          "ROMRAM_0/memSize"
-        ]
-      },
       "execLatch_0_rd": {
         "ports": [
           "execLatch_0/rd",
-          "bypassMux_0/execRd",
           "writeBackLatch_0/rdIn"
         ]
       },
-      "execLatch_0_rs2Val": {
+      "fakeMemIO_0_bValid": {
         "ports": [
-          "execLatch_0/rs2Val",
-          "ROMRAM_0/din"
+          "fakeMemIO_0/bValid",
+          "writeBackLatch_0/memValidIn"
+        ]
+      },
+      "fakeMemIO_0_doutB": {
+        "ports": [
+          "fakeMemIO_0/doutB",
+          "writeBackLatch_0/memIn"
+        ]
+      },
+      "fakeMemIO_0_instr": {
+        "ports": [
+          "fakeMemIO_0/instr",
+          "Decode_0/instruction"
+        ]
+      },
+      "fakeMemIO_0_pc": {
+        "ports": [
+          "fakeMemIO_0/pc",
+          "Decode_0/pc_in"
+        ]
+      },
+      "fakeMemIO_0_ready": {
+        "ports": [
+          "fakeMemIO_0/ready",
+          "Not_0/in"
         ]
       },
       "opLatch_0_aluOp": {
@@ -1138,13 +966,7 @@
       "opLatch_0_memOp": {
         "ports": [
           "opLatch_0/memOp",
-          "execLatch_0/memOpIn"
-        ]
-      },
-      "opLatch_0_memSize": {
-        "ports": [
-          "opLatch_0/memSize",
-          "execLatch_0/memSizeIn"
+          "fakeMemIO_0/memOp"
         ]
       },
       "opLatch_0_pc": {
@@ -1177,17 +999,16 @@
           "PC_0/reset",
           "Decode_0/reset",
           "opLatch_0/reset",
-          "execLatch_0/reset",
-          "writeBackLatch_0/reset",
           "RegFile_0/reset",
-          "ROMRAM_0/reset"
+          "writeBackLatch_0/reset",
+          "fakeMemIO_0/reset",
+          "execLatch_0/reset"
         ]
       },
       "writeBackLatch_0_dataToReg": {
         "ports": [
           "writeBackLatch_0/dataToReg",
           "dataToReg",
-          "bypassMux_0/wbVal",
           "RegFile_0/wd"
         ]
       },
@@ -1195,7 +1016,6 @@
         "ports": [
           "writeBackLatch_0/rd",
           "rd",
-          "bypassMux_0/wbRd",
           "RegFile_0/wa"
         ]
       },

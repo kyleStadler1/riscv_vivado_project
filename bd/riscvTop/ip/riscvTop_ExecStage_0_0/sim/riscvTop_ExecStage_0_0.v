@@ -56,7 +56,8 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module riscvTop_ExecStage_0_0 (
   clk,
-  hold,
+  stall,
+  reset,
   rs1Val,
   rs2Val,
   imm,
@@ -78,10 +79,13 @@ module riscvTop_ExecStage_0_0 (
   memDin
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscvTop_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscvTop_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-input wire hold;
+input wire stall;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
 input wire [31 : 0] rs1Val;
 input wire [31 : 0] rs2Val;
 input wire [31 : 0] imm;
@@ -104,7 +108,8 @@ output wire [31 : 0] memDin;
 
   ExecStage inst (
     .clk(clk),
-    .hold(hold),
+    .stall(stall),
+    .reset(reset),
     .rs1Val(rs1Val),
     .rs2Val(rs2Val),
     .imm(imm),

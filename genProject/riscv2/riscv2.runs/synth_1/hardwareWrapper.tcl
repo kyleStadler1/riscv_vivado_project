@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
 set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
@@ -81,7 +80,6 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/user/project/riscv2/genProject/riscv2/riscv2.cache/wt [current_project]
 set_property parent.project_path /home/user/project/riscv2/genProject/riscv2/riscv2.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_repo_paths /home/user/project/riscv2/ip_repo [current_project]
@@ -95,7 +93,6 @@ read_verilog -library xil_defaultlib {
   /home/user/project/riscv2/src/hardwareWrapper.v
 }
 add_files /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/sources_1/bd/simpleRisc/simpleRisc.bd
-set_property used_in_implementation false [get_files -all /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/simpleRisc_ooc.xdc]
 
 read_ip -quiet /home/user/project/riscv2/ips/dualPortRAM32kx32/dualPortRAM32kx32.xci

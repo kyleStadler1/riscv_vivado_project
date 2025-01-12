@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Jan 10 14:27:17 2025
-# Process ID: 44907
+# Start of session at: Sun Jan 12 06:29:13 2025
+# Process ID: 74777
 # Current directory: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1
 # Command line: vivado -log hardwareWrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hardwareWrapper.tcl
 # Log file: /home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/hardwareWrapper.vds
@@ -15,7 +15,7 @@ source hardwareWrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/user/project/riscv2/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/user/Xilinx/Vivado/2023.1/data/ip'.
-add_files: Time (s): cpu = 00:00:16 ; elapsed = 00:00:07 . Memory (MB): peak = 2090.629 ; gain = 184.660 ; free physical = 8802 ; free virtual = 13005
+add_files: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 2021.566 ; gain = 128.383 ; free physical = 9704 ; free virtual = 14707
 Command: read_checkpoint -auto_incremental -incremental /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/utils_1/imports/synth_1/hardwareWrapper.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/utils_1/imports/synth_1/hardwareWrapper.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -28,44 +28,43 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 45053
+INFO: [Synth 8-7075] Helper process launched with PID 74934
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2722.047 ; gain = 375.742 ; free physical = 8059 ; free virtual = 12052
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2710.121 ; gain = 377.383 ; free physical = 8641 ; free virtual = 13617
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'hardwareWrapper' [/home/user/project/riscv2/src/hardwareWrapper.v:23]
 INFO: [Synth 8-6157] synthesizing module 'simpleRisc_wrapper' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/hdl/simpleRisc_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'simpleRisc' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:13]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_Decode_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_Decode_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_Decode_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_Decode_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'branch' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:84]
-WARNING: [Synth 8-7071] port 'jal' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:84]
-WARNING: [Synth 8-7071] port 'jalr' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:84]
-WARNING: [Synth 8-7071] port 'regWriteCollision' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:84]
-WARNING: [Synth 8-7023] instance 'Decode_0' of module 'simpleRisc_Decode_0_0' has 20 connections declared, but only 16 given [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:84]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_Not_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_Not_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_Not_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_Not_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_PC_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_PC_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_PC_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_PC_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_ROMRAM_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_ROMRAM_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_ROMRAM_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_ROMRAM_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'addrBOut' of module 'simpleRisc_ROMRAM_0_0' is unconnected for instance 'ROMRAM_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:110]
-WARNING: [Synth 8-7071] port 'busErr' of module 'simpleRisc_ROMRAM_0_0' is unconnected for instance 'ROMRAM_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:110]
-WARNING: [Synth 8-7071] port 'readValidA' of module 'simpleRisc_ROMRAM_0_0' is unconnected for instance 'ROMRAM_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:110]
-WARNING: [Synth 8-7023] instance 'ROMRAM_0' of module 'simpleRisc_ROMRAM_0_0' has 16 connections declared, but only 13 given [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:110]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_RegFile_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_RegFile_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_RegFile_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_RegFile_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_aluMuxComb_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_aluMuxComb_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_aluMuxComb_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_aluMuxComb_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_alu_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_alu_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_alu_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_alu_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_bypassMux_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_bypassMux_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_bypassMux_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_bypassMux_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_execLatch_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_execLatch_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_execLatch_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_execLatch_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_opLatch_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_opLatch_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_opLatch_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_opLatch_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'simpleRisc_writeBackLatch_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_writeBackLatch_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_writeBackLatch_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-44907-e9a767cbc9ba/realtime/simpleRisc_writeBackLatch_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_Decode_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_Decode_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_Decode_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_Decode_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'branch' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:76]
+WARNING: [Synth 8-7071] port 'jal' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:76]
+WARNING: [Synth 8-7071] port 'jalr' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:76]
+WARNING: [Synth 8-7071] port 'regWriteCollision' of module 'simpleRisc_Decode_0_0' is unconnected for instance 'Decode_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:76]
+WARNING: [Synth 8-7023] instance 'Decode_0' of module 'simpleRisc_Decode_0_0' has 20 connections declared, but only 16 given [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:76]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_Not_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_Not_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_Not_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_Not_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_PC_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_PC_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_PC_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_PC_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_RegFile_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_RegFile_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_RegFile_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_RegFile_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ra1Out' of module 'simpleRisc_RegFile_0_0' is unconnected for instance 'RegFile_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:102]
+WARNING: [Synth 8-7071] port 'ra2Out' of module 'simpleRisc_RegFile_0_0' is unconnected for instance 'RegFile_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:102]
+WARNING: [Synth 8-7023] instance 'RegFile_0' of module 'simpleRisc_RegFile_0_0' has 13 connections declared, but only 11 given [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:102]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_aluMuxComb_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_aluMuxComb_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_aluMuxComb_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_aluMuxComb_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_alu_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_alu_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_alu_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_alu_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_execLatch_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_execLatch_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_execLatch_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_execLatch_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_fakeMemIO_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_fakeMemIO_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_fakeMemIO_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_fakeMemIO_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_opLatch_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_opLatch_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_opLatch_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_opLatch_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'memSize' of module 'simpleRisc_opLatch_0_0' is unconnected for instance 'opLatch_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:151]
+WARNING: [Synth 8-7023] instance 'opLatch_0' of module 'simpleRisc_opLatch_0_0' has 21 connections declared, but only 20 given [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:151]
+INFO: [Synth 8-6157] synthesizing module 'simpleRisc_writeBackLatch_0_0' [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_writeBackLatch_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_writeBackLatch_0_0' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/.Xil/Vivado-74777-e9a767cbc9ba/realtime/simpleRisc_writeBackLatch_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'simpleRisc' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/synth/simpleRisc.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'simpleRisc_wrapper' (0#1) [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/hdl/simpleRisc_wrapper.v:13]
 WARNING: [Synth 8-7071] port 'dataToReg' of module 'simpleRisc_wrapper' is unconnected for instance 'cpu' [/home/user/project/riscv2/src/hardwareWrapper.v:44]
@@ -77,18 +76,18 @@ WARNING: [Synth 8-3848] Net err in module/entity hardwareWrapper does not have d
 WARNING: [Synth 8-3917] design hardwareWrapper has port led[8] driven by constant 0
 WARNING: [Synth 8-7129] Port led[9] in module hardwareWrapper is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2802.062 ; gain = 455.758 ; free physical = 7590 ; free virtual = 11792
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2789.137 ; gain = 456.398 ; free physical = 8493 ; free virtual = 13517
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2820.375 ; gain = 474.070 ; free physical = 7577 ; free virtual = 11779
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2807.461 ; gain = 474.723 ; free physical = 8481 ; free virtual = 13505
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2820.375 ; gain = 474.070 ; free physical = 7577 ; free virtual = 11779
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2807.461 ; gain = 474.723 ; free physical = 8481 ; free virtual = 13505
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2821.008 ; gain = 0.055 ; free physical = 7576 ; free virtual = 11779
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2808.094 ; gain = 0.055 ; free physical = 8476 ; free virtual = 13500
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -99,22 +98,20 @@ Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources
 Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_Not_0_0/simpleRisc_Not_0_0/simpleRisc_Not_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/Not_0'
 Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_aluMuxComb_0_0/simpleRisc_aluMuxComb_0_0/simpleRisc_aluMuxComb_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/aluMuxComb_0'
 Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_aluMuxComb_0_0/simpleRisc_aluMuxComb_0_0/simpleRisc_aluMuxComb_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/aluMuxComb_0'
-Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/ROMRAM_0'
-Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0/simpleRisc_ROMRAM_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/ROMRAM_0'
 Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_Decode_0_0/simpleRisc_Decode_0_0/simpleRisc_Decode_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/Decode_0'
 Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_Decode_0_0/simpleRisc_Decode_0_0/simpleRisc_Decode_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/Decode_0'
-Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/simpleRisc_bypassMux_0_0/simpleRisc_bypassMux_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/bypassMux_0'
-Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_bypassMux_0_0/simpleRisc_bypassMux_0_0/simpleRisc_bypassMux_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/bypassMux_0'
 Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_opLatch_0_0/simpleRisc_opLatch_0_0/simpleRisc_opLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/opLatch_0'
 Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_opLatch_0_0/simpleRisc_opLatch_0_0/simpleRisc_opLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/opLatch_0'
-Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/execLatch_0'
-Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/execLatch_0'
-Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/writeBackLatch_0'
-Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/writeBackLatch_0'
 Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_RegFile_0_0/simpleRisc_RegFile_0_0/simpleRisc_RegFile_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/RegFile_0'
 Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_RegFile_0_0/simpleRisc_RegFile_0_0/simpleRisc_RegFile_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/RegFile_0'
 Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_alu_0_0/simpleRisc_alu_0_0/simpleRisc_alu_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/alu_0'
 Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_alu_0_0/simpleRisc_alu_0_0/simpleRisc_alu_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/alu_0'
+Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/writeBackLatch_0'
+Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0/simpleRisc_writeBackLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/writeBackLatch_0'
+Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_fakeMemIO_0_0/simpleRisc_fakeMemIO_0_0/simpleRisc_fakeMemIO_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/fakeMemIO_0'
+Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_fakeMemIO_0_0/simpleRisc_fakeMemIO_0_0/simpleRisc_fakeMemIO_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/fakeMemIO_0'
+Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/execLatch_0'
+Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0_in_context.xdc] for cell 'cpu/simpleRisc_i/execLatch_0'
 Parsing XDC File [/home/user/project/riscv2/constraints/constraints.xdc]
 Finished Parsing XDC File [/home/user/project/riscv2/constraints/constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/project/riscv2/constraints/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hardwareWrapper_propImpl.xdc].
@@ -123,22 +120,22 @@ Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_
 Finished Parsing XDC File [/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2929.746 ; gain = 0.000 ; free physical = 7494 ; free virtual = 11703
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2912.816 ; gain = 0.000 ; free physical = 8454 ; free virtual = 13483
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2929.859 ; gain = 0.098 ; free physical = 7494 ; free virtual = 11703
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2912.922 ; gain = 0.090 ; free physical = 8453 ; free virtual = 13483
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7493 ; free virtual = 11702
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8441 ; free virtual = 13471
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7493 ; free virtual = 11702
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8441 ; free virtual = 13471
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -147,19 +144,18 @@ Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i. (constraint fil
 Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/PC_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/Not_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/aluMuxComb_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/ROMRAM_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/Decode_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/bypassMux_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/opLatch_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/execLatch_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/writeBackLatch_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/RegFile_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/alu_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/writeBackLatch_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/fakeMemIO_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for cpu/simpleRisc_i/execLatch_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7493 ; free virtual = 11702
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8441 ; free virtual = 13471
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7491 ; free virtual = 11700
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8438 ; free virtual = 13469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -183,25 +179,25 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-3917] design hardwareWrapper has port led[8] driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7486 ; free virtual = 11695
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8429 ; free virtual = 13461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7475 ; free virtual = 11684
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8414 ; free virtual = 13446
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7475 ; free virtual = 11684
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8414 ; free virtual = 13446
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7475 ; free virtual = 11684
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8414 ; free virtual = 13446
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -219,37 +215,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -262,14 +258,13 @@ Report BlackBoxes:
 |1     |simpleRisc_Decode_0_0         |         1|
 |2     |simpleRisc_Not_0_0            |         1|
 |3     |simpleRisc_PC_0_0             |         1|
-|4     |simpleRisc_ROMRAM_0_0         |         1|
-|5     |simpleRisc_RegFile_0_0        |         1|
-|6     |simpleRisc_aluMuxComb_0_0     |         1|
-|7     |simpleRisc_alu_0_0            |         1|
-|8     |simpleRisc_bypassMux_0_0      |         1|
-|9     |simpleRisc_execLatch_0_0      |         1|
-|10    |simpleRisc_opLatch_0_0        |         1|
-|11    |simpleRisc_writeBackLatch_0_0 |         1|
+|4     |simpleRisc_RegFile_0_0        |         1|
+|5     |simpleRisc_aluMuxComb_0_0     |         1|
+|6     |simpleRisc_alu_0_0            |         1|
+|7     |simpleRisc_execLatch_0_0      |         1|
+|8     |simpleRisc_fakeMemIO_0_0      |         1|
+|9     |simpleRisc_opLatch_0_0        |         1|
+|10    |simpleRisc_writeBackLatch_0_0 |         1|
 +------+------------------------------+----------+
 
 Report Cell Usage: 
@@ -279,39 +274,38 @@ Report Cell Usage:
 |1     |simpleRisc_Decode_0         |     1|
 |2     |simpleRisc_Not_0            |     1|
 |3     |simpleRisc_PC_0             |     1|
-|4     |simpleRisc_ROMRAM_0         |     1|
-|5     |simpleRisc_RegFile_0        |     1|
-|6     |simpleRisc_aluMuxComb_0     |     1|
-|7     |simpleRisc_alu_0            |     1|
-|8     |simpleRisc_bypassMux_0      |     1|
-|9     |simpleRisc_execLatch_0      |     1|
-|10    |simpleRisc_opLatch_0        |     1|
-|11    |simpleRisc_writeBackLatch_0 |     1|
-|12    |LUT4                        |     8|
-|13    |IBUF                        |     2|
-|14    |OBUF                        |    10|
+|4     |simpleRisc_RegFile_0        |     1|
+|5     |simpleRisc_aluMuxComb_0     |     1|
+|6     |simpleRisc_alu_0            |     1|
+|7     |simpleRisc_execLatch_0      |     1|
+|8     |simpleRisc_fakeMemIO_0      |     1|
+|9     |simpleRisc_opLatch_0        |     1|
+|10    |simpleRisc_writeBackLatch_0 |     1|
+|11    |LUT4                        |     8|
+|12    |IBUF                        |     2|
+|13    |OBUF                        |    10|
 +------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2930.512 ; gain = 474.070 ; free physical = 7473 ; free virtual = 11683
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2930.512 ; gain = 584.207 ; free physical = 7473 ; free virtual = 11683
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2913.043 ; gain = 474.723 ; free physical = 8391 ; free virtual = 13425
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2913.043 ; gain = 580.305 ; free physical = 8391 ; free virtual = 13425
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2930.512 ; gain = 0.000 ; free physical = 7775 ; free virtual = 11988
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2913.043 ; gain = 0.000 ; free physical = 8670 ; free virtual = 13707
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2930.512 ; gain = 0.000 ; free physical = 7782 ; free virtual = 11995
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2913.043 ; gain = 0.000 ; free physical = 8666 ; free virtual = 13704
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: b97fb874
+Synth Design complete | Checksum: dcaf264
 INFO: [Common 17-83] Releasing license: Synthesis
-50 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+48 Infos, 19 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 2930.512 ; gain = 839.883 ; free physical = 7782 ; free virtual = 11995
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2392.642; main = 1834.652; forked = 557.989
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5212.152; main = 2915.062; forked = 2297.090
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:21 . Memory (MB): peak = 2913.043 ; gain = 891.477 ; free physical = 8666 ; free virtual = 13704
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2321.103; main = 1767.239; forked = 553.863
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5152.949; main = 2901.309; forked = 2251.641
 INFO: [Common 17-1381] The checkpoint '/home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/hardwareWrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file hardwareWrapper_utilization_synth.rpt -pb hardwareWrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan 10 14:27:54 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 12 06:29:50 2025...

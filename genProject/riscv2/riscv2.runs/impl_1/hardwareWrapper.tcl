@@ -137,14 +137,12 @@ OPTRACE "set parameters" START { }
   update_ip_catalog
   set_property ip_output_repo /home/user/project/riscv2/genProject/riscv2/riscv2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/user/project/riscv2/genProject/riscv2/riscv2.runs/synth_1/hardwareWrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
   add_files /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/sources_1/bd/simpleRisc/simpleRisc.bd
-  read_ip -quiet /home/user/project/riscv2/ips/dualPortRAM32kx32/dualPortRAM32kx32.xci
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/user/project/riscv2/constraints/constraints.xdc

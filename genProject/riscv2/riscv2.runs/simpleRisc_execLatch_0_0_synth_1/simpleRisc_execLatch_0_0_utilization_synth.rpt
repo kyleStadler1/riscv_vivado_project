@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Fri Jan 10 14:01:58 2025
+| Date         : Sun Jan 12 06:28:47 2025
 | Host         : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_utilization -file simpleRisc_execLatch_0_0_utilization_synth.rpt -pb simpleRisc_execLatch_0_0_utilization_synth.pb
 | Design       : simpleRisc_execLatch_0_0
@@ -34,8 +34,8 @@ Table of Contents
 | Slice LUTs*             |    1 |     0 |          0 |     14400 | <0.01 |
 |   LUT as Logic          |    1 |     0 |          0 |     14400 | <0.01 |
 |   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
-| Slice Registers         |   74 |     0 |          0 |     28800 |  0.26 |
-|   Register as Flip Flop |   74 |     0 |          0 |     28800 |  0.26 |
+| Slice Registers         |   38 |     0 |          0 |     28800 |  0.13 |
+|   Register as Flip Flop |   38 |     0 |          0 |     28800 |  0.13 |
 |   Register as Latch     |    0 |     0 |          0 |     28800 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
@@ -59,7 +59,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 74    |          Yes |       Reset |            - |
+| 38    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,7 +148,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   74 |        Flop & Latch |
+| FDRE     |   38 |        Flop & Latch |
 | LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 

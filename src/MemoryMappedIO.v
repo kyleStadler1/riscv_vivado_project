@@ -28,7 +28,7 @@ parameter ROM_UPPER_ADDR = 32'h7fff_ffff;
 parameter RAM_UPPER_ADDR = 32'h8001_ffff;
 
 wire AisROM = (addrA <= ROM_UPPER_ADDR);
-wire BisROM = memOpIn != 2'b00 ? (addrB <= ROM_UPPER_ADDR) : 1'b0;
+wire BisROM = 1'b1;//memOpIn != 2'b00 ? (addrB <= ROM_UPPER_ADDR) : 1'b0;
 
 wire RomReady, RomReadValidA, RomReadValidB;
 wire RamReady, RamReadValidA, RamReadValidB;

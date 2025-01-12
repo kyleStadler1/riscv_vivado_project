@@ -27,8 +27,7 @@ module writeBackLatch(
     input [31:0] aluIn,
     input [31:0] memIn,
     input aluToRegIn,
-    input [1:0] memOp,
-    input readValid,
+    input memValidIn,
     input [4:0] rdIn,
     output wire [31:0] dataToReg,
     output wire regWrite,
@@ -44,30 +43,25 @@ module writeBackLatch(
         if (reset) begin
             mem <= 32'hx;
             alu <= 32'hx;
-            //regWrite <= 1'b0;
             rd <= 5'b00000;
             memValid <= 1'b0;
             aluValid <= 1'b0;
         end
         else if (stall) begin
-            mem <= memIn;
+            mem <= mem;
             alu <= alu;
-            //regWrite <= regWrite;
             rd <= rd;
-            memValid <= readValid;
+            memValid <= memValid;
             aluValid <= aluValid;
-            //sel <= sel;
         end
         else begin
             mem <= memIn;
             alu <= aluIn;
-            //regWrite <= readValidIn | aluToRegIn;
             rd <= rdIn;
-            memValid <= readValid;//(memOp == 2'b01 | memOp == 2'b10);
+            memValid <= memValidIn;//(memOp == 2'b01 | memOp == 2'b10);
             aluValid <= aluToRegIn;
-            //sel <= readValidIn;
         end
     end
-    assign dataToReg = readValid ? mem : alu;
-    assign regWrite = readValid | aluValid;
+    assign dataToReg = memValid ? mem : alu;
+    assign regWrite = memValid | aluValid;
 endmodule

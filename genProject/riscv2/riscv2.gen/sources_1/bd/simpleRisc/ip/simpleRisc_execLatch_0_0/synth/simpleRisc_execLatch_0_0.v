@@ -61,19 +61,13 @@ module simpleRisc_execLatch_0_0 (
   reset,
   aluIn,
   aluToRegIn,
-  memSizeIn,
-  memOpIn,
   rdIn,
-  rs2ValIn,
   alu,
   aluToReg,
-  memSize,
-  memOp,
-  rd,
-  rs2Val
+  rd
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN simpleRisc_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 input wire stall;
@@ -82,16 +76,10 @@ input wire stall;
 input wire reset;
 input wire [31 : 0] aluIn;
 input wire aluToRegIn;
-input wire [1 : 0] memSizeIn;
-input wire [1 : 0] memOpIn;
 input wire [4 : 0] rdIn;
-input wire [31 : 0] rs2ValIn;
 output wire [31 : 0] alu;
 output wire aluToReg;
-output wire [1 : 0] memSize;
-output wire [1 : 0] memOp;
 output wire [4 : 0] rd;
-output wire [31 : 0] rs2Val;
 
   execLatch inst (
     .clk(clk),
@@ -99,15 +87,9 @@ output wire [31 : 0] rs2Val;
     .reset(reset),
     .aluIn(aluIn),
     .aluToRegIn(aluToRegIn),
-    .memSizeIn(memSizeIn),
-    .memOpIn(memOpIn),
     .rdIn(rdIn),
-    .rs2ValIn(rs2ValIn),
     .alu(alu),
     .aluToReg(aluToReg),
-    .memSize(memSize),
-    .memOp(memOp),
-    .rd(rd),
-    .rs2Val(rs2Val)
+    .rd(rd)
   );
 endmodule

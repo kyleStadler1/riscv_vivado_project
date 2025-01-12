@@ -56,7 +56,8 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module riscvTop_FetchLatch_0_0 (
   clk,
-  hold,
+  stall,
+  reset,
   pc_in,
   instr_in,
   valid,
@@ -64,10 +65,13 @@ module riscvTop_FetchLatch_0_0 (
   instr
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscvTop_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscvTop_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
-input wire hold;
+input wire stall;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
 input wire [31 : 0] pc_in;
 input wire [31 : 0] instr_in;
 input wire valid;
@@ -76,7 +80,8 @@ output wire [31 : 0] instr;
 
   FetchLatch inst (
     .clk(clk),
-    .hold(hold),
+    .stall(stall),
+    .reset(reset),
     .pc_in(pc_in),
     .instr_in(instr_in),
     .valid(valid),

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Fri Jan 10 14:27:54 2025
+| Date         : Sun Jan 12 06:29:50 2025
 | Host         : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_utilization -file hardwareWrapper_utilization_synth.rpt -pb hardwareWrapper_utilization_synth.pb
 | Design       : hardwareWrapper
@@ -162,12 +162,11 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-------------------------------+------+
 | simpleRisc_writeBackLatch_0_0 |    1 |
 | simpleRisc_opLatch_0_0        |    1 |
+| simpleRisc_fakeMemIO_0_0      |    1 |
 | simpleRisc_execLatch_0_0      |    1 |
-| simpleRisc_bypassMux_0_0      |    1 |
 | simpleRisc_alu_0_0            |    1 |
 | simpleRisc_aluMuxComb_0_0     |    1 |
 | simpleRisc_RegFile_0_0        |    1 |
-| simpleRisc_ROMRAM_0_0         |    1 |
 | simpleRisc_PC_0_0             |    1 |
 | simpleRisc_Not_0_0            |    1 |
 | simpleRisc_Decode_0_0         |    1 |

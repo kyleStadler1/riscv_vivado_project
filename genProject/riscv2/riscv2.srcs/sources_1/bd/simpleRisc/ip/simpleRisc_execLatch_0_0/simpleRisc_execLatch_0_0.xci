@@ -41,16 +41,10 @@
         "reset": [ { "direction": "in" } ],
         "aluIn": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "aluToRegIn": [ { "direction": "in" } ],
-        "memSizeIn": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
-        "memOpIn": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
         "rdIn": [ { "direction": "in", "size_left": "4", "size_right": "0" } ],
-        "rs2ValIn": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "alu": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "aluToReg": [ { "direction": "out" } ],
-        "memSize": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
-        "memOp": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
-        "rd": [ { "direction": "out", "size_left": "4", "size_right": "0" } ],
-        "rs2Val": [ { "direction": "out", "size_left": "31", "size_right": "0" } ]
+        "rd": [ { "direction": "out", "size_left": "4", "size_right": "0" } ]
       },
       "interfaces": {
         "reset": {

@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Sat Jan 11 00:21:11 2025
+//Date        : Sun Jan 12 04:41:43 2025
 //Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target simpleRisc.bd
 //Design      : simpleRisc
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "simpleRisc,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=simpleRisc,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=11,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "simpleRisc.hwdef" *) 
+(* CORE_GENERATION_INFO = "simpleRisc,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=simpleRisc,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=10,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "simpleRisc.hwdef" *) 
 module simpleRisc
    (clk,
     dataToReg,
@@ -44,15 +44,11 @@ module simpleRisc
   wire [31:0]ROMRAM_0_doutB;
   wire ROMRAM_0_readValidB;
   wire ROMRAM_0_ready;
-  wire [4:0]RegFile_0_ra1Out;
-  wire [4:0]RegFile_0_ra2Out;
   wire [31:0]RegFile_0_rd1;
-  wire [31:0]RegFile_0_rd2;
   wire [31:0]RegFile_0_toEdge;
   wire [31:0]aluMuxComb_0_a;
   wire [31:0]aluMuxComb_0_b;
   wire [31:0]alu_0_aluOut;
-  wire [31:0]bypassMux_0_r1Val;
   wire [31:0]bypassMux_0_r2Val;
   wire clk_1;
   wire [31:0]execLatch_0_alu;
@@ -124,11 +120,9 @@ module simpleRisc
   simpleRisc_RegFile_0_0 RegFile_0
        (.clk(clk_1),
         .ra1(Decode_0_rs1),
-        .ra1Out(RegFile_0_ra1Out),
         .ra2(Decode_0_rs2),
-        .ra2Out(RegFile_0_ra2Out),
         .rd1(RegFile_0_rd1),
-        .rd2(RegFile_0_rd2),
+        .rd2(bypassMux_0_r2Val),
         .reset(reset_1),
         .stall(Not_0_out),
         .toEdge(RegFile_0_toEdge),
@@ -140,7 +134,7 @@ module simpleRisc
         .b(aluMuxComb_0_b),
         .imm(opLatch_0_imm),
         .pc(opLatch_0_pc),
-        .rs1Val(bypassMux_0_r1Val),
+        .rs1Val(RegFile_0_rd1),
         .rs2Val(bypassMux_0_r2Val),
         .selA(opLatch_0_selA),
         .selB(opLatch_0_selB));
@@ -149,19 +143,6 @@ module simpleRisc
         .aluOp(opLatch_0_aluOp),
         .aluOut(alu_0_aluOut),
         .b(aluMuxComb_0_b));
-  simpleRisc_bypassMux_0_0 bypassMux_0
-       (.execAluVal(execLatch_0_alu),
-        .execMemOp(execLatch_0_memOp),
-        .execMemVal(ROMRAM_0_doutB),
-        .execRd(execLatch_0_rd),
-        .r1RegVal(RegFile_0_rd1),
-        .r1Val(bypassMux_0_r1Val),
-        .r2RegVal(RegFile_0_rd2),
-        .r2Val(bypassMux_0_r2Val),
-        .ra1(RegFile_0_ra1Out),
-        .ra2(RegFile_0_ra2Out),
-        .wbRd(writeBackLatch_0_rd),
-        .wbVal(writeBackLatch_0_dataToReg));
   simpleRisc_execLatch_0_0 execLatch_0
        (.alu(execLatch_0_alu),
         .aluIn(alu_0_aluOut),
