@@ -89,12 +89,19 @@ module Decode #(
 //    wire [11:0] store_imm_field = {instruction[31:25], instruction[11:7]};
 //    wire [11:0] branch_imm_field = {instruction[31:25], instruction[11:7]};
 
-    wire [31:0] Iimm ={{21{instruction[31]}}, instruction[30:25], instruction[24:21], instruction[20]};
-    wire [31:0] Simm ={{21{instruction[31]}}, instruction[30:25], instruction[11:8], instruction[7]};
-    wire [31:0] Bimm ={{20{instruction[31]}}, instruction[7], instruction[30:25], instruction[11:8], 1'b0};
-    wire [31:0] Uimm = {instruction[31], instruction[30:20], instruction[19:12], 12'b0};
-    wire [31:0] Jimm = {12{instruction[31]}, instruction[19:12], instruction[20], instruction[30:25], instruction[24:21], 1'b0};
+    // wire [31:0] Iimm ={{21{instruction[31]}}, instruction[30:25], instruction[24:21], instruction[20]};
+    // wire [31:0] Simm ={{21{instruction[31]}}, instruction[30:25], instruction[11:8], instruction[7]};
+    // wire [31:0] Bimm ={{20{instruction[31]}}, instruction[7], instruction[30:25], instruction[11:8], 1'b0};
+    // wire [31:0] Uimm = {instruction[31], instruction[30:20], instruction[19:12], 12'b0};
+    // wire [31:0] Jimm = {12{instruction[31]}, instruction[19:12], instruction[20], instruction[30:25], instruction[24:21], 1'b0};
+    // wire [31:0] IShiftimm = {26'b0, Iimm[5:0]};
+    wire [31:0] Iimm      = {{21{instruction[31]}}, instruction[30:25], instruction[24:21], instruction[20]};
+    wire [31:0] Simm      = {{21{instruction[31]}}, instruction[30:25], instruction[11:8], instruction[7]};
+    wire [31:0] Bimm      = {{20{instruction[31]}}, instruction[7], instruction[30:25], instruction[11:8], 1'b0};
+    wire [31:0] Uimm      = {instruction[31], instruction[30:20], instruction[19:12], 12'b0};
+    wire [31:0] Jimm      = {{12{instruction[31]}}, instruction[19:12], instruction[20], instruction[30:25], instruction[24:21], 1'b0};
     wire [31:0] IShiftimm = {26'b0, Iimm[5:0]};
+
 
     always @(posedge clk) begin
         if (reset | resetFlush) begin
