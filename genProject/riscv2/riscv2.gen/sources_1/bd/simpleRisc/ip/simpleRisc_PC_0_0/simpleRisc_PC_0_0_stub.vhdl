@@ -2,8 +2,8 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Fri Jan 10 14:05:40 2025
--- Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
+-- Date        : Sun Jan 12 12:55:15 2025
+-- Host        : 45b790a05d91 running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_PC_0_0/simpleRisc_PC_0_0_stub.vhdl
 -- Design      : simpleRisc_PC_0_0
@@ -18,6 +18,8 @@ entity simpleRisc_PC_0_0 is
     clk : in STD_LOGIC;
     stall : in STD_LOGIC;
     reset : in STD_LOGIC;
+    jumpEn : in STD_LOGIC;
+    jumpVect : in STD_LOGIC_VECTOR ( 31 downto 0 );
     pc : out STD_LOGIC_VECTOR ( 31 downto 0 );
     ena : out STD_LOGIC
   );
@@ -28,7 +30,7 @@ architecture stub of simpleRisc_PC_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,stall,reset,pc[31:0],ena";
+attribute black_box_pad_pin of stub : architecture is "clk,stall,reset,jumpEn,jumpVect[31:0],pc[31:0],ena";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "PC,Vivado 2023.1";
 begin

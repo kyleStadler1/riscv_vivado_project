@@ -24,6 +24,8 @@ module PC(
     input clk,
     input stall,
     input reset,
+    input jumpEn,
+    input [31:0] jumpVect,
     output reg [31:0] pc,
     output ena
     );
@@ -35,9 +37,10 @@ module PC(
             pc <= pc;
         end 
         else begin
-            pc <= pc+4;
+            pc <= jumpEn ? jumpVect : pc + 32'd4;
         end
     end
+    assign ena = 1'b1;
     
 endmodule
 

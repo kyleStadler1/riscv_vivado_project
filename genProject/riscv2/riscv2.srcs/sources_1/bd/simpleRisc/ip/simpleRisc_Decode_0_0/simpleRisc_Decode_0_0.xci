@@ -125,6 +125,7 @@
         "clk": [ { "direction": "in" } ],
         "stall": [ { "direction": "in" } ],
         "reset": [ { "direction": "in" } ],
+        "resetFlush": [ { "direction": "in" } ],
         "instruction": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "pc_in": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
         "rs1": [ { "direction": "out", "size_left": "4", "size_right": "0" } ],
@@ -140,7 +141,6 @@
         "branch": [ { "direction": "out" } ],
         "jal": [ { "direction": "out" } ],
         "jalr": [ { "direction": "out" } ],
-        "regWriteCollision": [ { "direction": "out" } ],
         "pc": [ { "direction": "out", "size_left": "31", "size_right": "0" } ]
       },
       "interfaces": {

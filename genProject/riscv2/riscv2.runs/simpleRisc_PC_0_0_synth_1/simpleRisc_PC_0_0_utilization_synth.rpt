@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Fri Jan 10 14:05:40 2025
-| Host         : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
+| Date         : Sun Jan 12 12:55:15 2025
+| Host         : 45b790a05d91 running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_utilization -file simpleRisc_PC_0_0_utilization_synth.rpt -pb simpleRisc_PC_0_0_utilization_synth.pb
 | Design       : simpleRisc_PC_0_0
 | Device       : xc7z007sclg400-1
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |    2 |     0 |          0 |     14400 |  0.01 |
-|   LUT as Logic          |    2 |     0 |          0 |     14400 |  0.01 |
+| Slice LUTs*             |   33 |     0 |          0 |     14400 |  0.23 |
+|   LUT as Logic          |   33 |     0 |          0 |     14400 |  0.23 |
 |   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
-| Slice Registers         |   30 |     0 |          0 |     28800 |  0.10 |
-|   Register as Flip Flop |   30 |     0 |          0 |     28800 |  0.10 |
+| Slice Registers         |   32 |     0 |          0 |     28800 |  0.11 |
+|   Register as Flip Flop |   32 |     0 |          0 |     28800 |  0.11 |
 |   Register as Latch     |    0 |     0 |          0 |     28800 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
@@ -59,7 +59,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 30    |          Yes |       Reset |            - |
+| 32    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,9 +148,10 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   30 |        Flop & Latch |
+| LUT3     |   33 |                 LUT |
+| FDRE     |   32 |        Flop & Latch |
 | CARRY4   |    8 |          CarryLogic |
-| LUT1     |    2 |                 LUT |
+| LUT1     |    1 |                 LUT |
 +----------+------+---------------------+
 
 

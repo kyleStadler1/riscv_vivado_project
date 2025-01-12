@@ -157,10 +157,10 @@ module pcAlu (
     input [31:0] pc,
     input [31:0] imm,
     input [31:0] r1,
-    input sel, // 0: pc+imm, 1: r1+imm
-    output [31:0] pcOut
+    input jalr, // 0: pc+imm, 1: r1+imm
+    output [31:0] jumpPc
 );
-    assign pcOut = (sel) ? r1 + imm : pc + imm;
+    assign jumpPc = (jalr) ? r1 + imm : pc + imm;
 endmodule
 
 module pcMuxSelector (
@@ -168,7 +168,7 @@ module pcMuxSelector (
     input branch,
     input jal,
     input jalr,
-    output pcMuxSel
+    output jumpEn
 );
-    assign pcMuxSel = (branch&(aluOut != 0)) | jal | jalr;
+    assign jumpEn = (branch&(aluOut != 0)) | jal | jalr;
 endmodule

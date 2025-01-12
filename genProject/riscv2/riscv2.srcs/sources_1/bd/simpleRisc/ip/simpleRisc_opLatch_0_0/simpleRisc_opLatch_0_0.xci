@@ -48,6 +48,9 @@
         "selBIn": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
         "aluOpIn": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
         "aluToRegIn": [ { "direction": "in" } ],
+        "branchIn": [ { "direction": "in" } ],
+        "jalIn": [ { "direction": "in" } ],
+        "jalrIn": [ { "direction": "in" } ],
         "imm": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
         "memSize": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
         "memOp": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
@@ -56,7 +59,10 @@
         "selA": [ { "direction": "out" } ],
         "selB": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
         "aluOp": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
-        "aluToReg": [ { "direction": "out" } ]
+        "aluToReg": [ { "direction": "out" } ],
+        "branch": [ { "direction": "out" } ],
+        "jal": [ { "direction": "out" } ],
+        "jalr": [ { "direction": "out" } ]
       },
       "interfaces": {
         "reset": {

@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Sun Jan 12 06:28:48 2025
+-- Date        : Sun Jan 12 06:28:47 2025
 -- Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_execLatch_0_0/simpleRisc_execLatch_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top simpleRisc_execLatch_0_0 -prefix
+--               simpleRisc_execLatch_0_0_ simpleRisc_execLatch_0_0_sim_netlist.vhdl
 -- Design      : simpleRisc_execLatch_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -27,8 +27,6 @@ entity simpleRisc_execLatch_0_0_execLatch is
     rdIn : in STD_LOGIC_VECTOR ( 4 downto 0 );
     stall : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of simpleRisc_execLatch_0_0_execLatch : entity is "execLatch";
 end simpleRisc_execLatch_0_0_execLatch;
 
 architecture STRUCTURE of simpleRisc_execLatch_0_0_execLatch is

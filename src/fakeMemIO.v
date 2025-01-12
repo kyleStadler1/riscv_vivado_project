@@ -32,19 +32,22 @@ module fakeMemIO #(
     parameter DATA4  = 32'h00400093,
     parameter DATA5  = 32'h00500093,
     parameter DATA6  = 32'h00600093,
-    parameter DATA7  = 32'h00112023,
-    parameter DATA8  = 32'h00700093,
+    
+    parameter DATA7  = 32'hffc080e7, //hfe000e63 - beq x0x0 -4
+    parameter DATA8  = 32'h00112023, 
+    
     parameter DATA9  = 32'h00800093,
     parameter DATAa  = 32'h00900093,
     parameter DATAb  = 32'h00a00093,
     parameter DATAc  = 32'h00b00093,
     parameter DATAd  = 32'h00c00093,
-    parameter DATAe  = 32'h00012083,
-    parameter DATAf  = 32'h00d00093,
-    parameter DATA10 = 32'h0,
-    parameter DATA11 = 32'h0,
-    parameter DATA12 = 32'h0,
-    parameter DATA13 = 32'h0,
+    parameter DATAe  = 32'h00d00093,
+    parameter DATAf  = 32'h00e00093,
+    parameter DATA10 = 32'h00f00093,
+    parameter DATA11 = 32'h00f00093,
+    
+    parameter DATA12 = 32'h00012083,
+    parameter DATA13 = 32'h002080b3,
     parameter DATA14 = 32'h0,
     parameter DATA15 = 32'h0,
     parameter DATA16 = 32'h0,
@@ -86,7 +89,7 @@ module fakeMemIO #(
     output reg [31:0] pc,
     output reg [31:0] doutB,
     output reg bValid,
-    output reg ready
+    output reg NOTready
     );
     
     
@@ -102,7 +105,7 @@ module fakeMemIO #(
             pc <= 32'h0;
             doutB <= 32'h0;
             bValid <= 1'b0;
-            ready <= 1'b1;
+            NOTready <= 1'b0;
             ram [32'h0] <= DATA0;
             ram [32'h1] <= DATA1;
             ram [32'h2] <= DATA2;
@@ -141,7 +144,7 @@ module fakeMemIO #(
                 ram[selB] <= dinB;
                 bValid <= 1'b0;
             end else if (memOp == MEM_READ_SEXT | memOp == MEM_READ_ZEXT) begin
-                doutB <= ram[selA];
+                doutB <= ram[selB];
                 bValid <= 1'b1;
             end
             else begin
@@ -151,7 +154,8 @@ module fakeMemIO #(
             if (enA) begin
                 instr <= ram[selA];
             end
-            ready <= 1'b1;
+            NOTready <= 1'b0;
+            pc <= pcIn;
         end
     end
 endmodule

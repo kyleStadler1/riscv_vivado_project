@@ -58,6 +58,7 @@ module simpleRisc_Decode_0_0 (
   clk,
   stall,
   reset,
+  resetFlush,
   instruction,
   pc_in,
   rs1,
@@ -73,17 +74,17 @@ module simpleRisc_Decode_0_0 (
   branch,
   jal,
   jalr,
-  regWriteCollision,
   pc
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN simpleRisc_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 input wire stall;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
 input wire reset;
+input wire resetFlush;
 input wire [31 : 0] instruction;
 input wire [31 : 0] pc_in;
 output wire [4 : 0] rs1;
@@ -99,7 +100,6 @@ output wire [1 : 0] memSize;
 output wire branch;
 output wire jal;
 output wire jalr;
-output wire regWriteCollision;
 output wire [31 : 0] pc;
 
   Decode #(
@@ -149,6 +149,7 @@ output wire [31 : 0] pc;
     .clk(clk),
     .stall(stall),
     .reset(reset),
+    .resetFlush(resetFlush),
     .instruction(instruction),
     .pc_in(pc_in),
     .rs1(rs1),
@@ -164,7 +165,6 @@ output wire [31 : 0] pc;
     .branch(branch),
     .jal(jal),
     .jalr(jalr),
-    .regWriteCollision(regWriteCollision),
     .pc(pc)
   );
 endmodule

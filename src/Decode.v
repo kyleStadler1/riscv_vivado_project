@@ -53,6 +53,7 @@ module Decode #(
     input clk,
     input stall,
     input reset,
+    input resetFlush,
     input [31:0] instruction,
     input [31:0] pc_in,
     
@@ -69,10 +70,11 @@ module Decode #(
     output reg branch,
     output reg jal,
     output reg jalr,
-    output reg regWriteCollision,
+    //output reg regWriteCollision,
     output reg [31:0] pc
 );
-    reg prevOpIsLoad = 0;
+    //reg prevOpIsLoad = 0;
+    reg ignoreNext;
 
 
 
@@ -85,25 +87,49 @@ module Decode #(
     wire [11:0] imm_12_field = instruction[31:20];
     wire [20:0] imm_20_field = {instruction[31], instruction[19:12], instruction[20], instruction[30:21]};
     wire [11:0] store_imm_field = {instruction[31:25], instruction[11:7]};
-    wire [12:0] branch_imm_field = {instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0};
+    wire [11:0] branch_imm_field = {instruction[31:25], instruction[11:7]};
 
     always @(posedge clk) begin
-        if (reset) begin
+        if (reset | resetFlush) begin
+            rs1 <= 5'b00000;
+            rs2 <= 5'b00000;
+            rd <= 5'b00000;
+            imm <= 32'dx;
+            aluOp <= 4'dx;
+            selA <= 1'dx;
+            selB <= 2'dx;
+            aluToReg <= 1'b0;
             memOp <= MEM_DISABLE;
+            memSize <= 2'dx;
             branch <= 1'b0;
             jal <= 1'b0;
             jalr <= 1'b0;
-            regWriteCollision <= 1'b0;
-            rs1 <= 5'd0;
-            rs2 <= 5'd0;
+            pc <= 32'dx;
+            ignoreNext <= resetFlush ? 1'b1 : 1'b0;
+            
+            
+        
+        
+        
+        
+//            memOp <= MEM_DISABLE;
+//            branch <= 1'b0;
+//            jal <= 1'b0;
+//            jalr <= 1'b0;
+//            //regWriteCollision <= 1'b0;
+//            rs1 <= 5'd0;
+//            rs2 <= 5'd0;
+//            aluToReg <= 1'b0;
         end 
         else if (stall) begin
             
+        end else if (ignoreNext) begin
+            ignoreNext <= 1'b0;
         end
         else begin
                 pc <= pc_in;
-                prevOpIsLoad <= (opcode_field == LOAD);
-                regWriteCollision <= (prevOpIsLoad & (opcode_field == R_TYPE | opcode_field == I_TYPE | opcode_field == JAL | opcode_field == JALR | opcode_field == LUI | opcode_field == AUIPC));
+                //prevOpIsLoad <= (opcode_field == LOAD);
+                //regWriteCollision <= (prevOpIsLoad & (opcode_field == R_TYPE | opcode_field == I_TYPE | opcode_field == JAL | opcode_field == JALR | opcode_field == LUI | opcode_field == AUIPC));
             case (opcode_field)
                 // R-Type Instructions
                 R_TYPE: begin
@@ -585,7 +611,7 @@ module Decode #(
                             rs1 <= rs1_field;
                             rs2 <= rs2_field;
                             rd <= 5'b00000;
-                            imm <= {{18{branch_imm_field[12]}}, branch_imm_field, 1'b0};
+                            imm <= {{20{branch_imm_field[11]}}, branch_imm_field};
                             aluOp <= BEQ;
                             selA <= 1'b0;
                             selB <= 2'b00;

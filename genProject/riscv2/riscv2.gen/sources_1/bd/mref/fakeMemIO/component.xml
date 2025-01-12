@@ -55,7 +55,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>13af7ebd</spirit:value>
+            <spirit:value>07e50405</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -68,7 +68,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>13af7ebd</spirit:value>
+            <spirit:value>07e50405</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -254,7 +254,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>ready</spirit:name>
+        <spirit:name>NOTready</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -291,102 +291,102 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA0</spirit:name>
         <spirit:displayName>Data0</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA0" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA0" spirit:bitStringLength="32">0x02000113</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA1</spirit:name>
         <spirit:displayName>Data1</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA1" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA1" spirit:bitStringLength="32">0x00100093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA2</spirit:name>
         <spirit:displayName>Data2</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA2" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA2" spirit:bitStringLength="32">0x00200093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA3</spirit:name>
         <spirit:displayName>Data3</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA3" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA3" spirit:bitStringLength="32">0x00300093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA4</spirit:name>
         <spirit:displayName>Data4</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA4" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA4" spirit:bitStringLength="32">0x00400093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA5</spirit:name>
         <spirit:displayName>Data5</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA5" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA5" spirit:bitStringLength="32">0x00500093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA6</spirit:name>
         <spirit:displayName>Data6</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA6" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA6" spirit:bitStringLength="32">0x00600093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA7</spirit:name>
         <spirit:displayName>Data7</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA7" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA7" spirit:bitStringLength="32">0xFFC080E7</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA8</spirit:name>
         <spirit:displayName>Data8</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA8" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA8" spirit:bitStringLength="32">0x00112023</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA9</spirit:name>
         <spirit:displayName>Data9</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA9" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA9" spirit:bitStringLength="32">0x00800093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATAa</spirit:name>
         <spirit:displayName>Dataa</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAa" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAa" spirit:bitStringLength="32">0x00900093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATAb</spirit:name>
         <spirit:displayName>Datab</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAb" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAb" spirit:bitStringLength="32">0x00A00093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATAc</spirit:name>
         <spirit:displayName>Datac</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAc" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAc" spirit:bitStringLength="32">0x00B00093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATAd</spirit:name>
         <spirit:displayName>Datad</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAd" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAd" spirit:bitStringLength="32">0x00C00093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATAe</spirit:name>
         <spirit:displayName>Datae</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAe" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAe" spirit:bitStringLength="32">0x00D00093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATAf</spirit:name>
         <spirit:displayName>Dataf</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAf" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATAf" spirit:bitStringLength="32">0x00E00093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA10</spirit:name>
         <spirit:displayName>Data10</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA10" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA10" spirit:bitStringLength="32">0x00F00093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA11</spirit:name>
         <spirit:displayName>Data11</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA11" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA11" spirit:bitStringLength="32">0x00F00093</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA12</spirit:name>
         <spirit:displayName>Data12</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA12" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA12" spirit:bitStringLength="32">0x00012083</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA13</spirit:name>
         <spirit:displayName>Data13</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA13" spirit:bitStringLength="32">0x00000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA13" spirit:bitStringLength="32">0x002080B3</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>DATA14</spirit:name>
@@ -486,102 +486,102 @@
     <spirit:parameter>
       <spirit:name>DATA0</spirit:name>
       <spirit:displayName>Data0</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA0" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA0" spirit:bitStringLength="32">0x02000113</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA1</spirit:name>
       <spirit:displayName>Data1</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA1" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA1" spirit:bitStringLength="32">0x00100093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA2</spirit:name>
       <spirit:displayName>Data2</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA2" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA2" spirit:bitStringLength="32">0x00200093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA3</spirit:name>
       <spirit:displayName>Data3</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA3" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA3" spirit:bitStringLength="32">0x00300093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA4</spirit:name>
       <spirit:displayName>Data4</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA4" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA4" spirit:bitStringLength="32">0x00400093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA5</spirit:name>
       <spirit:displayName>Data5</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA5" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA5" spirit:bitStringLength="32">0x00500093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA6</spirit:name>
       <spirit:displayName>Data6</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA6" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA6" spirit:bitStringLength="32">0x00600093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA7</spirit:name>
       <spirit:displayName>Data7</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA7" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA7" spirit:bitStringLength="32">0xFFC080E7</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA8</spirit:name>
       <spirit:displayName>Data8</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA8" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA8" spirit:bitStringLength="32">0x00112023</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA9</spirit:name>
       <spirit:displayName>Data9</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA9" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA9" spirit:bitStringLength="32">0x00800093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATAa</spirit:name>
       <spirit:displayName>Dataa</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAa" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAa" spirit:bitStringLength="32">0x00900093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATAb</spirit:name>
       <spirit:displayName>Datab</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAb" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAb" spirit:bitStringLength="32">0x00A00093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATAc</spirit:name>
       <spirit:displayName>Datac</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAc" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAc" spirit:bitStringLength="32">0x00B00093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATAd</spirit:name>
       <spirit:displayName>Datad</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAd" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAd" spirit:bitStringLength="32">0x00C00093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATAe</spirit:name>
       <spirit:displayName>Datae</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAe" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAe" spirit:bitStringLength="32">0x00D00093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATAf</spirit:name>
       <spirit:displayName>Dataf</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAf" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATAf" spirit:bitStringLength="32">0x00E00093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA10</spirit:name>
       <spirit:displayName>Data10</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA10" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA10" spirit:bitStringLength="32">0x00F00093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA11</spirit:name>
       <spirit:displayName>Data11</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA11" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA11" spirit:bitStringLength="32">0x00F00093</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA12</spirit:name>
       <spirit:displayName>Data12</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA12" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA12" spirit:bitStringLength="32">0x00012083</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA13</spirit:name>
       <spirit:displayName>Data13</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA13" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA13" spirit:bitStringLength="32">0x002080B3</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>DATA14</spirit:name>
@@ -663,7 +663,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2025-01-12T06:26:37Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2025-01-12T14:17:28Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.1</xilinx:xilinxVersion>

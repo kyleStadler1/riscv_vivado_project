@@ -23,35 +23,41 @@
 module bypassMux(
     input [4:0] ra1,
     input [4:0] ra2,
+    
     input [31:0] execAluVal,
     input [31:0] execMemVal,
-    input [1:0] execMemOp,
+    input execMemValid,
+    input execRegWrite,
     input [4:0] execRd,
+    
     input [31:0] wbVal,
+    input wbRegWrite,
     input [4:0] wbRd,
+    
     input [31:0] r1RegVal,
     input [31:0] r2RegVal,
+    
     output [31:0] r1Val,
     output [31:0] r2Val
     );
+    wire [31:0] execVal;
+    wire [4:0] _execRd;
     
-
+    wire _wbRd;
     
-    wire [31:0] execVal = 
-        execMemOp == 2'b00 ? execAluVal : 
-        execMemOp == 2'b01 | execMemOp == 2'b10 ? execMemVal :
-        2'b00;
-        
-    wire [4:0] validExecRd = execMemOp == 2'b11 ? 5'b00000 : execRd;
+    assign execVal = execMemValid ? execMemVal : execAluVal;
+    assign _execRd = execMemValid | execRegWrite ? execRd : 5'b00000;
+    assign _wbRd = wbRegWrite ? wbRd : 5'b00000;
+    
         
     assign r1Val = 
         ra1 == 5'b00000 ? 32'd0 : 
-        ra1 == validExecRd ? execVal : 
-        ra1 == wbRd ? wbVal :
+        (ra1 == _execRd) ? execVal : 
+        (ra1 == _wbRd) ? wbVal :
         r1RegVal;
    assign r2Val = 
-        ra2 == 5'b00000 ? 32'd0 : 
-        ra2 == validExecRd ? execVal : 
-        ra2 == wbRd ? wbVal :
+        (ra2 == 5'b00000) ? 32'd0 : 
+        (ra2 == _execRd) ? execVal : 
+        (ra2 == _wbRd) ? wbVal :
         r2RegVal;
 endmodule

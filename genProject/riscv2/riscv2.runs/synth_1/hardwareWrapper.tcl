@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {HDL-1065} -limit 10000
+set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
 
@@ -94,9 +94,6 @@ read_verilog -library xil_defaultlib {
 }
 add_files /home/user/project/riscv2/genProject/riscv2/riscv2.srcs/sources_1/bd/simpleRisc/simpleRisc.bd
 set_property used_in_implementation false [get_files -all /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/simpleRisc_ooc.xdc]
-
-read_ip -quiet /home/user/project/riscv2/ips/dualPortRAM32kx32/dualPortRAM32kx32.xci
-set_property used_in_implementation false [get_files -all /home/user/project/riscv2/ips/dualPortRAM32kx32/dualPortRAM32kx32_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

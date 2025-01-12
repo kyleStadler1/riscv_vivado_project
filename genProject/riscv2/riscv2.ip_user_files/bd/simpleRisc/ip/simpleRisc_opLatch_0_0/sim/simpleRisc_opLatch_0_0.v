@@ -67,6 +67,9 @@ module simpleRisc_opLatch_0_0 (
   selBIn,
   aluOpIn,
   aluToRegIn,
+  branchIn,
+  jalIn,
+  jalrIn,
   imm,
   memSize,
   memOp,
@@ -75,10 +78,13 @@ module simpleRisc_opLatch_0_0 (
   selA,
   selB,
   aluOp,
-  aluToReg
+  aluToReg,
+  branch,
+  jal,
+  jalr
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN simpleRisc_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 input wire stall;
@@ -94,6 +100,9 @@ input wire selAIn;
 input wire [1 : 0] selBIn;
 input wire [3 : 0] aluOpIn;
 input wire aluToRegIn;
+input wire branchIn;
+input wire jalIn;
+input wire jalrIn;
 output wire [31 : 0] imm;
 output wire [1 : 0] memSize;
 output wire [1 : 0] memOp;
@@ -103,6 +112,9 @@ output wire selA;
 output wire [1 : 0] selB;
 output wire [3 : 0] aluOp;
 output wire aluToReg;
+output wire branch;
+output wire jal;
+output wire jalr;
 
   opLatch inst (
     .clk(clk),
@@ -117,6 +129,9 @@ output wire aluToReg;
     .selBIn(selBIn),
     .aluOpIn(aluOpIn),
     .aluToRegIn(aluToRegIn),
+    .branchIn(branchIn),
+    .jalIn(jalIn),
+    .jalrIn(jalrIn),
     .imm(imm),
     .memSize(memSize),
     .memOp(memOp),
@@ -125,6 +140,9 @@ output wire aluToReg;
     .selA(selA),
     .selB(selB),
     .aluOp(aluOp),
-    .aluToReg(aluToReg)
+    .aluToReg(aluToReg),
+    .branch(branch),
+    .jal(jal),
+    .jalr(jalr)
   );
 endmodule

@@ -2,8 +2,8 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Fri Jan 10 14:05:40 2025
-// Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
+// Date        : Sun Jan 12 12:55:15 2025
+// Host        : 45b790a05d91 running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_PC_0_0/simpleRisc_PC_0_0_stub.v
 // Design      : simpleRisc_PC_0_0
@@ -15,12 +15,14 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "PC,Vivado 2023.1" *)
-module simpleRisc_PC_0_0(clk, stall, reset, pc, ena)
-/* synthesis syn_black_box black_box_pad_pin="stall,reset,pc[31:0],ena" */
+module simpleRisc_PC_0_0(clk, stall, reset, jumpEn, jumpVect, pc, ena)
+/* synthesis syn_black_box black_box_pad_pin="stall,reset,jumpEn,jumpVect[31:0],pc[31:0],ena" */
 /* synthesis syn_force_seq_prim="clk" */;
   input clk /* synthesis syn_isclock = 1 */;
   input stall;
   input reset;
+  input jumpEn;
+  input [31:0]jumpVect;
   output [31:0]pc;
   output ena;
 endmodule

@@ -14,12 +14,12 @@
       "MemInputCtrl_0": "",
       "MemOutputCtrl_0": "",
       "ModeFSM_0": "",
-      "PC_0": "",
-      "Decode_0": "",
       "RegFile_0": "",
       "FetchLatch_0": "",
+      "MemoryMappedIO_0": "",
       "ExecStage_0": "",
-      "MemoryMappedIO_0": ""
+      "PC_0": "",
+      "Decode_0": ""
     },
     "ports": {
       "busErr": {
@@ -261,163 +261,6 @@
           }
         }
       },
-      "PC_0": {
-        "vlnv": "xilinx.com:module_ref:PC:1.0",
-        "xci_name": "riscvTop_PC_0_0",
-        "xci_path": "ip/riscvTop_PC_0_0/riscvTop_PC_0_0.xci",
-        "inst_hier_path": "PC_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "PC",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscvTop_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "stall": {
-            "direction": "I"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "pc": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "ena": {
-            "direction": "O"
-          }
-        }
-      },
-      "Decode_0": {
-        "vlnv": "xilinx.com:module_ref:Decode:1.0",
-        "xci_name": "riscvTop_Decode_0_0",
-        "xci_path": "ip/riscvTop_Decode_0_0/riscvTop_Decode_0_0.xci",
-        "inst_hier_path": "Decode_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Decode",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscvTop_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "stall": {
-            "direction": "I"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "instruction": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "pc_in": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "rs1": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
-          },
-          "rs2": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
-          },
-          "rd": {
-            "direction": "O",
-            "left": "4",
-            "right": "0"
-          },
-          "imm": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "aluOp": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "selA": {
-            "direction": "O"
-          },
-          "selB": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "aluToReg": {
-            "direction": "O"
-          },
-          "memOp": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "branch": {
-            "direction": "O"
-          },
-          "jal": {
-            "direction": "O"
-          },
-          "jalr": {
-            "direction": "O"
-          },
-          "regWriteCollision": {
-            "direction": "O"
-          },
-          "pc": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "RegFile_0": {
         "vlnv": "xilinx.com:module_ref:RegFile:1.0",
         "xci_name": "riscvTop_RegFile_0_0",
@@ -565,129 +408,6 @@
           }
         }
       },
-      "ExecStage_0": {
-        "vlnv": "xilinx.com:module_ref:ExecStage:1.0",
-        "xci_name": "riscvTop_ExecStage_0_0",
-        "xci_path": "ip/riscvTop_ExecStage_0_0/riscvTop_ExecStage_0_0.xci",
-        "inst_hier_path": "ExecStage_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "ExecStage",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "1000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscvTop_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "stall": {
-            "direction": "I"
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "rs1Val": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "rs2Val": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "imm": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "pc": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "selA": {
-            "direction": "I"
-          },
-          "selB": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "aluOp": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "branch": {
-            "direction": "I"
-          },
-          "jal": {
-            "direction": "I"
-          },
-          "jalr": {
-            "direction": "I"
-          },
-          "memOpIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memSizeIn": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "aluToRegFile": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "aluToMem": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "pcSel": {
-            "direction": "O"
-          },
-          "pcVect": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "memOp": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "O",
-            "left": "1",
-            "right": "0"
-          },
-          "memDin": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "MemoryMappedIO_0": {
         "vlnv": "xilinx.com:module_ref:MemoryMappedIO:1.0",
         "xci_name": "riscvTop_MemoryMappedIO_0_0",
@@ -789,6 +509,270 @@
             "right": "0"
           }
         }
+      },
+      "ExecStage_0": {
+        "vlnv": "xilinx.com:module_ref:ExecStage:1.0",
+        "xci_name": "riscvTop_ExecStage_0_0",
+        "xci_path": "ip/riscvTop_ExecStage_0_0/riscvTop_ExecStage_0_0.xci",
+        "inst_hier_path": "ExecStage_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ExecStage",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "rs1Val": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rs2Val": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "imm": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "selA": {
+            "direction": "I"
+          },
+          "selB": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "aluOp": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "branch": {
+            "direction": "I"
+          },
+          "jal": {
+            "direction": "I"
+          },
+          "jalr": {
+            "direction": "I"
+          },
+          "memOpIn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memSizeIn": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "aluToRegFile": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "aluToMem": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "pcSel": {
+            "direction": "O"
+          },
+          "pcVect": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "memOp": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "memDin": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "PC_0": {
+        "vlnv": "xilinx.com:module_ref:PC:1.0",
+        "xci_name": "riscvTop_PC_0_0",
+        "xci_path": "ip/riscvTop_PC_0_0/riscvTop_PC_0_0.xci",
+        "inst_hier_path": "PC_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "PC",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "jumpEn": {
+            "direction": "I"
+          },
+          "jumpVect": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "ena": {
+            "direction": "O"
+          }
+        }
+      },
+      "Decode_0": {
+        "vlnv": "xilinx.com:module_ref:Decode:1.0",
+        "xci_name": "riscvTop_Decode_0_0",
+        "xci_path": "ip/riscvTop_Decode_0_0/riscvTop_Decode_0_0.xci",
+        "inst_hier_path": "Decode_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Decode",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "stall": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "resetFlush": {
+            "direction": "I"
+          },
+          "instruction": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pc_in": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rs1": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "rs2": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "rd": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "imm": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "aluOp": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "selA": {
+            "direction": "O"
+          },
+          "selB": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "aluToReg": {
+            "direction": "O"
+          },
+          "memOp": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "branch": {
+            "direction": "O"
+          },
+          "jal": {
+            "direction": "O"
+          },
+          "jalr": {
+            "direction": "O"
+          },
+          "pc": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -854,7 +838,6 @@
       },
       "Decode_0_regWriteCollision": {
         "ports": [
-          "Decode_0/regWriteCollision",
           "RegFileWriteArbiter_0/collision",
           "ModeFSM_0/regWriteCollision"
         ]
@@ -1089,12 +1072,12 @@
           "clk",
           "RegFileWriteArbiter_0/clk",
           "ModeFSM_0/clk",
-          "PC_0/clk",
-          "Decode_0/clk",
           "RegFile_0/clk",
           "FetchLatch_0/clk",
+          "MemoryMappedIO_0/clk",
           "ExecStage_0/clk",
-          "MemoryMappedIO_0/clk"
+          "PC_0/clk",
+          "Decode_0/clk"
         ]
       },
       "orGate_0_y": {

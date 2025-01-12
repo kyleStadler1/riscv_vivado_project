@@ -33,6 +33,9 @@ module opLatch(
     input [1:0] selBIn,
     input [3:0] aluOpIn,
     input aluToRegIn,
+    input branchIn,
+    input jalIn,
+    input jalrIn,
     output reg [31:0] imm,
     output reg [1:0] memSize,
     output reg [1:0] memOp,
@@ -41,7 +44,10 @@ module opLatch(
     output reg selA,
     output reg [1:0] selB,
     output reg [3:0] aluOp,
-    output reg aluToReg
+    output reg aluToReg,
+    output reg branch,
+    output reg jal,
+    output reg jalr
     );
     always @(posedge clk) begin
         if (reset) begin
@@ -54,6 +60,9 @@ module opLatch(
             selB <= 2'bxx;
             aluOp <= 4'bxxxx;
             aluToReg <= 1'b0;
+            branch <= 1'b0;
+            jal <= 1'b0;
+            jalr <= 1'b0;
         end
         else if (stall) begin
             imm <= imm;
@@ -65,6 +74,9 @@ module opLatch(
             selB <= selB;
             aluOp <= aluOp;
             aluToReg <= aluToReg;
+            branch <= branch;
+            jal <= jal;
+            jalr <= jalr;
         end
         else begin
             imm <= immIn;
@@ -76,6 +88,9 @@ module opLatch(
             selB <= selBIn;
             aluOp <= aluOpIn;
             aluToReg <= aluToRegIn;
+            branch <= branchIn;
+            jal <= jalIn;
+            jalr <= jalrIn;
         end
     end
 endmodule

@@ -58,17 +58,21 @@ module simpleRisc_PC_0_0 (
   clk,
   stall,
   reset,
+  jumpEn,
+  jumpVect,
   pc,
   ena
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN simpleRisc_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 input wire stall;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
 input wire reset;
+input wire jumpEn;
+input wire [31 : 0] jumpVect;
 output wire [31 : 0] pc;
 output wire ena;
 
@@ -76,6 +80,8 @@ output wire ena;
     .clk(clk),
     .stall(stall),
     .reset(reset),
+    .jumpEn(jumpEn),
+    .jumpVect(jumpVect),
     .pc(pc),
     .ena(ena)
   );

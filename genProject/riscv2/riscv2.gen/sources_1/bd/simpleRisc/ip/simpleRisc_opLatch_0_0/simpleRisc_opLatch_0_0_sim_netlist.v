@@ -2,8 +2,8 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Fri Jan 10 14:01:58 2025
-// Host        : e9a767cbc9ba running 64-bit Ubuntu 22.04.5 LTS
+// Date        : Sun Jan 12 12:55:16 2025
+// Host        : 45b790a05d91 running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/user/project/riscv2/genProject/riscv2/riscv2.gen/sources_1/bd/simpleRisc/ip/simpleRisc_opLatch_0_0/simpleRisc_opLatch_0_0_sim_netlist.v
 // Design      : simpleRisc_opLatch_0_0
@@ -29,6 +29,9 @@ module simpleRisc_opLatch_0_0
     selBIn,
     aluOpIn,
     aluToRegIn,
+    branchIn,
+    jalIn,
+    jalrIn,
     imm,
     memSize,
     memOp,
@@ -37,8 +40,11 @@ module simpleRisc_opLatch_0_0
     selA,
     selB,
     aluOp,
-    aluToReg);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *) input clk;
+    aluToReg,
+    branch,
+    jal,
+    jalr);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 1000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN simpleRisc_clk, INSERT_VIP 0" *) input clk;
   input stall;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
   input [31:0]immIn;
@@ -50,6 +56,9 @@ module simpleRisc_opLatch_0_0
   input [1:0]selBIn;
   input [3:0]aluOpIn;
   input aluToRegIn;
+  input branchIn;
+  input jalIn;
+  input jalrIn;
   output [31:0]imm;
   output [1:0]memSize;
   output [1:0]memOp;
@@ -59,14 +68,23 @@ module simpleRisc_opLatch_0_0
   output [1:0]selB;
   output [3:0]aluOp;
   output aluToReg;
+  output branch;
+  output jal;
+  output jalr;
 
   wire [3:0]aluOp;
   wire [3:0]aluOpIn;
   wire aluToReg;
   wire aluToRegIn;
+  wire branch;
+  wire branchIn;
   wire clk;
   wire [31:0]imm;
   wire [31:0]immIn;
+  wire jal;
+  wire jalIn;
+  wire jalr;
+  wire jalrIn;
   wire [1:0]memOp;
   wire [1:0]memOpIn;
   wire [1:0]memSize;
@@ -87,9 +105,15 @@ module simpleRisc_opLatch_0_0
         .aluOpIn(aluOpIn),
         .aluToReg(aluToReg),
         .aluToRegIn(aluToRegIn),
+        .branch(branch),
+        .branchIn(branchIn),
         .clk(clk),
         .imm(imm),
         .immIn(immIn),
+        .jal(jal),
+        .jalIn(jalIn),
+        .jalr(jalr),
+        .jalrIn(jalrIn),
         .memOp(memOp),
         .memOpIn(memOpIn),
         .memSize(memSize),
@@ -117,6 +141,9 @@ module simpleRisc_opLatch_0_0_opLatch
     selB,
     aluOp,
     aluToReg,
+    branch,
+    jal,
+    jalr,
     immIn,
     clk,
     memSizeIn,
@@ -128,6 +155,9 @@ module simpleRisc_opLatch_0_0_opLatch
     selBIn,
     aluOpIn,
     aluToRegIn,
+    branchIn,
+    jalIn,
+    jalrIn,
     stall);
   output [31:0]imm;
   output [1:0]memSize;
@@ -138,6 +168,9 @@ module simpleRisc_opLatch_0_0_opLatch
   output [1:0]selB;
   output [3:0]aluOp;
   output aluToReg;
+  output branch;
+  output jal;
+  output jalr;
   input [31:0]immIn;
   input clk;
   input [1:0]memSizeIn;
@@ -149,15 +182,24 @@ module simpleRisc_opLatch_0_0_opLatch
   input [1:0]selBIn;
   input [3:0]aluOpIn;
   input aluToRegIn;
+  input branchIn;
+  input jalIn;
+  input jalrIn;
   input stall;
 
   wire [3:0]aluOp;
   wire [3:0]aluOpIn;
   wire aluToReg;
   wire aluToRegIn;
+  wire branch;
+  wire branchIn;
   wire clk;
   wire [31:0]imm;
   wire [31:0]immIn;
+  wire jal;
+  wire jalIn;
+  wire jalr;
+  wire jalrIn;
   wire [1:0]memOp;
   wire [1:0]memOpIn;
   wire [1:0]memSize;
@@ -203,6 +245,12 @@ module simpleRisc_opLatch_0_0_opLatch
         .CE(p_0_in),
         .D(aluToRegIn),
         .Q(aluToReg),
+        .R(reset));
+  FDRE branch_reg
+       (.C(clk),
+        .CE(p_0_in),
+        .D(branchIn),
+        .Q(branch),
         .R(reset));
   LUT1 #(
     .INIT(2'h1)) 
@@ -401,6 +449,18 @@ module simpleRisc_opLatch_0_0_opLatch
         .D(immIn[9]),
         .Q(imm[9]),
         .R(1'b0));
+  FDRE jal_reg
+       (.C(clk),
+        .CE(p_0_in),
+        .D(jalIn),
+        .Q(jal),
+        .R(reset));
+  FDRE jalr_reg
+       (.C(clk),
+        .CE(p_0_in),
+        .D(jalrIn),
+        .Q(jalr),
+        .R(reset));
   FDRE \memOp_reg[0] 
        (.C(clk),
         .CE(p_0_in),
