@@ -325,18 +325,18 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_fakeMemIO_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_resetManager_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcMuxSelector_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcAlu_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_RegFile_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcMuxSelector_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_fakeMemIO_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_resetManager_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcAlu_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
 </GenRun>

@@ -21,15 +21,15 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="hardwareWrapper_timing_summary_postroute_physopted.pb"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING" Name="hardwareWrapper_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="hardwareWrapper_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="hardwareWrapper_postroute_physopt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="hardwareWrapper_physopt.dcp"/>
   <File Type="PLACE-IO" Name="hardwareWrapper_io_placed.rpt"/>
   <File Type="OPT-DRC" Name="hardwareWrapper_drc_opted.rpt"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="hardwareWrapper.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="hardwareWrapper.sysdef"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="hardwareWrapper_postroute_physopt.dcp"/>
   <File Type="BITSTR-MMI" Name="hardwareWrapper.mmi"/>
   <File Type="BITSTR-BMM" Name="hardwareWrapper_bd.bmm"/>
+  <File Type="PHYSOPT-DCP" Name="hardwareWrapper_physopt.dcp"/>
   <File Type="PLACE-UTIL-PB" Name="hardwareWrapper_utilization_placed.pb"/>
   <File Type="BG-BGN" Name="hardwareWrapper.bgn"/>
   <File Type="OPT-DCP" Name="hardwareWrapper_opt.dcp"/>
@@ -49,10 +49,10 @@
   <File Type="PLACE-DCP" Name="hardwareWrapper_placed.dcp"/>
   <File Type="BITSTR-MSK" Name="hardwareWrapper.msk"/>
   <File Type="PWROPT-DCP" Name="hardwareWrapper_pwropt.dcp"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="hardwareWrapper_incremental_reuse_pre_placed.rpt"/>
   <File Type="BITSTR-RBT" Name="hardwareWrapper.rbt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="hardwareWrapper_postplace_pwropt.dcp"/>
   <File Type="BITSTR-NKY" Name="hardwareWrapper.nky"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="hardwareWrapper_incremental_reuse_pre_placed.rpt"/>
   <File Type="ROUTE-DRC" Name="hardwareWrapper_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="hardwareWrapper_drc_routed.pb"/>
   <File Type="ROUTE-PWR" Name="hardwareWrapper_power_routed.rpt"/>
@@ -398,18 +398,18 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_fakeMemIO_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_resetManager_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcMuxSelector_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcAlu_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_RegFile_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcMuxSelector_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_fakeMemIO_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_resetManager_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcAlu_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
 </GenRun>

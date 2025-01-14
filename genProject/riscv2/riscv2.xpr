@@ -59,20 +59,20 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="112"/>
+    <Option Name="WTXSimLaunchSim" Val="145"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="60"/>
-    <Option Name="WTModelSimExportSim" Val="60"/>
-    <Option Name="WTQuestaExportSim" Val="60"/>
+    <Option Name="WTXSimExportSim" Val="76"/>
+    <Option Name="WTModelSimExportSim" Val="76"/>
+    <Option Name="WTQuestaExportSim" Val="76"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="60"/>
-    <Option Name="WTRivieraExportSim" Val="60"/>
-    <Option Name="WTActivehdlExportSim" Val="60"/>
+    <Option Name="WTVcsExportSim" Val="76"/>
+    <Option Name="WTRivieraExportSim" Val="76"/>
+    <Option Name="WTActivehdlExportSim" Val="76"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -90,7 +90,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/aluMuxComb.v">
+      <File Path="$PPRDIR/../../src/aluMuxComb.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -111,7 +111,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/bypassMux.v">
+      <File Path="$PPRDIR/../../src/bypassMux.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -173,9 +173,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_pcAlu_0_0/simpleRisc_pcAlu_0_0.xci">
-          <Proxy FileSetName="simpleRisc_pcAlu_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_pcMuxSelector_0_0/simpleRisc_pcMuxSelector_0_0.xci">
           <Proxy FileSetName="simpleRisc_pcMuxSelector_0_0"/>
         </CompFileExtendedInfo>
@@ -184,9 +181,6 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_PC_0_0/simpleRisc_PC_0_0.xci">
           <Proxy FileSetName="simpleRisc_PC_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_aluMuxComb_0_0/simpleRisc_aluMuxComb_0_0.xci">
-          <Proxy FileSetName="simpleRisc_aluMuxComb_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_RegFile_0_0/simpleRisc_RegFile_0_0.xci">
           <Proxy FileSetName="simpleRisc_RegFile_0_0"/>
@@ -203,6 +197,9 @@
         <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_alu_0_0/simpleRisc_alu_0_0.xci">
           <Proxy FileSetName="simpleRisc_alu_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="simpleRisc.bd" FileRelPathName="ip/simpleRisc_pcAlu_0_0/simpleRisc_pcAlu_0_0.xci">
+          <Proxy FileSetName="simpleRisc_pcAlu_0_0"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/simpleRisc/hdl/simpleRisc_wrapper.v">
         <FileInfo>
@@ -213,6 +210,38 @@
       </File>
       <File Path="$PPRDIR/../../src/hardwareWrapper.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/aluMuxComb.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/bypassMux.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../src/littletobigendian.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../src/MemoryIO.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -313,11 +342,11 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="riscvTop.bd" FileRelPathName="ip/riscvTop_RegFileWriteArbiter_0_0/riscvTop_RegFileWriteArbiter_0_0.xci">
-          <Proxy FileSetName="riscvTop_RegFileWriteArbiter_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="riscvTop.bd" FileRelPathName="ip/riscvTop_orGate_0_0/riscvTop_orGate_0_0.xci">
           <Proxy FileSetName="riscvTop_orGate_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="riscvTop.bd" FileRelPathName="ip/riscvTop_RegFileWriteArbiter_0_0/riscvTop_RegFileWriteArbiter_0_0.xci">
+          <Proxy FileSetName="riscvTop_RegFileWriteArbiter_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/../../bd/riscvTop/hdl/riscvTop_wrapper.v">
@@ -408,14 +437,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/littleBigEndian.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="hardwareWrapper"/>
@@ -486,12 +507,6 @@
     <FileSet Name="riscvTop_orGate_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/riscvTop_orGate_0_0" RelGenDir="$PGENDIR/riscvTop_orGate_0_0">
       <Config>
         <Option Name="TopModule" Val="riscvTop_orGate_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="simpleRisc_aluMuxComb_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/simpleRisc_aluMuxComb_0_0" RelGenDir="$PGENDIR/simpleRisc_aluMuxComb_0_0">
-      <Config>
-        <Option Name="TopModule" Val="simpleRisc_aluMuxComb_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -603,16 +618,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="riscvTop_orGate_0_0_synth_1" Type="Ft3:Synth" SrcSet="riscvTop_orGate_0_0" Part="xc7z007sclg400-1" ConstrsSet="riscvTop_orGate_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/riscvTop_orGate_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/riscvTop_orGate_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/riscvTop_orGate_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="simpleRisc_aluMuxComb_0_0_synth_1" Type="Ft3:Synth" SrcSet="simpleRisc_aluMuxComb_0_0" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_aluMuxComb_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/simpleRisc_aluMuxComb_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_aluMuxComb_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_aluMuxComb_0_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
         <Step Id="synth_design"/>
@@ -765,23 +770,6 @@
       <RQSFiles/>
     </Run>
     <Run Id="riscvTop_orGate_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="riscvTop_orGate_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="riscvTop_orGate_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/riscvTop_orGate_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/riscvTop_orGate_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="simpleRisc_aluMuxComb_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="simpleRisc_aluMuxComb_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="simpleRisc_aluMuxComb_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/simpleRisc_aluMuxComb_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/simpleRisc_aluMuxComb_0_0_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>

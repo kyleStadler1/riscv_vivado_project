@@ -1,9 +1,9 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../riscv2.srcs/sources_1/new/aluMuxComb.v" \
+"../../../../../../src/aluMuxComb.v" \
 "../../../../../../src/RegFile.v" \
 "../../../../../../src/writeBackLatch.v" \
-"../../../../riscv2.srcs/sources_1/new/bypassMux.v" \
+"../../../../../../src/bypassMux.v" \
 "../../../../../../src/opLatch.v" \
 "../../../../../../src/ExecStage.v" \
 "../../../../../../src/execLatch.v" \

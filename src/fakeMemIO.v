@@ -31,7 +31,7 @@ module fakeMemIO #(
     parameter DATA3  = 32'h93004000,
     parameter DATA4  = 32'h93005000,
     parameter DATA5  = 32'h93006000,
-    parameter DATA6  = 32'heff0dfff,
+    parameter DATA6  = 32'he700c0ff,
     
     parameter DATA7  = 32'h93007000, 
     parameter DATA8  = 32'h93008000, 
