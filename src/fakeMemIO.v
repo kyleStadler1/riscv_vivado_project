@@ -33,7 +33,7 @@ module fakeMemIO #(
     parameter DATA5  = 32'h00500093,
     parameter DATA6  = 32'h00600093,
     
-    parameter DATA7  = 32'hffe1ff0ef, //hfe000e63 - beq x0x0 -4
+    parameter DATA7  = 32'hfe1ff0ef, //hfe000e63 - beq x0x0 -4
     parameter DATA8  = 32'h00112023, 
     
     parameter DATA9  = 32'h00800093,
