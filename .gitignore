@@ -13,5 +13,5 @@
 *
 !.gitignore
 !/src/
-!/src/**
+!/src/**.v
 !/src/*.v
