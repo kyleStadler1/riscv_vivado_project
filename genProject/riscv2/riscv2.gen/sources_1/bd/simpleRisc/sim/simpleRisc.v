@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Tue Jan 14 12:12:11 2025
+//Date        : Wed Jan 15 03:12:30 2025
 //Host        : f8646cf7dbf2 running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target simpleRisc.bd
 //Design      : simpleRisc
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "simpleRisc,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=simpleRisc,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=13,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=13,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "simpleRisc.hwdef" *) 
+(* CORE_GENERATION_INFO = "simpleRisc,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=simpleRisc,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=14,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=14,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=3,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "simpleRisc.hwdef" *) 
 module simpleRisc
    (clk,
     dataToReg,
@@ -39,7 +39,6 @@ module simpleRisc
   wire [4:0]Decode_0_rs2;
   wire Decode_0_selA;
   wire [1:0]Decode_0_selB;
-  wire Not_0_out;
   wire PC_0_ena;
   wire [31:0]PC_0_pc;
   wire [4:0]RegFile_0_ra1Out;
@@ -56,10 +55,12 @@ module simpleRisc
   wire [31:0]execLatch_0_alu;
   wire execLatch_0_aluToReg;
   wire [4:0]execLatch_0_rd;
+  wire fakeMemIO_0_NOTready;
   wire fakeMemIO_0_bValid;
   wire [31:0]fakeMemIO_0_doutB;
   wire [31:0]fakeMemIO_0_instr;
   wire [31:0]fakeMemIO_0_pc;
+  wire [31:0]littleBigEndianConve_0_dout;
   wire [3:0]opLatch_0_aluOp;
   wire opLatch_0_aluToReg;
   wire opLatch_0_branch;
@@ -92,7 +93,7 @@ module simpleRisc
         .branch(Decode_0_branch),
         .clk(clk_1),
         .imm(Decode_0_imm),
-        .instruction(fakeMemIO_0_instr),
+        .instruction(littleBigEndianConve_0_dout),
         .jal(Decode_0_jal),
         .jalr(Decode_0_jalr),
         .memOp(Decode_0_memOp),
@@ -106,7 +107,7 @@ module simpleRisc
         .rs2(Decode_0_rs2),
         .selA(Decode_0_selA),
         .selB(Decode_0_selB),
-        .stall(Not_0_out));
+        .stall(fakeMemIO_0_NOTready));
   simpleRisc_PC_0_0 PC_0
        (.clk(clk_1),
         .ena(PC_0_ena),
@@ -114,7 +115,7 @@ module simpleRisc
         .jumpVect(pcAlu_0_jumpPc),
         .pc(PC_0_pc),
         .reset(resetManager_0_mainReset),
-        .stall(Not_0_out));
+        .stall(fakeMemIO_0_NOTready));
   simpleRisc_RegFile_0_0 RegFile_0
        (.clk(clk_1),
         .ra1(Decode_0_rs1),
@@ -124,7 +125,7 @@ module simpleRisc
         .rd1(RegFile_0_rd1),
         .rd2(RegFile_0_rd2),
         .reset(resetManager_0_mainReset),
-        .stall(Not_0_out),
+        .stall(fakeMemIO_0_NOTready),
         .toEdge(RegFile_0_toEdge),
         .wa(writeBackLatch_0_rd),
         .wd(writeBackLatch_0_dataToReg),
@@ -167,9 +168,9 @@ module simpleRisc
         .rd(execLatch_0_rd),
         .rdIn(opLatch_0_rd),
         .reset(resetManager_0_mainReset),
-        .stall(Not_0_out));
+        .stall(fakeMemIO_0_NOTready));
   simpleRisc_fakeMemIO_0_0 fakeMemIO_0
-       (.NOTready(Not_0_out),
+       (.NOTready(fakeMemIO_0_NOTready),
         .addrB(alu_0_aluOut),
         .bValid(fakeMemIO_0_bValid),
         .clk(clk_1),
@@ -181,6 +182,9 @@ module simpleRisc
         .pc(fakeMemIO_0_pc),
         .pcIn(PC_0_pc),
         .reset(resetManager_0_mainReset));
+  simpleRisc_littleBigEndianConve_0_0 littleBigEndianConve_0
+       (.din(fakeMemIO_0_instr),
+        .dout(littleBigEndianConve_0_dout));
   simpleRisc_opLatch_0_0 opLatch_0
        (.aluOp(opLatch_0_aluOp),
         .aluOpIn(Decode_0_aluOp),
@@ -207,7 +211,7 @@ module simpleRisc
         .selAIn(Decode_0_selA),
         .selB(opLatch_0_selB),
         .selBIn(Decode_0_selB),
-        .stall(Not_0_out));
+        .stall(fakeMemIO_0_NOTready));
   simpleRisc_pcAlu_0_0 pcAlu_0
        (.imm(opLatch_0_imm),
         .jalr(opLatch_0_jalr),
@@ -236,5 +240,5 @@ module simpleRisc
         .rdIn(execLatch_0_rd),
         .regWrite(writeBackLatch_0_regWrite),
         .reset(resetManager_0_mainReset),
-        .stall(Not_0_out));
+        .stall(fakeMemIO_0_NOTready));
 endmodule

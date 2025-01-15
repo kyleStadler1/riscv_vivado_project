@@ -11,5 +11,6 @@ simpleRisc_resetManager_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/s
 simpleRisc_PC_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_PC_0_0/sim/simpleRisc_PC_0_0.v,
 simpleRisc_Decode_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_Decode_0_0/sim/simpleRisc_Decode_0_0.v,
 simpleRisc_fakeMemIO_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_fakeMemIO_0_0/sim/simpleRisc_fakeMemIO_0_0.v,
+simpleRisc_littleBigEndianConve_0_0.v,verilog,xil_defaultlib,../../../bd/simpleRisc/ip/simpleRisc_littleBigEndianConve_0_0/sim/simpleRisc_littleBigEndianConve_0_0.v,
 simpleRisc.v,verilog,xil_defaultlib,../../../bd/simpleRisc/sim/simpleRisc.v,
 glbl.v,Verilog,xil_defaultlib,glbl.v

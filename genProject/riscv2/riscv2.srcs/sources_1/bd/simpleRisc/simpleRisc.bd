@@ -23,7 +23,8 @@
       "resetManager_0": "",
       "PC_0": "",
       "Decode_0": "",
-      "fakeMemIO_0": ""
+      "fakeMemIO_0": "",
+      "littleBigEndianConve_0": ""
     },
     "ports": {
       "reset": {
@@ -930,6 +931,29 @@
             "direction": "O"
           }
         }
+      },
+      "littleBigEndianConve_0": {
+        "vlnv": "xilinx.com:module_ref:littleBigEndianConverter:1.0",
+        "xci_name": "simpleRisc_littleBigEndianConve_0_0",
+        "xci_path": "ip/simpleRisc_littleBigEndianConve_0_0/simpleRisc_littleBigEndianConve_0_0.xci",
+        "inst_hier_path": "littleBigEndianConve_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "littleBigEndianConverter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "din": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "dout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -1015,17 +1039,6 @@
         "ports": [
           "Decode_0/selB",
           "opLatch_0/selBIn"
-        ]
-      },
-      "Not_0_out": {
-        "ports": [
-          "fakeMemIO_0/NOTready",
-          "RegFile_0/stall",
-          "writeBackLatch_0/stall",
-          "opLatch_0/stall",
-          "execLatch_0/stall",
-          "PC_0/stall",
-          "Decode_0/stall"
         ]
       },
       "PC_0_ena": {
@@ -1137,6 +1150,17 @@
           "bypassMux_0/execRd"
         ]
       },
+      "fakeMemIO_0_NOTready": {
+        "ports": [
+          "fakeMemIO_0/NOTready",
+          "writeBackLatch_0/stall",
+          "execLatch_0/stall",
+          "opLatch_0/stall",
+          "RegFile_0/stall",
+          "Decode_0/stall",
+          "PC_0/stall"
+        ]
+      },
       "fakeMemIO_0_bValid": {
         "ports": [
           "fakeMemIO_0/bValid",
@@ -1154,13 +1178,19 @@
       "fakeMemIO_0_instr": {
         "ports": [
           "fakeMemIO_0/instr",
-          "Decode_0/instruction"
+          "littleBigEndianConve_0/din"
         ]
       },
       "fakeMemIO_0_pc": {
         "ports": [
           "fakeMemIO_0/pc",
           "Decode_0/pc_in"
+        ]
+      },
+      "littleBigEndianConve_0_dout": {
+        "ports": [
+          "littleBigEndianConve_0/dout",
+          "Decode_0/instruction"
         ]
       },
       "opLatch_0_aluOp": {

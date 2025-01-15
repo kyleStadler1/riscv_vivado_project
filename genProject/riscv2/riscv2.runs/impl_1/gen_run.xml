@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736692203">
+<GenRun Id="impl_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1736686465">
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="hardwareWrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS" Name="hardwareWrapper_routed.rqs"/>
@@ -79,6 +79,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../../src/Decode.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../src/RegFile.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -128,13 +135,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/PC.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../../src/fakeMemIO.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -142,7 +142,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../src/Decode.v">
+    <File Path="$PPRDIR/../../src/PC.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -398,18 +398,18 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_RegFile_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_aluMuxComb_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="riscvTop_orGate_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_writeBackLatch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="riscvTop_RegFileWriteArbiter_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_opLatch_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcMuxSelector_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_PC_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_fakeMemIO_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_Decode_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_resetManager_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="simpleRisc_pcAlu_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_bypassMux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="simpleRisc_alu_0_0"/>
 </GenRun>

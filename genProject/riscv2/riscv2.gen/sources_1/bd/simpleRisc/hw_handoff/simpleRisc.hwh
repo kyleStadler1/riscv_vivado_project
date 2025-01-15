@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jan 14 12:12:12 2025" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 15 03:12:31 2025" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="simpleRisc" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -114,9 +114,9 @@
             <CONNECTION INSTANCE="resetManager_0" PORT="flushReset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="instruction" RIGHT="0" SIGIS="undef" SIGNAME="fakeMemIO_0_instr">
+        <PORT DIR="I" LEFT="31" NAME="instruction" RIGHT="0" SIGIS="undef" SIGNAME="littleBigEndianConve_0_dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="fakeMemIO_0" PORT="instr"/>
+            <CONNECTION INSTANCE="littleBigEndianConve_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="pc_in" RIGHT="0" SIGIS="undef" SIGNAME="fakeMemIO_0_pc">
@@ -562,20 +562,20 @@
         <PARAMETER NAME="MEM_READ_SEXT" VALUE="&quot;01&quot;"/>
         <PARAMETER NAME="MEM_READ_ZEXT" VALUE="&quot;10&quot;"/>
         <PARAMETER NAME="MEM_WRITE" VALUE="&quot;11&quot;"/>
-        <PARAMETER NAME="DATA0" VALUE="0x93001000"/>
-        <PARAMETER NAME="DATA1" VALUE="0x93002000"/>
-        <PARAMETER NAME="DATA2" VALUE="0x93003000"/>
-        <PARAMETER NAME="DATA3" VALUE="0x93004000"/>
-        <PARAMETER NAME="DATA4" VALUE="0x93005000"/>
-        <PARAMETER NAME="DATA5" VALUE="0x93006000"/>
-        <PARAMETER NAME="DATA6" VALUE="0xE700C0FF"/>
-        <PARAMETER NAME="DATA7" VALUE="0x93007000"/>
-        <PARAMETER NAME="DATA8" VALUE="0x93008000"/>
-        <PARAMETER NAME="DATA9" VALUE="0x93009000"/>
-        <PARAMETER NAME="DATAa" VALUE="0x9300A000"/>
-        <PARAMETER NAME="DATAb" VALUE="0x9300B000"/>
-        <PARAMETER NAME="DATAc" VALUE="0x9300C000"/>
-        <PARAMETER NAME="DATAd" VALUE="0x9300D000"/>
+        <PARAMETER NAME="DATA0" VALUE="0xB7000080"/>
+        <PARAMETER NAME="DATA1" VALUE="0x97000080"/>
+        <PARAMETER NAME="DATA2" VALUE="0x93001000"/>
+        <PARAMETER NAME="DATA3" VALUE="0x93002000"/>
+        <PARAMETER NAME="DATA4" VALUE="0x93003000"/>
+        <PARAMETER NAME="DATA5" VALUE="0x93004000"/>
+        <PARAMETER NAME="DATA6" VALUE="0x93005000"/>
+        <PARAMETER NAME="DATA7" VALUE="0x93006000"/>
+        <PARAMETER NAME="DATA8" VALUE="0xE30C00FE"/>
+        <PARAMETER NAME="DATA9" VALUE="0x93007000"/>
+        <PARAMETER NAME="DATAa" VALUE="0x93008000"/>
+        <PARAMETER NAME="DATAb" VALUE="0x93009000"/>
+        <PARAMETER NAME="DATAc" VALUE="0x9300A000"/>
+        <PARAMETER NAME="DATAd" VALUE="0x9300B000"/>
         <PARAMETER NAME="DATAe" VALUE="0x00000000"/>
         <PARAMETER NAME="DATAf" VALUE="0x00000000"/>
         <PARAMETER NAME="DATA10" VALUE="0x00000000"/>
@@ -635,7 +635,7 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="instr" RIGHT="0" SIGIS="undef" SIGNAME="fakeMemIO_0_instr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Decode_0" PORT="instruction"/>
+            <CONNECTION INSTANCE="littleBigEndianConve_0" PORT="din"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="pc" RIGHT="0" SIGIS="undef" SIGNAME="fakeMemIO_0_pc">
@@ -657,12 +657,32 @@
         </PORT>
         <PORT DIR="O" NAME="NOTready" SIGIS="undef" SIGNAME="fakeMemIO_0_NOTready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="RegFile_0" PORT="stall"/>
             <CONNECTION INSTANCE="writeBackLatch_0" PORT="stall"/>
-            <CONNECTION INSTANCE="opLatch_0" PORT="stall"/>
             <CONNECTION INSTANCE="execLatch_0" PORT="stall"/>
-            <CONNECTION INSTANCE="PC_0" PORT="stall"/>
+            <CONNECTION INSTANCE="opLatch_0" PORT="stall"/>
+            <CONNECTION INSTANCE="RegFile_0" PORT="stall"/>
             <CONNECTION INSTANCE="Decode_0" PORT="stall"/>
+            <CONNECTION INSTANCE="PC_0" PORT="stall"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/littleBigEndianConve_0" HWVERSION="1.0" INSTANCE="littleBigEndianConve_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="littleBigEndianConverter" VLNV="xilinx.com:module_ref:littleBigEndianConverter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="simpleRisc_littleBigEndianConve_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="31" NAME="din" RIGHT="0" SIGIS="undef" SIGNAME="fakeMemIO_0_instr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="fakeMemIO_0" PORT="instr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="littleBigEndianConve_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Decode_0" PORT="instruction"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

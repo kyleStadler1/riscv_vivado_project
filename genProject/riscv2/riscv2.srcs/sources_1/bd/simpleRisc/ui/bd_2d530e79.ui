@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.79799",
-   "Default View_TopLeft":"1090,-272",
+   "Default View_ScaleFactor":"0.410103",
+   "Default View_TopLeft":"-276,-810",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
@@ -24,6 +24,7 @@ preplace inst resetManager_0 -pg 1 -lvl 1 -x 200 -y 700 -defaultsOSRD
 preplace inst PC_0 -pg 1 -lvl 1 -x 200 -y 550 -defaultsOSRD
 preplace inst Decode_0 -pg 1 -lvl 2 -x 770 -y 90 -defaultsOSRD
 preplace inst fakeMemIO_0 -pg 1 -lvl 8 -x 3140 -y 530 -defaultsOSRD
+preplace inst littleBigEndianConve_0 -pg 1 -lvl 8 -x 3140 -y 790 -defaultsOSRD
 preplace netloc Decode_0_aluOp 1 2 1 1010 40n
 preplace netloc Decode_0_aluToReg 1 2 1 990 100n
 preplace netloc Decode_0_branch 1 2 1 970 160n
@@ -38,8 +39,7 @@ preplace netloc Decode_0_rs1 1 2 1 1100 -40n
 preplace netloc Decode_0_rs2 1 2 1 1080 -20n
 preplace netloc Decode_0_selA 1 2 1 1040 60n
 preplace netloc Decode_0_selB 1 2 1 1000 80n
-preplace netloc Not_0_out 1 0 9 40 60 610 -100 1070 120 N 120 1920 -50 N -50 N -50 3000 170 3320
-preplace netloc PC_0_ena 1 1 7 N 560 NJ 560 1470J 530 N 530 NJ 530 NJ 530 2980
+preplace netloc PC_0_ena 1 1 7 N 560 NJ 560 1470J 530 N 530 NJ 530 NJ 530 2950
 preplace netloc PC_0_pc 1 1 7 N 540 NJ 540 NJ 540 N 540 NJ 540 NJ 540 3000
 preplace netloc RegFile_0_ra1Out 1 3 1 1470 -220n
 preplace netloc RegFile_0_ra2Out 1 3 1 1480 -200n
@@ -50,15 +50,14 @@ preplace netloc aluMuxComb_0_a 1 5 1 2310 130n
 preplace netloc aluMuxComb_0_b 1 5 1 2310 150n
 preplace netloc alu_0_aluOut 1 6 2 2650 300 2940
 preplace netloc bypassMux_0_r1Val 1 4 2 2040 0 2330
-preplace netloc bypassMux_0_r2Val 1 4 4 2010 -40 N -40 N -40 2960
-preplace netloc clk_1 1 0 9 20 -110 600 -110 1120 130 N 130 1940 -30 N -30 N -30 2990 180 3350
+preplace netloc bypassMux_0_r2Val 1 4 4 2010 -50 N -50 N -50 2970
+preplace netloc clk_1 1 0 9 20 -110 600 -110 1120 120 N 120 1940 -30 N -30 N -30 2990 170 3350
 preplace netloc execLatch_0_alu 1 3 6 1560 380 1950 410 2330 400 2620 310 2920 410 3330
-preplace netloc execLatch_0_aluToReg 1 3 6 1590 680 NJ 680 NJ 680 NJ 680 N 680 3310
-preplace netloc execLatch_0_rd 1 3 6 1580 690 N 690 N 690 N 690 N 690 3300
-preplace netloc fakeMemIO_0_bValid 1 3 6 1570 700 N 700 N 700 N 700 N 700 3350
-preplace netloc fakeMemIO_0_doutB 1 3 6 1550 660 N 660 N 660 N 660 N 660 3340
-preplace netloc fakeMemIO_0_instr 1 1 8 600 670 NJ 670 NJ 670 N 670 NJ 670 NJ 670 N 670 3290
-preplace netloc fakeMemIO_0_pc 1 1 8 610 650 NJ 650 NJ 650 N 650 NJ 650 NJ 650 N 650 3280
+preplace netloc execLatch_0_aluToReg 1 3 6 1580 660 NJ 660 NJ 660 NJ 660 N 660 3310
+preplace netloc execLatch_0_rd 1 3 6 1590 650 N 650 N 650 N 650 N 650 3300
+preplace netloc fakeMemIO_0_bValid 1 3 6 1550 680 N 680 N 680 N 680 N 680 3350
+preplace netloc fakeMemIO_0_doutB 1 3 6 1570 670 N 670 N 670 N 670 N 670 3340
+preplace netloc fakeMemIO_0_pc 1 1 8 610 690 NJ 690 NJ 690 N 690 NJ 690 NJ 690 N 690 3280
 preplace netloc opLatch_0_aluOp 1 3 3 1540J 260 N 260 2310
 preplace netloc opLatch_0_aluToReg 1 3 5 NJ 390 1910 420 NJ 420 2640 320 2980
 preplace netloc opLatch_0_branch 1 3 4 1490J 430 NJ 430 NJ 430 2660
@@ -73,11 +72,14 @@ preplace netloc opLatch_0_selB 1 3 2 1520 250 2050
 preplace netloc pcAlu_0_jumpPc 1 0 7 50 440 N 440 940 570 N 570 N 570 N 570 2610
 preplace netloc pcMuxSelector_0_jumpEn 1 0 8 60 450 NJ 450 930J 550 NJ 550 NJ 550 NJ 550 NJ 550 2920
 preplace netloc resetManager_0_flushReset 1 1 2 580 -130 1090
-preplace netloc resetManager_0_mainReset 1 0 9 30 430 590 -120 1110 140 N 140 1970 10 N 10 N 10 2970 190 3330
+preplace netloc resetManager_0_mainReset 1 0 9 30 430 590 -120 1110 140 N 140 1970 10 N 10 N 10 2960 190 3330
 preplace netloc reset_1 1 0 1 -170 -200n
 preplace netloc writeBackLatch_0_dataToReg 1 2 8 1150 90 1540 90 1960 30 N 30 N 30 N 30 3300 160 3680
 preplace netloc writeBackLatch_0_rd 1 2 8 1140 100 1530 70 1950 20 N 20 N 20 N 20 3320 150 3690
-preplace netloc writeBackLatch_0_regWrite 1 2 8 1130 110 1510 80 1930 -20 N -20 N -20 N -20 N -20 3700
+preplace netloc writeBackLatch_0_regWrite 1 2 8 1130 110 1510 80 1920 -20 N -20 N -20 N -20 N -20 3700
+preplace netloc fakeMemIO_0_NOTready 1 0 9 40 60 610 -100 1070 130 N 130 1930 -40 N -40 N -40 3000 180 3320
+preplace netloc fakeMemIO_0_instr 1 7 2 3000 700 3290
+preplace netloc littleBigEndianConve_0_dout 1 1 8 600 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 NJ 710 3280
 levelinfo -pg 1 -190 200 770 1310 1750 2180 2470 2790 3140 3520 3730
 pagesize -pg 1 -db -bbox -sgen -280 -480 3900 1010
 "
