@@ -7,6 +7,20 @@ module MemMux_(
     output [31:0] dout,
     output readValid
 );
-    assign dout = addr <= 32'h0000_ffff ? romIn : ramIn;
-    assign readValid = addr <= 32'h0000_ffff ? romReadValid : ramReadValid;
+    wire sel = addr <= 32'h0000_ffff;
+    assign dout = sel ? romIn : ramIn;
+    assign readValid = sel ? romReadValid : ramReadValid;
+endmodule
+
+module MemMuxEx_(
+    input [31:0] ramIn,
+    input [31:0] romIn,
+    input ramReadValid,
+    input romReadValid,
+    output [31:0] dout,
+    output readValid
+);
+    wire sel = ~ramReadValid;
+    assign dout = sel ? romIn : ramIn;
+    assign readValid = romReadValid | ramReadValid;
 endmodule

@@ -43,7 +43,7 @@ module bypassMux(
     wire [31:0] execVal;
     wire [4:0] _execRd;
     
-    wire _wbRd;
+    wire [4:0] _wbRd;
     
     assign execVal = execMemValid ? execMemVal : execAluVal;
     assign _execRd = execMemValid | execRegWrite ? execRd : 5'b00000;

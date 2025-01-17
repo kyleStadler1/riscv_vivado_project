@@ -39,15 +39,20 @@ module RAM_ #(
     output reg readValidB,
     output reg NOTready
     );
+    reg readValidA_prev, readValidB_prev;
     always @(posedge clk) begin
         if (reset) begin
             readValidA <= 1'b0;
             readValidB <= 1'b0;
             NOTready <= 1'b0;
+            readValidA_prev <= 1'b0;
+            readValidB_prev <= 1'b0;
         end else begin
-            readValidA <= 1'b1;
-            readValidB <= web == 4'b0000 & enB;
+            readValidA_prev <= 1'b1;
+            readValidB_prev <= web == 4'b0000 & enB;
             NOTready <= 1'b0;
+            readValidA <= readValidA_prev;
+            readValidB <= readValidB_prev;
         end
     end
     
