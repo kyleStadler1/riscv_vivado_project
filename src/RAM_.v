@@ -34,6 +34,7 @@ module RAM_ #(
     input [3:0] web,
     input [31:0] addrB,
     input [31:0] dinB,
+    input enB,
     output [31:0] doutB,
     output reg readValidB,
     output reg NOTready
@@ -45,7 +46,7 @@ module RAM_ #(
             NOTready <= 1'b0;
         end else begin
             readValidA <= 1'b1;
-            readValidB <= web == 4'b0000;
+            readValidB <= web == 4'b0000 & enB;
             NOTready <= 1'b0;
         end
     end

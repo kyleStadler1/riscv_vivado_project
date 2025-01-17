@@ -23,6 +23,7 @@ module ROM_ #(
     input reset,
     input [31:0] addrA,
     input [31:0] addrB,
+    input enB,
     output reg [31:0] doutA,
     output reg readValidA,
     output reg [31:0] doutB,
@@ -76,7 +77,7 @@ module ROM_ #(
                 default : doutB <= NOP;
             endcase
             readValidA <= 1'b1;
-            readValidB <= 1'b1;
+            readValidB <= 1'b1&enB;
         end
     end
 endmodule
