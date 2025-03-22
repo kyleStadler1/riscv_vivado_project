@@ -35,7 +35,7 @@ module memFetchLatch(
             pc <= pc;
         end
         else begin
-            pc <= pcIn;
+            pc <= pcIn + 32'd0;
         end
     end
 endmodule

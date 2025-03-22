@@ -1,8 +1,6 @@
-module orGate (
-    input a,
-    input b,
+module constant0 (
     output y
     );
-    assign y = a | b;
+    assign y = 1'b0;
     
 endmodule

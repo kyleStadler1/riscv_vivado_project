@@ -22,15 +22,11 @@
 
 module memOutputLogic_(
     input [31:0] addr, //for byte locations
-    input readValidIn,
     input [31:0] rawDin,
     input [1:0] memOp,
     input [1:0] memSize,
-    
-    output [31:0] dout,
-    output readValid
+    output [31:0] dout
 
     );
     assign dout = rawDin;
-    assign readValid = (memOp == 2'b11 | memOp == 2'b00) ? 1'b0 : readValidIn;
 endmodule

@@ -26,8 +26,7 @@ module PC(
     input reset,
     input jumpEn,
     input [31:0] jumpVect,
-    output reg [31:0] pc,
-    output ena
+    output reg [31:0] pc
     );
     always @(posedge clk) begin
         if (reset) begin
@@ -39,8 +38,6 @@ module PC(
         else begin
             pc <= jumpEn ? jumpVect : pc + 32'd4;
         end
-    end
-    assign ena = 1'b1;
-    
+    end  
 endmodule
 
