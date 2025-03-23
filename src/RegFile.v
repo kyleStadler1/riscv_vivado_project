@@ -40,9 +40,24 @@ module RegFile (
             ra1Out <= ra1Out;
             ra2Out <= ra2Out;
         end else begin
-            rd1 <= regfile[ra1];
-            rd2 <= regfile[ra2];
-            toEdge <= regfile[5'b00001];
+            if (we & wa == ra1) begin
+                rd1 <= wd;
+            end else begin
+                rd1 <= regfile[ra1];
+            end
+            
+            if (we & wa == ra2) begin
+                rd2 <= wd;
+            end else begin
+                rd2 <= regfile[ra2];
+            end
+            
+            if (we & wa == 5'b00001) begin
+                toEdge <= wd;
+            end else begin
+                toEdge <= regfile[5'b00001];
+            end
+            
             ra1Out <= ra1;
             ra2Out <= ra2;
         end
