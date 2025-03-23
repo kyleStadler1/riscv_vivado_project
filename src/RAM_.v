@@ -35,53 +35,104 @@ module RAM_(
     output [31:0] memToEdge
     );
     integer i;
-    reg [31:0] mem [511:0];
+    reg [31:0] mem [1023:0];
     wire [31:0] writeMask = {{8{web[3]}}, {8{web[2]}}, {8{web[1]}}, {8{web[0]}}};
     always @(posedge clk) begin
     
         
         if (writeMask) begin //portB write
-            mem[addrB[9:2]] <= dinB;//((mem[addrB[9:2]] & ~writeMask) | (dinB & writeMask));
+            mem[addrB[12:2]] <= dinB;//((mem[addrB[9:2]] & ~writeMask) | (dinB & writeMask));
         end else begin      //portB read
-            doutB <=  mem[addrB[11:2]];
+            doutB <=  mem[addrB[12:2]];
         end
-        doutA <= mem[addrA[11:2]];
+        doutA <= mem[addrA[12:2]];
         
         if (reset) begin
             doutA <= 32'h13000000;
             doutB <= 32'h13000000;
-            for (i = 0; i < 512; i = i + 1'd1) begin
-                mem[i] <= 32'b0;
+            for (i = 0; i < 1024; i = i + 1'd1) begin
+                mem[i] <= 32'hDEADBEEF;
             end
+            
+            
+            //benchmark mem read write test - works
+            //  mem[0]  <= 32'h00100393;  // 
+            //  mem[1]  <= 32'h00739393;  // 
+            
+            //  mem[2]  <= 32'h00100093;  // 
+            //  mem[3]  <= 32'h00200113;  // 
+            //  mem[4]  <= 32'h00300193;  // 
+            //  mem[5]  <= 32'h00400213;  // 
+            //  mem[6]  <= 32'h0013a023;  // 
+            //  mem[7]  <= 32'h0023a223;  // 
+            //  mem[8]  <= 32'h0033a423;  // 
+            //  mem[9] <= 32'h0043a623;  // 
+            //  mem[10] <= 32'h0003a083;  // 
+            //  mem[11] <= 32'h0043a083;  // 
+            //  mem[12] <= 32'h0083a083;  // 
+            //  mem[13] <= 32'h00c3a083;  // 
+            //  mem[14] <= 32'h00700093;  // 
+    
+            //  mem[15]  <= 32'h00800093;  // 
+            //  mem[16]  <= 32'h00900093;  // 
+            //  mem[17]  <= 32'h00a00093;  // 
+            //  mem[18]  <= 32'h00b00093;  // 
+            //  mem[19]  <= 32'h00c00093;  // 
+            //  mem[20]  <= 32'h00d00093;  // 
+            //  mem[21] <= 32'h00e00093;  // 
+            //  mem[22] <= 32'h00f00093;  // 
+            //  mem[23] <= 32'h3ff00393;  // 
+            //  mem[24] <= 32'h00239393;
+            //  mem[25] <= 32'h0013a023;  // 
+
+       
+            
+            
+//            //c mmio prog - works
+            mem[0] <= 32'h57f00113;    // li sp,1407
+            mem[1] <= 32'h008000ef;    // jal c <main>
+
+            mem[2] <= 32'h0000006f;    // j 8 <hang>
+
+            mem[3] <= 32'hfe010113;    // addi sp,sp,-32
+            mem[4] <= 32'h00112e23;    // sw ra,28(sp)
+            mem[5] <= 32'h00812c23;    // sw s0,24(sp)
+            mem[6] <= 32'h02010413;    // addi s0,sp,32
+            mem[7] <= 32'h000017b7;    // lui a5,0x1
+            mem[8] <= 32'hffc78793;    // addi a5,a5,-4
+            mem[9] <= 32'hfef42623;    // sw a5,-20(s0)
+            mem[10] <= 32'hfec42783;   // lw a5,-20(s0)
+            mem[11] <= 32'h00400713;   // li a4,4
+            mem[12] <= 32'h00e7a023;   // sw a4,0(a5)
+            mem[13] <= 32'h00000793;   // li a5,0
+            mem[14] <= 32'h00078513;   // mv a0,a5
+            mem[15] <= 32'h01c12083;   // lw ra,28(sp)
+            mem[16] <= 32'h01812403;   // lw s0,24(sp)
+            mem[17] <= 32'h02010113;   // addi sp,sp,32
+            mem[18] <= 32'h00008067;   // ret
+
+
+        end
+    end
+    assign memToEdge = mem[10'h3ff];
+endmodule
 
 
 
-        //stack style plustorial works
-        mem[0] <= 32'h00100393;
-        mem[1] <= 32'h00739393;
-        mem[2] <= 32'h00100413;
-        mem[3] <= 32'h0083a023;
+
+//stack style plustorial works
+//        mem[0] <= 32'h00100393;
+//        mem[1] <= 32'h00739393;
+//        mem[2] <= 32'h00100413;
+//        mem[3] <= 32'h0083a023;
         
-        mem[4] <= 32'h0003a083;
-        mem[5] <= 32'h00138393;
-        mem[6] <= 32'h001080b3;
-        mem[7] <= 32'h00108093;
-        mem[8] <= 32'h0013a023;
-        mem[9] <= 32'hfff38393;
-        mem[10] <= 32'hfe9ff06f;
-
-
-
-
-
-
-
-
-
-
-
-
-
+//        mem[4] <= 32'h0003a083;
+//        mem[5] <= 32'h00138393;
+//        mem[6] <= 32'h001080b3;
+//        mem[7] <= 32'h00108093;
+//        mem[8] <= 32'h0013a023;
+//        mem[9] <= 32'hfff38393;
+//        mem[10] <= 32'hfe9ff06f;
 
 //benchmark jump test - works
 //         mem[0]  <= 32'h800000b7;  // lui ra,0x80000 //works
@@ -100,8 +151,6 @@ module RAM_(
 //         mem[13] <= 32'h00b00093;  // li ra,11
 //         mem[14] <= 32'h00c00093;  // li ra,12
 //         mem[15] <= 32'h00d00093;  // li ra,13
-
-
 
 //benchmark mem read write test - works
 //        mem[0]  <= 32'h00100393;  // 
@@ -134,10 +183,7 @@ module RAM_(
             
             
             
-        end
-    end
-    assign memToEdge = mem[1023];
-endmodule
+
 
 
 
