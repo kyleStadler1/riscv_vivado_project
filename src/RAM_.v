@@ -88,11 +88,11 @@ module RAM_(
        
             
             
-//            //c mmio prog - works
+//            //c mmio prog
             mem[0] <= 32'h57f00113;    // li sp,1407
             mem[1] <= 32'h008000ef;    // jal c <main>
 
-            mem[2] <= 32'h0000006f;    // j 8 <hang>
+            mem[2] <= 32'h13000000;//0000006f;    // j 8 <hang>
 
             mem[3] <= 32'hfe010113;    // addi sp,sp,-32
             mem[4] <= 32'h00112e23;    // sw ra,28(sp)
