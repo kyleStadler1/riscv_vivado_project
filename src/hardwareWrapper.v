@@ -35,3 +35,6 @@ module hardwareWrapper(
     );
     assign led = dout[9:0];
 endmodule
+
+
+
