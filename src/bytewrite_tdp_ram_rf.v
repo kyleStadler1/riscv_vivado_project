@@ -52,7 +52,6 @@ module bytewrite_tdp_ram_rf #(
   initial begin
     $readmemb("bram_init.mem", ram_block, 0, (2**ADDR_WIDTH)-1);
   end
-    
 
   integer i;
 

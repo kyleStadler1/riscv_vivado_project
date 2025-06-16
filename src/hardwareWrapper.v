@@ -63,7 +63,7 @@ module top(
     // === Instantiate pipelined CPU ===
     wire [31:0] instr, pc;
     riscWithPipeMem_wrapper cpu (
-        .clk(clk1hz),
+        .clk(clk5),
         .reset(btn | ~stable),   // Active-high reset
         .stall(1'b0),
         .instr(instr),
