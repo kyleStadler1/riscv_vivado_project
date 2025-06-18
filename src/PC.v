@@ -28,7 +28,7 @@ module PC(
     input [31:0] jumpVect,
     output reg [31:0] pc,
     output enA,
-    output [12:0] pcForMem
+    output [14:0] pcForMem
     );
     always @(posedge clk) begin
         if (reset) begin
@@ -42,6 +42,6 @@ module PC(
         end
     end  
     assign enA = 1'b1;
-    assign pcForMem = pc[14:2];
+    assign pcForMem = pc[16:2];
 endmodule
 

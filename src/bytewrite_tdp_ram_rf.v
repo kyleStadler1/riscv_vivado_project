@@ -29,7 +29,7 @@ module bytewrite_tdp_ram_rf #(
   //--------------------------------------------------------------------------
   parameter NUM_COL     = 4,
   parameter COL_WIDTH   = 8,
-  parameter ADDR_WIDTH  = 13,                 // Addr Width in bits : 2^ADDR_WIDTH = RAM Depth
+  parameter ADDR_WIDTH  = 15,                 // Addr Width in bits : 2^ADDR_WIDTH = RAM Depth
   parameter DATA_WIDTH  = NUM_COL * COL_WIDTH // Data Width in bits
   //----------------------------------------------------------------------
 )(
@@ -46,14 +46,14 @@ module bytewrite_tdp_ram_rf #(
 );
 
   // Core Memory
-  (* ram_style = "block" *)
+  (* ram_style = "block" *) 
   reg [DATA_WIDTH-1:0] ram_block [(2**ADDR_WIDTH)-1:0];
   
   initial begin
     $readmemb("bram_init.mem", ram_block, 0, (2**ADDR_WIDTH)-1);
   end
 
-  integer i;
+  integer i; 
 
   // Port-A Operation
   always @ (posedge clk) begin
