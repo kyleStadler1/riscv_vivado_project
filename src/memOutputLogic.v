@@ -57,10 +57,12 @@ module memOutputLogic#(
     );
 
     // Convert instruction from little-endian to big-endian
-    assign instrDout = instrMemRead; //{instrMemRead[7:0], instrMemRead[15:8], instrMemRead[23:16], instrMemRead[31:24]};
+    //assign instrDout = instrMemRead; //{instrMemRead[7:0], instrMemRead[15:8], instrMemRead[23:16], instrMemRead[31:24]};
+    assign instrDout = {instrMemRead[7:0], instrMemRead[15:8], instrMemRead[23:16], instrMemRead[31:24]};
     
     
-    assign dout = rawMemRead; //{rawMemRead[7:0], rawMemRead[15:8], rawMemRead[23:16], rawMemRead[31:24]};
+    //assign dout = rawMemRead; //{rawMemRead[7:0], rawMemRead[15:8], rawMemRead[23:16], rawMemRead[31:24]};
+    assign dout = {rawMemRead[7:0], rawMemRead[15:8], rawMemRead[23:16], rawMemRead[31:24]};
 //    // Extract bytes from little-endian input (byte 0 is LSB)
 //    wire[7:0] byte0, byte1, byte2, byte3;
 //    assign byte0 = rawMemRead[7:0];   // LSB

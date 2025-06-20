@@ -25,7 +25,7 @@
 // bytewrite_tdp_ram_rf.v
 //
 
-module bytewrite_tdp_ram_rf #(
+module bytewrite_tdp_ram_rf #(   
   //--------------------------------------------------------------------------
   parameter NUM_COL     = 4,
   parameter COL_WIDTH   = 8,
@@ -54,7 +54,7 @@ module bytewrite_tdp_ram_rf #(
   end
 
   integer i; 
-
+//    wire a;
   // Port-A Operation
   always @ (posedge clk) begin
     if (enaA) begin

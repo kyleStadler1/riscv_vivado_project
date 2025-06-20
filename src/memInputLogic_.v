@@ -30,9 +30,9 @@ module memInputLogic_ #(
     input [31:0] rawDin,
     
     output enaB,
-    output  [3:0] weB,
+    output [3:0] weB,
     output [14:0] addrB,
-    output  [31:0] dinToMem,
+    output reg [31:0] dinToMem,
     output [31:0] memToEdge
 );
 
@@ -58,8 +58,10 @@ module memInputLogic_ #(
      assign b0 = rawDin[7:0];
     
 
-    assign weB = memOp == MEM_WRITE ? 4'b1111 : 4'b0000;
-    assign dinToMem = {b3, b2, b1, b0};
+    //assign weB = memOp == MEM_WRITE ? 4'b1111 : 4'b0000;
+    
+    /////assign dinToMem = {b3, b2, b1, b0};
+    //assign dinToMem = {b0, b1, b2, b3};
     
 
 
@@ -129,41 +131,36 @@ module memInputLogic_ #(
 //        8'hBE;
 
 
-
-
-
-//     always @(*) begin
-//         case(memSize)
-//             WORD: weB = 4'b1111;
-//             HALFWORD: weB = {addr[1:0]==2'b10, addr[1:0]==2'b10, addr[1:0]==2'b00, addr[1:0]==2'b00};
-//             BYTE: weB = {addr[1:0]==2'b11, addr[1:0]==2'b10, addr[1:0]==2'b01, addr[1:0]==2'b00};
-//             default: weB = 4'b0000;
-//         endcase
-//     end
+    wire writeWord = memSize==WORD && memOp==MEM_WRITE;
+    wire writeHalfWord = memSize==HALFWORD && memOp==MEM_WRITE;
+    wire writeByte = memSize==BYTE && memOp==MEM_WRITE;
     
-//     //big endian input: {b3, b2, b1, b0} msb->lsb
-//     //sets up dinToMem as little endian
-//     always @(*) begin
-//         case({addr[1:0], memSize})
-//             {2'b00, WORD}: dinToMem = {b0, b1, b2, b3};
-//             {2'b00, HALFWORD}: dinToMem = {16'b0, b0, b1};
-//             {2'b00, BYTE}: dinToMem = {24'b0, b0};
+     assign weB = {writeWord, writeWord, writeHalfWord | writeWord, writeByte | writeHalfWord | writeWord} << addr[1:0];
+
+    
+     //big endian input: {b3, b2, b1, b0} msb->lsb
+     //sets up dinToMem as little endian
+     always @(*) begin
+         case({addr[1:0], memSize})
+             {2'b00, WORD}: dinToMem = {b0, b1, b2, b3};
+             {2'b00, HALFWORD}: dinToMem = {16'b0, b0, b1};
+             {2'b00, BYTE}: dinToMem = {24'b0, b0};
             
-//             //{2'b01, WORD}: ;
-//             //{2'b01, HALFWORD}: ;
-//             {2'b01, BYTE}: dinToMem = {16'b0, b0, 8'b0};
+             //{2'b01, WORD}: ;
+             //{2'b01, HALFWORD}: ;
+             {2'b01, BYTE}: dinToMem = {16'b0, b0, 8'b0};
             
-//             //{2'b10, WORD}: ;
-//             {2'b10, HALFWORD}: dinToMem = {b0, b1, 16'b0};
-//             {2'b10, BYTE}: dinToMem = {8'b0, b0, 16'b0};
+             //{2'b10, WORD}: ;
+             {2'b10, HALFWORD}: dinToMem = {b0, b1, 16'b0};
+             {2'b10, BYTE}: dinToMem = {8'b0, b0, 16'b0};
             
-//             //{2'b11, WORD}: ;
-//             //{2'b11, HALFWORD}: ;
-//             {2'b11, BYTE}: dinToMem = {b0, 24'b0};
+             //{2'b11, WORD}: ;
+             //{2'b11, HALFWORD}: ;
+             {2'b11, BYTE}: dinToMem = {b0, 24'b0};
             
-//             default: dinToMem = 32'hCAFE_BABE;
-//         endcase
-//     end
+             default: dinToMem = 32'hCAFE_BABE;
+         endcase
+     end
     
     
     //
@@ -241,7 +238,7 @@ module memInputLogic_ #(
             mmio <= 32'hDEADBEEF;
         end else begin
             if (enaB && addrB == 13'h3ff) begin
-                mmio <= dinToMem;
+                mmio <= rawDin;
             end
         end
     end
