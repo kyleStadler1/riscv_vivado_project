@@ -51,17 +51,17 @@ module bytewrite_tdp_ram_rf #(
   
   initial begin
     $readmemb("bram_init.mem", ram_block, 0, (2**ADDR_WIDTH)-1);
-  end
-
-  integer i; 
-//    wire a;
+  end 
+ 
+  integer i;           
+ //wire a;      
   // Port-A Operation
   always @ (posedge clk) begin
     if (enaA) begin
       doutA <= ram_block[addrA];
     end
-  end
-
+  end    
+ 
   // Port-B Operation
   always @ (posedge clk) begin
     if (enaB) begin
@@ -75,4 +75,7 @@ module bytewrite_tdp_ram_rf #(
   end
 
 endmodule // bytewrite_tdp_ram_rf
+
+
+
 

@@ -1,4 +1,4 @@
-module memInputLogic_ #(
+ module memInputLogic_ #(
     // Parameters for memory operations
      parameter MEM_DISABLE   = 2'b00,
      parameter MEM_READ_SEXT = 2'b01,
@@ -63,104 +63,74 @@ module memInputLogic_ #(
     /////assign dinToMem = {b3, b2, b1, b0};
     //assign dinToMem = {b0, b1, b2, b3};
     
-
-
-
-//    // -------------------
-//    // weB assignment
-//    // -------------------
-//    wire isWord     = (memSize == 2'b00);
-//    wire isHalfword = (memSize == 2'b01);
-//    wire isByte     = (memSize == 2'b10);
-
-//    wire addr00 = (addr[1:0] == 2'b00);
-//    wire addr01 = (addr[1:0] == 2'b01);
-//    wire addr10 = (addr[1:0] == 2'b10);
-//    wire addr11 = (addr[1:0] == 2'b11);
-
-//    assign weB[3] = (isWord) | (isHalfword & addr10) | (isByte & addr11);
-//    assign weB[2] = (isWord) | (isHalfword & addr10) | (isByte & addr10);
-//    assign weB[1] = (isWord) | (isHalfword & addr00) | (isByte & addr01);
-//    assign weB[0] = (isWord) | (isHalfword & addr00) | (isByte & addr00);
-
-//    // -------------------
-//    // dinToMem assignment
-//    // -------------------
-//    wire sel00_word     = (addr[1:0] == 2'b00) && (memSize == 2'b00);
-//    wire sel00_half     = (addr[1:0] == 2'b00) && (memSize == 2'b01);
-//    wire sel00_byte     = (addr[1:0] == 2'b00) && (memSize == 2'b10);
-//    wire sel01_byte     = (addr[1:0] == 2'b01) && (memSize == 2'b10);
-//    wire sel10_half     = (addr[1:0] == 2'b10) && (memSize == 2'b01);
-//    wire sel10_byte     = (addr[1:0] == 2'b10) && (memSize == 2'b10);
-//    wire sel11_byte     = (addr[1:0] == 2'b11) && (memSize == 2'b10);
-
-//    // Default filler pattern
-//    assign dinToMem[31:24] =
-//        sel00_word     ? b0 :
-//        sel10_half     ? b0 :
-//        sel10_byte     ? 8'b0 :
-//        sel11_byte     ? b0 :
-//        8'hCA;
-
-//    assign dinToMem[23:16] =
-//        sel00_word     ? b1 :
-//        sel00_half     ? b0 :
-//        sel01_byte     ? b0 :
-//        sel10_half     ? b1 :
-//        sel10_byte     ? b0 :
-//        sel11_byte     ? 8'b0 :
-//        8'hFE;
-
-//    assign dinToMem[15:8] =
-//        sel00_word     ? b2 :
-//        sel00_half     ? b1 :
-//        sel01_byte     ? 8'b0 :
-//        sel10_half     ? 8'b0 :
-//        sel10_byte     ? 8'b0 :
-//        sel11_byte     ? 8'b0 :
-//        8'hBA;
-
-//    assign dinToMem[7:0] =
-//        sel00_word     ? b3 :
-//        sel00_half     ? 8'b0 :
-//        sel00_byte     ? b0 :
-//        sel01_byte     ? 8'b0 :
-//        sel10_half     ? 8'b0 :
-//        sel10_byte     ? 8'b0 :
-//        sel11_byte     ? 8'b0 :
-//        8'hBE;
-
-
     wire writeWord = memSize==WORD && memOp==MEM_WRITE;
     wire writeHalfWord = memSize==HALFWORD && memOp==MEM_WRITE;
     wire writeByte = memSize==BYTE && memOp==MEM_WRITE;
     
-     assign weB = {writeWord, writeWord, writeHalfWord | writeWord, writeByte | writeHalfWord | writeWord} << addr[1:0];
+    //assign weB = {writeWord, writeWord, writeHalfWord | writeWord, writeByte | writeHalfWord | writeWord} << addr[1:0];
+    assign weB = (memOp != MEM_WRITE) ? 4'b0000 :
+        (memSize == WORD)     ? 4'b1111 :
+        (memSize == HALFWORD) ? (addr[1] ? 4'b0011 : 4'b1100) :
+        (memSize == BYTE)     ? (4'b1000 >> addr[1:0]) :
+        4'b0000;
 
     
      //big endian input: {b3, b2, b1, b0} msb->lsb
      //sets up dinToMem as little endian
-     always @(*) begin
-         case({addr[1:0], memSize})
-             {2'b00, WORD}: dinToMem = {b0, b1, b2, b3};
-             {2'b00, HALFWORD}: dinToMem = {16'b0, b0, b1};
-             {2'b00, BYTE}: dinToMem = {24'b0, b0};
+    //  always @(*) begin
+    //      case({addr[1:0], memSize})
+    //          {2'b00, WORD}: dinToMem = {b0, b1, b2, b3};
+    //          {2'b00, HALFWORD}: dinToMem = {16'b0, b0, b1};
+    //          {2'b00, BYTE}: dinToMem = {24'b0, b0};
             
-             //{2'b01, WORD}: ;
-             //{2'b01, HALFWORD}: ;
-             {2'b01, BYTE}: dinToMem = {16'b0, b0, 8'b0};
+    //          //{2'b01, WORD}: ;
+    //          //{2'b01, HALFWORD}: ;
+    //          {2'b01, BYTE}: dinToMem = {16'b0, b0, 8'b0};
             
-             //{2'b10, WORD}: ;
-             {2'b10, HALFWORD}: dinToMem = {b0, b1, 16'b0};
-             {2'b10, BYTE}: dinToMem = {8'b0, b0, 16'b0};
+    //          //{2'b10, WORD}: ;
+    //          {2'b10, HALFWORD}: dinToMem = {b0, b1, 16'b0};
+    //          {2'b10, BYTE}: dinToMem = {8'b0, b0, 16'b0};
             
-             //{2'b11, WORD}: ;
-             //{2'b11, HALFWORD}: ;
-             {2'b11, BYTE}: dinToMem = {b0, 24'b0};
+    //          //{2'b11, WORD}: ;
+    //          //{2'b11, HALFWORD}: ;
+    //          {2'b11, BYTE}: dinToMem = {b0, 24'b0};
             
-             default: dinToMem = 32'hCAFE_BABE;
-         endcase
-     end
+    //          default: dinToMem = 32'hCAFE_BABE;
+    //      endcase
+    //  end
+
+
+
+
+    always @(*) begin
+        dinToMem = 32'hDEADBEEF;
+        case (memSize)
+            WORD: begin
+                dinToMem = {rawDin[7:0], rawDin[15:8], rawDin[23:16], rawDin[31:24]};
+            end
+            HALFWORD: begin
+                case (addr[1])
+                    1'b0: dinToMem = {rawDin[7:0], rawDin[15:8], 16'b0};   // low half
+                    1'b1: dinToMem = {16'b0, rawDin[7:0], rawDin[15:8]};   // high half
+                endcase
+            end
+            BYTE: begin
+                case (addr[1:0])
+//                    2'b00: dinToMem = {24'b0, rawDin[7:0]};
+//                    2'b01: dinToMem = {16'b0, rawDin[7:0], 8'b0};
+//                    2'b10: dinToMem = {8'b0, rawDin[7:0], 16'b0};
+//                    2'b11: dinToMem = {rawDin[7:0], 24'b0};
+                     2'b00: dinToMem = {rawDin[7:0], 24'b0};      // MSB position
+                     2'b01: dinToMem = {8'b0, rawDin[7:0], 16'b0};
+                     2'b10: dinToMem = {16'b0, rawDin[7:0], 8'b0};
+                     2'b11: dinToMem = {24'b0, rawDin[7:0]};      // LSB position
+                endcase
+            end
+        endcase
+    end
+
+
+
     
     
     //
@@ -237,7 +207,7 @@ module memInputLogic_ #(
         if (reset) begin
             mmio <= 32'hDEADBEEF;
         end else begin
-            if (enaB && addrB == 13'h3ff) begin
+            if (enaB && addr == 32'h0000_A000) begin
                 mmio <= rawDin;
             end
         end

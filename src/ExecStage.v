@@ -134,14 +134,15 @@ module alu #(
     input [3:0] aluOp,
     output wire [31:0] aluOut
 );
+    wire signed [31:0] signedA = $signed(a);
     assign aluOut = (aluOp == ADD)  ? (a + b) :
                  (aluOp == SUB)  ? (a - b) :
                  (aluOp == XOR)  ? (a ^ b) :
                  (aluOp == OR)   ? (a | b) :
                  (aluOp == AND)  ? (a & b) :
                  (aluOp == SLL)  ? (a << b[4:0]) :
-                 (aluOp == SRL)  ? (a >> b[4:0]) :
-                 (aluOp == SRA)  ? (a >>> b[4:0]) :
+                (aluOp == SRL) ? (a >> b[4:0]) :
+                (aluOp == SRA) ? $signed((signedA >>> b[4:0])) :
                  (aluOp == SLT)  ? {31'b0, $signed(a) < $signed(b)} :
                  (aluOp == SLTU) ? {31'b0, a < b} :
                  (aluOp == BEQ)  ? {31'b0, a == b} :
