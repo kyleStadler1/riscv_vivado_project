@@ -1,92 +1,92 @@
-module ExecStage (
-    input clk,
-    input stall,
-    input reset,
-    input [31:0] rs1Val,
-    input [31:0] rs2Val,
-    input [31:0] imm,
-    input [31:0] pc,
-    input selA,
-    input [1:0] selB,
-    input [3:0] aluOp,
-    input branch,
-    input jal,
-    input jalr,
-    input [1:0] memOpIn,
-    input [1:0] memSizeIn,
-    output wire [31:0] aluToRegFile,
-    output reg [31:0] aluToMem,
-    output reg pcSel = 1'b0,
-    output reg [31:0] pcVect,
-    output reg [1:0] memOp = 2'b00,
-    output reg [1:0] memSize,
-    output reg [31:0] memDin
-);
-    wire [31:0] aOut, bOut;
-    inputAMux inputAMux (
-        .r1(rs1Val),
-        .pc(pc),
-        .sel(selA),
-        .aOut(aOut)
-    );
-    inputBMux inputBMux (
-        .r2(rs2Val),
-        .imm(imm),
-        .sel(selB),
-        .bOut(bOut)
-    );
-    wire [31:0] _aluOut;
-    alu alu (
-        .a(aOut),
-        .b(bOut),
-        .aluOp(aluOp),
-        .aluOut(_aluOut)
-    );
-    wire [31:0] _pcVect;
-    pcAlu pcAlu (
-        .pc(pc),
-        .imm(imm),
-        .r1(rs1Val),
-        .sel(jalr),
-        .pcOut(_pcVect)
-    );
-    wire _pcSel;
-    pcMuxSelector pcMuxSelector (
-        .aluOut(_aluOut),
-        .branch(branch),
-        .jal(jal),
-        .jalr(jalr),
-        .pcMuxSel(_pcSel)
-    );
+// module ExecStage (
+//     input clk,
+//     input stall,
+//     input reset,
+//     input [31:0] rs1Val,
+//     input [31:0] rs2Val,
+//     input [31:0] imm,
+//     input [31:0] pc,
+//     input selA,
+//     input [1:0] selB,
+//     input [3:0] aluOp,
+//     input branch,
+//     input jal,
+//     input jalr,
+//     input [1:0] memOpIn,
+//     input [1:0] memSizeIn,
+//     output wire [31:0] aluToRegFile,
+//     output reg [31:0] aluToMem,
+//     output reg pcSel = 1'b0,
+//     output reg [31:0] pcVect,
+//     output reg [1:0] memOp = 2'b00,
+//     output reg [1:0] memSize,
+//     output reg [31:0] memDin
+// );
+//     wire [31:0] aOut, bOut;
+//     inputAMux inputAMux (
+//         .r1(rs1Val),
+//         .pc(pc),
+//         .sel(selA),
+//         .aOut(aOut)
+//     );
+//     inputBMux inputBMux (
+//         .r2(rs2Val),
+//         .imm(imm),
+//         .sel(selB),
+//         .bOut(bOut)
+//     );
+//     wire [31:0] _aluOut;
+//     alu alu (
+//         .a(aOut),
+//         .b(bOut),
+//         .aluOp(aluOp),
+//         .aluOut(_aluOut)
+//     );
+//     wire [31:0] _pcVect;
+//     pcAlu pcAlu (
+//         .pc(pc),
+//         .imm(imm),
+//         .r1(rs1Val),
+//         .sel(jalr),
+//         .pcOut(_pcVect)
+//     );
+//     wire _pcSel;
+//     pcMuxSelector pcMuxSelector (
+//         .aluOut(_aluOut),
+//         .branch(branch),
+//         .jal(jal),
+//         .jalr(jalr),
+//         .pcMuxSel(_pcSel)
+//     );
 
-    assign aluToRegFile = _aluOut;
-    always @(posedge clk) begin
-        if (reset) begin
-            aluToMem <= 32'b0;
-            pcSel <= 1'b0;
-            pcVect <= 32'b0;
-            memOp <= 2'b00;
-            memSize <= 2'b00;
-            memDin <= 32'b0;
-        end else begin
-            if (stall) begin
-                aluToMem <= aluToMem;
-                pcSel <= pcSel;
-                pcVect <= pcVect;
-                memOp <= memOp;
-                memSize <= memSize;
-                memDin <= memDin;
-            end else begin
-                aluToMem <= _aluOut;
-                pcSel <= _pcSel;
-                pcVect <= _pcVect;
-                memOp <= memOpIn;
-                memSize <= memSizeIn;
-                memDin <= rs2Val;
-            end
-        end
-    end
-endmodule
+//     assign aluToRegFile = _aluOut;
+//     always @(posedge clk) begin
+//         if (reset) begin
+//             aluToMem <= 32'b0;
+//             pcSel <= 1'b0;
+//             pcVect <= 32'b0;
+//             memOp <= 2'b00;
+//             memSize <= 2'b00;
+//             memDin <= 32'b0;
+//         end else begin
+//             if (stall) begin
+//                 aluToMem <= aluToMem;
+//                 pcSel <= pcSel;
+//                 pcVect <= pcVect;
+//                 memOp <= memOp;
+//                 memSize <= memSize;
+//                 memDin <= memDin;
+//             end else begin
+//                 aluToMem <= _aluOut;
+//                 pcSel <= _pcSel;
+//                 pcVect <= _pcVect;
+//                 memOp <= memOpIn;
+//                 memSize <= memSizeIn;
+//                 memDin <= rs2Val;
+//             end
+//         end
+//     end
+// endmodule
 
 
 module inputAMux (
