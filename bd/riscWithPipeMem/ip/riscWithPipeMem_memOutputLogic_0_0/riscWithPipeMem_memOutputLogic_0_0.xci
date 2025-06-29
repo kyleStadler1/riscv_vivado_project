@@ -1,0 +1,77 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "riscWithPipeMem_memOutputLogic_0_0",
+    "cell_name": "memOutputLogic_0",
+    "component_reference": "xilinx.com:module_ref:memOutputLogic:1.0",
+    "ip_revision": "1",
+    "gen_directory": ".",
+    "parameters": {
+      "component_parameters": {
+        "MEM_DISABLE": [ { "value": "\"00\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "MEM_READ_SEXT": [ { "value": "\"01\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "MEM_READ_ZEXT": [ { "value": "\"10\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "MEM_WRITE": [ { "value": "\"11\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BYTE": [ { "value": "\"00\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "HALFWORD": [ { "value": "\"01\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "WORD": [ { "value": "\"10\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "CPU_BRAM_START": [ { "value": "0x00000000", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "CPU_BRAM_END": [ { "value": "0x007FFF00", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BUF_BRAM_START": [ { "value": "0x01000000", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BUF_BRAM_END": [ { "value": "0x013FFF00", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "READ_REG_INPUT": [ { "value": "0x02000000", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "WRITE_REG_OUTPUT": [ { "value": "0x02000100", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "Component_Name": [ { "value": "riscWithPipeMem_memOutputLogic_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "MEM_DISABLE": [ { "value": "\"00\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "MEM_READ_SEXT": [ { "value": "\"01\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "MEM_READ_ZEXT": [ { "value": "\"10\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "MEM_WRITE": [ { "value": "\"11\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BYTE": [ { "value": "\"00\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "HALFWORD": [ { "value": "\"01\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "WORD": [ { "value": "\"10\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "CPU_BRAM_START": [ { "value": "0x00000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "CPU_BRAM_END": [ { "value": "0x007FFF00", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BUF_BRAM_START": [ { "value": "0x01000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BUF_BRAM_END": [ { "value": "0x013FFF00", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "READ_REG_INPUT": [ { "value": "0x02000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "WRITE_REG_OUTPUT": [ { "value": "0x02000100", "resolve_type": "generated", "format": "bitString", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z007s" } ],
+        "PACKAGE": [ { "value": "clg400" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "." } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "addr": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "memOp": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
+        "memSize": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
+        "rawMemRead": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "instrMemRead": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "instrDout": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
+        "dout": [ { "direction": "out", "size_left": "31", "size_right": "0" } ]
+      }
+    }
+  }
+}

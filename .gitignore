@@ -10,8 +10,52 @@
 #riscv2_project
 #*.tmp
 #*.zip
+
+#
+# *
+# !.gitignore
+# !/src/
+# !/src/**.v
+# !/src/*.v
+# !*.tcl
+#
+
+
+# Ignore everything by default
 *
+
+# But don't ignore this .gitignore itself
 !.gitignore
+
+# Don't ignore TCL project script(s)
+!*.tcl
+!**/*.tcl
+
+# Don't ignore Verilog source files anywhere
+!*.v
+!**/*.v
+
+# Don't ignore block design wrapper files in /bd/
+!/bd/
+!/bd/**
+
+# Don't ignore mem init files
+!*.mem
+!**/*.mem
+
+# Don't ignore constraint files
+!*.xdc
+!**/*.xdc
+
+# Don't ignore IP configuration files
+!*.xci
+!**/*.xci
+
+# Don't ignore checkpoint files
+!*.dcp
+!**/*.dcp
+
+# Don't ignore these important folders and everything inside
 !/src/
-!/src/**.v
-!/src/*.v
+!/constraints/
+!/bd/

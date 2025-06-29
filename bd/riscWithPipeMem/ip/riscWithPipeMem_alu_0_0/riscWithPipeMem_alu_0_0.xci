@@ -1,0 +1,80 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "riscWithPipeMem_alu_0_0",
+    "cell_name": "alu_0",
+    "component_reference": "xilinx.com:module_ref:alu:1.0",
+    "ip_revision": "1",
+    "gen_directory": ".",
+    "parameters": {
+      "component_parameters": {
+        "ADD": [ { "value": "\"0000\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "SUB": [ { "value": "\"0001\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "AND": [ { "value": "\"0010\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "OR": [ { "value": "\"0011\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "XOR": [ { "value": "\"0100\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "SLL": [ { "value": "\"0101\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "SRL": [ { "value": "\"0110\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "SRA": [ { "value": "\"0111\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "SLT": [ { "value": "\"1000\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "SLTU": [ { "value": "\"1001\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BEQ": [ { "value": "\"1010\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BNE": [ { "value": "\"1011\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BLT": [ { "value": "\"1100\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BGE": [ { "value": "\"1101\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BLTU": [ { "value": "\"1110\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "BGEU": [ { "value": "\"1111\"", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "Component_Name": [ { "value": "riscWithPipeMem_alu_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "ADD": [ { "value": "\"0000\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "SUB": [ { "value": "\"0001\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "AND": [ { "value": "\"0010\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "OR": [ { "value": "\"0011\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "XOR": [ { "value": "\"0100\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "SLL": [ { "value": "\"0101\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "SRL": [ { "value": "\"0110\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "SRA": [ { "value": "\"0111\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "SLT": [ { "value": "\"1000\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "SLTU": [ { "value": "\"1001\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BEQ": [ { "value": "\"1010\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BNE": [ { "value": "\"1011\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BLT": [ { "value": "\"1100\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BGE": [ { "value": "\"1101\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BLTU": [ { "value": "\"1110\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "BGEU": [ { "value": "\"1111\"", "resolve_type": "generated", "format": "bitString", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z007s" } ],
+        "PACKAGE": [ { "value": "clg400" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "." } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "a": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "b": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "aluOp": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "aluOut": [ { "direction": "out", "size_left": "31", "size_right": "0" } ]
+      }
+    }
+  }
+}
