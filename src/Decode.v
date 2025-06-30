@@ -740,7 +740,7 @@ module Decode #(
                 // JALR (I-Type)
                 JALR: begin
                     // JALR
-                    rs1 <= 5'b00000;
+                    rs1 <= rs1_field;
                     rs2 <= 5'b00000;
                     rd <= rd_field;
                     imm <= Iimm;//{{20{imm_20_field[11]}}, imm_20_field, 1'b0};

@@ -34,6 +34,7 @@ module bytewrite_tdp_ram_rf #(
   //----------------------------------------------------------------------
 )(
   input clk,
+  input reset,
   input enaA,
   input [ADDR_WIDTH-1:0] addrA,
   output reg [DATA_WIDTH-1:0] doutA,
@@ -62,17 +63,17 @@ module bytewrite_tdp_ram_rf #(
     end
   end    
  
-  // Port-B Operation
-  always @ (posedge clk) begin
-    if (enaB) begin
-      for (i = 0; i < NUM_COL; i = i + 1) begin
-        if (weB[i]) begin
-          ram_block[addrB][i*COL_WIDTH +: COL_WIDTH] <= dinB[i*COL_WIDTH +: COL_WIDTH];
-        end
-      end
-      doutB <= ram_block[addrB];
-    end
-  end
+   // Port-B Operation
+   always @ (posedge clk) begin
+     if (enaB) begin
+       for (i = 0; i < NUM_COL; i = i + 1) begin
+         if (weB[i]) begin
+           ram_block[addrB][i*COL_WIDTH +: COL_WIDTH] <= dinB[i*COL_WIDTH +: COL_WIDTH];
+         end
+       end
+       doutB <=  ram_block[addrB];
+     end
+   end
 
 endmodule // bytewrite_tdp_ram_rf
 

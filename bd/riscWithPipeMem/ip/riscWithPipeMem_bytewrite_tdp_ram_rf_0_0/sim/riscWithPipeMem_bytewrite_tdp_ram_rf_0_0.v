@@ -56,6 +56,7 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module riscWithPipeMem_bytewrite_tdp_ram_rf_0_0 (
   clk,
+  reset,
   enaA,
   addrA,
   doutA,
@@ -66,9 +67,12 @@ module riscWithPipeMem_bytewrite_tdp_ram_rf_0_0 (
   doutB
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
 input wire enaA;
 input wire [14 : 0] addrA;
 output wire [31 : 0] doutA;
@@ -85,6 +89,7 @@ output wire [31 : 0] doutB;
     .DATA_WIDTH(32)
   ) inst (
     .clk(clk),
+    .reset(reset),
     .enaA(enaA),
     .addrA(addrA),
     .doutA(doutA),

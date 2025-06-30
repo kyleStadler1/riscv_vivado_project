@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Jun 27 02:45:29 2025" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jun 30 03:06:21 2025" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="riscWithPipeMem" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -17,23 +17,23 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="opLatch_0" PORT="clk"/>
         <CONNECTION INSTANCE="writeBackLatch_0" PORT="clk"/>
-        <CONNECTION INSTANCE="Decode_0" PORT="clk"/>
         <CONNECTION INSTANCE="memFetchLatch_0" PORT="clk"/>
         <CONNECTION INSTANCE="new_reg_file_0" PORT="clk"/>
         <CONNECTION INSTANCE="PC_0" PORT="clk"/>
         <CONNECTION INSTANCE="execLatch_0" PORT="clk"/>
-        <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="clk"/>
         <CONNECTION INSTANCE="memInputLogic_0" PORT="clk"/>
+        <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="clk"/>
+        <CONNECTION INSTANCE="Decode_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="stall" SIGIS="undef" SIGNAME="External_Ports_stall">
       <CONNECTIONS>
         <CONNECTION INSTANCE="writeBackLatch_0" PORT="stall"/>
         <CONNECTION INSTANCE="opLatch_0" PORT="stall"/>
-        <CONNECTION INSTANCE="Decode_0" PORT="stall"/>
         <CONNECTION INSTANCE="memFetchLatch_0" PORT="stall"/>
         <CONNECTION INSTANCE="PC_0" PORT="stall"/>
         <CONNECTION INSTANCE="execLatch_0" PORT="stall"/>
+        <CONNECTION INSTANCE="Decode_0" PORT="stall"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="31" NAME="memToEdge" RIGHT="0" SIGIS="undef" SIGNAME="memInputLogic_0_memToEdge">
@@ -455,6 +455,11 @@
             <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="resetManager_0_mainReset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="resetManager_0" PORT="mainReset"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="enaA" SIGIS="undef" SIGNAME="PC_0_enA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PC_0" PORT="enA"/>
@@ -743,8 +748,8 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="instrDout" RIGHT="0" SIGIS="undef" SIGNAME="memOutputLogic_0_instrDout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Decode_0" PORT="instruction"/>
             <CONNECTION INSTANCE="External_Ports" PORT="instr"/>
+            <CONNECTION INSTANCE="Decode_0" PORT="instruction"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="memOutputLogic_0_dout">
@@ -1064,12 +1069,13 @@
         <PORT DIR="O" NAME="mainReset" SIGIS="undef" SIGNAME="resetManager_0_mainReset">
           <CONNECTIONS>
             <CONNECTION INSTANCE="writeBackLatch_0" PORT="reset"/>
-            <CONNECTION INSTANCE="Decode_0" PORT="reset"/>
             <CONNECTION INSTANCE="memFetchLatch_0" PORT="reset"/>
             <CONNECTION INSTANCE="new_reg_file_0" PORT="rst"/>
             <CONNECTION INSTANCE="PC_0" PORT="reset"/>
             <CONNECTION INSTANCE="execLatch_0" PORT="reset"/>
             <CONNECTION INSTANCE="memInputLogic_0" PORT="reset"/>
+            <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="reset"/>
+            <CONNECTION INSTANCE="Decode_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="flushReset" SIGIS="undef" SIGNAME="resetManager_0_flushReset">

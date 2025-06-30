@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.45832",
-   "Default View_TopLeft":"577,-539",
+   "Default View_TopLeft":"256,-636",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
@@ -18,84 +18,84 @@ preplace portBus instr -pg 1 -lvl 13 -x 6400 -y 590 -defaultsOSRD
 preplace inst aluMuxComb_0 -pg 1 -lvl 6 -x 60 -y -330 -defaultsOSRD
 preplace inst opLatch_0 -pg 1 -lvl 4 -x -790 -y -80 -defaultsOSRD
 preplace inst resetManager_0 -pg 1 -lvl 1 -x -1880 -y -390 -defaultsOSRD
-preplace inst writeBackLatch_0 -pg 1 -lvl 12 -x 2410 -y -140 -defaultsOSRD
-preplace inst Decode_0 -pg 1 -lvl 3 -x -1220 -y -60 -defaultsOSRD
+preplace inst writeBackLatch_0 -pg 1 -lvl 12 -x 2420 -y -140 -defaultsOSRD
 preplace inst memFetchLatch_0 -pg 1 -lvl 2 -x -1550 -y -50 -defaultsOSRD
 preplace inst bypassMux_0 -pg 1 -lvl 5 -x -310 -y -380 -defaultsOSRD
 preplace inst new_reg_file_0 -pg 1 -lvl 4 -x -790 -y -440 -defaultsOSRD
 preplace inst PC_0 -pg 1 -lvl 1 -x -1880 -y -40 -defaultsOSRD
-preplace inst execLatch_0 -pg 1 -lvl 10 -x 1610 -y -310 -defaultsOSRD
-preplace inst bytewrite_tdp_ram_rf_0 -pg 1 -lvl 10 -x 1610 -y 40 -defaultsOSRD
+preplace inst execLatch_0 -pg 1 -lvl 10 -x 1630 -y -310 -defaultsOSRD
 preplace inst memInputLogic_0 -pg 1 -lvl 9 -x 1190 -y 50 -defaultsOSRD
-preplace inst memOutputLogic_0 -pg 1 -lvl 11 -x 2040 -y 40 -defaultsOSRD
+preplace inst memOutputLogic_0 -pg 1 -lvl 11 -x 2080 -y 40 -defaultsOSRD
 preplace inst alu_0 -pg 1 -lvl 7 -x 420 -y -340 -defaultsOSRD
 preplace inst pcAlu_0 -pg 1 -lvl 7 -x 420 -y -190 -defaultsOSRD
-preplace inst pcMuxSelector_0 -pg 1 -lvl 8 -x 800 -y -270 -defaultsOSRD
+preplace inst pcMuxSelector_0 -pg 1 -lvl 8 -x 810 -y -270 -defaultsOSRD
+preplace inst bytewrite_tdp_ram_rf_0 -pg 1 -lvl 10 -x 1630 -y 40 -defaultsOSRD
+preplace inst Decode_0 -pg 1 -lvl 3 -x -1220 -y -60 -defaultsOSRD
 preplace netloc Decode_0_aluOp 1 3 1 -1020 -110n
-preplace netloc Decode_0_aluToReg 1 3 1 -1070 -50n
-preplace netloc Decode_0_branch 1 3 1 -1070 10n
+preplace netloc Decode_0_aluToReg 1 3 1 -1060 -50n
+preplace netloc Decode_0_branch 1 3 1 -1060 10n
 preplace netloc Decode_0_imm 1 3 1 -1020 -160n
-preplace netloc Decode_0_jal 1 3 1 -1070 30n
-preplace netloc Decode_0_jalr 1 3 1 -1070 50n
+preplace netloc Decode_0_jal 1 3 1 -1060 30n
+preplace netloc Decode_0_jalr 1 3 1 -1060 50n
 preplace netloc Decode_0_memOp 1 3 1 -960 -120n
 preplace netloc Decode_0_memSize 1 3 1 -970 -140n
 preplace netloc Decode_0_pc 1 3 1 -950 -80n
 preplace netloc Decode_0_rd 1 3 1 -950 -150n
-preplace netloc Decode_0_rs1 1 3 1 -1070 -440n
-preplace netloc Decode_0_rs2 1 3 1 -1060 -420n
+preplace netloc Decode_0_rs1 1 3 1 -1060 -440n
+preplace netloc Decode_0_rs2 1 3 1 -1050 -420n
 preplace netloc Decode_0_selA 1 3 1 -1010 -90n
 preplace netloc Decode_0_selB 1 3 1 -1030 -70n
-preplace netloc PC_0_enA 1 1 9 -1680J 60 -1420J 140 N 140 -530 -50 N -50 280 -60 N -60 N -60 1350
-preplace netloc PC_0_pc 1 1 12 -1710 160 N 160 N 160 -500 140 N 140 N 140 630 -140 N -140 1340 -170 1780 -400 N -400 N
-preplace netloc PC_0_pcForMem 1 1 9 -1730J 70 -1430J 150 N 150 N 150 N 150 N 150 N 150 990 160 1340
-preplace netloc aluMuxComb_0_a 1 6 1 180 -360n
-preplace netloc aluMuxComb_0_b 1 6 1 190 -340n
-preplace netloc alu_0_aluOut 1 7 3 600 -360 1000 -320 N
-preplace netloc bypassMux_0_r1Val 1 5 2 -60 -180 N
-preplace netloc bypassMux_0_r2Val 1 5 4 -90 -110 180 100 N 100 N
-preplace netloc bytewrite_tdp_ram_rf_0_doutA 1 10 1 1790 30n
-preplace netloc bytewrite_tdp_ram_rf_0_doutB 1 10 1 1770 50n
-preplace netloc clk_1 1 0 12 -2070 60 -1690 -140 -1370 -260 -980 -280 -540 -170 N -170 290 -50 N -50 1040 -70 1460 -150 1820 -210 N
-preplace netloc execLatch_0_alu 1 4 8 -500 -40 N -40 N -40 N -40 940 -80 N -80 1840 -150 N
-preplace netloc execLatch_0_aluToReg 1 4 8 -460 -80 N -80 N -80 590 -130 N -130 1450 -160 1790 -160 2220
-preplace netloc execLatch_0_memOpOut 1 10 1 1860 -360n
-preplace netloc execLatch_0_memSizeOut 1 10 1 1830 -340n
-preplace netloc execLatch_0_rd 1 4 8 -480 160 N 160 N 160 630 180 N 180 N 180 1760 -70 N
-preplace netloc fakeMemIO_0_doutB 1 4 8 -490 180 N 180 N 180 590 190 N 190 N 190 1850 -60 2230
-preplace netloc inferredBRAM_0_doutA 1 2 11 -1370 170 N 170 N 170 N 170 N 170 N 170 N 170 N 170 N 170 2210 190 2590
+preplace netloc PC_0_enA 1 1 9 -1680J 50 -1420J 140 N 140 N 140 N 140 N 140 660 160 N 160 1430
+preplace netloc PC_0_pc 1 1 12 -1700 160 N 160 N 160 N 160 N 160 N 160 640 -170 N -170 N -170 1800 -400 N -400 N
+preplace netloc PC_0_pcForMem 1 1 9 -1710J 60 -1430J 150 N 150 N 150 N 150 N 150 630 180 N 180 1380
+preplace netloc aluMuxComb_0_a 1 6 1 190 -360n
+preplace netloc aluMuxComb_0_b 1 6 1 220 -340n
+preplace netloc alu_0_aluOut 1 7 3 680 -360 990 -320 N
+preplace netloc bypassMux_0_r1Val 1 5 2 -80 -180 N
+preplace netloc bypassMux_0_r2Val 1 5 4 -110 -120 190 100 N 100 N
+preplace netloc bytewrite_tdp_ram_rf_0_doutA 1 10 1 1820 30n
+preplace netloc bytewrite_tdp_ram_rf_0_doutB 1 10 1 1800 50n
+preplace netloc clk_1 1 0 12 -2080 60 -1720 -140 -1380 -260 -980 -280 -600 -170 N -170 210 -40 N -40 1020 -60 1450 -150 1840 -210 N
+preplace netloc execLatch_0_alu 1 4 8 -510 -50 N -50 N -50 630 -110 N -110 N -110 1870 -150 N
+preplace netloc execLatch_0_aluToReg 1 4 8 -470 -60 N -60 N -60 620 -120 N -120 N -120 1890 -110 N
+preplace netloc execLatch_0_memOpOut 1 10 1 1900 -360n
+preplace netloc execLatch_0_memSizeOut 1 10 1 1860 -340n
+preplace netloc execLatch_0_rd 1 4 8 -490 20 N 20 N 20 N 20 960 170 N 170 1790 -70 N
+preplace netloc fakeMemIO_0_doutB 1 4 8 -500 170 N 170 N 170 N 170 950 210 N 210 1910 -60 2250
+preplace netloc inferredBRAM_0_doutA 1 2 11 -1380 180 N 180 N 180 N 180 N 180 590 190 N 190 N 190 N 190 2260 590 N
 preplace netloc memFetchLatch_0_pc 1 2 1 -1430 -50n
-preplace netloc memInputLogic_0_addrB 1 9 1 1370 50n
+preplace netloc memInputLogic_0_addrB 1 9 1 1410 50n
 preplace netloc memInputLogic_0_dinToMem 1 9 1 1360 70n
-preplace netloc memInputLogic_0_enaB 1 9 1 1390 10n
-preplace netloc memInputLogic_0_memToEdge 1 9 4 1350 160 N 160 N 160 2600
-preplace netloc memInputLogic_0_weB 1 9 1 1380 30n
-preplace netloc memOutputLogic_0_readValid 1 4 8 -470 -20 N -20 N -20 620 -90 N -90 N -90 1770 -90 N
-preplace netloc new_reg_file_0_rd1_addr_out 1 4 1 -600 -490n
-preplace netloc new_reg_file_0_rd1_data 1 4 1 -590 -470n
-preplace netloc new_reg_file_0_rd2_addr_out 1 4 1 -570 -470n
-preplace netloc new_reg_file_0_rd2_data 1 4 1 -520 -450n
-preplace netloc opLatch_0_aluOp 1 4 3 -600 -210 N -210 220
-preplace netloc opLatch_0_aluToReg 1 4 6 -620 -10 N -10 N -10 N -10 930 -300 N
-preplace netloc opLatch_0_branch 1 4 4 -630 0 N 0 N 0 560
-preplace netloc opLatch_0_imm 1 4 3 -590 -200 -80 -200 N
-preplace netloc opLatch_0_jal 1 4 4 -630 20 N 20 N 20 580
-preplace netloc opLatch_0_jalr 1 4 4 N 30 -100 -60 270 -70 570
-preplace netloc opLatch_0_memOp 1 4 6 -580 -30 N -30 N -30 N -30 1020 -260 N
-preplace netloc opLatch_0_memSize 1 4 6 -610 10 N 10 N 10 N 10 1030 -240 N
-preplace netloc opLatch_0_pc 1 4 3 N -110 -120 -220 N
-preplace netloc opLatch_0_rd 1 4 6 -590 -120 -110 -100 N -100 N -100 N -100 1440
+preplace netloc memInputLogic_0_enaB 1 9 1 1420 10n
+preplace netloc memInputLogic_0_memToEdge 1 9 4 1400 200 N 200 2250 600 2590
+preplace netloc memInputLogic_0_weB 1 9 1 1370 30n
+preplace netloc memOutputLogic_0_readValid 1 4 8 -480 -20 N -20 N -20 660 -90 N -90 N -90 1810 -90 N
+preplace netloc new_reg_file_0_rd1_addr_out 1 4 1 -570 -490n
+preplace netloc new_reg_file_0_rd1_data 1 4 1 -600 -470n
+preplace netloc new_reg_file_0_rd2_addr_out 1 4 1 -560 -470n
+preplace netloc new_reg_file_0_rd2_data 1 4 1 -530 -450n
+preplace netloc opLatch_0_aluOp 1 4 3 -590 -210 N -210 230
+preplace netloc opLatch_0_aluToReg 1 4 6 N -30 N -30 N -30 N -30 960 -80 1420
+preplace netloc opLatch_0_branch 1 4 4 N -10 N -10 N -10 600
+preplace netloc opLatch_0_imm 1 4 3 -580 -200 -90 -200 N
+preplace netloc opLatch_0_jal 1 4 4 -530 0 N 0 N 0 610
+preplace netloc opLatch_0_jalr 1 4 4 -630 -80 N -80 280 -80 580
+preplace netloc opLatch_0_memOp 1 4 6 -620 30 N 30 N 30 N 30 1000 -260 N
+preplace netloc opLatch_0_memSize 1 4 6 -610 40 N 40 N 40 N 40 980 -240 N
+preplace netloc opLatch_0_pc 1 4 3 N -110 -130 -220 N
+preplace netloc opLatch_0_rd 1 4 6 N -130 -120 -110 200 -70 570 -370 N -370 1440
 preplace netloc opLatch_0_selA 1 4 2 N -90 -100
 preplace netloc opLatch_0_selB 1 4 2 N -70 -70
-preplace netloc orGate_0_y 1 0 12 -2060 80 -1670 80 -1390 130 -1000 130 -520 120 N 120 N 120 610 -150 N -150 1420 -180 1800 -190 N
-preplace netloc pcAlu_0_jumpPc 1 0 8 -2050 190 N 190 N 190 N 190 N 190 N 190 N 190 550
-preplace netloc pcMuxSelector_0_jumpEn 1 0 9 -2040 180 N 180 N 180 N 180 -510 130 N 130 N 130 N 130 920
-preplace netloc resetManager_0_flushReset 1 1 3 N -380 -1400 -270 -990
-preplace netloc resetManager_0_mainReset 1 0 12 -2030 70 -1700 -250 -1380 -250 -1040 120 -540 90 N 90 N 90 N 90 1010 -120 1430 -140 N -140 2210
+preplace netloc orGate_0_y 1 0 12 -2070 70 -1670 70 -1400 130 -1000 130 N 130 N 130 N 130 650 -130 N -130 1410 -160 1850 -190 N
+preplace netloc pcAlu_0_jumpPc 1 0 8 -2050 200 N 200 N 200 N 200 N 200 N 200 N 200 560
+preplace netloc pcMuxSelector_0_jumpEn 1 0 9 -2060 210 N 210 N 210 N 210 N 210 N 210 N 210 N 210 940
+preplace netloc resetManager_0_flushReset 1 1 3 N -380 -1410 -270 -990
+preplace netloc resetManager_0_mainReset 1 0 12 -2040 80 -1690 -250 -1390 -250 -1040 120 -520 10 N 10 N 10 N 10 1010 -70 1460 -140 1880 -170 N
 preplace netloc reset_1 1 0 1 -2080J -380n
-preplace netloc writeBackLatch_0_dataToReg 1 3 10 -950 -320 -550 200 N 200 N 200 N 200 N 200 N 200 N 200 N 200 2580
-preplace netloc writeBackLatch_0_rd 1 3 10 -960 -310 -530 -130 N -130 280 -90 600 -110 N -110 N -110 1810 -270 N -270 2570
-preplace netloc writeBackLatch_0_regWrite 1 3 10 -970 -300 -510 -190 N -190 190 210 N 210 N 210 N 210 N 210 N 210 2560
-levelinfo -pg 1 -2100 -1880 -1550 -1220 -790 -310 60 420 800 1190 1610 2040 2410 6400
+preplace netloc writeBackLatch_0_dataToReg 1 3 10 -950 -320 -540 190 N 190 N 190 570 200 N 200 1390 180 N 180 N 180 2580
+preplace netloc writeBackLatch_0_rd 1 3 10 -960 -310 -550 -100 N -100 N -100 N -100 N -100 N -100 1830 -280 N -280 2600
+preplace netloc writeBackLatch_0_regWrite 1 3 10 -970 -300 -520 -190 N -190 220 -90 590 -180 N -180 N -180 1820 -270 N -270 2590
+levelinfo -pg 1 -2100 -1880 -1550 -1220 -790 -310 60 420 810 1190 1630 2080 2420 6400
 pagesize -pg 1 -db -bbox -sgen -2190 -1020 6590 1460
 "
 }
