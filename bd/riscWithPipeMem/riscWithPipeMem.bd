@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x4FE83DAFCEB2ACF5",
+      "boundary_crc": "0xE878E1942552F398",
       "device": "xc7z007sclg400-1",
       "name": "riscWithPipeMem",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -19,35 +19,20 @@
       "new_reg_file_0": "",
       "PC_0": "",
       "execLatch_0": "",
-      "memInputLogic_0": "",
-      "memOutputLogic_0": "",
       "alu_0": "",
       "pcAlu_0": "",
       "pcMuxSelector_0": "",
+      "Decode_0": "",
+      "memInputLogic_0": "",
+      "gpdin_0": "",
+      "gpdout_0": "",
       "bytewrite_tdp_ram_rf_0": "",
-      "Decode_0": ""
+      "bytewrite_tdp_buf_rf_0": "",
+      "memOutputLogic_0": ""
     },
     "ports": {
-      "dataToReg": {
-        "direction": "O",
-        "left": "31",
-        "right": "0"
-      },
-      "rd": {
-        "direction": "O",
-        "left": "4",
-        "right": "0"
-      },
-      "regWrite": {
-        "direction": "O"
-      },
       "reset": {
         "direction": "I"
-      },
-      "toEdge01": {
-        "direction": "O",
-        "left": "31",
-        "right": "0"
       },
       "clk": {
         "type": "clk",
@@ -88,6 +73,16 @@
         "right": "0"
       },
       "instr": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "din": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "dout": {
         "direction": "O",
         "left": "31",
         "right": "0"
@@ -730,132 +725,6 @@
           }
         }
       },
-      "memInputLogic_0": {
-        "vlnv": "xilinx.com:module_ref:memInputLogic_:1.0",
-        "xci_name": "riscWithPipeMem_memInputLogic_0_0",
-        "xci_path": "ip/riscWithPipeMem_memInputLogic_0_0/riscWithPipeMem_memInputLogic_0_0.xci",
-        "inst_hier_path": "memInputLogic_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "memInputLogic_",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscWithPipeMem_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "addr": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "memOp": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "rawDin": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "enaB": {
-            "direction": "O"
-          },
-          "weB": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "addrB": {
-            "direction": "O",
-            "left": "14",
-            "right": "0"
-          },
-          "dinToMem": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "memToEdge": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
-      "memOutputLogic_0": {
-        "vlnv": "xilinx.com:module_ref:memOutputLogic:1.0",
-        "xci_name": "riscWithPipeMem_memOutputLogic_0_0",
-        "xci_path": "ip/riscWithPipeMem_memOutputLogic_0_0/riscWithPipeMem_memOutputLogic_0_0.xci",
-        "inst_hier_path": "memOutputLogic_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "memOutputLogic",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "addr": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "memOp": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "memSize": {
-            "direction": "I",
-            "left": "1",
-            "right": "0"
-          },
-          "rawMemRead": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "instrMemRead": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "instrDout": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "dout": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "alu_0": {
         "vlnv": "xilinx.com:module_ref:alu:1.0",
         "xci_name": "riscWithPipeMem_alu_0_0",
@@ -952,77 +821,6 @@
           },
           "jumpEn": {
             "direction": "O"
-          }
-        }
-      },
-      "bytewrite_tdp_ram_rf_0": {
-        "vlnv": "xilinx.com:module_ref:bytewrite_tdp_ram_rf:1.0",
-        "xci_name": "riscWithPipeMem_bytewrite_tdp_ram_rf_0_0",
-        "xci_path": "ip/riscWithPipeMem_bytewrite_tdp_ram_rf_0_0/riscWithPipeMem_bytewrite_tdp_ram_rf_0_0.xci",
-        "inst_hier_path": "bytewrite_tdp_ram_rf_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "bytewrite_tdp_ram_rf",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "riscWithPipeMem_clk",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "enaA": {
-            "direction": "I"
-          },
-          "addrA": {
-            "direction": "I",
-            "left": "14",
-            "right": "0"
-          },
-          "doutA": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "enaB": {
-            "direction": "I"
-          },
-          "weB": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "addrB": {
-            "direction": "I",
-            "left": "14",
-            "right": "0"
-          },
-          "dinB": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "doutB": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
           }
         }
       },
@@ -1131,6 +929,404 @@
             "direction": "O"
           },
           "pc": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "memInputLogic_0": {
+        "vlnv": "xilinx.com:module_ref:memInputLogic_:1.0",
+        "xci_name": "riscWithPipeMem_memInputLogic_0_0",
+        "xci_path": "ip/riscWithPipeMem_memInputLogic_0_0/riscWithPipeMem_memInputLogic_0_0.xci",
+        "inst_hier_path": "memInputLogic_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "memInputLogic_",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscWithPipeMem_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "memOp": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "rawDin": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "enRam": {
+            "direction": "O"
+          },
+          "enBuf": {
+            "direction": "O"
+          },
+          "enDin": {
+            "direction": "O"
+          },
+          "enDout": {
+            "direction": "O"
+          },
+          "weB": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "addrB": {
+            "direction": "O",
+            "left": "14",
+            "right": "0"
+          },
+          "dinToMem": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "memToEdge": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "gpdin_0": {
+        "vlnv": "xilinx.com:module_ref:gpdin:1.0",
+        "xci_name": "riscWithPipeMem_gpdin_0_0",
+        "xci_path": "ip/riscWithPipeMem_gpdin_0_0/riscWithPipeMem_gpdin_0_0.xci",
+        "inst_hier_path": "gpdin_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "gpdin",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscWithPipeMem_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "dinFromEdge": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "din": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "gpdout_0": {
+        "vlnv": "xilinx.com:module_ref:gpdout:1.0",
+        "xci_name": "riscWithPipeMem_gpdout_0_0",
+        "xci_path": "ip/riscWithPipeMem_gpdout_0_0/riscWithPipeMem_gpdout_0_0.xci",
+        "inst_hier_path": "gpdout_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "gpdout",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscWithPipeMem_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "en": {
+            "direction": "I"
+          },
+          "wen": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "dout": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutToEdge": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "bytewrite_tdp_ram_rf_0": {
+        "vlnv": "xilinx.com:module_ref:bytewrite_tdp_ram_rf:1.0",
+        "xci_name": "riscWithPipeMem_bytewrite_tdp_ram_rf_0_0",
+        "xci_path": "ip/riscWithPipeMem_bytewrite_tdp_ram_rf_0_0/riscWithPipeMem_bytewrite_tdp_ram_rf_0_0.xci",
+        "inst_hier_path": "bytewrite_tdp_ram_rf_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bytewrite_tdp_ram_rf",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscWithPipeMem_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "enaA": {
+            "direction": "I"
+          },
+          "addrA": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "doutA": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "enaB": {
+            "direction": "I"
+          },
+          "weB": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "addrB": {
+            "direction": "I",
+            "left": "14",
+            "right": "0"
+          },
+          "dinB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutB": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "bytewrite_tdp_buf_rf_0": {
+        "vlnv": "xilinx.com:module_ref:bytewrite_tdp_buf_rf:1.0",
+        "xci_name": "riscWithPipeMem_bytewrite_tdp_buf_rf_0_0",
+        "xci_path": "ip/riscWithPipeMem_bytewrite_tdp_buf_rf_0_0/riscWithPipeMem_bytewrite_tdp_buf_rf_0_0.xci",
+        "inst_hier_path": "bytewrite_tdp_buf_rf_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bytewrite_tdp_buf_rf",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "riscWithPipeMem_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "enaB": {
+            "direction": "I"
+          },
+          "weB": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "addrB": {
+            "direction": "I",
+            "left": "13",
+            "right": "0"
+          },
+          "dinB": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutB": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "enaC": {
+            "direction": "I"
+          },
+          "weC": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "addrC": {
+            "direction": "I",
+            "left": "13",
+            "right": "0"
+          },
+          "dinC": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "doutC": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "memOutputLogic_0": {
+        "vlnv": "xilinx.com:module_ref:memOutputLogic:1.0",
+        "xci_name": "riscWithPipeMem_memOutputLogic_0_0",
+        "xci_path": "ip/riscWithPipeMem_memOutputLogic_0_0/riscWithPipeMem_memOutputLogic_0_0.xci",
+        "inst_hier_path": "memOutputLogic_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "memOutputLogic",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "memOp": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "memSize": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "rawMemRead": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rawBufRead": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rawDinRead": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instrMemRead": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instrDout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "dout": {
             "direction": "O",
             "left": "31",
             "right": "0"
@@ -1258,8 +1454,8 @@
         "ports": [
           "alu_0/aluOut",
           "execLatch_0/aluIn",
-          "memInputLogic_0/addr",
-          "pcMuxSelector_0/aluOut"
+          "pcMuxSelector_0/aluOut",
+          "memInputLogic_0/addr"
         ]
       },
       "bypassMux_0_r1Val": {
@@ -1274,6 +1470,12 @@
           "bypassMux_0/r2Val",
           "aluMuxComb_0/rs2Val",
           "memInputLogic_0/rawDin"
+        ]
+      },
+      "bytewrite_tdp_buf_rf_0_doutA": {
+        "ports": [
+          "bytewrite_tdp_buf_rf_0/doutB",
+          "memOutputLogic_0/rawBufRead"
         ]
       },
       "bytewrite_tdp_ram_rf_0_doutA": {
@@ -1297,9 +1499,18 @@
           "new_reg_file_0/clk",
           "PC_0/clk",
           "execLatch_0/clk",
+          "Decode_0/clk",
           "memInputLogic_0/clk",
+          "gpdout_0/clk",
+          "gpdin_0/clk",
           "bytewrite_tdp_ram_rf_0/clk",
-          "Decode_0/clk"
+          "bytewrite_tdp_buf_rf_0/clk"
+        ]
+      },
+      "din_1": {
+        "ports": [
+          "din",
+          "gpdin_0/dinFromEdge"
         ]
       },
       "execLatch_0_alu": {
@@ -1343,6 +1554,18 @@
           "bypassMux_0/execMemVal"
         ]
       },
+      "gpdin_0_din": {
+        "ports": [
+          "gpdin_0/din",
+          "memOutputLogic_0/rawDinRead"
+        ]
+      },
+      "gpdout_0_doutToEdge": {
+        "ports": [
+          "gpdout_0/doutToEdge",
+          "dout"
+        ]
+      },
       "inferredBRAM_0_doutA": {
         "ports": [
           "memOutputLogic_0/instrDout",
@@ -1359,18 +1582,39 @@
       "memInputLogic_0_addrB": {
         "ports": [
           "memInputLogic_0/addrB",
-          "bytewrite_tdp_ram_rf_0/addrB"
+          "bytewrite_tdp_ram_rf_0/addrB",
+          "bytewrite_tdp_buf_rf_0/addrB"
         ]
       },
       "memInputLogic_0_dinToMem": {
         "ports": [
           "memInputLogic_0/dinToMem",
-          "bytewrite_tdp_ram_rf_0/dinB"
+          "gpdout_0/dout",
+          "bytewrite_tdp_ram_rf_0/dinB",
+          "bytewrite_tdp_buf_rf_0/dinB"
+        ]
+      },
+      "memInputLogic_0_enBuf": {
+        "ports": [
+          "memInputLogic_0/enBuf",
+          "bytewrite_tdp_buf_rf_0/enaB"
+        ]
+      },
+      "memInputLogic_0_enDin": {
+        "ports": [
+          "memInputLogic_0/enDin",
+          "gpdin_0/en"
+        ]
+      },
+      "memInputLogic_0_enDout": {
+        "ports": [
+          "memInputLogic_0/enDout",
+          "gpdout_0/en"
         ]
       },
       "memInputLogic_0_enaB": {
         "ports": [
-          "memInputLogic_0/enaB",
+          "memInputLogic_0/enRam",
           "bytewrite_tdp_ram_rf_0/enaB"
         ]
       },
@@ -1383,7 +1627,9 @@
       "memInputLogic_0_weB": {
         "ports": [
           "memInputLogic_0/weB",
-          "bytewrite_tdp_ram_rf_0/weB"
+          "gpdout_0/wen",
+          "bytewrite_tdp_ram_rf_0/weB",
+          "bytewrite_tdp_buf_rf_0/weB"
         ]
       },
       "memOutputLogic_0_readValid": {
@@ -1533,9 +1779,12 @@
           "new_reg_file_0/rst",
           "PC_0/reset",
           "execLatch_0/reset",
+          "Decode_0/reset",
           "memInputLogic_0/reset",
+          "gpdout_0/reset",
+          "gpdin_0/reset",
           "bytewrite_tdp_ram_rf_0/reset",
-          "Decode_0/reset"
+          "bytewrite_tdp_buf_rf_0/reset"
         ]
       },
       "reset_1": {

@@ -61,7 +61,10 @@ module riscWithPipeMem_memInputLogic_0_0 (
   memOp,
   memSize,
   rawDin,
-  enaB,
+  enRam,
+  enBuf,
+  enDin,
+  enDout,
   weB,
   addrB,
   dinToMem,
@@ -78,7 +81,10 @@ input wire [31 : 0] addr;
 input wire [1 : 0] memOp;
 input wire [1 : 0] memSize;
 input wire [31 : 0] rawDin;
-output wire enaB;
+output wire enRam;
+output wire enBuf;
+output wire enDin;
+output wire enDout;
 output wire [3 : 0] weB;
 output wire [14 : 0] addrB;
 output wire [31 : 0] dinToMem;
@@ -96,8 +102,8 @@ output wire [31 : 0] memToEdge;
     .CPU_BRAM_END(32'H007FFF00),
     .BUF_BRAM_START(32'H01000000),
     .BUF_BRAM_END(32'H013FFF00),
-    .READ_REG_INPUT(32'H02000000),
-    .WRITE_REG_OUTPUT(32'H02000100)
+    .DIN_REG(32'H02000000),
+    .DOUT_REG(32'H02000100)
   ) inst (
     .clk(clk),
     .reset(reset),
@@ -105,7 +111,10 @@ output wire [31 : 0] memToEdge;
     .memOp(memOp),
     .memSize(memSize),
     .rawDin(rawDin),
-    .enaB(enaB),
+    .enRam(enRam),
+    .enBuf(enBuf),
+    .enDin(enDin),
+    .enDout(enDout),
     .weB(weB),
     .addrB(addrB),
     .dinToMem(dinToMem),

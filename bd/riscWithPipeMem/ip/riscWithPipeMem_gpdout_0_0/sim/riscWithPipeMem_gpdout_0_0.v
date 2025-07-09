@@ -47,58 +47,39 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:memOutputLogic:1.0
+// IP VLNV: xilinx.com:module_ref:gpdout:1.0
 // IP Revision: 1
 
 `timescale 1ns/1ps
 
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module riscWithPipeMem_memOutputLogic_0_0 (
-  addr,
-  memOp,
-  memSize,
-  rawMemRead,
-  rawBufRead,
-  rawDinRead,
-  instrMemRead,
-  instrDout,
-  dout
+module riscWithPipeMem_gpdout_0_0 (
+  clk,
+  reset,
+  en,
+  wen,
+  dout,
+  doutToEdge
 );
 
-input wire [31 : 0] addr;
-input wire [1 : 0] memOp;
-input wire [1 : 0] memSize;
-input wire [31 : 0] rawMemRead;
-input wire [31 : 0] rawBufRead;
-input wire [31 : 0] rawDinRead;
-input wire [31 : 0] instrMemRead;
-output wire [31 : 0] instrDout;
-output wire [31 : 0] dout;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
+input wire clk;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
+input wire en;
+input wire [3 : 0] wen;
+input wire [31 : 0] dout;
+output wire [31 : 0] doutToEdge;
 
-  memOutputLogic #(
-    .MEM_DISABLE(2'B00),
-    .MEM_READ_SEXT(2'B01),
-    .MEM_READ_ZEXT(2'B10),
-    .MEM_WRITE(2'B11),
-    .BYTE(2'B00),
-    .HALFWORD(2'B01),
-    .WORD(2'B10),
-    .CPU_BRAM_START(32'H00000000),
-    .CPU_BRAM_END(32'H007FFF00),
-    .BUF_BRAM_START(32'H01000000),
-    .BUF_BRAM_END(32'H013FFF00),
-    .DIN_REG(32'H02000000),
-    .DOUT_REG(32'H02000100)
-  ) inst (
-    .addr(addr),
-    .memOp(memOp),
-    .memSize(memSize),
-    .rawMemRead(rawMemRead),
-    .rawBufRead(rawBufRead),
-    .rawDinRead(rawDinRead),
-    .instrMemRead(instrMemRead),
-    .instrDout(instrDout),
-    .dout(dout)
+  gpdout inst (
+    .clk(clk),
+    .reset(reset),
+    .en(en),
+    .wen(wen),
+    .dout(dout),
+    .doutToEdge(doutToEdge)
   );
 endmodule

@@ -2,36 +2,32 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-//Date        : Mon Jun 30 03:06:20 2025
-//Host        : 79c895249355 running 64-bit Ubuntu 22.04.5 LTS
+//Date        : Wed Jul  9 03:13:02 2025
+//Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target riscWithPipeMem.bd
 //Design      : riscWithPipeMem
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "riscWithPipeMem,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=riscWithPipeMem,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=16,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=16,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=7,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "riscWithPipeMem.hwdef" *) 
+(* CORE_GENERATION_INFO = "riscWithPipeMem,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=riscWithPipeMem,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=19,numReposBlks=19,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=19,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=7,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "riscWithPipeMem.hwdef" *) 
 module riscWithPipeMem
    (clk,
-    dataToReg,
+    din,
+    dout,
     instr,
     memToEdge,
     pc,
-    rd,
-    regWrite,
     reset,
-    stall,
-    toEdge01);
+    stall);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN riscWithPipeMem_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
-  output [31:0]dataToReg;
+  input [31:0]din;
+  output [31:0]dout;
   output [31:0]instr;
   output [31:0]memToEdge;
   output [31:0]pc;
-  output [4:0]rd;
-  output regWrite;
   input reset;
   input stall;
-  output [31:0]toEdge01;
 
   wire [3:0]Decode_0_aluOp;
   wire Decode_0_aluToReg;
@@ -55,19 +51,26 @@ module riscWithPipeMem
   wire [31:0]alu_0_aluOut;
   wire [31:0]bypassMux_0_r1Val;
   wire [31:0]bypassMux_0_r2Val;
+  wire [31:0]bytewrite_tdp_buf_rf_0_doutA;
   wire [31:0]bytewrite_tdp_ram_rf_0_doutA;
   wire [31:0]bytewrite_tdp_ram_rf_0_doutB;
   wire clk_1;
+  wire [31:0]din_1;
   wire [31:0]execLatch_0_alu;
   wire execLatch_0_aluToReg;
   wire [1:0]execLatch_0_memOpOut;
   wire [1:0]execLatch_0_memSizeOut;
   wire [4:0]execLatch_0_rd;
   wire [31:0]fakeMemIO_0_doutB;
+  wire [31:0]gpdin_0_din;
+  wire [31:0]gpdout_0_doutToEdge;
   wire [31:0]inferredBRAM_0_doutA;
   wire [31:0]memFetchLatch_0_pc;
   wire [14:0]memInputLogic_0_addrB;
   wire [31:0]memInputLogic_0_dinToMem;
+  wire memInputLogic_0_enBuf;
+  wire memInputLogic_0_enDin;
+  wire memInputLogic_0_enDout;
   wire memInputLogic_0_enaB;
   wire [31:0]memInputLogic_0_memToEdge;
   wire [3:0]memInputLogic_0_weB;
@@ -99,6 +102,8 @@ module riscWithPipeMem
   wire writeBackLatch_0_regWrite;
 
   assign clk_1 = clk;
+  assign din_1 = din[31:0];
+  assign dout[31:0] = gpdout_0_doutToEdge;
   assign instr[31:0] = inferredBRAM_0_doutA;
   assign memToEdge[31:0] = memInputLogic_0_memToEdge;
   assign orGate_0_y = stall;
@@ -163,6 +168,18 @@ module riscWithPipeMem
         .wbRd(writeBackLatch_0_rd),
         .wbRegWrite(writeBackLatch_0_regWrite),
         .wbVal(writeBackLatch_0_dataToReg));
+  riscWithPipeMem_bytewrite_tdp_buf_rf_0_0 bytewrite_tdp_buf_rf_0
+       (.addrB(memInputLogic_0_addrB[13:0]),
+        .addrC({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .clk(clk_1),
+        .dinB(memInputLogic_0_dinToMem),
+        .dinC({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .doutB(bytewrite_tdp_buf_rf_0_doutA),
+        .enaB(memInputLogic_0_enBuf),
+        .enaC(1'b0),
+        .reset(resetManager_0_mainReset),
+        .weB(memInputLogic_0_weB),
+        .weC({1'b0,1'b0,1'b0,1'b0}));
   riscWithPipeMem_bytewrite_tdp_ram_rf_0_0 bytewrite_tdp_ram_rf_0
        (.addrA(PC_0_pcForMem),
         .addrB(memInputLogic_0_addrB),
@@ -189,6 +206,19 @@ module riscWithPipeMem
         .rdIn(opLatch_0_rd),
         .reset(resetManager_0_mainReset),
         .stall(orGate_0_y));
+  riscWithPipeMem_gpdin_0_0 gpdin_0
+       (.clk(clk_1),
+        .din(gpdin_0_din),
+        .dinFromEdge(din_1),
+        .en(memInputLogic_0_enDin),
+        .reset(resetManager_0_mainReset));
+  riscWithPipeMem_gpdout_0_0 gpdout_0
+       (.clk(clk_1),
+        .dout(memInputLogic_0_dinToMem),
+        .doutToEdge(gpdout_0_doutToEdge),
+        .en(memInputLogic_0_enDout),
+        .reset(resetManager_0_mainReset),
+        .wen(memInputLogic_0_weB));
   riscWithPipeMem_memFetchLatch_0_0 memFetchLatch_0
        (.clk(clk_1),
         .pc(memFetchLatch_0_pc),
@@ -200,7 +230,10 @@ module riscWithPipeMem
         .addrB(memInputLogic_0_addrB),
         .clk(clk_1),
         .dinToMem(memInputLogic_0_dinToMem),
-        .enaB(memInputLogic_0_enaB),
+        .enBuf(memInputLogic_0_enBuf),
+        .enDin(memInputLogic_0_enDin),
+        .enDout(memInputLogic_0_enDout),
+        .enRam(memInputLogic_0_enaB),
         .memOp(opLatch_0_memOp),
         .memSize(opLatch_0_memSize),
         .memToEdge(memInputLogic_0_memToEdge),
@@ -214,6 +247,8 @@ module riscWithPipeMem
         .instrMemRead(bytewrite_tdp_ram_rf_0_doutA),
         .memOp(execLatch_0_memOpOut),
         .memSize(execLatch_0_memSizeOut),
+        .rawBufRead(bytewrite_tdp_buf_rf_0_doutA),
+        .rawDinRead(gpdin_0_din),
         .rawMemRead(bytewrite_tdp_ram_rf_0_doutB));
   riscWithPipeMem_new_reg_file_0_0 new_reg_file_0
        (.clk(clk_1),

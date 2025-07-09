@@ -32,15 +32,15 @@ module memOutputLogic#(
     parameter HALFWORD    = 2'b01,
     parameter WORD        = 2'b10,
     
-    //Byte addr mmio table
-    parameter CPU_BRAM_START    = 32'h0000_0000,
-    parameter CPU_BRAM_END      = 32'h007F_FF00,
+     //Byte addr mmio table
+     parameter CPU_BRAM_START    = 32'h0000_0000,
+     parameter CPU_BRAM_END      = 32'h007F_FF00,
     
-    parameter BUF_BRAM_START    = 32'h0100_0000,
-    parameter BUF_BRAM_END      = 32'h013F_FF00,
+     parameter BUF_BRAM_START    = 32'h0100_0000,
+     parameter BUF_BRAM_END      = 32'h013F_FF00,
     
-    parameter READ_REG_INPUT        = 32'h0200_0000,
-    parameter WRITE_REG_OUTPUT      = 32'h0200_0100
+     parameter DIN_REG        = 32'h0200_0000,
+     parameter DOUT_REG      = 32'h0200_0100
 
 )(
     //input clk,
@@ -49,6 +49,8 @@ module memOutputLogic#(
     input [1:0] memOp,
     input [1:0] memSize,
     input [31:0] rawMemRead,
+    input [31:0] rawBufRead,
+    input [31:0] rawDinRead,
     
     input [31:0] instrMemRead,
     output [31:0] instrDout,
@@ -56,19 +58,33 @@ module memOutputLogic#(
     output reg [31:0] dout
     );
 
+
+
     // Convert instruction from little-endian to big-endian
     //assign instrDout = instrMemRead; //{instrMemRead[7:0], instrMemRead[15:8], instrMemRead[23:16], instrMemRead[31:24]};
     assign instrDout = {instrMemRead[7:0], instrMemRead[15:8], instrMemRead[23:16], instrMemRead[31:24]};
     
-    
-    //assign dout = rawMemRead; //{rawMemRead[7:0], rawMemRead[15:8], rawMemRead[23:16], rawMemRead[31:24]};
-    //assign dout = {rawMemRead[7:0], rawMemRead[15:8], rawMemRead[23:16], rawMemRead[31:24]}; //WORKS
+
+
+
+
+    wire enaB = memOp != MEM_DISABLE;
+    wire enRam, enBuf, enDin;
+    assign enRam = enaB && addr >= CPU_BRAM_START && addr <= CPU_BRAM_END;
+    assign enBuf = enaB && addr >= BUF_BRAM_START && addr <= BUF_BRAM_END;
+    assign enDin = enaB && addr == DIN_REG && (memOp==2'b01 || memOp==2'b10);
+
+    wire [31:0] rawIn = enRam ? rawMemRead : 
+                        enDin ? rawDinRead :
+                        enBuf ? rawBufRead :
+                        32'hBAD00BAD;
+
     // Extract bytes from little-endian input (byte 0 is LSB)
     wire[7:0] byte0, byte1, byte2, byte3;
-    assign byte0 = rawMemRead[7:0];   // LSB
-    assign byte1 = rawMemRead[15:8];
-    assign byte2 = rawMemRead[23:16];
-    assign byte3 = rawMemRead[31:24]; // MSB
+    assign byte0 = rawIn[7:0];   // LSB
+    assign byte1 = rawIn[15:8];
+    assign byte2 = rawIn[23:16];
+    assign byte3 = rawIn[31:24]; // MSB
     
     always @(*) begin
         dout = 32'hCAFE_BABE;
@@ -90,11 +106,6 @@ module memOutputLogic#(
                 end
                 BYTE: begin
                     case(addr[1:0])
-//                        2'b00: dout = {{24{byte0[7]}}, byte0};
-//                        2'b01: dout = {{24{byte1[7]}}, byte1};
-//                        2'b10: dout = {{24{byte2[7]}}, byte2};
-//                        2'b11: dout = {{24{byte3[7]}}, byte3};
-                        
                         2'b00: dout = {{24{byte3[7]}}, byte3};
                         2'b01: dout = {{24{byte2[7]}}, byte2};
                         2'b10: dout = {{24{byte1[7]}}, byte1};
@@ -117,11 +128,6 @@ module memOutputLogic#(
                 end
                 BYTE: begin
                     case(addr[1:0])
-//                        2'b00: dout = {24'h000000, byte0};
-//                        2'b01: dout = {24'h000000, byte1};
-//                        2'b10: dout = {24'h000000, byte2};
-//                        2'b11: dout = {24'h000000, byte3};
-
                         2'b00: dout = {24'h000000, byte3};
                         2'b01: dout = {24'h000000, byte2};
                         2'b10: dout = {24'h000000, byte1};

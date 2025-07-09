@@ -47,26 +47,26 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:memInputLogic_:1.0
+// IP VLNV: xilinx.com:module_ref:bytewrite_tdp_buf_rf:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "memInputLogic_,Vivado 2023.1" *)
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_memInputLogic_0_0,memInputLogic_,{}" *)
-(* CORE_GENERATION_INFO = "riscWithPipeMem_memInputLogic_0_0,memInputLogic_,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=memInputLogic_,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,MEM_DISABLE=00,MEM_READ_SEXT=01,MEM_READ_ZEXT=10,MEM_WRITE=11,BYTE=00,HALFWORD=01,WORD=10,CPU_BRAM_START=0x00000000,CPU_BRAM_END=0x007FFF00,BUF_BRAM_START=0x01000000,BUF_BRAM_END=0x013FFF00,READ_REG_INPUT=0x02000000,WRITE_REG_OUTPUT=0x02000100}" *)
+`timescale 1ns/1ps
+
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module riscWithPipeMem_memInputLogic_0_0 (
+module riscWithPipeMem_bytewrite_tdp_buf_rf_0_0 (
   clk,
   reset,
-  addr,
-  memOp,
-  memSize,
-  rawDin,
   enaB,
   weB,
   addrB,
-  dinToMem,
-  memToEdge
+  dinB,
+  doutB,
+  enaC,
+  weC,
+  addrC,
+  dinC,
+  doutC
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *)
@@ -75,41 +75,34 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
 input wire reset;
-input wire [31 : 0] addr;
-input wire [1 : 0] memOp;
-input wire [1 : 0] memSize;
-input wire [31 : 0] rawDin;
-output wire enaB;
-output wire [3 : 0] weB;
-output wire [14 : 0] addrB;
-output wire [31 : 0] dinToMem;
-output wire [31 : 0] memToEdge;
+input wire enaB;
+input wire [3 : 0] weB;
+input wire [13 : 0] addrB;
+input wire [31 : 0] dinB;
+output wire [31 : 0] doutB;
+input wire enaC;
+input wire [3 : 0] weC;
+input wire [13 : 0] addrC;
+input wire [31 : 0] dinC;
+output wire [31 : 0] doutC;
 
-  memInputLogic_ #(
-    .MEM_DISABLE(2'B00),
-    .MEM_READ_SEXT(2'B01),
-    .MEM_READ_ZEXT(2'B10),
-    .MEM_WRITE(2'B11),
-    .BYTE(2'B00),
-    .HALFWORD(2'B01),
-    .WORD(2'B10),
-    .CPU_BRAM_START(32'H00000000),
-    .CPU_BRAM_END(32'H007FFF00),
-    .BUF_BRAM_START(32'H01000000),
-    .BUF_BRAM_END(32'H013FFF00),
-    .READ_REG_INPUT(32'H02000000),
-    .WRITE_REG_OUTPUT(32'H02000100)
+  bytewrite_tdp_buf_rf #(
+    .NUM_COL(4),
+    .COL_WIDTH(8),
+    .ADDR_WIDTH(14),
+    .DATA_WIDTH(32)
   ) inst (
     .clk(clk),
     .reset(reset),
-    .addr(addr),
-    .memOp(memOp),
-    .memSize(memSize),
-    .rawDin(rawDin),
     .enaB(enaB),
     .weB(weB),
     .addrB(addrB),
-    .dinToMem(dinToMem),
-    .memToEdge(memToEdge)
+    .dinB(dinB),
+    .doutB(doutB),
+    .enaC(enaC),
+    .weC(weC),
+    .addrC(addrC),
+    .dinC(dinC),
+    .doutC(doutC)
   );
 endmodule

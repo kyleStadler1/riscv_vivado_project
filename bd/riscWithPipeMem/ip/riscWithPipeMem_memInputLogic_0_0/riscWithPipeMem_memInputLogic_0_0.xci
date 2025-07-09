@@ -19,8 +19,8 @@
         "CPU_BRAM_END": [ { "value": "0x007FFF00", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "BUF_BRAM_START": [ { "value": "0x01000000", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "BUF_BRAM_END": [ { "value": "0x013FFF00", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
-        "READ_REG_INPUT": [ { "value": "0x02000000", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
-        "WRITE_REG_OUTPUT": [ { "value": "0x02000100", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "DIN_REG": [ { "value": "0x02000000", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
+        "DOUT_REG": [ { "value": "0x02000100", "resolve_type": "user", "format": "bitString", "usage": "all" } ],
         "Component_Name": [ { "value": "riscWithPipeMem_memInputLogic_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
@@ -35,8 +35,8 @@
         "CPU_BRAM_END": [ { "value": "0x007FFF00", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "BUF_BRAM_START": [ { "value": "0x01000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
         "BUF_BRAM_END": [ { "value": "0x013FFF00", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
-        "READ_REG_INPUT": [ { "value": "0x02000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
-        "WRITE_REG_OUTPUT": [ { "value": "0x02000100", "resolve_type": "generated", "format": "bitString", "usage": "all" } ]
+        "DIN_REG": [ { "value": "0x02000000", "resolve_type": "generated", "format": "bitString", "usage": "all" } ],
+        "DOUT_REG": [ { "value": "0x02000100", "resolve_type": "generated", "format": "bitString", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],
@@ -70,7 +70,10 @@
         "memOp": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
         "memSize": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
         "rawDin": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
-        "enaB": [ { "direction": "out" } ],
+        "enRam": [ { "direction": "out" } ],
+        "enBuf": [ { "direction": "out" } ],
+        "enDin": [ { "direction": "out" } ],
+        "enDout": [ { "direction": "out" } ],
         "weB": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
         "addrB": [ { "direction": "out", "size_left": "14", "size_right": "0" } ],
         "dinToMem": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],

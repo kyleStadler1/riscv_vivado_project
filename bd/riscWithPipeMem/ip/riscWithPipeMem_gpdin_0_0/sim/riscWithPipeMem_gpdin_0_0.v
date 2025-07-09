@@ -47,53 +47,36 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:memOutputLogic:1.0
+// IP VLNV: xilinx.com:module_ref:gpdin:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "memOutputLogic,Vivado 2023.1" *)
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_memOutputLogic_0_0,memOutputLogic,{}" *)
-(* CORE_GENERATION_INFO = "riscWithPipeMem_memOutputLogic_0_0,memOutputLogic,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=memOutputLogic,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,MEM_DISABLE=00,MEM_READ_SEXT=01,MEM_READ_ZEXT=10,MEM_WRITE=11,BYTE=00,HALFWORD=01,WORD=10,CPU_BRAM_START=0x00000000,CPU_BRAM_END=0x007FFF00,BUF_BRAM_START=0x01000000,BUF_BRAM_END=0x013FFF00,READ_REG_INPUT=0x02000000,WRITE_REG_OUTPUT=0x02000100}" *)
+`timescale 1ns/1ps
+
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module riscWithPipeMem_memOutputLogic_0_0 (
-  addr,
-  memOp,
-  memSize,
-  rawMemRead,
-  instrMemRead,
-  instrDout,
-  dout
+module riscWithPipeMem_gpdin_0_0 (
+  clk,
+  reset,
+  en,
+  dinFromEdge,
+  din
 );
 
-input wire [31 : 0] addr;
-input wire [1 : 0] memOp;
-input wire [1 : 0] memSize;
-input wire [31 : 0] rawMemRead;
-input wire [31 : 0] instrMemRead;
-output wire [31 : 0] instrDout;
-output wire [31 : 0] dout;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
+input wire clk;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
+input wire en;
+input wire [31 : 0] dinFromEdge;
+output wire [31 : 0] din;
 
-  memOutputLogic #(
-    .MEM_DISABLE(2'B00),
-    .MEM_READ_SEXT(2'B01),
-    .MEM_READ_ZEXT(2'B10),
-    .MEM_WRITE(2'B11),
-    .BYTE(2'B00),
-    .HALFWORD(2'B01),
-    .WORD(2'B10),
-    .CPU_BRAM_START(32'H00000000),
-    .CPU_BRAM_END(32'H007FFF00),
-    .BUF_BRAM_START(32'H01000000),
-    .BUF_BRAM_END(32'H013FFF00),
-    .READ_REG_INPUT(32'H02000000),
-    .WRITE_REG_OUTPUT(32'H02000100)
-  ) inst (
-    .addr(addr),
-    .memOp(memOp),
-    .memSize(memSize),
-    .rawMemRead(rawMemRead),
-    .instrMemRead(instrMemRead),
-    .instrDout(instrDout),
-    .dout(dout)
+  gpdin inst (
+    .clk(clk),
+    .reset(reset),
+    .en(en),
+    .dinFromEdge(dinFromEdge),
+    .din(din)
   );
 endmodule
