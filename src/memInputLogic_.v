@@ -30,7 +30,7 @@
     input [31:0] rawDin,
     
     output enRam,
-    output enBuf, 
+    //output enBuf, 
     output enDin,
     output enDout,
     output [3:0] weB,
@@ -42,10 +42,10 @@
     wire enaB = memOp != MEM_DISABLE;
     assign addrB = addr[16:2];
 
-    assign enRam = enaB && addrB >= CPU_BRAM_START && addrB <= CPU_BRAM_END;
-    assign enBuf = enaB && addrB >= BUF_BRAM_START && addrB <= BUF_BRAM_END;
-    assign enDin = enaB && addrB == DIN_REG && (memOp==2'b01 || memOp==2'b10);
-    assign enDout = enaB && addrB == DOUT_REG && memOp==2'b11;
+    assign enRam = enaB && addr >= CPU_BRAM_START && addr <= CPU_BRAM_END;
+    //assign enBuf = enaB && addr >= BUF_BRAM_START && addr <= BUF_BRAM_END;
+    assign enDin = enaB && addr == DIN_REG && (memOp==2'b01 || memOp==2'b10);
+    assign enDout = enaB && addr == DOUT_REG;
     
     
 

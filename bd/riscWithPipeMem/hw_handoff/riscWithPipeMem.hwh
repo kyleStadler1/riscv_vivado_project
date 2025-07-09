@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul  9 03:13:04 2025" VIVADOVERSION="2023.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul  9 04:06:07 2025" VIVADOVERSION="2023.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z007s" NAME="riscWithPipeMem" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -18,11 +18,10 @@
         <CONNECTION INSTANCE="PC_0" PORT="clk"/>
         <CONNECTION INSTANCE="execLatch_0" PORT="clk"/>
         <CONNECTION INSTANCE="Decode_0" PORT="clk"/>
-        <CONNECTION INSTANCE="memInputLogic_0" PORT="clk"/>
         <CONNECTION INSTANCE="gpdout_0" PORT="clk"/>
         <CONNECTION INSTANCE="gpdin_0" PORT="clk"/>
         <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="clk"/>
-        <CONNECTION INSTANCE="bytewrite_tdp_buf_rf_0" PORT="clk"/>
+        <CONNECTION INSTANCE="memInputLogic_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="stall" SIGIS="undef" SIGNAME="External_Ports_stall">
@@ -448,60 +447,6 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/bytewrite_tdp_buf_rf_0" HWVERSION="1.0" INSTANCE="bytewrite_tdp_buf_rf_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="bytewrite_tdp_buf_rf" VLNV="xilinx.com:module_ref:bytewrite_tdp_buf_rf:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="NUM_COL" VALUE="4"/>
-        <PARAMETER NAME="COL_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="ADDR_WIDTH" VALUE="14"/>
-        <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="Component_Name" VALUE="riscWithPipeMem_bytewrite_tdp_buf_rf_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="resetManager_0_mainReset">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="resetManager_0" PORT="mainReset"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="enaB" SIGIS="undef" SIGNAME="memInputLogic_0_enBuf">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="memInputLogic_0" PORT="enBuf"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="3" NAME="weB" RIGHT="0" SIGIS="undef" SIGNAME="memInputLogic_0_weB">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="memInputLogic_0" PORT="weB"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="13" NAME="addrB" RIGHT="0" SIGIS="undef" SIGNAME="memInputLogic_0_addrB">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="memInputLogic_0" PORT="addrB"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="dinB" RIGHT="0" SIGIS="undef" SIGNAME="memInputLogic_0_dinToMem">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="memInputLogic_0" PORT="dinToMem"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="doutB" RIGHT="0" SIGIS="undef" SIGNAME="bytewrite_tdp_buf_rf_0_doutB">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="memOutputLogic_0" PORT="rawBufRead"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="enaC" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="weC" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="13" NAME="addrC" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="dinC" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="31" NAME="doutC" RIGHT="0" SIGIS="undef"/>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/bytewrite_tdp_ram_rf_0" HWVERSION="1.0" INSTANCE="bytewrite_tdp_ram_rf_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="bytewrite_tdp_ram_rf" VLNV="xilinx.com:module_ref:bytewrite_tdp_ram_rf:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -721,6 +666,7 @@
         <PORT DIR="O" LEFT="31" NAME="doutToEdge" RIGHT="0" SIGIS="undef" SIGNAME="gpdout_0_doutToEdge">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="dout"/>
+            <CONNECTION INSTANCE="memOutputLogic_0" PORT="rawDoutRead"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -816,11 +762,6 @@
             <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="enaB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="enBuf" SIGIS="undef" SIGNAME="memInputLogic_0_enBuf">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="bytewrite_tdp_buf_rf_0" PORT="enaB"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" NAME="enDin" SIGIS="undef" SIGNAME="memInputLogic_0_enDin">
           <CONNECTIONS>
             <CONNECTION INSTANCE="gpdin_0" PORT="en"/>
@@ -835,20 +776,17 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="gpdout_0" PORT="wen"/>
             <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="weB"/>
-            <CONNECTION INSTANCE="bytewrite_tdp_buf_rf_0" PORT="weB"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="14" NAME="addrB" RIGHT="0" SIGIS="undef" SIGNAME="memInputLogic_0_addrB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="addrB"/>
-            <CONNECTION INSTANCE="bytewrite_tdp_buf_rf_0" PORT="addrB"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="dinToMem" RIGHT="0" SIGIS="undef" SIGNAME="memInputLogic_0_dinToMem">
           <CONNECTIONS>
             <CONNECTION INSTANCE="gpdout_0" PORT="dout"/>
             <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="dinB"/>
-            <CONNECTION INSTANCE="bytewrite_tdp_buf_rf_0" PORT="dinB"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="memToEdge" RIGHT="0" SIGIS="undef" SIGNAME="memInputLogic_0_memToEdge">
@@ -899,14 +837,14 @@
             <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="doutB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="rawBufRead" RIGHT="0" SIGIS="undef" SIGNAME="bytewrite_tdp_buf_rf_0_doutB">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="bytewrite_tdp_buf_rf_0" PORT="doutB"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="31" NAME="rawDinRead" RIGHT="0" SIGIS="undef" SIGNAME="gpdin_0_din">
           <CONNECTIONS>
             <CONNECTION INSTANCE="gpdin_0" PORT="din"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="rawDoutRead" RIGHT="0" SIGIS="undef" SIGNAME="gpdout_0_doutToEdge">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="gpdout_0" PORT="doutToEdge"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="instrMemRead" RIGHT="0" SIGIS="undef" SIGNAME="bytewrite_tdp_ram_rf_0_doutA">
@@ -1242,11 +1180,10 @@
             <CONNECTION INSTANCE="PC_0" PORT="reset"/>
             <CONNECTION INSTANCE="execLatch_0" PORT="reset"/>
             <CONNECTION INSTANCE="Decode_0" PORT="reset"/>
-            <CONNECTION INSTANCE="memInputLogic_0" PORT="reset"/>
             <CONNECTION INSTANCE="gpdout_0" PORT="reset"/>
             <CONNECTION INSTANCE="gpdin_0" PORT="reset"/>
             <CONNECTION INSTANCE="bytewrite_tdp_ram_rf_0" PORT="reset"/>
-            <CONNECTION INSTANCE="bytewrite_tdp_buf_rf_0" PORT="reset"/>
+            <CONNECTION INSTANCE="memInputLogic_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="flushReset" SIGIS="undef" SIGNAME="resetManager_0_flushReset">

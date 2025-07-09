@@ -59,8 +59,8 @@ module riscWithPipeMem_memOutputLogic_0_0 (
   memOp,
   memSize,
   rawMemRead,
-  rawBufRead,
   rawDinRead,
+  rawDoutRead,
   instrMemRead,
   instrDout,
   dout
@@ -70,8 +70,8 @@ input wire [31 : 0] addr;
 input wire [1 : 0] memOp;
 input wire [1 : 0] memSize;
 input wire [31 : 0] rawMemRead;
-input wire [31 : 0] rawBufRead;
 input wire [31 : 0] rawDinRead;
+input wire [31 : 0] rawDoutRead;
 input wire [31 : 0] instrMemRead;
 output wire [31 : 0] instrDout;
 output wire [31 : 0] dout;
@@ -95,8 +95,8 @@ output wire [31 : 0] dout;
     .memOp(memOp),
     .memSize(memSize),
     .rawMemRead(rawMemRead),
-    .rawBufRead(rawBufRead),
     .rawDinRead(rawDinRead),
+    .rawDoutRead(rawDoutRead),
     .instrMemRead(instrMemRead),
     .instrDout(instrDout),
     .dout(dout)

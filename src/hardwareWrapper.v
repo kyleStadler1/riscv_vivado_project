@@ -23,7 +23,7 @@
 module top(
     input clk,
     input [0:0] btn,        // Active-high pushbutton reset
-    input [0:0] sw,
+    input [11:0] sw,
     output [0:0] led,
     output [3:0] seg_an,    // Anode signals (active low)
     output [7:0] seg_cat    // Cathode signals (active low)
@@ -41,7 +41,9 @@ module top(
         .clk_in1(clk)
     );
 
-    wire [31:0] dout;
+    wire [31:0] memToEdge, din, dout;
+    
+    assign din = {20'b0, sw};
 
 
     reg [31:0] clkDiv = 32'd0;
@@ -61,20 +63,23 @@ module top(
     assign led = btn | ~stable;
 
     // === Instantiate pipelined CPU ===
-    wire [31:0] instr, pc;
+    //wire [31:0] instr, pc;
     riscWithPipeMem_wrapper cpu (
         .clk(clk5),
         .reset(btn | ~stable),   // Active-high reset
         .stall(1'b0),
-        .instr(instr),
-        .pc(pc),
-        .memToEdge(dout)
+//        .instr(instr),
+//        .pc(pc),
+        .memToEdge(memToEdge),
+        .din(din),
+        .dout(dout)
+        
     );
 
     // === Instantiate 4-digit 7-segment display ===
     fourDigHexDisplay disp (
         .clk(clk100),
-        .hex_val(sw ? instr : dout),      // Lower 16 bits to display
+        .hex_val(dout),      // Lower 16 bits to display
         //.reset(btn),   // Optional reset to clear display logic
         ._seg_an(seg_an),
         ._seg_cat(seg_cat)

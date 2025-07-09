@@ -62,7 +62,6 @@ module riscWithPipeMem_memInputLogic_0_0 (
   memSize,
   rawDin,
   enRam,
-  enBuf,
   enDin,
   enDout,
   weB,
@@ -82,7 +81,6 @@ input wire [1 : 0] memOp;
 input wire [1 : 0] memSize;
 input wire [31 : 0] rawDin;
 output wire enRam;
-output wire enBuf;
 output wire enDin;
 output wire enDout;
 output wire [3 : 0] weB;
@@ -112,7 +110,6 @@ output wire [31 : 0] memToEdge;
     .memSize(memSize),
     .rawDin(rawDin),
     .enRam(enRam),
-    .enBuf(enBuf),
     .enDin(enDin),
     .enDout(enDout),
     .weB(weB),

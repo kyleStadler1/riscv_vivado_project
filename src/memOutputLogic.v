@@ -49,8 +49,9 @@ module memOutputLogic#(
     input [1:0] memOp,
     input [1:0] memSize,
     input [31:0] rawMemRead,
-    input [31:0] rawBufRead,
+    //input [31:0] rawBufRead,
     input [31:0] rawDinRead,
+    input [31:0] rawDoutRead,
     
     input [31:0] instrMemRead,
     output [31:0] instrDout,
@@ -69,14 +70,16 @@ module memOutputLogic#(
 
 
     wire enaB = memOp != MEM_DISABLE;
-    wire enRam, enBuf, enDin;
+    wire enRam, enDin;//, enBuf;
     assign enRam = enaB && addr >= CPU_BRAM_START && addr <= CPU_BRAM_END;
-    assign enBuf = enaB && addr >= BUF_BRAM_START && addr <= BUF_BRAM_END;
+    //assign enBuf = enaB && addr >= BUF_BRAM_START && addr <= BUF_BRAM_END;
     assign enDin = enaB && addr == DIN_REG && (memOp==2'b01 || memOp==2'b10);
+    assign enDout = enaB && addr == DOUT_REG;
 
     wire [31:0] rawIn = enRam ? rawMemRead : 
                         enDin ? rawDinRead :
-                        enBuf ? rawBufRead :
+                        //enBuf ? rawBufRead :
+                        enDout ? rawDoutRead :
                         32'hBAD00BAD;
 
     // Extract bytes from little-endian input (byte 0 is LSB)

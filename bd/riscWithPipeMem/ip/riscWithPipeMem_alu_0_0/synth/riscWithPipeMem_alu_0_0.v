@@ -47,62 +47,47 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:module_ref:bytewrite_tdp_buf_rf:1.0
+// IP VLNV: xilinx.com:module_ref:alu:1.0
 // IP Revision: 1
 
-`timescale 1ns/1ps
-
+(* X_CORE_INFO = "alu,Vivado 2023.1" *)
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_alu_0_0,alu,{}" *)
+(* CORE_GENERATION_INFO = "riscWithPipeMem_alu_0_0,alu,{x_ipProduct=Vivado 2023.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=alu,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,ADD=0000,SUB=0001,AND=0010,OR=0011,XOR=0100,SLL=0101,SRL=0110,SRA=0111,SLT=1000,SLTU=1001,BEQ=1010,BNE=1011,BLT=1100,BGE=1101,BLTU=1110,BGEU=1111}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
-module riscWithPipeMem_bytewrite_tdp_buf_rf_0_0 (
-  clk,
-  reset,
-  enaB,
-  weB,
-  addrB,
-  dinB,
-  doutB,
-  enaC,
-  weC,
-  addrC,
-  dinC,
-  doutC
+module riscWithPipeMem_alu_0_0 (
+  a,
+  b,
+  aluOp,
+  aluOut
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
-input wire clk;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
-input wire reset;
-input wire enaB;
-input wire [3 : 0] weB;
-input wire [13 : 0] addrB;
-input wire [31 : 0] dinB;
-output wire [31 : 0] doutB;
-input wire enaC;
-input wire [3 : 0] weC;
-input wire [13 : 0] addrC;
-input wire [31 : 0] dinC;
-output wire [31 : 0] doutC;
+input wire [31 : 0] a;
+input wire [31 : 0] b;
+input wire [3 : 0] aluOp;
+output wire [31 : 0] aluOut;
 
-  bytewrite_tdp_buf_rf #(
-    .NUM_COL(4),
-    .COL_WIDTH(8),
-    .ADDR_WIDTH(14),
-    .DATA_WIDTH(32)
+  alu #(
+    .ADD(4'B0000),
+    .SUB(4'B0001),
+    .AND(4'B0010),
+    .OR(4'B0011),
+    .XOR(4'B0100),
+    .SLL(4'B0101),
+    .SRL(4'B0110),
+    .SRA(4'B0111),
+    .SLT(4'B1000),
+    .SLTU(4'B1001),
+    .BEQ(4'B1010),
+    .BNE(4'B1011),
+    .BLT(4'B1100),
+    .BGE(4'B1101),
+    .BLTU(4'B1110),
+    .BGEU(4'B1111)
   ) inst (
-    .clk(clk),
-    .reset(reset),
-    .enaB(enaB),
-    .weB(weB),
-    .addrB(addrB),
-    .dinB(dinB),
-    .doutB(doutB),
-    .enaC(enaC),
-    .weC(weC),
-    .addrC(addrC),
-    .dinC(dinC),
-    .doutC(doutC)
+    .a(a),
+    .b(b),
+    .aluOp(aluOp),
+    .aluOut(aluOut)
   );
 endmodule
