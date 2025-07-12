@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Mon Jun 16 03:15:05 2025
+-- Date        : Mon Jun 16 03:15:03 2025
 -- Host        : a8ab420d0780 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_new_reg_file_0_0/riscWithPipeMem_new_reg_file_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top riscWithPipeMem_new_reg_file_0_0 -prefix
+--               riscWithPipeMem_new_reg_file_0_0_ riscWithPipeMem_new_reg_file_0_0_stub.vhdl
 -- Design      : riscWithPipeMem_new_reg_file_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z007sclg400-1

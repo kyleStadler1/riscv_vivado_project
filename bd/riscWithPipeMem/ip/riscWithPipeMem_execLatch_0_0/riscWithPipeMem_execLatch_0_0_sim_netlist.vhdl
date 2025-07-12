@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Sun Jun 22 22:04:04 2025
+-- Date        : Sun Jun 22 22:04:03 2025
 -- Host        : 1ee5f11b5411 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_execLatch_0_0/riscWithPipeMem_execLatch_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top riscWithPipeMem_execLatch_0_0 -prefix
+--               riscWithPipeMem_execLatch_0_0_ riscWithPipeMem_execLatch_0_0_sim_netlist.vhdl
 -- Design      : riscWithPipeMem_execLatch_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -32,8 +32,6 @@ entity riscWithPipeMem_execLatch_0_0_execLatch is
     rdIn : in STD_LOGIC_VECTOR ( 4 downto 0 );
     stall : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of riscWithPipeMem_execLatch_0_0_execLatch : entity is "execLatch";
 end riscWithPipeMem_execLatch_0_0_execLatch;
 
 architecture STRUCTURE of riscWithPipeMem_execLatch_0_0_execLatch is

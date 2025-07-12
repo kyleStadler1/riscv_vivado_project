@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Wed Jul  9 04:09:26 2025
+// Date        : Wed Jul  9 04:09:23 2025
 // Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_pcMuxSelector_0_0/riscWithPipeMem_pcMuxSelector_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_pcMuxSelector_0_0 -prefix
+//               riscWithPipeMem_pcMuxSelector_0_0_ riscWithPipeMem_pcMuxSelector_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_pcMuxSelector_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,36 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_pcMuxSelector_0_0,pcMuxSelector,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "pcMuxSelector,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_pcMuxSelector_0_0
-   (aluOut,
-    branch,
-    jal,
-    jalr,
-    jumpEn);
-  input [31:0]aluOut;
-  input branch;
-  input jal;
-  input jalr;
-  output jumpEn;
-
-  wire [31:0]aluOut;
-  wire branch;
-  wire jal;
-  wire jalr;
-  wire jumpEn;
-
-  riscWithPipeMem_pcMuxSelector_0_0_pcMuxSelector inst
-       (.aluOut(aluOut),
-        .branch(branch),
-        .jal(jal),
-        .jalr(jalr),
-        .jumpEn(jumpEn));
-endmodule
-
-(* ORIG_REF_NAME = "pcMuxSelector" *) 
 module riscWithPipeMem_pcMuxSelector_0_0_pcMuxSelector
    (jumpEn,
     aluOut,
@@ -148,6 +118,35 @@ module riscWithPipeMem_pcMuxSelector_0_0_pcMuxSelector
         .I4(branch),
         .I5(aluOut[28]),
         .O(jumpEn_INST_0_i_7_n_0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_pcMuxSelector_0_0,pcMuxSelector,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "pcMuxSelector,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_pcMuxSelector_0_0
+   (aluOut,
+    branch,
+    jal,
+    jalr,
+    jumpEn);
+  input [31:0]aluOut;
+  input branch;
+  input jal;
+  input jalr;
+  output jumpEn;
+
+  wire [31:0]aluOut;
+  wire branch;
+  wire jal;
+  wire jalr;
+  wire jumpEn;
+
+  riscWithPipeMem_pcMuxSelector_0_0_pcMuxSelector inst
+       (.aluOut(aluOut),
+        .branch(branch),
+        .jal(jal),
+        .jalr(jalr),
+        .jumpEn(jumpEn));
 endmodule
 `ifndef GLBL
 `define GLBL

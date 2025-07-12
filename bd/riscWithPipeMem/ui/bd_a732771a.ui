@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.01806",
-   "Default View_TopLeft":"1127,-526",
+   "Default View_TopLeft":"1127,-724",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
@@ -13,10 +13,6 @@ preplace portBus pc -pg 1 -lvl 13 -x 6400 -y -400 -defaultsOSRD
 preplace portBus instr -pg 1 -lvl 13 -x 6400 -y 590 -defaultsOSRD
 preplace portBus din -pg 1 -lvl 0 -x -2100 -y 340 -defaultsOSRD
 preplace portBus dout -pg 1 -lvl 13 -x 6400 -y 820 -defaultsOSRD
-preplace inst aluMuxComb_0 -pg 1 -lvl 6 -x 70 -y -330 -defaultsOSRD
-preplace inst opLatch_0 -pg 1 -lvl 4 -x -790 -y -80 -defaultsOSRD
-preplace inst resetManager_0 -pg 1 -lvl 1 -x -1880 -y -390 -defaultsOSRD
-preplace inst writeBackLatch_0 -pg 1 -lvl 12 -x 2990 -y -140 -defaultsOSRD
 preplace inst memFetchLatch_0 -pg 1 -lvl 2 -x -1550 -y -50 -defaultsOSRD
 preplace inst bypassMux_0 -pg 1 -lvl 5 -x -280 -y -380 -defaultsOSRD
 preplace inst new_reg_file_0 -pg 1 -lvl 4 -x -790 -y -440 -defaultsOSRD
@@ -26,11 +22,15 @@ preplace inst alu_0 -pg 1 -lvl 7 -x 440 -y -340 -defaultsOSRD
 preplace inst pcAlu_0 -pg 1 -lvl 7 -x 440 -y -190 -defaultsOSRD
 preplace inst pcMuxSelector_0 -pg 1 -lvl 8 -x 860 -y -270 -defaultsOSRD
 preplace inst Decode_0 -pg 1 -lvl 3 -x -1220 -y -60 -defaultsOSRD
+preplace inst memInputLogic_0 -pg 1 -lvl 9 -x 1530 -y 50 -defaultsOSRD
 preplace inst gpdin_0 -pg 1 -lvl 10 -x 2090 -y 750 -defaultsOSRD
 preplace inst gpdout_0 -pg 1 -lvl 10 -x 2090 -y 580 -defaultsOSRD
 preplace inst bytewrite_tdp_ram_rf_0 -pg 1 -lvl 10 -x 2090 -y 90 -defaultsOSRD
-preplace inst memInputLogic_0 -pg 1 -lvl 9 -x 1530 -y 50 -defaultsOSRD
 preplace inst memOutputLogic_0 -pg 1 -lvl 11 -x 2590 -y 40 -defaultsOSRD
+preplace inst aluMuxComb_0 -pg 1 -lvl 6 -x 70 -y -330 -defaultsOSRD
+preplace inst opLatch_0 -pg 1 -lvl 4 -x -790 -y -80 -defaultsOSRD
+preplace inst resetManager_0 -pg 1 -lvl 1 -x -1880 -y -390 -defaultsOSRD
+preplace inst writeBackLatch_0 -pg 1 -lvl 12 -x 2990 -y -140 -defaultsOSRD
 preplace netloc Decode_0_aluOp 1 3 1 -970 -110n
 preplace netloc Decode_0_aluToReg 1 3 1 -1060 -50n
 preplace netloc Decode_0_branch 1 3 1 -1060 10n

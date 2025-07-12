@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Wed Jul  9 04:09:25 2025
+// Date        : Wed Jul  9 04:09:22 2025
 // Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_gpdin_0_0/riscWithPipeMem_gpdin_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_gpdin_0_0 -prefix
+//               riscWithPipeMem_gpdin_0_0_ riscWithPipeMem_gpdin_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_gpdin_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,36 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_gpdin_0_0,gpdin,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "gpdin,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_gpdin_0_0
-   (clk,
-    reset,
-    en,
-    dinFromEdge,
-    din);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
-  input en;
-  input [31:0]dinFromEdge;
-  output [31:0]din;
-
-  wire clk;
-  wire [31:0]din;
-  wire [31:0]dinFromEdge;
-  wire en;
-  wire reset;
-
-  riscWithPipeMem_gpdin_0_0_gpdin inst
-       (.clk(clk),
-        .din(din),
-        .dinFromEdge(dinFromEdge),
-        .en(en),
-        .reset(reset));
-endmodule
-
-(* ORIG_REF_NAME = "gpdin" *) 
 module riscWithPipeMem_gpdin_0_0_gpdin
    (din,
     reset,
@@ -253,6 +223,35 @@ module riscWithPipeMem_gpdin_0_0_gpdin
         .D(dinFromEdge[17]),
         .Q(din[9]),
         .R(reset));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_gpdin_0_0,gpdin,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "gpdin,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_gpdin_0_0
+   (clk,
+    reset,
+    en,
+    dinFromEdge,
+    din);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
+  input en;
+  input [31:0]dinFromEdge;
+  output [31:0]din;
+
+  wire clk;
+  wire [31:0]din;
+  wire [31:0]dinFromEdge;
+  wire en;
+  wire reset;
+
+  riscWithPipeMem_gpdin_0_0_gpdin inst
+       (.clk(clk),
+        .din(din),
+        .dinFromEdge(dinFromEdge),
+        .en(en),
+        .reset(reset));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Wed Jul  9 04:09:26 2025
+// Date        : Wed Jul  9 04:09:23 2025
 // Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_pcAlu_0_0/riscWithPipeMem_pcAlu_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_pcAlu_0_0 -prefix
+//               riscWithPipeMem_pcAlu_0_0_ riscWithPipeMem_pcAlu_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_pcAlu_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,36 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_pcAlu_0_0,pcAlu,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "pcAlu,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_pcAlu_0_0
-   (pc,
-    imm,
-    r1,
-    jalr,
-    jumpPc);
-  input [31:0]pc;
-  input [31:0]imm;
-  input [31:0]r1;
-  input jalr;
-  output [31:0]jumpPc;
-
-  wire [31:0]imm;
-  wire jalr;
-  wire [31:0]jumpPc;
-  wire [31:0]pc;
-  wire [31:0]r1;
-
-  riscWithPipeMem_pcAlu_0_0_pcAlu inst
-       (.imm(imm),
-        .jalr(jalr),
-        .jumpPc(jumpPc),
-        .pc(pc),
-        .r1(r1));
-endmodule
-
-(* ORIG_REF_NAME = "pcAlu" *) 
 module riscWithPipeMem_pcAlu_0_0_pcAlu
    (jumpPc,
     imm,
@@ -453,6 +423,35 @@ module riscWithPipeMem_pcAlu_0_0_pcAlu
         .I2(pc[0]),
         .I3(r1[0]),
         .O(_carry_i_4_n_0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_pcAlu_0_0,pcAlu,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "pcAlu,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_pcAlu_0_0
+   (pc,
+    imm,
+    r1,
+    jalr,
+    jumpPc);
+  input [31:0]pc;
+  input [31:0]imm;
+  input [31:0]r1;
+  input jalr;
+  output [31:0]jumpPc;
+
+  wire [31:0]imm;
+  wire jalr;
+  wire [31:0]jumpPc;
+  wire [31:0]pc;
+  wire [31:0]r1;
+
+  riscWithPipeMem_pcAlu_0_0_pcAlu inst
+       (.imm(imm),
+        .jalr(jalr),
+        .jumpPc(jumpPc),
+        .pc(pc),
+        .r1(r1));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Wed Jul  9 04:09:29 2025
+-- Date        : Wed Jul  9 04:09:27 2025
 -- Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_alu_0_0/riscWithPipeMem_alu_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top riscWithPipeMem_alu_0_0 -prefix
+--               riscWithPipeMem_alu_0_0_ riscWithPipeMem_alu_0_0_sim_netlist.vhdl
 -- Design      : riscWithPipeMem_alu_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,8 +22,6 @@ entity riscWithPipeMem_alu_0_0_alu is
     a : in STD_LOGIC_VECTOR ( 31 downto 0 );
     aluOp : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of riscWithPipeMem_alu_0_0_alu : entity is "alu";
 end riscWithPipeMem_alu_0_0_alu;
 
 architecture STRUCTURE of riscWithPipeMem_alu_0_0_alu is

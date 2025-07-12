@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Mon Jun 16 03:15:05 2025
+// Date        : Mon Jun 16 03:15:03 2025
 // Host        : a8ab420d0780 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_new_reg_file_0_0/riscWithPipeMem_new_reg_file_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_new_reg_file_0_0 -prefix
+//               riscWithPipeMem_new_reg_file_0_0_ riscWithPipeMem_new_reg_file_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_new_reg_file_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,60 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_new_reg_file_0_0,new_reg_file,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "new_reg_file,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_new_reg_file_0_0
-   (rst,
-    clk,
-    wr_en,
-    rd1_addr,
-    rd2_addr,
-    wr_addr,
-    wr_data,
-    rd1_data,
-    rd2_data,
-    rd1_addr_out,
-    rd2_addr_out);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
-  input wr_en;
-  input [4:0]rd1_addr;
-  input [4:0]rd2_addr;
-  input [4:0]wr_addr;
-  input [31:0]wr_data;
-  output [31:0]rd1_data;
-  output [31:0]rd2_data;
-  output [4:0]rd1_addr_out;
-  output [4:0]rd2_addr_out;
-
-  wire clk;
-  wire [4:0]rd1_addr;
-  wire [4:0]rd1_addr_out;
-  wire [31:0]rd1_data;
-  wire [4:0]rd2_addr;
-  wire [4:0]rd2_addr_out;
-  wire [31:0]rd2_data;
-  wire rst;
-  wire [4:0]wr_addr;
-  wire [31:0]wr_data;
-  wire wr_en;
-
-  riscWithPipeMem_new_reg_file_0_0_new_reg_file inst
-       (.clk(clk),
-        .rd1_addr(rd1_addr),
-        .rd1_addr_out(rd1_addr_out),
-        .rd1_data(rd1_data),
-        .rd2_addr(rd2_addr),
-        .rd2_addr_out(rd2_addr_out),
-        .rd2_data(rd2_data),
-        .rst(rst),
-        .wr_addr(wr_addr),
-        .wr_data(wr_data),
-        .wr_en(wr_en));
-endmodule
-
-(* ORIG_REF_NAME = "new_reg_file" *) 
 module riscWithPipeMem_new_reg_file_0_0_new_reg_file
    (rd1_data,
     rd2_data,
@@ -15407,6 +15353,59 @@ module riscWithPipeMem_new_reg_file_0_0_new_reg_file
         .I1(\rd2_data[9]_i_15_n_0 ),
         .O(\rd2_data_reg[9]_i_7_n_0 ),
         .S(rd2_addr[2]));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_new_reg_file_0_0,new_reg_file,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "new_reg_file,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_new_reg_file_0_0
+   (rst,
+    clk,
+    wr_en,
+    rd1_addr,
+    rd2_addr,
+    wr_addr,
+    wr_data,
+    rd1_data,
+    rd2_data,
+    rd1_addr_out,
+    rd2_addr_out);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input rst;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
+  input wr_en;
+  input [4:0]rd1_addr;
+  input [4:0]rd2_addr;
+  input [4:0]wr_addr;
+  input [31:0]wr_data;
+  output [31:0]rd1_data;
+  output [31:0]rd2_data;
+  output [4:0]rd1_addr_out;
+  output [4:0]rd2_addr_out;
+
+  wire clk;
+  wire [4:0]rd1_addr;
+  wire [4:0]rd1_addr_out;
+  wire [31:0]rd1_data;
+  wire [4:0]rd2_addr;
+  wire [4:0]rd2_addr_out;
+  wire [31:0]rd2_data;
+  wire rst;
+  wire [4:0]wr_addr;
+  wire [31:0]wr_data;
+  wire wr_en;
+
+  riscWithPipeMem_new_reg_file_0_0_new_reg_file inst
+       (.clk(clk),
+        .rd1_addr(rd1_addr),
+        .rd1_addr_out(rd1_addr_out),
+        .rd1_data(rd1_data),
+        .rd2_addr(rd2_addr),
+        .rd2_addr_out(rd2_addr_out),
+        .rd2_data(rd2_data),
+        .rst(rst),
+        .wr_addr(wr_addr),
+        .wr_data(wr_data),
+        .wr_en(wr_en));
 endmodule
 `ifndef GLBL
 `define GLBL

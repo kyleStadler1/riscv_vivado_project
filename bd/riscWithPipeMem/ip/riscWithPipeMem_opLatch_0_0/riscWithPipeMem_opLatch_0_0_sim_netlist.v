@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Sun Mar 23 09:28:52 2025
+// Date        : Sun Mar 23 09:28:48 2025
 // Host        : a42f7f3b6b49 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_opLatch_0_0/riscWithPipeMem_opLatch_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_opLatch_0_0 -prefix
+//               riscWithPipeMem_opLatch_0_0_ riscWithPipeMem_opLatch_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_opLatch_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,124 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_opLatch_0_0,opLatch,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "opLatch,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_opLatch_0_0
-   (clk,
-    stall,
-    reset,
-    immIn,
-    memSizeIn,
-    memOpIn,
-    rdIn,
-    pcIn,
-    selAIn,
-    selBIn,
-    aluOpIn,
-    aluToRegIn,
-    branchIn,
-    jalIn,
-    jalrIn,
-    imm,
-    memSize,
-    memOp,
-    rd,
-    pc,
-    selA,
-    selB,
-    aluOp,
-    aluToReg,
-    branch,
-    jal,
-    jalr);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
-  input stall;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
-  input [31:0]immIn;
-  input [1:0]memSizeIn;
-  input [1:0]memOpIn;
-  input [4:0]rdIn;
-  input [31:0]pcIn;
-  input selAIn;
-  input [1:0]selBIn;
-  input [3:0]aluOpIn;
-  input aluToRegIn;
-  input branchIn;
-  input jalIn;
-  input jalrIn;
-  output [31:0]imm;
-  output [1:0]memSize;
-  output [1:0]memOp;
-  output [4:0]rd;
-  output [31:0]pc;
-  output selA;
-  output [1:0]selB;
-  output [3:0]aluOp;
-  output aluToReg;
-  output branch;
-  output jal;
-  output jalr;
-
-  wire [3:0]aluOp;
-  wire [3:0]aluOpIn;
-  wire aluToReg;
-  wire aluToRegIn;
-  wire branch;
-  wire branchIn;
-  wire clk;
-  wire [31:0]imm;
-  wire [31:0]immIn;
-  wire jal;
-  wire jalIn;
-  wire jalr;
-  wire jalrIn;
-  wire [1:0]memOp;
-  wire [1:0]memOpIn;
-  wire [1:0]memSize;
-  wire [1:0]memSizeIn;
-  wire [31:0]pc;
-  wire [31:0]pcIn;
-  wire [4:0]rd;
-  wire [4:0]rdIn;
-  wire reset;
-  wire selA;
-  wire selAIn;
-  wire [1:0]selB;
-  wire [1:0]selBIn;
-  wire stall;
-
-  riscWithPipeMem_opLatch_0_0_opLatch inst
-       (.aluOp(aluOp),
-        .aluOpIn(aluOpIn),
-        .aluToReg(aluToReg),
-        .aluToRegIn(aluToRegIn),
-        .branch(branch),
-        .branchIn(branchIn),
-        .clk(clk),
-        .imm(imm),
-        .immIn(immIn),
-        .jal(jal),
-        .jalIn(jalIn),
-        .jalr(jalr),
-        .jalrIn(jalrIn),
-        .memOp(memOp),
-        .memOpIn(memOpIn),
-        .memSize(memSize),
-        .memSizeIn(memSizeIn),
-        .pc(pc),
-        .pcIn(pcIn),
-        .rd(rd),
-        .rdIn(rdIn),
-        .reset(reset),
-        .selA(selA),
-        .selAIn(selAIn),
-        .selB(selB),
-        .selBIn(selBIn),
-        .stall(stall));
-endmodule
-
-(* ORIG_REF_NAME = "opLatch" *) 
 module riscWithPipeMem_opLatch_0_0_opLatch
    (imm,
     memSize,
@@ -725,6 +607,123 @@ module riscWithPipeMem_opLatch_0_0_opLatch
         .D(selBIn[1]),
         .Q(selB[1]),
         .R(1'b0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_opLatch_0_0,opLatch,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "opLatch,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_opLatch_0_0
+   (clk,
+    stall,
+    reset,
+    immIn,
+    memSizeIn,
+    memOpIn,
+    rdIn,
+    pcIn,
+    selAIn,
+    selBIn,
+    aluOpIn,
+    aluToRegIn,
+    branchIn,
+    jalIn,
+    jalrIn,
+    imm,
+    memSize,
+    memOp,
+    rd,
+    pc,
+    selA,
+    selB,
+    aluOp,
+    aluToReg,
+    branch,
+    jal,
+    jalr);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
+  input stall;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
+  input [31:0]immIn;
+  input [1:0]memSizeIn;
+  input [1:0]memOpIn;
+  input [4:0]rdIn;
+  input [31:0]pcIn;
+  input selAIn;
+  input [1:0]selBIn;
+  input [3:0]aluOpIn;
+  input aluToRegIn;
+  input branchIn;
+  input jalIn;
+  input jalrIn;
+  output [31:0]imm;
+  output [1:0]memSize;
+  output [1:0]memOp;
+  output [4:0]rd;
+  output [31:0]pc;
+  output selA;
+  output [1:0]selB;
+  output [3:0]aluOp;
+  output aluToReg;
+  output branch;
+  output jal;
+  output jalr;
+
+  wire [3:0]aluOp;
+  wire [3:0]aluOpIn;
+  wire aluToReg;
+  wire aluToRegIn;
+  wire branch;
+  wire branchIn;
+  wire clk;
+  wire [31:0]imm;
+  wire [31:0]immIn;
+  wire jal;
+  wire jalIn;
+  wire jalr;
+  wire jalrIn;
+  wire [1:0]memOp;
+  wire [1:0]memOpIn;
+  wire [1:0]memSize;
+  wire [1:0]memSizeIn;
+  wire [31:0]pc;
+  wire [31:0]pcIn;
+  wire [4:0]rd;
+  wire [4:0]rdIn;
+  wire reset;
+  wire selA;
+  wire selAIn;
+  wire [1:0]selB;
+  wire [1:0]selBIn;
+  wire stall;
+
+  riscWithPipeMem_opLatch_0_0_opLatch inst
+       (.aluOp(aluOp),
+        .aluOpIn(aluOpIn),
+        .aluToReg(aluToReg),
+        .aluToRegIn(aluToRegIn),
+        .branch(branch),
+        .branchIn(branchIn),
+        .clk(clk),
+        .imm(imm),
+        .immIn(immIn),
+        .jal(jal),
+        .jalIn(jalIn),
+        .jalr(jalr),
+        .jalrIn(jalrIn),
+        .memOp(memOp),
+        .memOpIn(memOpIn),
+        .memSize(memSize),
+        .memSizeIn(memSizeIn),
+        .pc(pc),
+        .pcIn(pcIn),
+        .rd(rd),
+        .rdIn(rdIn),
+        .reset(reset),
+        .selA(selA),
+        .selAIn(selAIn),
+        .selB(selB),
+        .selBIn(selBIn),
+        .stall(stall));
 endmodule
 `ifndef GLBL
 `define GLBL

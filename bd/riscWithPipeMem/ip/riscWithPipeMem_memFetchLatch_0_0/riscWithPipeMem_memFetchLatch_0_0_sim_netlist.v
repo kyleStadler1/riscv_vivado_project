@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Sun Mar 23 09:28:52 2025
+// Date        : Sun Mar 23 09:28:48 2025
 // Host        : a42f7f3b6b49 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_memFetchLatch_0_0/riscWithPipeMem_memFetchLatch_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_memFetchLatch_0_0 -prefix
+//               riscWithPipeMem_memFetchLatch_0_0_ riscWithPipeMem_memFetchLatch_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_memFetchLatch_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,36 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_memFetchLatch_0_0,memFetchLatch,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "memFetchLatch,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_memFetchLatch_0_0
-   (clk,
-    reset,
-    stall,
-    pcIn,
-    pc);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
-  input stall;
-  input [31:0]pcIn;
-  output [31:0]pc;
-
-  wire clk;
-  wire [31:0]pc;
-  wire [31:0]pcIn;
-  wire reset;
-  wire stall;
-
-  riscWithPipeMem_memFetchLatch_0_0_memFetchLatch inst
-       (.clk(clk),
-        .pc(pc),
-        .pcIn(pcIn),
-        .reset(reset),
-        .stall(stall));
-endmodule
-
-(* ORIG_REF_NAME = "memFetchLatch" *) 
 module riscWithPipeMem_memFetchLatch_0_0_memFetchLatch
    (pc,
     reset,
@@ -259,6 +229,35 @@ module riscWithPipeMem_memFetchLatch_0_0_memFetchLatch
         .D(pcIn[9]),
         .Q(pc[9]),
         .R(reset));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_memFetchLatch_0_0,memFetchLatch,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "memFetchLatch,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_memFetchLatch_0_0
+   (clk,
+    reset,
+    stall,
+    pcIn,
+    pc);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
+  input stall;
+  input [31:0]pcIn;
+  output [31:0]pc;
+
+  wire clk;
+  wire [31:0]pc;
+  wire [31:0]pcIn;
+  wire reset;
+  wire stall;
+
+  riscWithPipeMem_memFetchLatch_0_0_memFetchLatch inst
+       (.clk(clk),
+        .pc(pc),
+        .pcIn(pcIn),
+        .reset(reset),
+        .stall(stall));
 endmodule
 `ifndef GLBL
 `define GLBL

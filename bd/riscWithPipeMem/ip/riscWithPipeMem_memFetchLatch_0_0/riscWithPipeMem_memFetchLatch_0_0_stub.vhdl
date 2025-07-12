@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Sun Mar 23 09:28:51 2025
+-- Date        : Sun Mar 23 09:28:48 2025
 -- Host        : a42f7f3b6b49 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_memFetchLatch_0_0/riscWithPipeMem_memFetchLatch_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top riscWithPipeMem_memFetchLatch_0_0 -prefix
+--               riscWithPipeMem_memFetchLatch_0_0_ riscWithPipeMem_memFetchLatch_0_0_stub.vhdl
 -- Design      : riscWithPipeMem_memFetchLatch_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z007sclg400-1

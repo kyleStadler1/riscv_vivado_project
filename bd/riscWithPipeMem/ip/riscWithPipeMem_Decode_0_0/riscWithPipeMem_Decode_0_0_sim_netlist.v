@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Wed Jul  9 04:09:28 2025
+// Date        : Wed Jul  9 04:09:24 2025
 // Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_Decode_0_0/riscWithPipeMem_Decode_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_Decode_0_0 -prefix
+//               riscWithPipeMem_Decode_0_0_ riscWithPipeMem_Decode_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_Decode_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,96 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_Decode_0_0,Decode,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "Decode,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_Decode_0_0
-   (clk,
-    stall,
-    reset,
-    resetFlush,
-    instruction,
-    pc_in,
-    rs1,
-    rs2,
-    rd,
-    imm,
-    aluOp,
-    selA,
-    selB,
-    aluToReg,
-    memOp,
-    memSize,
-    branch,
-    jal,
-    jalr,
-    pc);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
-  input stall;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
-  input resetFlush;
-  input [31:0]instruction;
-  input [31:0]pc_in;
-  output [4:0]rs1;
-  output [4:0]rs2;
-  output [4:0]rd;
-  output [31:0]imm;
-  output [3:0]aluOp;
-  output selA;
-  output [1:0]selB;
-  output aluToReg;
-  output [1:0]memOp;
-  output [1:0]memSize;
-  output branch;
-  output jal;
-  output jalr;
-  output [31:0]pc;
-
-  wire [3:0]aluOp;
-  wire aluToReg;
-  wire branch;
-  wire clk;
-  wire [31:0]imm;
-  wire [31:0]instruction;
-  wire jal;
-  wire jalr;
-  wire [1:0]memOp;
-  wire [1:0]memSize;
-  wire [31:0]pc;
-  wire [31:0]pc_in;
-  wire [4:0]rd;
-  wire reset;
-  wire resetFlush;
-  wire [4:0]rs1;
-  wire [4:0]rs2;
-  wire selA;
-  wire [1:0]selB;
-  wire stall;
-
-  riscWithPipeMem_Decode_0_0_Decode inst
-       (.aluOp(aluOp),
-        .aluToReg(aluToReg),
-        .branch(branch),
-        .clk(clk),
-        .imm(imm),
-        .instruction(instruction),
-        .jal(jal),
-        .jalr(jalr),
-        .memOp(memOp),
-        .memSize(memSize),
-        .pc(pc),
-        .pc_in(pc_in),
-        .rd(rd),
-        .reset(reset),
-        .resetFlush(resetFlush),
-        .rs1(rs1),
-        .rs2(rs2),
-        .selA(selA),
-        .selB(selB),
-        .stall(stall));
-endmodule
-
-(* ORIG_REF_NAME = "Decode" *) 
 module riscWithPipeMem_Decode_0_0_Decode
    (rs1,
     rs2,
@@ -1669,6 +1579,95 @@ module riscWithPipeMem_Decode_0_0_Decode
         .D(selB_5[1]),
         .Q(selB[1]),
         .R(1'b0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_Decode_0_0,Decode,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "Decode,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_Decode_0_0
+   (clk,
+    stall,
+    reset,
+    resetFlush,
+    instruction,
+    pc_in,
+    rs1,
+    rs2,
+    rd,
+    imm,
+    aluOp,
+    selA,
+    selB,
+    aluToReg,
+    memOp,
+    memSize,
+    branch,
+    jal,
+    jalr,
+    pc);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
+  input stall;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
+  input resetFlush;
+  input [31:0]instruction;
+  input [31:0]pc_in;
+  output [4:0]rs1;
+  output [4:0]rs2;
+  output [4:0]rd;
+  output [31:0]imm;
+  output [3:0]aluOp;
+  output selA;
+  output [1:0]selB;
+  output aluToReg;
+  output [1:0]memOp;
+  output [1:0]memSize;
+  output branch;
+  output jal;
+  output jalr;
+  output [31:0]pc;
+
+  wire [3:0]aluOp;
+  wire aluToReg;
+  wire branch;
+  wire clk;
+  wire [31:0]imm;
+  wire [31:0]instruction;
+  wire jal;
+  wire jalr;
+  wire [1:0]memOp;
+  wire [1:0]memSize;
+  wire [31:0]pc;
+  wire [31:0]pc_in;
+  wire [4:0]rd;
+  wire reset;
+  wire resetFlush;
+  wire [4:0]rs1;
+  wire [4:0]rs2;
+  wire selA;
+  wire [1:0]selB;
+  wire stall;
+
+  riscWithPipeMem_Decode_0_0_Decode inst
+       (.aluOp(aluOp),
+        .aluToReg(aluToReg),
+        .branch(branch),
+        .clk(clk),
+        .imm(imm),
+        .instruction(instruction),
+        .jal(jal),
+        .jalr(jalr),
+        .memOp(memOp),
+        .memSize(memSize),
+        .pc(pc),
+        .pc_in(pc_in),
+        .rd(rd),
+        .reset(reset),
+        .resetFlush(resetFlush),
+        .rs1(rs1),
+        .rs2(rs2),
+        .selA(selA),
+        .selB(selB),
+        .stall(stall));
 endmodule
 `ifndef GLBL
 `define GLBL

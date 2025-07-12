@@ -2,16 +2,345 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Wed Jul  9 04:09:27 2025
+// Date        : Wed Jul  9 04:09:24 2025
 // Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_memInputLogic_0_0/riscWithPipeMem_memInputLogic_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_memInputLogic_0_0 -prefix
+//               riscWithPipeMem_memInputLogic_0_0_ riscWithPipeMem_memInputLogic_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_memInputLogic_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z007sclg400-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
+
+module riscWithPipeMem_memInputLogic_0_0_memInputLogic_
+   (addr_25_sp_1,
+    memOp_0_sp_1,
+    addr_3_sp_1,
+    addr_8_sp_1,
+    addr_29_sp_1,
+    addr_22_sp_1,
+    addr_6_sp_1,
+    memToEdge,
+    memOp,
+    addr,
+    reset,
+    rawDin,
+    clk);
+  output addr_25_sp_1;
+  output memOp_0_sp_1;
+  output addr_3_sp_1;
+  output addr_8_sp_1;
+  output addr_29_sp_1;
+  output addr_22_sp_1;
+  output addr_6_sp_1;
+  output [31:0]memToEdge;
+  input [1:0]memOp;
+  input [31:0]addr;
+  input reset;
+  input [31:0]rawDin;
+  input clk;
+
+  wire [31:0]addr;
+  wire addr_22_sn_1;
+  wire addr_25_sn_1;
+  wire addr_29_sn_1;
+  wire addr_3_sn_1;
+  wire addr_6_sn_1;
+  wire addr_8_sn_1;
+  wire clk;
+  wire [1:0]memOp;
+  wire memOp_0_sn_1;
+  wire [31:0]memToEdge;
+  wire mmio0;
+  wire \mmio[31]_i_2_n_0 ;
+  wire \mmio[31]_i_3_n_0 ;
+  wire [31:0]rawDin;
+  wire reset;
+
+  assign addr_22_sp_1 = addr_22_sn_1;
+  assign addr_25_sp_1 = addr_25_sn_1;
+  assign addr_29_sp_1 = addr_29_sn_1;
+  assign addr_3_sp_1 = addr_3_sn_1;
+  assign addr_6_sp_1 = addr_6_sn_1;
+  assign addr_8_sp_1 = addr_8_sn_1;
+  assign memOp_0_sp_1 = memOp_0_sn_1;
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    enDin_INST_0_i_2
+       (.I0(addr[8]),
+        .I1(addr[9]),
+        .I2(addr[11]),
+        .I3(addr[10]),
+        .O(addr_8_sn_1));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    enDin_INST_0_i_5
+       (.I0(addr[22]),
+        .I1(addr[17]),
+        .I2(addr[21]),
+        .I3(addr[23]),
+        .I4(addr[18]),
+        .I5(addr[19]),
+        .O(addr_22_sn_1));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    enRam_INST_0_i_2
+       (.I0(addr[6]),
+        .I1(addr[5]),
+        .I2(addr[7]),
+        .I3(addr[4]),
+        .O(addr_6_sn_1));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    enRam_INST_0_i_3
+       (.I0(addr[3]),
+        .I1(addr[2]),
+        .I2(addr[0]),
+        .I3(addr[1]),
+        .O(addr_3_sn_1));
+  LUT2 #(
+    .INIT(4'h1)) 
+    enRam_INST_0_i_4
+       (.I0(memOp[0]),
+        .I1(memOp[1]),
+        .O(memOp_0_sn_1));
+  LUT5 #(
+    .INIT(32'hFFFFFFFD)) 
+    enRam_INST_0_i_5
+       (.I0(addr_29_sn_1),
+        .I1(addr[25]),
+        .I2(addr[24]),
+        .I3(addr[26]),
+        .I4(addr[27]),
+        .O(addr_25_sn_1));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    enRam_INST_0_i_9
+       (.I0(addr[29]),
+        .I1(addr[31]),
+        .I2(addr[28]),
+        .I3(addr[30]),
+        .O(addr_29_sn_1));
+  LUT6 #(
+    .INIT(64'h0000000000000002)) 
+    \mmio[31]_i_1 
+       (.I0(\mmio[31]_i_2_n_0 ),
+        .I1(addr_25_sn_1),
+        .I2(\mmio[31]_i_3_n_0 ),
+        .I3(memOp_0_sn_1),
+        .I4(addr_3_sn_1),
+        .I5(addr_8_sn_1),
+        .O(mmio0));
+  LUT6 #(
+    .INIT(64'h0000000000000002)) 
+    \mmio[31]_i_2 
+       (.I0(addr_22_sn_1),
+        .I1(addr[14]),
+        .I2(addr[12]),
+        .I3(addr[20]),
+        .I4(addr[16]),
+        .I5(addr_6_sn_1),
+        .O(\mmio[31]_i_2_n_0 ));
+  LUT2 #(
+    .INIT(4'h7)) 
+    \mmio[31]_i_3 
+       (.I0(addr[13]),
+        .I1(addr[15]),
+        .O(\mmio[31]_i_3_n_0 ));
+  FDSE \mmio_reg[0] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[0]),
+        .Q(memToEdge[0]),
+        .S(reset));
+  FDSE \mmio_reg[10] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[10]),
+        .Q(memToEdge[10]),
+        .S(reset));
+  FDSE \mmio_reg[11] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[11]),
+        .Q(memToEdge[11]),
+        .S(reset));
+  FDSE \mmio_reg[12] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[12]),
+        .Q(memToEdge[12]),
+        .S(reset));
+  FDSE \mmio_reg[13] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[13]),
+        .Q(memToEdge[13]),
+        .S(reset));
+  FDRE \mmio_reg[14] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[14]),
+        .Q(memToEdge[14]),
+        .R(reset));
+  FDSE \mmio_reg[15] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[15]),
+        .Q(memToEdge[15]),
+        .S(reset));
+  FDSE \mmio_reg[16] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[16]),
+        .Q(memToEdge[16]),
+        .S(reset));
+  FDRE \mmio_reg[17] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[17]),
+        .Q(memToEdge[17]),
+        .R(reset));
+  FDSE \mmio_reg[18] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[18]),
+        .Q(memToEdge[18]),
+        .S(reset));
+  FDSE \mmio_reg[19] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[19]),
+        .Q(memToEdge[19]),
+        .S(reset));
+  FDSE \mmio_reg[1] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[1]),
+        .Q(memToEdge[1]),
+        .S(reset));
+  FDRE \mmio_reg[20] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[20]),
+        .Q(memToEdge[20]),
+        .R(reset));
+  FDSE \mmio_reg[21] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[21]),
+        .Q(memToEdge[21]),
+        .S(reset));
+  FDRE \mmio_reg[22] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[22]),
+        .Q(memToEdge[22]),
+        .R(reset));
+  FDSE \mmio_reg[23] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[23]),
+        .Q(memToEdge[23]),
+        .S(reset));
+  FDRE \mmio_reg[24] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[24]),
+        .Q(memToEdge[24]),
+        .R(reset));
+  FDSE \mmio_reg[25] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[25]),
+        .Q(memToEdge[25]),
+        .S(reset));
+  FDSE \mmio_reg[26] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[26]),
+        .Q(memToEdge[26]),
+        .S(reset));
+  FDSE \mmio_reg[27] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[27]),
+        .Q(memToEdge[27]),
+        .S(reset));
+  FDSE \mmio_reg[28] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[28]),
+        .Q(memToEdge[28]),
+        .S(reset));
+  FDRE \mmio_reg[29] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[29]),
+        .Q(memToEdge[29]),
+        .R(reset));
+  FDSE \mmio_reg[2] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[2]),
+        .Q(memToEdge[2]),
+        .S(reset));
+  FDSE \mmio_reg[30] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[30]),
+        .Q(memToEdge[30]),
+        .S(reset));
+  FDSE \mmio_reg[31] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[31]),
+        .Q(memToEdge[31]),
+        .S(reset));
+  FDSE \mmio_reg[3] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[3]),
+        .Q(memToEdge[3]),
+        .S(reset));
+  FDRE \mmio_reg[4] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[4]),
+        .Q(memToEdge[4]),
+        .R(reset));
+  FDSE \mmio_reg[5] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[5]),
+        .Q(memToEdge[5]),
+        .S(reset));
+  FDSE \mmio_reg[6] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[6]),
+        .Q(memToEdge[6]),
+        .S(reset));
+  FDSE \mmio_reg[7] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[7]),
+        .Q(memToEdge[7]),
+        .S(reset));
+  FDRE \mmio_reg[8] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[8]),
+        .Q(memToEdge[8]),
+        .R(reset));
+  FDSE \mmio_reg[9] 
+       (.C(clk),
+        .CE(mmio0),
+        .D(rawDin[9]),
+        .Q(memToEdge[9]),
+        .S(reset));
+endmodule
 
 (* CHECK_LICENSE_TYPE = "riscWithPipeMem_memInputLogic_0_0,memInputLogic_,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
 (* X_CORE_INFO = "memInputLogic_,Vivado 2023.1" *) 
@@ -604,336 +933,6 @@ module riscWithPipeMem_memInputLogic_0_0
         .I4(memSize[1]),
         .I5(addr[1]),
         .O(weB[3]));
-endmodule
-
-(* ORIG_REF_NAME = "memInputLogic_" *) 
-module riscWithPipeMem_memInputLogic_0_0_memInputLogic_
-   (addr_25_sp_1,
-    memOp_0_sp_1,
-    addr_3_sp_1,
-    addr_8_sp_1,
-    addr_29_sp_1,
-    addr_22_sp_1,
-    addr_6_sp_1,
-    memToEdge,
-    memOp,
-    addr,
-    reset,
-    rawDin,
-    clk);
-  output addr_25_sp_1;
-  output memOp_0_sp_1;
-  output addr_3_sp_1;
-  output addr_8_sp_1;
-  output addr_29_sp_1;
-  output addr_22_sp_1;
-  output addr_6_sp_1;
-  output [31:0]memToEdge;
-  input [1:0]memOp;
-  input [31:0]addr;
-  input reset;
-  input [31:0]rawDin;
-  input clk;
-
-  wire [31:0]addr;
-  wire addr_22_sn_1;
-  wire addr_25_sn_1;
-  wire addr_29_sn_1;
-  wire addr_3_sn_1;
-  wire addr_6_sn_1;
-  wire addr_8_sn_1;
-  wire clk;
-  wire [1:0]memOp;
-  wire memOp_0_sn_1;
-  wire [31:0]memToEdge;
-  wire mmio0;
-  wire \mmio[31]_i_2_n_0 ;
-  wire \mmio[31]_i_3_n_0 ;
-  wire [31:0]rawDin;
-  wire reset;
-
-  assign addr_22_sp_1 = addr_22_sn_1;
-  assign addr_25_sp_1 = addr_25_sn_1;
-  assign addr_29_sp_1 = addr_29_sn_1;
-  assign addr_3_sp_1 = addr_3_sn_1;
-  assign addr_6_sp_1 = addr_6_sn_1;
-  assign addr_8_sp_1 = addr_8_sn_1;
-  assign memOp_0_sp_1 = memOp_0_sn_1;
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    enDin_INST_0_i_2
-       (.I0(addr[8]),
-        .I1(addr[9]),
-        .I2(addr[11]),
-        .I3(addr[10]),
-        .O(addr_8_sn_1));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    enDin_INST_0_i_5
-       (.I0(addr[22]),
-        .I1(addr[17]),
-        .I2(addr[21]),
-        .I3(addr[23]),
-        .I4(addr[18]),
-        .I5(addr[19]),
-        .O(addr_22_sn_1));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    enRam_INST_0_i_2
-       (.I0(addr[6]),
-        .I1(addr[5]),
-        .I2(addr[7]),
-        .I3(addr[4]),
-        .O(addr_6_sn_1));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    enRam_INST_0_i_3
-       (.I0(addr[3]),
-        .I1(addr[2]),
-        .I2(addr[0]),
-        .I3(addr[1]),
-        .O(addr_3_sn_1));
-  LUT2 #(
-    .INIT(4'h1)) 
-    enRam_INST_0_i_4
-       (.I0(memOp[0]),
-        .I1(memOp[1]),
-        .O(memOp_0_sn_1));
-  LUT5 #(
-    .INIT(32'hFFFFFFFD)) 
-    enRam_INST_0_i_5
-       (.I0(addr_29_sn_1),
-        .I1(addr[25]),
-        .I2(addr[24]),
-        .I3(addr[26]),
-        .I4(addr[27]),
-        .O(addr_25_sn_1));
-  LUT4 #(
-    .INIT(16'h0001)) 
-    enRam_INST_0_i_9
-       (.I0(addr[29]),
-        .I1(addr[31]),
-        .I2(addr[28]),
-        .I3(addr[30]),
-        .O(addr_29_sn_1));
-  LUT6 #(
-    .INIT(64'h0000000000000002)) 
-    \mmio[31]_i_1 
-       (.I0(\mmio[31]_i_2_n_0 ),
-        .I1(addr_25_sn_1),
-        .I2(\mmio[31]_i_3_n_0 ),
-        .I3(memOp_0_sn_1),
-        .I4(addr_3_sn_1),
-        .I5(addr_8_sn_1),
-        .O(mmio0));
-  LUT6 #(
-    .INIT(64'h0000000000000002)) 
-    \mmio[31]_i_2 
-       (.I0(addr_22_sn_1),
-        .I1(addr[14]),
-        .I2(addr[12]),
-        .I3(addr[20]),
-        .I4(addr[16]),
-        .I5(addr_6_sn_1),
-        .O(\mmio[31]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \mmio[31]_i_3 
-       (.I0(addr[13]),
-        .I1(addr[15]),
-        .O(\mmio[31]_i_3_n_0 ));
-  FDSE \mmio_reg[0] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[0]),
-        .Q(memToEdge[0]),
-        .S(reset));
-  FDSE \mmio_reg[10] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[10]),
-        .Q(memToEdge[10]),
-        .S(reset));
-  FDSE \mmio_reg[11] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[11]),
-        .Q(memToEdge[11]),
-        .S(reset));
-  FDSE \mmio_reg[12] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[12]),
-        .Q(memToEdge[12]),
-        .S(reset));
-  FDSE \mmio_reg[13] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[13]),
-        .Q(memToEdge[13]),
-        .S(reset));
-  FDRE \mmio_reg[14] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[14]),
-        .Q(memToEdge[14]),
-        .R(reset));
-  FDSE \mmio_reg[15] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[15]),
-        .Q(memToEdge[15]),
-        .S(reset));
-  FDSE \mmio_reg[16] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[16]),
-        .Q(memToEdge[16]),
-        .S(reset));
-  FDRE \mmio_reg[17] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[17]),
-        .Q(memToEdge[17]),
-        .R(reset));
-  FDSE \mmio_reg[18] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[18]),
-        .Q(memToEdge[18]),
-        .S(reset));
-  FDSE \mmio_reg[19] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[19]),
-        .Q(memToEdge[19]),
-        .S(reset));
-  FDSE \mmio_reg[1] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[1]),
-        .Q(memToEdge[1]),
-        .S(reset));
-  FDRE \mmio_reg[20] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[20]),
-        .Q(memToEdge[20]),
-        .R(reset));
-  FDSE \mmio_reg[21] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[21]),
-        .Q(memToEdge[21]),
-        .S(reset));
-  FDRE \mmio_reg[22] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[22]),
-        .Q(memToEdge[22]),
-        .R(reset));
-  FDSE \mmio_reg[23] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[23]),
-        .Q(memToEdge[23]),
-        .S(reset));
-  FDRE \mmio_reg[24] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[24]),
-        .Q(memToEdge[24]),
-        .R(reset));
-  FDSE \mmio_reg[25] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[25]),
-        .Q(memToEdge[25]),
-        .S(reset));
-  FDSE \mmio_reg[26] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[26]),
-        .Q(memToEdge[26]),
-        .S(reset));
-  FDSE \mmio_reg[27] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[27]),
-        .Q(memToEdge[27]),
-        .S(reset));
-  FDSE \mmio_reg[28] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[28]),
-        .Q(memToEdge[28]),
-        .S(reset));
-  FDRE \mmio_reg[29] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[29]),
-        .Q(memToEdge[29]),
-        .R(reset));
-  FDSE \mmio_reg[2] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[2]),
-        .Q(memToEdge[2]),
-        .S(reset));
-  FDSE \mmio_reg[30] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[30]),
-        .Q(memToEdge[30]),
-        .S(reset));
-  FDSE \mmio_reg[31] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[31]),
-        .Q(memToEdge[31]),
-        .S(reset));
-  FDSE \mmio_reg[3] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[3]),
-        .Q(memToEdge[3]),
-        .S(reset));
-  FDRE \mmio_reg[4] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[4]),
-        .Q(memToEdge[4]),
-        .R(reset));
-  FDSE \mmio_reg[5] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[5]),
-        .Q(memToEdge[5]),
-        .S(reset));
-  FDSE \mmio_reg[6] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[6]),
-        .Q(memToEdge[6]),
-        .S(reset));
-  FDSE \mmio_reg[7] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[7]),
-        .Q(memToEdge[7]),
-        .S(reset));
-  FDRE \mmio_reg[8] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[8]),
-        .Q(memToEdge[8]),
-        .R(reset));
-  FDSE \mmio_reg[9] 
-       (.C(clk),
-        .CE(mmio0),
-        .D(rawDin[9]),
-        .Q(memToEdge[9]),
-        .S(reset));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Wed Jul  9 04:09:28 2025
+// Date        : Wed Jul  9 04:09:24 2025
 // Host        : 0c6e161387d0 running 64-bit Ubuntu 22.04.5 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/user/project/riscv2/bd/riscWithPipeMem/ip/riscWithPipeMem_bytewrite_tdp_ram_rf_0_0/riscWithPipeMem_bytewrite_tdp_ram_rf_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top riscWithPipeMem_bytewrite_tdp_ram_rf_0_0 -prefix
+//               riscWithPipeMem_bytewrite_tdp_ram_rf_0_0_ riscWithPipeMem_bytewrite_tdp_ram_rf_0_0_sim_netlist.v
 // Design      : riscWithPipeMem_bytewrite_tdp_ram_rf_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,54 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "riscWithPipeMem_bytewrite_tdp_ram_rf_0_0,bytewrite_tdp_ram_rf,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "bytewrite_tdp_ram_rf,Vivado 2023.1" *) 
-(* NotValidForBitStream *)
-module riscWithPipeMem_bytewrite_tdp_ram_rf_0_0
-   (clk,
-    reset,
-    enaA,
-    addrA,
-    doutA,
-    enaB,
-    weB,
-    addrB,
-    dinB,
-    doutB);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
-  input enaA;
-  input [14:0]addrA;
-  output [31:0]doutA;
-  input enaB;
-  input [3:0]weB;
-  input [14:0]addrB;
-  input [31:0]dinB;
-  output [31:0]doutB;
-
-  wire [14:0]addrA;
-  wire [14:0]addrB;
-  wire clk;
-  wire [31:0]dinB;
-  wire [31:0]doutA;
-  wire [31:0]doutB;
-  wire enaA;
-  wire enaB;
-  wire [3:0]weB;
-
-  riscWithPipeMem_bytewrite_tdp_ram_rf_0_0_bytewrite_tdp_ram_rf inst
-       (.addrA(addrA),
-        .addrB(addrB),
-        .clk(clk),
-        .dinB(dinB),
-        .doutA(doutA),
-        .doutB(doutB),
-        .enaA(enaA),
-        .enaB(enaB),
-        .weB(weB));
-endmodule
-
-(* ORIG_REF_NAME = "bytewrite_tdp_ram_rf" *) 
 module riscWithPipeMem_bytewrite_tdp_ram_rf_0_0_bytewrite_tdp_ram_rf
    (doutB,
     doutA,
@@ -7227,6 +7179,53 @@ module riscWithPipeMem_bytewrite_tdp_ram_rf_0_0_bytewrite_tdp_ram_rf
         .SBITERR(NLW_ram_block_reg_3_0_7_SBITERR_UNCONNECTED),
         .WEA({weB[3],weB[3],weB[3],weB[3]}),
         .WEBWE({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "riscWithPipeMem_bytewrite_tdp_ram_rf_0_0,bytewrite_tdp_ram_rf,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
+(* X_CORE_INFO = "bytewrite_tdp_ram_rf,Vivado 2023.1" *) 
+(* NotValidForBitStream *)
+module riscWithPipeMem_bytewrite_tdp_ram_rf_0_0
+   (clk,
+    reset,
+    enaA,
+    addrA,
+    doutA,
+    enaB,
+    weB,
+    addrB,
+    dinB,
+    doutB);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN riscWithPipeMem_clk, INSERT_VIP 0" *) input clk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
+  input enaA;
+  input [14:0]addrA;
+  output [31:0]doutA;
+  input enaB;
+  input [3:0]weB;
+  input [14:0]addrB;
+  input [31:0]dinB;
+  output [31:0]doutB;
+
+  wire [14:0]addrA;
+  wire [14:0]addrB;
+  wire clk;
+  wire [31:0]dinB;
+  wire [31:0]doutA;
+  wire [31:0]doutB;
+  wire enaA;
+  wire enaB;
+  wire [3:0]weB;
+
+  riscWithPipeMem_bytewrite_tdp_ram_rf_0_0_bytewrite_tdp_ram_rf inst
+       (.addrA(addrA),
+        .addrB(addrB),
+        .clk(clk),
+        .dinB(dinB),
+        .doutA(doutA),
+        .doutB(doutB),
+        .enaA(enaA),
+        .enaB(enaB),
+        .weB(weB));
 endmodule
 `ifndef GLBL
 `define GLBL
